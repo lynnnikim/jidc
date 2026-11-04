@@ -382,6 +382,31 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .sb-glyph.sm{font-size:1rem}
 .sb-glyph sup{font-size:.6875rem;margin-left:1px}
 .sb-tx{white-space:nowrap;line-height:1.2}
+
+/* 관리자 편집 */
+.ed{position:relative;outline:2px dashed transparent;outline-offset:4px;border-radius:6px}
+.is-admin .ed{outline-color:rgba(232,121,43,.45)}
+.ed-btn{position:absolute;top:-10px;right:-10px;z-index:5;padding:4px 10px;font-size:.75rem;font-weight:700;color:#fff;background:var(--tangerine);border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.ed-btn:hover{background:#C9631C}
+.ed-dark{display:inline-block}
+.ed-dark+.ed-dark{display:block}
+.slide .ed{margin-bottom:4px}
+.ed-img{width:100%;border-radius:8px;display:block}
+.greet .ed-img{aspect-ratio:3/4;object-fit:cover}
+.photo-cards .ed-img{aspect-ratio:4/3;object-fit:cover}
+.greet-title{font-size:1.375rem;font-weight:800;color:var(--navy);line-height:1.5}
+.greet-sign{text-align:right;margin-top:20px;font-weight:700}
+.ed-text{line-height:1.8}
+.org .slot-box.filled{background:#fff;color:var(--basalt);border:1px solid var(--line);font-weight:600}
+.ed-modal{position:fixed;inset:0;z-index:400;display:flex;align-items:center;justify-content:center;padding:16px}
+.ed-modal[hidden]{display:none}
+.em-dim{position:absolute;inset:0;background:rgba(10,20,30,.5)}
+.em-box{position:relative;width:min(560px,100%);max-height:90vh;overflow:auto;background:#fff;border-radius:12px;padding:24px}
+.em-title{font-size:1.25rem;font-weight:800;margin-bottom:16px}
+.admin-bar{position:fixed;left:0;right:0;bottom:0;z-index:300;display:flex;align-items:center;gap:16px;justify-content:center;flex-wrap:wrap;padding:10px 16px;background:var(--tangerine);color:#fff;font-size:.875rem;font-weight:600}
+.admin-bar[hidden]{display:none}
+.admin-bar a,.admin-bar button{color:#fff;text-decoration:underline}
+.is-admin .footer{padding-bottom:80px}
 /* 가운데 정렬 (제목·관련기관·푸터) */
 .sec-title{justify-content:center;text-align:center}
 .sub-visual{text-align:center}
@@ -531,12 +556,24 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
   <a class="sb-item" id="sbBlog" href="https://blog.naver.com/jidcc" target="_blank" rel="noopener" title="블로그 (새 창 열림)">
     <span class="sb-ic"><img alt="" src="images/blog_logo.png" data-base="images/blog_logo"></span><span class="sb-tx">블로그</span>
   </a>
+  <a class="sb-item" id="sbYoutube" href="https://www.youtube.com/@%EC%A0%9C%EC%A3%BC%EA%B5%AD%EC%A0%9C%EA%B0%9C%EB%B0%9C%ED%98%91%EB%A0%A5%EC%84%BC%ED%84%B0" target="_blank" rel="noopener" title="유튜브 (새 창 열림)">
+    <span class="sb-ic"><img alt="" src="images/youtube_logo.png" data-base="images/youtube_logo"></span><span class="sb-tx">유튜브</span>
+  </a>
   <div class="sb-fs" role="group" aria-label="글자 크기">
     <button class="sb-item" data-fs="1" aria-label="글자 크게"><span class="sb-ic sb-glyph">가<sup>+</sup></span><span class="sb-tx">글자 크게</span></button>
     <button class="sb-item" data-fs="-1" aria-label="글자 작게"><span class="sb-ic sb-glyph sm">가<sup>−</sup></span><span class="sb-tx">글자 작게</span></button>
   </div>
 </aside>
 <button class="top-btn" id="topBtn" aria-label="맨 위로"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
+<div class="ed-modal" id="edModal" hidden>
+  <div class="em-dim" data-em-close></div>
+  <div class="em-box" role="dialog" aria-modal="true" aria-labelledby="emTitle">
+    <h2 class="em-title" id="emTitle">수정</h2>
+    <div class="em-body"></div>
+    <div class="board-bottom"><button class="btn btn-danger" data-em-del>비우기</button><span style="flex:1"></span><button class="btn btn-line" data-em-close>취소</button><button class="btn btn-primary" data-em-save>저장</button></div>
+  </div>
+</div>
+<div class="admin-bar" id="adminBar" hidden><span>관리자 모드 · 각 영역의 [수정] 버튼으로 글과 사진을 바꿀 수 있습니다</span><a href="#/admin">관리자 페이지</a><button data-logout>로그아웃</button></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
@@ -581,44 +618,98 @@ const BIZ = {
   briefing:{groups:[{name:'개발협력 진로 컨설팅', items:['개발협력 진로 컨설팅']}], kw:['진로','컨설팅']}
 };
 Object.values(BIZ).forEach(d => d.programs = d.groups.flatMap(g => g.items));
+function applyBizLists(){
+  const lists = store.get('bizLists', null); if (!lists) return;
+  Object.entries(lists).forEach(([k, items]) => { if (BIZ[k]) { BIZ[k].groups = [{name:'', items}]; BIZ[k].programs = items; } });
+}
 // 분야 페이지: 세부 사업 목록만 (누르면 개별 사업 페이지)
 function bizPage(key){
   const d = BIZ[key];
   return `<ul class="prog-list">${d.programs.map((n,i)=>`<li><a href="#/program/${key}/${i}"><span>${esc(n)}</span>${ico.down.replace('M6 9l6 6 6-6','M9 6l6 6-6 6')}</a></li>`).join('')}</ul>`;
 }
 // 개별 사업 페이지
-function programPage(){
+function programPage(name){
+  const k = f => 'prog.' + name + '.' + f;
+  const rows = [edRow('사업 목적',k('purpose'),'사업 목적 입력'), edRow('참여 대상',k('target'),'참여 대상 입력'), edRow('주요 내용',k('content'),'주요 활동 내용 입력'), edRow('신청 방법',k('apply'),'신청 방법 입력 (공지사항 게시 후 접수 등)')].join('');
+  const photos = [1,2,3].map(n => (CMS.get(k('photo'+n)) || isAdmin()) ? ed(k('photo'+n), {type:'image', label:'활동 사진 '+n, ph:'활동 사진 '+n}) : '').join('');
   return `
   <h3 class="h3">사업 개요</h3>
   <table class="info-table"><caption class="sr-only">사업 개요</caption>
-    <tr><th scope="row">사업 목적</th><td>${slot('사업 목적 입력')}</td></tr>
-    <tr><th scope="row">참여 대상</th><td>${slot('참여 대상 입력')}</td></tr>
-    <tr><th scope="row">주요 내용</th><td>${slot('주요 활동 내용 입력')}</td></tr>
-    <tr><th scope="row">신청 방법</th><td>${slot('신청 방법 입력 (공지사항 게시 후 접수 등)')}</td></tr>
+    ${rows}
     <tr><th scope="row">문의</th><td>제주국제개발협력센터 ${TEL}</td></tr>
   </table>
-  <h3 class="h3">활동 사진</h3>
-  <div class="cards">${slot('활동 사진 1','img')}${slot('활동 사진 2','img')}${slot('활동 사진 3','img')}</div>`;
+  ${photos ? `<h3 class="h3">활동 사진</h3><div class="cards photo-cards">${photos}</div>` : ''}`;
 }
 function viewProgram(cat, idx){
   const d = BIZ[cat], name = d && d.programs[+idx];
   if (!name) return viewNotFound();
   window._lnbOpen = cat; window._lnbCur = cat + '/' + idx;
-  subLayout('biz', cat, name, `<h2 class="ct">${esc(name)}</h2>${programPage()}`);
+  subLayout('biz', cat, name, `<h2 class="ct">${esc(name)}</h2>${programPage(name)}`);
 }
+// ---------- 관리자 편집(CMS) ----------
+// 관리자로 로그인하면 각 영역에 [수정] 버튼이 생기고, 글·사진을 바로 바꿀 수 있습니다.
+// 시안: 브라우저 저장 / 실서비스: 서버 DB(콘텐츠 테이블)로 교체
+const CMS = {
+  all(){ return store.get('cms', {}); },
+  get(k){ return this.all()[k]; },
+  set(k, v){ const a = this.all(); if (v === null || v === '' || v === undefined) delete a[k]; else a[k] = v; store.set('cms', a); }
+};
+const nl2br = t => esc(t).replace(/\n/g, '<br>');
+// 편집 가능 영역. type: text | image
+function ed(key, o = {}){
+  const type = o.type || 'text', v = CMS.get(key), val = v !== undefined ? v : o.def;
+  let view = '';
+  if (val) view = o.render ? o.render(val) : type === 'image' ? `<img class="ed-img" src="${val.src || val}" alt="${esc(val.alt || '')}">` : `<div class="ed-text">${nl2br(val)}</div>`;
+  else if (isAdmin()) view = slot(o.ph || '내용 입력', type === 'image' ? 'img' : '');
+  if (!isAdmin()) return view;
+  return `<div class="ed ${o.cls||''}" data-ed="${esc(key)}" data-type="${type}" data-label="${esc(o.label||'')}">${view}<button class="ed-btn" data-edit>수정</button></div>`;
+}
+// 표 한 줄: 방문자에게는 내용이 있을 때만 보임
+function edRow(label, key, ph){
+  const has = CMS.get(key);
+  if (!has && !isAdmin()) return '';
+  return `<tr><th scope="row">${label}</th><td>${ed(key, {label, ph})}</td></tr>`;
+}
+let edCtx = null;
+function openEditor(box){
+  const key = box.dataset.ed, type = box.dataset.type, label = box.dataset.label || '내용';
+  const v = CMS.get(key);
+  edCtx = {key, type, img: v && type === 'image' ? (v.src || v) : null};
+  const m = $('#edModal');
+  m.querySelector('.em-title').textContent = label + ' 수정';
+  m.querySelector('.em-body').innerHTML = type === 'image'
+    ? `<img id="emPrev" class="photo-prev" alt="" ${edCtx.img?`src="${edCtx.img}"`:'hidden'}>
+       <div class="field" style="margin-top:12px"><label for="emFile">사진 파일 (JPG·PNG·WEBP, 10MB 이하)</label><input id="emFile" type="file" accept="image/png,image/jpeg,image/webp"></div>
+       <div class="field"><label for="emAlt">사진 설명 (대체텍스트)</label><input id="emAlt" type="text" maxlength="120" value="${esc(v && v.alt || '')}"></div>`
+    : `<div class="field"><label for="emText">${esc(label)}</label><textarea id="emText" style="height:220px">${esc(v || '')}</textarea><p class="hint">줄바꿈은 그대로 반영됩니다.</p></div>`;
+  const f = $('#emFile');
+  if (f) f.onchange = async () => { const file = f.files[0]; if (!file) return; edCtx.img = await readPhoto(file); const pv = $('#emPrev'); pv.src = edCtx.img; pv.hidden = false; };
+  m.hidden = false; (m.querySelector('textarea,input') || m.querySelector('button')).focus();
+}
+function closeEditor(){ $('#edModal').hidden = true; edCtx = null; }
+function saveEditor(remove){
+  if (!edCtx) return;
+  if (remove) CMS.set(edCtx.key, null);
+  else if (edCtx.type === 'image') CMS.set(edCtx.key, edCtx.img ? {src: edCtx.img, alt: $('#emAlt').value.trim()} : null);
+  else CMS.set(edCtx.key, $('#emText').value.trim());
+  closeEditor(); const y = scrollY; route(); window.scrollTo(0, y); toast(remove ? '삭제했습니다.' : '저장했습니다.');
+}
+const timeline = v => `<ul class="timeline">${v.split('\n').filter(Boolean).map(l => { const [y, ...t] = l.split('|'); return `<li><span class="y">${esc(y.trim())}</span><p>${esc(t.join('|').trim())}</p></li>`; }).join('')}</ul>`;
+const orgRow = v => `<div class="row">${v.split('\n').filter(Boolean).map(t=>`<div class="box slot-box filled">${esc(t)}</div>`).join('')}</div>`;
+
 const PAGES = {
   greeting:{body:()=>`
     <div class="greet">
-      ${slot('센터장 사진<br>(세로형 3:4)','img')}
+      ${ed('greeting.photo', {type:'image', label:'센터장 사진', ph:'센터장 사진<br>(세로형 3:4)'})}
       <div>
-        ${slot('인사말 제목 한 줄 입력')}
+        ${ed('greeting.title', {label:'인사말 제목', ph:'인사말 제목 한 줄 입력', render:v=>`<p class="greet-title">${nl2br(v)}</p>`})}
         <div style="height:16px"></div>
-        ${slot('인사말 본문 입력 (3~5문단)','tall')}
-        <p style="text-align:right;margin-top:20px;font-weight:700">제주국제개발협력센터장 <span class="slot inline-slot">성명</span></p>
+        ${ed('greeting.body', {label:'인사말 본문', ph:'인사말 본문 입력 (3~5문단)'})}
+        ${ed('greeting.sign', {label:'서명', ph:'제주국제개발협력센터장 OOO', render:v=>`<p class="greet-sign">${nl2br(v)}</p>`})}
       </div>
     </div>`},
   purpose:{body:()=>`
-    <p class="lead">제주 지역의 공적개발원조(ODA) 참여 기반 확대를 위해<br>제주특별자치도·한국국제협력단(KOICA)·제주대학교의 협약으로 설립되었습니다.</p>
+    ${ed('purpose.lead', {label:'설립 목적', def:'제주 지역의 공적개발원조(ODA) 참여 기반 확대를 위해\n제주특별자치도·한국국제협력단(KOICA)·제주대학교의 협약으로 설립되었습니다.', render:v=>`<p class="lead">${nl2br(v)}</p>`})}
     <h3 class="h3">설립 당시 주요 역할</h3>
     <div class="cards">
       <div class="card"><b>ODA 교육</b>주민·학생·시민단체·기업 대상</div>
@@ -628,31 +719,27 @@ const PAGES = {
       <div class="card"><b>모니터링·평가</b>제주 지역 ODA 사업 모니터링·평가</div>
     </div>
     <h3 class="h3">연혁</h3>
-    <ul class="timeline">
-      <li><span class="y">2015. 08.</span><p>제주특별자치도·KOICA·제주대학교 3자 업무협약 체결</p></li>
-      <li><span class="y">2016. 06. 22.</span><p>제주국제개발협력센터 개소 (제주대학교 본관 개소식)</p></li>
-      <li><span class="y slot inline-slot">연도</span>${slot('이후 주요 연혁 입력 (센터 내부 자료 기준)')}</li>
-    </ul>`},
+    ${ed('purpose.history', {label:'연혁 (한 줄에 하나씩: 연도 | 내용)', def:'2015. 08. | 제주특별자치도·KOICA·제주대학교 3자 업무협약 체결\n2016. 06. 22. | 제주국제개발협력센터 개소 (제주대학교 본관 개소식)', render:timeline})}`},
   org:{body:()=>`
     <h3 class="h3">조직도</h3>
     <div class="org">
       <div class="box">센터장</div><div class="line"></div>
-      <div class="row">${['담당 업무 입력','담당 업무 입력','담당 업무 입력'].map(t=>`<div class="box slot-box">${t}</div>`).join('')}</div>
+      ${ed('org.chart', {label:'조직도 (한 줄에 한 칸씩)', ph:'담당 업무를 한 줄에 하나씩 입력', render:orgRow})}
     </div>
     <h3 class="h3">대표 연락처</h3>
     <table class="info-table"><tr><th scope="row">대표 전화</th><td>${TEL}</td></tr><tr><th scope="row">이메일</th><td>esther@jejunu.ac.kr</td></tr></table>`},
   map:{body:()=>`
-    ${slot('지도 영역 (카카오맵·네이버지도 API — 외주 개발 시 연동)','map')}
+    ${ed('map.image', {type:'image', label:'약도 이미지', ph:'약도 이미지 (지도 API는 외주 개발 시 연동)', cls:'map-ed'})}
     <table class="info-table" style="margin-top:24px">
       <tr><th scope="row">주소</th><td>(63243) 제주특별자치도 제주시 제주대학로 102<br>제주대학교 통번역대학원 1층 103호 제주국제개발협력센터</td></tr>
       <tr><th scope="row">전화</th><td>${TEL}</td></tr>
-      <tr><th scope="row">대중교통</th><td>${slot('버스 노선·하차 정류장 입력')}</td></tr>
-      <tr><th scope="row">자가용·주차</th><td>${slot('주차 안내 입력')}</td></tr>
+      ${edRow('대중교통','map.bus','버스 노선·하차 정류장 입력')}
+      ${edRow('자가용·주차','map.car','주차 안내 입력')}
     </table>`},
   awareness:{body:()=>bizPage('awareness')}, network:{body:()=>bizPage('network')}, koica:{body:()=>bizPage('koica')},
   odyssey:{body:()=>bizPage('odyssey')}, consult:{body:()=>bizPage('consult')}, briefing:{body:()=>bizPage('briefing')},
-  privacy:{title:'개인정보처리방침', body:()=>slot('「개인정보 보호법」 제30조에 따른 개인정보 처리방침 전문 (발송대행 업체 등 처리 위탁 내용 포함)')},
-  terms:{title:'이용약관', body:()=>slot('누리집 이용약관 전문')},
+  privacy:{title:'개인정보처리방침', body:()=>ed('page.privacy', {label:'개인정보처리방침', ph:'「개인정보 보호법」 제30조에 따른 개인정보 처리방침 전문 (발송대행 업체 등 처리 위탁 내용 포함)'})},
+  terms:{title:'이용약관', body:()=>ed('page.terms', {label:'이용약관', ph:'누리집 이용약관 전문'})},
   noemail:{title:'이메일무단수집거부', body:()=>'<p>본 누리집에 게시된 이메일 주소가 전자우편 수집 프로그램이나 그 밖의 기술적 장치를 이용하여 무단으로 수집되는 것을 거부합니다.</p>'}
 };
 
@@ -739,8 +826,9 @@ function renderMenus(){
     : `<li><button aria-expanded="false" aria-controls="msub${i}">${m.name}${ico.down}</button><ul id="msub${i}">${m.items.map(([k,n])=>`<li><a href="${linkOf(k)}">${n}</a></li>`).join('')}</ul></li>`).join('');
 }
 function renderAuth(){
+  const bar = $('#adminBar'); if (bar) { bar.hidden = !isAdmin(); document.body.classList.toggle('is-admin', isAdmin()); }
   const u = user;
-  if ($('#utilAuth')) $('#utilAuth').innerHTML = u
+  if ($('#utilAuth')) $('#utilAuth').innerHTML = ''; if (false) $('#utilAuth').innerHTML = u
     ? `<span class="h-user">${esc(u.name)}님${u.role==='admin'?' (관리자)':''}</span>${u.role==='admin'?'<a href="#/admin">관리자 페이지</a>':''}<button data-logout>로그아웃</button>`
     : '';
   if ($('#mAuth')) $('#mAuth').innerHTML = u
@@ -789,9 +877,9 @@ function viewHome(){
     ${heroPhoto()}
     <div class="wrap">
       <div class="slide on">
-        <span class="tag">제주국제개발협력센터</span>
-        <h2>기업에게는 기회를, 청년에게는 꿈을</h2>
-        <p>제주국제개발협력센터가 기업과 청년의 국제개발협력 참여 기회를 넓힙니다.</p>
+        ${ed('home.tag', {label:'배너 작은 표시', def:'제주국제개발협력센터', render:v=>`<span class="tag">${esc(v)}</span>`, cls:'ed-dark'})}
+        ${ed('home.title', {label:'배너 제목', def:'기업에게는 기회를, 청년에게는 꿈을', render:v=>`<h2>${esc(v)}</h2>`, cls:'ed-dark'})}
+        ${ed('home.desc', {label:'배너 설명', def:'제주국제개발협력센터가 기업과 청년의 국제개발협력 참여 기회를 넓힙니다.', render:v=>`<p>${esc(v)}</p>`, cls:'ed-dark'})}
       </div>
     </div>
   </section>
@@ -1148,6 +1236,10 @@ function viewAdmin(){
     </table></div>
     <p class="hint" style="margin-top:12px">실서비스에서는 권한 변경·삭제 이력을 접속기록(로그)으로 남겨야 합니다.</p>
 
+    <div class="sec-title" style="margin-top:48px"><h2 style="font-size:1.25rem">주요사업 목록 관리</h2></div>
+    <p class="hint" style="margin-bottom:14px;text-align:center">한 줄에 사업 하나씩 입력하세요. 메뉴·메인 카드·사업 페이지에 바로 반영됩니다. 사업 이름을 바꾸면 그 사업에 입력한 내용은 새로 입력해야 합니다.</p>
+    <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">${BIZ_CARDS.map(c=>`<div class="field"><label for="bl_${c.page}">${c.title}</label><textarea id="bl_${c.page}" data-bizlist="${c.page}" style="height:240px">${esc(BIZ[c.page].programs.join('\n'))}</textarea></div>`).join('')}</div>
+    <div class="board-bottom"><button class="btn btn-primary" id="bizListSave">목록 저장</button></div>
     ${logoAdmin()}
     ${bannerAdmin()}
     <div class="sec-title" style="margin-top:48px"><h2 style="font-size:1.25rem">관련기관 로고 관리</h2></div>
@@ -1157,6 +1249,13 @@ function viewAdmin(){
       <tbody>${FAMILY.map(f=>{ const lg = store.get('logos',{})[f.key]; return `<tr><td class="tl"><a href="${f.url}" target="_blank" rel="noopener" title="새 창 열림">${f.name}</a></td><td><div class="logo-cell">${lg?`<img src="${lg}" alt="${f.name} 로고">`:'로고 없음'}</div></td><td><code>${f.file}</code></td><td><label class="sr-only" for="lg_${f.key}">${f.name} 로고 파일</label><input id="lg_${f.key}" type="file" accept=".png,.jpg,.jpeg,.svg,.webp,image/png,image/jpeg,image/svg+xml,image/webp" data-logo="${f.key}"></td><td>${lg?`<button class="btn btn-danger btn-sm" data-logo-del="${f.key}">삭제</button>`:'-'}</td></tr>`; }).join('')}</tbody>
     </table></div>
   </div>`;
+  // 주요사업 목록
+  const bls = $('#bizListSave');
+  if (bls) bls.onclick = () => {
+    const lists = {}; app.querySelectorAll('[data-bizlist]').forEach(t => lists[t.dataset.bizlist] = t.value.split('\n').map(x=>x.trim()).filter(Boolean));
+    if (Object.values(lists).some(l => !l.length)) { toast('분야마다 사업을 하나 이상 입력하세요.'); return; }
+    store.set('bizLists', lists); applyBizLists(); toast('주요사업 목록을 저장했습니다.');
+  };
   // 센터 로고
   const slf = $('#siteLogoFile');
   if (slf) slf.onchange = async () => {
@@ -1335,14 +1434,18 @@ mNav.addEventListener('click', e => {
   const t = e.target.closest('.m-list>li>button');
   if (t) { const ex = t.getAttribute('aria-expanded')==='true'; t.setAttribute('aria-expanded', !ex); $('#'+t.getAttribute('aria-controls')).classList.toggle('on', !ex); }
 });
-document.addEventListener('keydown', e => { if (e.key==='Escape') { if (mNav.classList.contains('on')) { closeMobile(); btnMenu.focus(); } closeMega(); } });
+document.addEventListener('keydown', e => { if (e.key==='Escape' && !$('#edModal').hidden) { closeEditor(); return; } if (e.key==='Escape') { if (mNav.classList.contains('on')) { closeMobile(); btnMenu.focus(); } closeMega(); } });
 
 document.addEventListener('click', e => {
   const lo = e.target.closest('[data-logout]');
-  if (lo) { user = null; session.set(null); renderAuth(); toast('로그아웃했습니다.'); location.hash = '#/'; }
+  if (lo) { user = null; session.set(null); renderAuth(); toast('로그아웃했습니다.'); if (location.hash === '#/' || !location.hash) route(); else location.hash = '#/'; }
   const fsb = e.target.closest('[data-fs]');
   if (fsb) { const d = +fsb.dataset.fs; const cur = parseInt(getComputedStyle(document.documentElement).fontSize); const n = d===0 ? 16 : Math.min(22, Math.max(14, cur + d*2)); document.documentElement.style.setProperty('--fs', n+'px'); toast(n===16?'기본 글자 크기':'글자 크기 '+Math.round(n/16*100)+'%'); }
   const tab = e.target.closest('[data-tab]'); if (tab) showTab(tab.dataset.tab);
+  const eb = e.target.closest('[data-edit]'); if (eb) { e.preventDefault(); openEditor(eb.closest('.ed')); }
+  if (e.target.closest('[data-em-close]')) closeEditor();
+  if (e.target.closest('[data-em-save]')) saveEditor(false);
+  if (e.target.closest('[data-em-del]') && confirm('이 영역의 내용을 비울까요?')) saveEditor(true);
   const bm = e.target.closest('[data-bizmore]');
   if (bm) { const ex = bm.getAttribute('aria-expanded') === 'true';
     bm.closest('.biz').querySelectorAll('.more-item').forEach(li => li.hidden = ex);
@@ -1376,7 +1479,7 @@ function loadSideLogos(){
     if (img.complete && !img.naturalWidth) img.onerror();
   });
 }
-(async () => { loadSideLogos(); await seed(); seedGallery(); store.set('posts', store.get('posts',[]).filter(p=>BOARDS[p.board])); renderMenus(); renderAuth(); renderFamily(); renderLogo(); route(); })();
+(async () => { loadSideLogos(); applyBizLists(); await seed(); seedGallery(); store.set('posts', store.get('posts',[]).filter(p=>BOARDS[p.board])); renderMenus(); renderAuth(); renderFamily(); renderLogo(); route(); })();
 </script>
 </body>
 </html>
