@@ -168,7 +168,7 @@ img{max-width:100%}
 .biz:nth-child(2){border-top-color:var(--navy)}
 .biz:nth-child(3){border-top-color:var(--tangerine)}
 .biz h3{font-size:1.25rem;font-weight:800;margin-bottom:14px}
-.biz li{padding:8px 0;border-bottom:1px dashed var(--line);font-size:.9375rem}
+.biz li{padding:8px 0;font-size:.9375rem}
 .biz li:last-child{border:0}
 .biz .more{margin-top:16px}
 
@@ -182,6 +182,11 @@ img{max-width:100%}
 .fam-ic img{max-width:85%;max-height:48px;object-fit:contain;display:block}
 .fam:hover{color:var(--sea)}
 .fam:hover .fam-nm{text-decoration:underline}
+/* 로고가 있으면 기관명 글자는 숨김 (화면낭독기로만 읽힘) */
+.fam:not(.no-logo) .fam-nm{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.fam{position:relative}
+.fam:not(.no-logo){gap:0;min-height:88px}
+.fam.no-logo .fam-ic{display:none}
 
 .logo-cell{display:flex;align-items:center;justify-content:center;height:48px;min-width:120px;border:1px dashed var(--line);border-radius:4px;background:#fff;font-size:.75rem;color:var(--sub)}
 .logo-cell img{max-height:36px;max-width:140px;object-fit:contain}
@@ -201,11 +206,15 @@ img{max-width:100%}
 .sub-visual h1{font-size:2rem;font-weight:800;letter-spacing:-.03em}
 .crumb{display:flex;gap:8px;font-size:.875rem;opacity:.8;margin-top:10px;flex-wrap:wrap}
 .crumb li+li::before{content:"›";margin-right:8px}
-.sub-body{display:grid;grid-template-columns:280px 1fr;gap:48px;padding:48px 0 90px}
+.sub-body{display:grid;grid-template-columns:280px 1fr;gap:48px;padding-top:48px;padding-bottom:90px}
 .lnb h2{font-size:1.25rem;font-weight:800;padding:20px;background:var(--sea);color:#fff;border-radius:var(--radius) var(--radius) 0 0}
 .lnb ul{border:1px solid var(--line);border-top:0}
 .lnb a{display:flex;align-items:center;height:52px;padding:0 20px;border-top:1px solid var(--line);font-size:.9375rem;line-height:1.3}
 .lnb-sub{border:0!important;background:#FAFBFC}
+.lnb-m-sub{display:none;gap:8px;overflow-x:auto;padding:12px 0 2px;scrollbar-width:none}
+.lnb-m-sub::-webkit-scrollbar{display:none}
+.lnb-m-sub a{flex:0 0 auto;white-space:nowrap;padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:.875rem;color:var(--sub);background:#fff}
+.lnb-m-sub a[aria-current="page"]{border-color:var(--sea);background:var(--sea-weak);color:var(--sea);font-weight:700}
 .lnb-tg{justify-content:space-between;gap:8px}
 .lnb-tg svg{flex-shrink:0;color:var(--sub);transition:transform .2s}
 .lnb-tg[aria-expanded="true"] svg{transform:rotate(180deg);color:var(--sea)}
@@ -224,6 +233,42 @@ img{max-width:100%}
 .content h2.ct{font-size:1.5rem;font-weight:800;padding-bottom:16px;border-bottom:2px solid var(--basalt);margin-bottom:24px}
 .placeholder{border:2px dashed var(--line);border-radius:10px;padding:40px;text-align:center;color:var(--sub)}
 .info-table{width:100%;border-collapse:collapse;border-top:2px solid var(--basalt)}
+/* 사업 페이지 */
+.prog-notice{border:1px solid var(--line);border-radius:8px;padding:22px 26px;margin-top:44px;font-size:.9375rem;line-height:1.8}
+.pn-q{display:flex;gap:14px;margin-top:6px}
+.pn-q b{letter-spacing:.3em;color:var(--basalt);white-space:nowrap}
+.pn-q a{color:inherit}
+.prog-notice .hl{font-weight:700}
+.prog-notice ul,.ps ul,.prog-notice .rich ul,.ps .rich ul{list-style:none;padding:0;margin:4px 0}
+.prog-notice li,.ps li{position:relative;padding-left:14px;margin:4px 0}
+.prog-notice li::before,.ps li::before{content:"";position:absolute;left:0;top:.75em;width:4px;height:4px;background:var(--basalt)}
+.ps{margin-top:44px}
+.ps-t{position:relative;padding-top:14px;margin-bottom:16px;font-size:1.25rem;font-weight:800;color:var(--basalt)}
+.ps-t::before{content:"";position:absolute;left:0;top:0;width:18px;height:3px;background:var(--navy)}
+.ps-t small{margin-left:8px;font-size:.9375rem;font-weight:500;color:var(--sub)}
+.ps-box{background:var(--stone);border-radius:10px;padding:24px 30px;margin-bottom:18px;font-size:.9375rem;line-height:1.8;color:var(--sub)}
+.ps-box strong{color:var(--basalt)}
+.ps-wrap{display:flex;gap:28px;align-items:flex-start}
+.ps-main{flex:1;min-width:0;font-size:.9375rem;line-height:1.8;color:#3D4550}
+.ps-main strong{color:var(--basalt)}
+.ps-img{flex:0 0 140px;text-align:center;font-size:.8125rem;color:var(--sub)}
+.ps-img img{width:100%;border:1px solid var(--line);border-radius:6px;background:#fff}
+.ps-img figcaption{margin-top:6px;line-height:1.4}
+.ps-table-wrap{overflow-x:auto;margin-top:12px}
+.ps-table{width:100%;min-width:520px;border-collapse:collapse;border-top:1px solid var(--basalt);font-size:.875rem;text-align:center}
+.ps-table th,.ps-table td{padding:12px 10px;border-bottom:1px solid var(--line);border-left:1px solid var(--line);vertical-align:middle}
+.ps-table tr>*:first-child{border-left:0}
+.ps-table thead th,.ps-table tbody th{background:var(--stone);font-weight:700}
+.ps-table tbody th{width:18%}
+.ps-tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;padding:10px;border:1px dashed #E8A06A;border-radius:8px;background:#FFF8F2}
+.ps-add{margin-top:28px;text-align:center}
+.chk{display:flex;align-items:center;gap:6px;font-size:.875rem}
+@media (max-width:767px){
+  .prog-notice{padding:16px 18px}
+  .ps{margin-top:34px}.ps-t{font-size:1.125rem}
+  .ps-box{padding:18px}
+  .ps-wrap{flex-direction:column}.ps-img{flex:none;width:140px;align-self:center}
+}
 .info-table th,.info-table td{padding:14px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
 .info-table th{background:var(--stone);width:160px;font-weight:700;text-align:center;vertical-align:middle}
 
@@ -312,14 +357,31 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .slot.tall{min-height:240px;display:flex;align-items:center;justify-content:center}
 .slot.map{height:360px;display:flex;align-items:center;justify-content:center}
 .inline-slot{display:inline-block;padding:2px 14px;font-size:.875rem}
-.greet{display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:start}
-.greet>.slot.img{aspect-ratio:3/4}
+.greet{display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:start}
+.greet-side{margin:0}
+.greet-side .slot.img,.greet-side .ed-img{aspect-ratio:4/3.5;object-fit:cover;border-radius:16px;width:100%}
+.greet-cap{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:20px;font-size:.9375rem;color:var(--basalt)}
+.greet-cap .slot{padding:6px 12px}
+.greet-signimg{height:44px;width:auto;display:block}
+.greet-body{line-height:1.9;white-space:normal}
+.greet-body .hl{color:var(--sea);font-weight:800}
 .lead{font-size:1.1875rem;font-weight:700;text-align:center;padding:28px 20px;background:var(--sea-weak);border-radius:10px;color:var(--navy);line-height:1.7}
 .h3{font-size:1.1875rem;font-weight:800;margin:44px 0 16px;padding-left:12px;border-left:4px solid var(--sea);line-height:1.3}
 .content>.ct+.h3{margin-top:0}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
 .card{border:1px solid var(--line);border-radius:10px;padding:20px;font-size:.9375rem;color:var(--sub)}
 .card b{display:block;font-size:1.0625rem;color:var(--basalt);margin-bottom:6px}
+.role-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.role-card{display:flex;flex-direction:column;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:10px;padding:24px;color:var(--sub);transition:box-shadow .2s,transform .2s}
+.role-card:hover{box-shadow:0 8px 20px rgba(16,40,70,.08);transform:translateY(-2px)}
+.role-no{font-size:.875rem;font-weight:800;color:var(--sea)}
+.role-card>b{font-size:1.1875rem;color:var(--basalt);margin:6px 0 10px}
+.role-card>b a:hover{color:var(--sea);text-decoration:underline}
+.role-card p{font-size:.9375rem;line-height:1.6}
+.role-card ul{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:.875rem}
+.role-card li{position:relative;padding-left:12px;line-height:1.9}
+.role-card li::before{content:"";position:absolute;left:0;top:.8em;width:4px;height:4px;border-radius:50%;background:var(--sea)}
+@media (max-width:900px){.role-cards{grid-template-columns:1fr}}
 .card .slot{margin-top:8px}
 .timeline{border-left:2px solid var(--line);margin-left:6px}
 .timeline li{position:relative;padding:0 0 24px 26px}
@@ -374,7 +436,8 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .dot-list li{position:relative;padding:3px 0 3px 12px;color:var(--basalt)}
 .dot-list li::before{content:"";position:absolute;left:0;top:.8em;width:4px;height:4px;border-radius:50%;background:var(--sea)}
 .biz li{padding:0}
-.biz li a{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 0}
+.biz li a{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 0 9px 18px;position:relative}
+.biz li a::before{content:"";position:absolute;left:2px;top:50%;width:6px;height:6px;margin-top:-3px;border-radius:50%;background:var(--sea)}
 .biz li a::after{content:"›";color:#9AA4AE;font-size:1.125rem;line-height:1}
 .biz li a:hover{color:var(--sea)}
 .biz li a:hover::after{color:var(--sea)}
@@ -402,9 +465,9 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .ed-dark+.ed-dark{display:block}
 .slide .ed{margin-bottom:4px}
 .ed-img{width:100%;border-radius:8px;display:block}
-.greet .ed-img{aspect-ratio:3/4;object-fit:cover}
+
 .photo-cards .ed-img{aspect-ratio:4/3;object-fit:cover}
-.greet-title{font-size:1.375rem;font-weight:800;color:var(--navy);line-height:1.5}
+.greet-title{font-size:1.25rem;font-weight:800;color:var(--sea);line-height:1.5;padding-left:12px;border-left:4px solid var(--sea);margin-bottom:18px}
 .greet-sign{text-align:right;margin-top:20px;font-weight:700}
 .ed-text{line-height:1.8}
 .org .slot-box.filled{background:#fff;color:var(--basalt);border:1px solid var(--line);font-weight:600}
@@ -425,6 +488,44 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .naver-map{width:100%;height:400px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--stone)}
 .map-empty{height:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:var(--sub);font-size:.9375rem}
 .map-link{text-align:right;margin-top:10px}
+.loc-bar{display:flex;align-items:stretch;margin-top:20px;border:1px solid #CFE0F0;border-radius:10px;overflow:hidden;background:#fff;color:var(--basalt)}
+.loc-name{flex:0 0 auto;display:flex;align-items:center;padding:16px 24px;background:#2F7FC1;color:#fff;font-size:1rem;font-weight:700}
+.loc-info{flex:1;display:flex;flex-direction:column;justify-content:center;gap:12px;padding:20px 26px}
+.loc-info p{display:flex;align-items:center;gap:16px;font-size:.9375rem;letter-spacing:.02em;line-height:1.6}
+.loc-k{display:inline-flex;align-items:center;gap:6px;font-weight:700;white-space:nowrap;padding-right:14px;border-right:1px solid var(--line)}
+.loc-k svg{color:#2F7FC1}
+.loc-v a{color:var(--basalt)}
+.map-links{display:flex;justify-content:flex-end;align-items:center;margin-top:14px}
+.map-btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 18px;font-size:.9375rem;font-weight:700;color:var(--basalt)}
+.map-btn+.map-btn{position:relative}
+.map-btn+.map-btn::before{content:"";position:absolute;left:0;top:50%;width:1px;height:14px;margin-top:-7px;background:#B8C0C8}
+.map-btn:hover{color:var(--sea);text-decoration:underline}
+.map-btn{justify-content:center;gap:8px}
+.map-btn:last-child{padding-right:0}
+.map-ic{flex:0 0 24px;width:24px;height:24px;display:inline-flex}
+.map-ic img{width:100%;height:100%;object-fit:contain;border-radius:5px}
+.route-table{width:100%;margin-top:32px;border-collapse:collapse;border-top:1px solid var(--basalt)}
+.route-table tr{border-bottom:1px solid var(--line)}
+.route-table th,.route-table td{padding:22px 12px;text-align:left;vertical-align:middle}
+.route-table th{width:26%;font-size:1rem;font-weight:700}
+.route-table td{font-size:.9375rem;color:var(--sub)}
+.route-table td{display:table-cell}
+.route-table td>b{color:var(--basalt);margin:0 14px 0 10px;white-space:nowrap}
+.route-table td>.ed,.route-table td>span:last-child{display:inline-block;vertical-align:middle}
+.rt-ic{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--stone);color:var(--basalt);vertical-align:middle}
+.route-note{margin-top:14px;font-size:.875rem;color:var(--sub)}
+@media (max-width:767px){
+  .loc-bar{flex-direction:column}
+  .loc-name{padding:12px 18px}
+  .loc-info{padding:14px 18px}
+  .loc-info p{align-items:flex-start;gap:10px;font-size:.875rem}
+  .map-links{justify-content:center}.map-btn:last-child{padding-right:18px}
+  .route-table,.route-table tbody,.route-table tr,.route-table th,.route-table td{display:block;width:auto}
+  .route-table tr{padding:16px 4px}
+  .route-table th,.route-table td{padding:6px 0}
+  .route-table td{display:flex!important;align-items:center}
+  .route-table td>b{margin:0 10px;flex-shrink:0}
+}
 @media (max-width:640px){.naver-map{height:280px}}
 /* 사업 페이지 활동 사진 (대표 사진 크게) */
 .photo-gallery{display:grid;gap:12px;margin-bottom:40px}
@@ -436,17 +537,32 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .pg-item img.ed-img,.pg-item .ed-img{width:100%;height:100%;object-fit:cover;border-radius:10px}
 .pg-item .slot.img{height:100%;aspect-ratio:auto}
 @media (max-width:640px){.photo-gallery.pg-3{grid-template-columns:1fr 1fr;grid-template-rows:auto auto;aspect-ratio:auto}.photo-gallery.pg-3 .pg-item:first-child{grid-row:auto;grid-column:1 / span 2;aspect-ratio:4/3}.photo-gallery.pg-3 .pg-item{aspect-ratio:4/3}.photo-gallery.pg-2,.photo-gallery.pg-1{aspect-ratio:auto}.photo-gallery.pg-2 .pg-item,.photo-gallery.pg-1 .pg-item{aspect-ratio:4/3}}
+/* 서식 편집기 */
+.rt-bar{display:flex;flex-wrap:wrap;gap:4px;padding:6px;border:1px solid #B8C0C8;border-bottom:0;border-radius:var(--radius) var(--radius) 0 0;background:var(--stone)}
+.rt-bar button{min-width:34px;height:32px;padding:0 8px;border:1px solid transparent;border-radius:4px;font-size:.875rem;background:none}
+.rt-bar button:hover{background:#fff;border-color:var(--line)}
+.rt-sep{width:1px;background:var(--line);margin:4px 2px}
+.rt-area{min-height:240px;max-height:480px;overflow:auto;padding:14px;border:1px solid #B8C0C8;border-radius:0 0 var(--radius) var(--radius);background:#fff;line-height:1.8;outline:none}
+.rt-area:focus{border-color:var(--sea);box-shadow:0 0 0 2px var(--sea-weak)}
+.rt-area p,.rich p{margin:0}
+.rich ul,.rt-area ul{list-style:disc;padding-left:1.4em;margin:6px 0}
+.fs-s{font-size:.875em}.fs-l{font-size:1.25em}.fs-xl{font-size:1.5em;line-height:1.5}
+.rich .hl,.rt-area font[color],.hl{color:var(--sea);font-weight:800}
+.view-body.rich{white-space:normal}
 /* 가운데 정렬 (제목·관련기관·푸터) */
 .sec-title{justify-content:center;text-align:center}
 .sub-visual{text-align:center}
 .crumb{justify-content:center}
 .content h2.ct{text-align:center}
+.content h2.ct:has(+ .board-top),.content h2.ct:has(+ .list){border-bottom:0;padding-bottom:0}
 .lnb h2{text-align:center}
 .family .wrap{justify-content:center}
 .fam-title{width:100%;margin-bottom:12px}
-.fam-list{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;width:100%}
+.fam-list{display:flex;flex-wrap:nowrap;gap:8px;width:100%;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none}
+.fam-list::-webkit-scrollbar{display:none}
+.fam-list>li{flex:1 0 180px;scroll-snap-align:start}
 .fam-list .fam{padding-left:6px;padding-right:6px}
-@media (max-width:1180px){.fam-list{grid-template-columns:repeat(3,1fr)}}
+
 .fam{min-width:0}
 .footer{text-align:center}
 .f-links{justify-content:center}
@@ -463,18 +579,20 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
   .btn-menu{display:flex}
     .logo-img{height:38px;max-width:230px}
     .hero .wrap{min-height:400px;padding-bottom:80px}
-  .quick ul{grid-template-columns:repeat(2,1fr)}
-  .quick li:nth-child(n+3){border-top:1px solid var(--line)}
-  .quick li:nth-child(3){border-left:0}
+  .quick a{padding:22px 8px;font-size:.875rem}
   .board-cols{grid-template-columns:minmax(0,1fr);gap:56px}
   .biz-grid{grid-template-columns:1fr}
   .sub-body{grid-template-columns:minmax(0,1fr);gap:24px;padding-top:24px}
   .content,.lnb{min-width:0}
   .lnb h2{display:none}
-  .lnb ul{display:flex;overflow-x:auto;border:0;border-bottom:1px solid var(--line);gap:4px}
-  .lnb a{border:0;white-space:nowrap;padding:0 14px;height:46px}
-  .lnb-sub{display:none}
-  .lnb a[aria-current="page"]{background:none;box-shadow:inset 0 -3px 0 var(--sea)}
+  .lnb>ul{display:flex;overflow-x:auto;border:0;border-bottom:1px solid var(--line);gap:4px;scrollbar-width:none}
+  .lnb>ul::-webkit-scrollbar{display:none}
+  .lnb>ul>li{flex:0 0 auto}
+  .lnb>ul>li>a{border:0;white-space:nowrap;padding:0 14px;height:46px;background:none!important}
+  .lnb .lnb-sub{display:none!important}
+  .lnb .lnb-tg svg{display:none}
+  .lnb>ul>li>a[aria-current="page"]{box-shadow:inset 0 -3px 0 var(--sea)}
+  .lnb-m-sub{display:flex!important}
   .stats{grid-template-columns:repeat(2,1fr)}
   .side-bar{top:auto;bottom:80px;transform:none;right:10px;width:50px;border-radius:18px}
   .sb-tx{display:none}
@@ -483,8 +601,8 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
   .sb-glyph{font-size:1.0625rem}
   .banner-grid{grid-template-columns:1fr}
   .gal-grid,.board-gal{grid-template-columns:repeat(2,1fr);gap:14px}
-  .greet{grid-template-columns:1fr}
-  .greet>.slot.img{max-width:220px;margin:0 auto;width:100%}
+  .greet{grid-template-columns:1fr;gap:28px}
+  .greet-side{order:-1;max-width:360px;margin:0 auto;width:100%}
   .steps{grid-template-columns:1fr}
   .steps li{display:flex;align-items:center;gap:12px;text-align:left;padding:12px 14px}
   .steps li::before{margin:0}
@@ -504,11 +622,7 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
   .sub-visual{padding:36px 0 30px}
   .sub-visual h1{font-size:1.5rem}
     .family strong{width:100%}
-  .fam-list{display:grid;grid-template-columns:1fr 1fr}
-  .fam{min-width:0;padding:14px 10px;min-height:110px;font-size:.9375rem;gap:16px}
-  .fam-ic{height:36px}
-  .fam-ic img{max-height:36px}
-  .family .wrap{padding-top:44px;padding-bottom:44px}
+
   .search{width:100%}
   .search input{flex:1;width:auto;min-width:0}
   .search select{flex:0 0 96px;min-width:0}
@@ -517,6 +631,98 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
   .auth-card{padding:28px 20px;border:0}
   .info-table th{width:100px}
   .contact-card .tel{font-size:1.6rem}
+}
+
+/* ===== 모바일 최적화 (767px 이하) ===== */
+@media (max-width:767px){
+  /* 관련기관: 로고 한 줄 슬라이드 */
+  .family .wrap{position:relative;padding-top:28px;padding-bottom:28px}
+  .fam-title{font-size:1.25rem;margin-bottom:14px}
+  .fam-list{display:flex;flex-wrap:nowrap;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:2px 0}
+  .fam-list::-webkit-scrollbar{display:none}
+  .fam-list>li{flex:0 0 auto}
+  .fam-list .fam{position:relative;min-width:0;width:132px;min-height:56px;height:56px;padding:0 10px;gap:0;border:0}
+  .fam-ic{height:28px}
+  .fam-ic img{max-height:28px;max-width:100%}
+  .fam:not(.no-logo) .fam-nm{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .fam.no-logo .fam-ic{display:none}
+  .fam.no-logo{font-size:.8125rem;line-height:1.3}
+  /* 오른쪽 고정 배너: 접었다 펴기 */
+  .side-bar{top:auto;bottom:76px;right:12px;width:48px;border-radius:24px}
+  .side-bar:not(.open)>a,.side-bar:not(.open) .sb-fs{display:none}
+  .sb-toggle{display:flex!important}
+  .sb-item{height:46px}
+  .top-btn{right:12px;bottom:20px;width:44px;height:44px}
+  /* 메인 배너 글자 */
+  .slide .tag{font-size:.875rem;padding:4px 12px;margin-bottom:14px}
+  .slide h2,.slide p{font-size:1.0625rem}
+  .sub-visual h1{font-size:1.375rem;padding:0 8px}
+  .crumb{font-size:.75rem}
+  /* 하단 정보 */
+  .footer{font-size:.8125rem;padding:28px 0 36px}
+  .f-links{gap:6px 14px}
+  .footer address{line-height:1.7;word-break:keep-all}
+  /* 공통 여백·글자 */
+  .sec{padding:44px 0}
+  .col-title{font-size:1.375rem}
+  .sec-title h2{font-size:1.375rem}
+  .biz{padding:22px 20px 18px}
+  .biz h3{font-size:1.125rem}
+  .h3{margin:32px 0 12px;font-size:1.0625rem}
+  .info-table th,.info-table td{padding:12px 10px;font-size:.9375rem}
+  .info-table th{width:88px}
+  .view-head h3{font-size:1.1875rem}
+  .view-body{padding:24px 4px 36px}
+  .board-top{gap:10px}
+  table.list{font-size:.875rem}
+  table.list th,table.list td{padding:12px 6px}
+  .content h2.ct{font-size:1.25rem;margin-bottom:18px;padding-bottom:12px}
+  .admin-bar{font-size:.75rem;gap:8px;padding:8px 12px}
+  .admin-bar>span{width:100%;text-align:center}
+  .em-box{padding:18px}
+}
+.sb-toggle{display:none;width:100%;height:48px;align-items:center;justify-content:center;color:var(--navy)}
+.side-bar.open .sb-toggle svg{transform:rotate(45deg)}
+.sb-toggle svg{transition:transform .2s}
+/* 배너: 창 폭에 맞춰 사진 비율(1920×440)대로 줄어듦 — 좌우 잘림 최소화 */
+@media (min-width:768px){
+  .hero{height:clamp(300px, calc(100vw * 440 / 1920), 560px)}
+  .hero .wrap{min-height:0!important;height:100%;padding-top:24px}
+}
+
+/* 좁은 PC·태블릿(768~1023px) */
+@media (min-width:768px) and (max-width:1023px){
+  .sub-body{grid-template-columns:200px minmax(0,1fr);gap:32px;padding-top:40px}
+}
+/* 왼쪽 메뉴: 제목 + 세로선 목록 (768px 이상 전체) */
+@media (min-width:768px){
+  .lnb{border-right:1px solid var(--line);padding-right:12px;align-self:stretch}
+  .lnb h2{display:block;background:none;color:var(--basalt);font-size:1.375rem;font-weight:800;padding:0 0 22px;border-radius:0;text-align:left}
+  .lnb>ul{display:block;overflow:visible;border:0;border-left:1px solid var(--line)}
+  .lnb>ul>li>a{height:auto;min-height:44px;padding:10px 14px;white-space:normal;background:none!important;box-shadow:none!important;border-left:2px solid transparent;margin-left:-1px;font-size:.9375rem}
+  .lnb>ul>li>a[aria-current="page"]{border-left-color:var(--navy);color:var(--navy);font-weight:700}
+  .lnb .lnb-tg svg{display:inline-block}
+  .lnb .lnb-sub:not([hidden]){display:block!important;background:none}
+  .lnb-sub a{height:auto;min-height:38px;padding:8px 10px 8px 26px;white-space:normal;font-size:.8125rem}
+  .lnb-sub a::before{left:14px}
+  .lnb .lnb-sub a[aria-current="page"]{background:none}
+  .lnb-m-sub{display:none!important}
+  .lnb a{border-top:0}
+  .lnb>ul>li>a{font-weight:700;color:var(--basalt)}
+  .lnb>ul>li>a[aria-current="page"]{color:var(--navy)}
+  .lnb-sub a{font-weight:400}
+  .lnb-sub li{border-top:0}
+}
+@media (min-width:1024px){
+  .sub-body{grid-template-columns:240px minmax(0,1fr);column-gap:56px}
+  .lnb{padding-right:24px}
+  .lnb h2{font-size:1.5rem;padding:0 0 36px}
+  .lnb>ul>li>a{min-height:50px;font-size:1rem;padding:12px 18px}
+}
+@media (max-width:767px){
+  .quick ul{grid-template-columns:repeat(2,1fr)}
+  .quick li:nth-child(n+3){border-top:1px solid var(--line)}
+  .quick li:nth-child(3){border-left:0}
 }
 @media (max-width:359px){.slide h2{white-space:normal}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
@@ -564,7 +770,7 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
     <div class="f-links">
       <a href="#/page/privacy" class="priv">개인정보처리방침</a>
       <a href="#/page/terms">이용약관</a>
-      <a href="#/page/map">오시는 길</a>
+      <a href="#/page/map">찾아오시는 길</a>
       <span id="utilAuth" class="f-admin"></span>
       <a href="https://www.jejunu.ac.kr" target="_blank" rel="noopener" title="새 창 열림">제주대학교</a>
       <a href="https://www.koica.go.kr" target="_blank" rel="noopener" title="새 창 열림">한국국제협력단(KOICA)</a>
@@ -578,7 +784,7 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
   </div>
 </footer>
 
-<aside class="side-bar" aria-label="SNS 및 글자 크기">
+<aside class="side-bar" id="sideBar" aria-label="SNS 및 글자 크기">
   <a class="sb-item" id="sbInsta" href="https://www.instagram.com/jjidcc_official" target="_blank" rel="noopener" title="인스타그램 (새 창 열림)">
     <span class="sb-ic"><img alt="" src="images/insta_logo.png" data-base="images/insta_logo"></span><span class="sb-tx">인스타그램</span>
   </a>
@@ -592,6 +798,7 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
     <button class="sb-item" data-fs="1" aria-label="글자 크게"><span class="sb-ic sb-glyph">가<sup>+</sup></span><span class="sb-tx">글자 크게</span></button>
     <button class="sb-item" data-fs="-1" aria-label="글자 작게"><span class="sb-ic sb-glyph sm">가<sup>−</sup></span><span class="sb-tx">글자 작게</span></button>
   </div>
+  <button class="sb-toggle" id="sbToggle" type="button" aria-expanded="false" aria-controls="sideBar" aria-label="SNS·글자 크기 메뉴 열기"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
 </aside>
 <button class="top-btn" id="topBtn" aria-label="맨 위로"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
 <div class="ed-modal" id="edModal" hidden>
@@ -615,7 +822,7 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 
 // ---------- 메뉴 구조 (실제 센터 프로그램 기준) ----------
 const MENU = [
-  {id:'about', name:'센터소개', items:[['greeting','인사말'],['purpose','설립목적·연혁'],['org','조직·연락처'],['map','오시는 길']]},
+  {id:'about', name:'센터소개', items:[['greeting','인사말'],['purpose','설립목적 및 연혁'],['org','조직·연락처'],['map','찾아오시는 길']]},
   {id:'cnews', name:'센터뉴스', items:[['board:press','보도자료'],['board:gallery','운영 사진']]},
   {id:'biz', name:'주요사업', items:[['awareness','ODA 인지제고'],['network','ODA 네트워킹'],['koica','ODA 사업 참여 지원'],['jejuoda','제주도 내 ODA 현황']]},
   {id:'news', name:'공지사항', items:[['board:notice','공지사항']]}
@@ -676,19 +883,91 @@ function statusPage(name){
     <tbody>${total ? list.map((p,i)=>`<tr class="${p.pinned?'pinned':''}"><td>${p.pinned?'<span class="badge pin">공지</span>':total-i}</td><td class="tl"><a href="#/post/${p.id}">${esc(p.title)}</a>${p.files?.length?' <span class="sr-only">첨부파일 있음</span>📎':''}</td><td>${p.date}</td><td class="hide-m">${p.views}</td></tr>`).join('') : `<tr><td colspan="4" class="empty">등록된 글이 없습니다.${canWrite('odastat')?' [글쓰기]로 현황을 추가하세요.':''}</td></tr>`}</tbody>
   </table>`;
 }
+// 사업 페이지 = 안내 상자 + 활동 사진 + 소제목 섹션(관리자가 추가·순서 변경·삭제)
+const secKey = name => 'prog.' + name + '.secs';
+const toInline = v => !v ? '' : isRich(v) ? cleanHTML(v.slice(RICH.length)).replace(/<\/?p>/g, m => m === '</p>' ? '<br>' : '').replace(/(<br>)+$/, '') : nl2br(v);
+function progSecs(name){
+  const saved = CMS.get(secKey(name));
+  if (Array.isArray(saved)) return saved;
+  const k = f => CMS.get('prog.' + name + '.' + f);   // 예전 '사업 개요' 표 내용이 있으면 가져옴
+  const li = (l, f, d) => `<li><strong>${l} :</strong> ${toInline(k(f)) || d}</li>`;
+  return [{t:'사업 개요', b: RICH + `<ul>${li('사업 목적','purpose','사업 목적 입력')}${li('참여 대상','target','참여 대상 입력')}${li('주요 내용','content','주요 활동 내용 입력')}${li('신청 방법','apply','공지사항 게시 후 접수')}</ul>`}];
+}
+const secTable = t => {
+  const rows = t.split('\n').map(l => l.trim()).filter(Boolean).map(l => l.split('|').map(c => c.trim()));
+  if (!rows.length) return '';
+  const [head, ...body] = rows;
+  return `<div class="ps-table-wrap"><table class="ps-table"><thead><tr>${head.map(c => `<th scope="col">${esc(c)}</th>`).join('')}</tr></thead>
+    <tbody>${body.map(r => `<tr>${r.map((c, i) => i === 0 ? `<th scope="row">${esc(c)}</th>` : `<td>${nl2br(c.replace(/\\n/g, '\n'))}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+};
 function programPage(name){
   const k = f => 'prog.' + name + '.' + f;
-  const rows = [edRow('사업 목적',k('purpose'),'사업 목적 입력'), edRow('참여 대상',k('target'),'참여 대상 입력'), edRow('주요 내용',k('content'),'주요 활동 내용 입력'), edRow('신청 방법',k('apply'),'신청 방법 입력 (공지사항 게시 후 접수 등)')].join('');
   const ph = [1,2,3].filter(n => CMS.get(k('photo'+n)) || isAdmin());
   const photos = ph.map(n => `<div class="pg-item">${ed(k('photo'+n), {type:'image', label:n===1?'대표 활동 사진':'활동 사진 '+n, ph:n===1?'대표 활동 사진 (사업을 가장 잘 보여주는 사진)':'활동 사진 '+n})}</div>`).join('');
+  const secs = progSecs(name), adm = isAdmin();
   return `
   ${photos ? `<div class="photo-gallery pg-${ph.length}" aria-label="활동 사진">${photos}</div>` : ''}
-  <h3 class="h3">사업 개요</h3>
-  <table class="info-table"><caption class="sr-only">사업 개요</caption>
-    ${rows}
-    <tr><th scope="row">문의</th><td>제주국제개발협력센터 ${TEL}</td></tr>
-  </table>`;
+  ${secs.map((x, i) => `
+  <section class="ps">
+    <h3 class="ps-t">${esc(x.t || '')}${x.sub ? ` <small>${esc(x.sub)}</small>` : ''}</h3>
+    ${x.box ? `<div class="ps-box">${richView(x.box)}</div>` : ''}
+    <div class="ps-wrap">
+      <div class="ps-main">${x.b ? richView(x.b) : ''}${x.tb ? secTable(x.tb) : ''}</div>
+      ${x.img ? `<figure class="ps-img"><img src="${x.img.src}" alt="${esc(x.img.alt || '')}">${x.img.alt ? `<figcaption>${esc(x.img.alt)}</figcaption>` : ''}</figure>` : ''}
+    </div>
+    ${adm ? `<div class="ps-tools"><button type="button" class="btn btn-sm btn-primary" data-sec="edit" data-name="${esc(name)}" data-i="${i}">이 항목 수정</button>
+      <button type="button" class="btn btn-sm btn-line" data-sec="up" data-name="${esc(name)}" data-i="${i}" ${i===0?'disabled':''}>위로</button>
+      <button type="button" class="btn btn-sm btn-line" data-sec="down" data-name="${esc(name)}" data-i="${i}" ${i===secs.length-1?'disabled':''}>아래로</button>
+      <button type="button" class="btn btn-sm btn-danger" data-sec="del" data-name="${esc(name)}" data-i="${i}">삭제</button></div>` : ''}
+  </section>`).join('')}
+  ${adm ? `<p class="ps-add"><button type="button" class="btn btn-line" data-sec="add" data-name="${esc(name)}">+ 소제목 항목 추가</button></p>` : ''}
+  <div class="prog-notice">${ed(k('notice'), {rich:true, label:'안내 문구', def: RICH + `<p><span class="hl">세부 내용은 사업계획에 따라 수정 및 변경될 수 있습니다.</span></p>`, render:v=>richView(v)})}
+    <p class="pn-q"><b>문의</b><span>제주국제개발협력센터 <a href="tel:${TEL.replace(/[^0-9]/g,'')}">${TEL}</a></span></p></div>`;
 }
+function openSecEditor(name, i){
+  const secs = progSecs(name), x = secs[i] || {t:'', b:''};
+  edCtx = {sec:{name, i}, img: x.img ? x.img.src : null};
+  const m = $('#edModal');
+  m.querySelector('.em-title').textContent = (secs[i] ? '항목 수정' : '항목 추가') + ' · ' + name;
+  m.querySelector('.em-body').innerHTML = `
+    <div class="field"><label for="psT">소제목</label><input id="psT" type="text" maxlength="60" value="${esc(x.t || '')}" placeholder="예: 신청 방법"></div>
+    <div class="field"><label for="psSub">작은 설명 (소제목 옆, 선택)</label><input id="psSub" type="text" maxlength="80" value="${esc(x.sub || '')}" placeholder="예: 연 2회 운영"></div>
+    <div class="field rt-wrap"><span class="lbl">회색 안내 상자 (선택)</span>${richEditor('psBox', richToEditor(x.box), '회색 안내 상자')}</div>
+    <div class="field rt-wrap"><span class="lbl">본문</span>${richEditor('psBody', richToEditor(x.b), '본문')}<p class="hint">• 목록 버튼으로 항목을 나열하고, '참여 대상 :'처럼 앞말만 굵게 하면 보기 좋습니다.</p></div>
+    <div class="field"><label for="psTb">표 (선택)</label><textarea id="psTb" style="height:120px" placeholder="구분 | 1차 | 2차&#10;기간 | 3월 | 9월&#10;대상 | 대학생 | 청년">${esc(x.tb || '')}</textarea><p class="hint">한 줄이 한 행, 칸은 | 로 나눕니다. 첫 줄은 제목 행입니다.</p></div>
+    <img id="emPrev" class="photo-prev" alt="" ${edCtx.img ? `src="${edCtx.img}"` : 'hidden'}>
+    <div class="field"><label for="emFile">오른쪽 이미지 (QR코드·포스터 등, 선택)</label><input id="emFile" type="file" accept="image/png,image/jpeg,image/webp"></div>
+    <div class="field"><label for="emAlt">이미지 설명 (이미지 아래 표시)</label><input id="emAlt" type="text" maxlength="60" value="${esc(x.img && x.img.alt || '')}" placeholder="예: 신청서 QR"></div>
+    ${x.img ? `<label class="chk"><input type="checkbox" id="psImgDel"> 이미지 빼기</label>` : ''}`;
+  const f = $('#emFile');
+  f.onchange = async () => { const file = f.files[0]; if (!file) return; edCtx.img = await readPhoto(file); const pv = $('#emPrev'); pv.src = edCtx.img; pv.hidden = false; };
+  m.querySelector('[data-em-del]').textContent = secs[i] ? '항목 삭제' : '비우기';
+  m.hidden = false; $('#psT').focus();
+}
+function saveSec(remove){
+  const {name, i} = edCtx.sec, secs = progSecs(name).slice();
+  if (remove) { if (secs[i]) secs.splice(i, 1); }
+  else {
+    const rv = id => { const a = $('#' + id); return a.textContent.trim() ? RICH + cleanHTML(a.innerHTML) : ''; };
+    const t = $('#psT').value.trim();
+    if (!t) { toast('소제목을 입력하세요.'); $('#psT').focus(); return false; }
+    const x = {t, sub: $('#psSub').value.trim(), box: rv('psBox'), b: rv('psBody'), tb: $('#psTb').value.trim()};
+    if (edCtx.img && !$('#psImgDel')?.checked) x.img = {src: edCtx.img, alt: $('#emAlt').value.trim()};
+    secs[i] = x;
+  }
+  CMS.set(secKey(name), secs);
+  return true;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-sec]'); if (!b || !isAdmin()) return;
+  const name = b.dataset.name, i = +b.dataset.i, act = b.dataset.sec, secs = progSecs(name).slice();
+  if (act === 'edit') return openSecEditor(name, i);
+  if (act === 'add') return openSecEditor(name, secs.length);
+  if (act === 'del') { if (!confirm('이 항목을 삭제할까요?')) return; secs.splice(i, 1); }
+  if (act === 'up' && i > 0) [secs[i-1], secs[i]] = [secs[i], secs[i-1]];
+  if (act === 'down' && i < secs.length - 1) [secs[i+1], secs[i]] = [secs[i], secs[i+1]];
+  CMS.set(secKey(name), secs); const y = scrollY; route(); window.scrollTo(0, y);
+});
 function viewProgram(cat, idx){
   const d = BIZ[cat], name = d && d.programs[+idx];
   if (!name) return viewNotFound();
@@ -750,21 +1029,91 @@ const CMS = {
   set(k, v){ const a = this.all(); if (v === null || v === '' || v === undefined) delete a[k]; else a[k] = v; store.set('cms', a); }
 };
 const nl2br = t => esc(t).replace(/\n/g, '<br>');
+const hl = t => nl2br(t).replace(/\*\*(.+?)\*\*/g, '<strong class="hl">$1</strong>');   // **강조** → 파란 굵은 글씨
+// ---------- 서식 있는 글 (굵게·기울임·밑줄·크기·강조색) ----------
+const RICH = '<!--rich-->';
+const isRich = v => typeof v === 'string' && v.startsWith(RICH);
+// 허용한 태그만 남기고 나머지는 지움 (스크립트·링크 속성 등 차단)
+function cleanHTML(html){
+  const doc = new DOMParser().parseFromString('<div>' + html + '</div>', 'text/html');
+  const SIZE = {'1':'fs-s','2':'fs-s','4':'fs-l','5':'fs-l','6':'fs-xl','7':'fs-xl'};
+  const walk = node => [...node.childNodes].map(n => {
+    if (n.nodeType === 3) return esc(n.nodeValue);
+    if (n.nodeType !== 1) return '';
+    const t = n.tagName, inner = walk(n);
+    if (t === 'BR') return '<br>';
+    if (t === 'B' || t === 'STRONG') return `<strong>${inner}</strong>`;
+    if (t === 'I' || t === 'EM') return `<em>${inner}</em>`;
+    if (t === 'U') return `<u>${inner}</u>`;
+    if (t === 'UL' || t === 'OL' || t === 'LI') { const x = t.toLowerCase(); return `<${x}>${inner}</${x}>`; }
+    if (t === 'P' || t === 'DIV') return `<p>${inner || '<br>'}</p>`;
+    if (t === 'FONT' || t === 'SPAN') {
+      const cls = [];
+      const sz = n.getAttribute('size'); if (SIZE[sz]) cls.push(SIZE[sz]);
+      ['fs-s','fs-l','fs-xl','hl'].forEach(c => n.classList.contains(c) && cls.push(c));
+      const col = (n.getAttribute('color') || n.style.color || '').toLowerCase().replace(/\s/g,'');
+      if (col && col !== 'inherit') cls.push('hl');
+      return cls.length ? `<span class="${[...new Set(cls)].join(' ')}">${inner}</span>` : inner;
+    }
+    return inner;
+  }).join('');
+  return walk(doc.body.firstChild);
+}
+const richView = v => isRich(v) ? `<div class="ed-text rich">${cleanHTML(v.slice(RICH.length))}</div>` : `<div class="ed-text">${hl(v)}</div>`;
+const richToEditor = v => !v ? '' : isRich(v) ? cleanHTML(v.slice(RICH.length)) : hl(v);
+const RICH_BAR = `<div class="rt-bar" role="toolbar" aria-label="글자 서식">
+  <button type="button" data-rt="bold" aria-label="굵게"><b>가</b></button>
+  <button type="button" data-rt="italic" aria-label="기울임꼴"><i>가</i></button>
+  <button type="button" data-rt="underline" aria-label="밑줄"><u>가</u></button>
+  <span class="rt-sep"></span>
+  <button type="button" data-rt="size" data-v="2" aria-label="글자 작게">작게</button>
+  <button type="button" data-rt="size" data-v="3" aria-label="글자 보통">보통</button>
+  <button type="button" data-rt="size" data-v="5" aria-label="글자 크게">크게</button>
+  <button type="button" data-rt="size" data-v="6" aria-label="글자 아주 크게">아주 크게</button>
+  <span class="rt-sep"></span>
+  <button type="button" data-rt="color" aria-label="파란색 강조"><span style="color:var(--sea);font-weight:800">강조</span></button>
+  <button type="button" data-rt="list" aria-label="목록">• 목록</button>
+  <button type="button" data-rt="clear" aria-label="서식 지우기">서식 지우기</button>
+</div>`;
+const richEditor = (id, html, label) => `${RICH_BAR}<div class="rt-area" id="${id}" contenteditable="true" role="textbox" aria-multiline="true" aria-label="${esc(label)}">${html}</div>`;
+document.addEventListener('mousedown', e => { if (e.target.closest('[data-rt]')) e.preventDefault(); });   // 선택 영역 유지
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-rt]'); if (!b) return;
+  const area = b.closest('.rt-wrap')?.querySelector('.rt-area'); if (area) area.focus();
+  const c = b.dataset.rt;
+  try { document.execCommand('styleWithCSS', false, false); } catch(_) {}
+  if (c === 'size') document.execCommand('fontSize', false, b.dataset.v);
+  else if (c === 'color') document.execCommand('foreColor', false, '#1769aa');
+  else if (c === 'list') document.execCommand('insertUnorderedList');
+  else if (c === 'clear') document.execCommand('removeFormat');
+  else document.execCommand(c);
+});
+
 // 편집 가능 영역. type: text | image
 function ed(key, o = {}){
   const type = o.type || 'text', v = CMS.get(key), val = v !== undefined ? v : o.def;
   let view = '';
-  if (val) view = o.render ? o.render(val) : type === 'image' ? `<img class="ed-img" src="${val.src || val}" alt="${esc(val.alt || '')}">` : `<div class="ed-text">${nl2br(val)}</div>`;
+  if (val) view = o.render ? o.render(val) : type === 'image' ? `<img class="ed-img" src="${val.src || val}" alt="${esc(val.alt || '')}">` : o.rich ? richView(val) : `<div class="ed-text">${nl2br(val)}</div>`;
   else if (isAdmin()) view = slot(o.ph || '내용 입력', type === 'image' ? 'img' : '');
   if (!isAdmin()) return view;
-  return `<div class="ed ${o.cls||''}" data-ed="${esc(key)}" data-type="${type}" data-label="${esc(o.label||'')}">${view}<button class="ed-btn" data-edit>수정</button></div>`;
+  return `<div class="ed ${o.cls||''}" data-ed="${esc(key)}" data-type="${type}" ${o.rich?'data-rich="1"':''} data-label="${esc(o.label||'')}">${view}<button class="ed-btn" data-edit>수정</button></div>`;
 }
 // 표 한 줄: 방문자에게는 내용이 있을 때만 보임
 function edRow(label, key, ph, def){
   const has = CMS.get(key) || def;
   if (!has && !isAdmin()) return '';
-  return `<tr><th scope="row">${label}</th><td>${ed(key, {label, ph, def})}</td></tr>`;
+  return `<tr><th scope="row">${label}</th><td>${ed(key, {label, ph, def, rich:true})}</td></tr>`;
 }
+const MAP_ROUTES = [
+  ['제주공항 - 제주대학교', "'제주대학교' 방면 버스 탑승, 소요시간 약 35분", '소요시간 약 20분'],
+  ['제주시청 - 제주대학교', "'제주대학교' 방면 버스 탑승, 소요시간 약 15분", '소요시간 약 8분']
+];
+const IC_PIN = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>';
+const IC_TEL = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>';
+const IC_BUS = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4 16c0 .9.4 1.7 1 2.2V20a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h8v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1.8c.6-.5 1-1.3 1-2.2V6c0-3.5-3.6-4-8-4S4 2.5 4 6v10zm3.5 1a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm9 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM18 11H6V6h12v5z"/></svg>';
+const IC_CAR = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 6a1.5 1.5 0 0 0-1.4-1h-11a1.5 1.5 0 0 0-1.4 1L3 12v8a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h12v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-8l-2.1-6zM6.5 16a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm11 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM5 11l1.5-4.5h11L19 11H5z"/></svg>';
+// 이미지 확장자 자동 찾기 (png → jpg → jpeg → svg → webp), 끝까지 없으면 숨김
+function nextExt(img){ const ex = ['png','jpg','jpeg','svg','webp']; const i = +(img.dataset.i || 0) + 1; if (i < ex.length) { img.dataset.i = i; img.src = img.dataset.base + '.' + ex[i]; } else { img.onerror = null; img.style.display = 'none'; } }
 const MAP_BUS = '버스 이용 시 \'제주대학교\' 정류장에서 내리면 됩니다.\n노선과 도착 시간은 제주버스정보시스템(bus.jeju.go.kr)에서 확인하세요.';
 let edCtx = null;
 function openEditor(box){
@@ -777,16 +1126,21 @@ function openEditor(box){
     ? `<img id="emPrev" class="photo-prev" alt="" ${edCtx.img?`src="${edCtx.img}"`:'hidden'}>
        <div class="field" style="margin-top:12px"><label for="emFile">사진 파일 (JPG·PNG·WEBP, 10MB 이하)</label><input id="emFile" type="file" accept="image/png,image/jpeg,image/webp"></div>
        <div class="field"><label for="emAlt">사진 설명 (대체텍스트)</label><input id="emAlt" type="text" maxlength="120" value="${esc(v && v.alt || '')}"></div>`
-    : `<div class="field"><label for="emText">${esc(label)}</label><textarea id="emText" style="height:220px">${esc(v || '')}</textarea><p class="hint">줄바꿈은 그대로 반영됩니다.</p></div>`;
+    : box.dataset.rich
+      ? `<div class="field rt-wrap"><span class="lbl">${esc(label)}</span>${richEditor('emRich', richToEditor(v), label)}<p class="hint">글자를 드래그해 고른 뒤 위 버튼을 누르세요. 메일 쓰듯 줄을 바꾸면 됩니다.</p></div>`
+      : `<div class="field"><label for="emText">${esc(label)}</label><textarea id="emText" style="height:220px">${esc(v || '')}</textarea><p class="hint">줄바꿈은 그대로 반영됩니다.</p></div>`;
+  edCtx.rich = !!box.dataset.rich;
   const f = $('#emFile');
   if (f) f.onchange = async () => { const file = f.files[0]; if (!file) return; edCtx.img = await readPhoto(file); const pv = $('#emPrev'); pv.src = edCtx.img; pv.hidden = false; };
-  m.hidden = false; (m.querySelector('textarea,input') || m.querySelector('button')).focus();
+  m.hidden = false; (m.querySelector('.rt-area,textarea,input') || m.querySelector('button')).focus();
 }
-function closeEditor(){ $('#edModal').hidden = true; edCtx = null; }
+function closeEditor(){ $('#edModal').hidden = true; edCtx = null; $('#edModal [data-em-del]').textContent = '비우기'; }
 function saveEditor(remove){
   if (!edCtx) return;
-  if (remove) CMS.set(edCtx.key, null);
+  if (edCtx.sec) { if (saveSec(remove) === false) return; }
+  else if (remove) CMS.set(edCtx.key, null);
   else if (edCtx.type === 'image') CMS.set(edCtx.key, edCtx.img ? {src: edCtx.img, alt: $('#emAlt').value.trim()} : null);
+  else if (edCtx.rich) { const a = $('#emRich'); CMS.set(edCtx.key, a.textContent.trim() ? RICH + cleanHTML(a.innerHTML) : null); }
   else CMS.set(edCtx.key, $('#emText').value.trim());
   closeEditor(); const y = scrollY; route(); window.scrollTo(0, y); toast(remove ? '삭제했습니다.' : '저장했습니다.');
 }
@@ -796,23 +1150,31 @@ const orgRow = v => `<div class="row">${v.split('\n').filter(Boolean).map(t=>`<d
 const PAGES = {
   greeting:{body:()=>`
     <div class="greet">
-      ${ed('greeting.photo', {type:'image', label:'센터장 사진', ph:'센터장 사진<br>(세로형 3:4)'})}
-      <div>
-        ${ed('greeting.title', {label:'인사말 제목', ph:'인사말 제목 한 줄 입력', render:v=>`<p class="greet-title">${nl2br(v)}</p>`})}
-        <div style="height:16px"></div>
-        ${ed('greeting.body', {label:'인사말 본문', ph:'인사말 본문 입력 (3~5문단)'})}
-        ${ed('greeting.sign', {label:'서명', ph:'제주국제개발협력센터장 OOO', render:v=>`<p class="greet-sign">${nl2br(v)}</p>`})}
+      <div class="greet-text">
+        ${ed('greeting.title', {label:'인사말 제목', ph:'“인사말 제목 한 줄 입력”', render:v=>`<p class="greet-title">${esc(v)}</p>`})}
+        ${ed('greeting.body', {label:'인사말 본문', ph:'인사말 본문 입력 (굵게·기울임·크기·강조색 사용 가능)', rich:true, render:v=>`<div class="greet-body">${richView(v)}</div>`})}
       </div>
+      <figure class="greet-side">
+        ${ed('greeting.photo', {type:'image', label:'센터장 사진', ph:'센터장 사진<br>(가로 4 : 세로 3.5 권장)'})}
+        <figcaption class="greet-cap">
+          ${ed('greeting.sign', {label:'직위·성명', ph:'제주국제개발협력센터장 OOO', render:v=>`<span>${esc(v)}</span>`})}
+          ${ed('greeting.signimg', {type:'image', label:'서명 이미지 (투명 PNG)', ph:'서명', render:v=>`<img class="greet-signimg" src="${v.src||v}" alt="${esc(v.alt||'서명')}">`})}
+        </figcaption>
+      </figure>
     </div>`},
   purpose:{body:()=>`
     ${ed('purpose.lead', {label:'설립 목적', def:'제주 지역의 공적개발원조(ODA) 참여 기반 확대를 위해\n제주특별자치도·한국국제협력단(KOICA)·제주대학교의 협약으로 설립되었습니다.', render:v=>`<p class="lead">${nl2br(v)}</p>`})}
     <h3 class="h3">주요 역할</h3>
-    <div class="cards">
-      <div class="card"><b>ODA 교육</b>주민·학생·시민단체·기업 대상</div>
-      <div class="card"><b>사업 발굴·컨설팅</b>신규 ODA 사업 발굴과 사업 수행 컨설팅</div>
-      <div class="card"><b>파트너 네트워크</b>ODA 협력 파트너 네트워크 강화</div>
-      <div class="card"><b>귀국 봉사단원 지원</b>WFK 귀국 단원의 지역 활동 지원</div>
-      <div class="card"><b>모니터링·평가</b>제주 지역 ODA 사업 모니터링·평가</div>
+    <div class="role-cards">
+      ${[['awareness','ODA 인지제고','교육·설명회·홍보로 도민과 청년의 ODA 이해를 넓힙니다.'],
+         ['network','ODA 네트워킹','지역 기관·단체와 ODA 협력 네트워크를 만듭니다.'],
+         ['koica','ODA 사업 참여 지원','지역 기관의 ODA 사업 발굴과 참여를 돕습니다.']].map(([k,t,d],i)=>`
+      <div class="role-card">
+        <span class="role-no">0${i+1}</span>
+        <b><a href="#/page/${k}">${t}</a></b>
+        ${ed('purpose.role'+i, {label:t+' 설명', def:d, render:v=>`<p>${nl2br(v)}</p>`})}
+        <ul>${(BIZ[k].groups.length > 1 ? BIZ[k].groups.map(g=>g.name) : BIZ[k].groups[0].items).map(n=>`<li>${esc(n)}</li>`).join('')}</ul>
+      </div>`).join('')}
     </div>
     <h3 class="h3">연혁</h3>
     ${ed('purpose.history', {label:'연혁 (한 줄에 하나씩: 연도 | 내용)', def:'2015. 08. | 제주특별자치도·KOICA·제주대학교 3자 업무협약 체결\n2016. 06. 22. | 제주국제개발협력센터 개소 (제주대학교 본관 개소식)', render:timeline})}`},
@@ -826,16 +1188,30 @@ const PAGES = {
     <table class="info-table"><tr><th scope="row">대표 전화</th><td>${TEL}</td></tr><tr><th scope="row">이메일</th><td>jejuidcc@jejunu.ac.kr</td></tr></table>`},
   map:{body:()=>`
     <div id="naverMap" class="naver-map" role="region" aria-label="센터 위치 지도"></div>
-    <p class="map-link"><a class="btn btn-line btn-sm" href="https://map.naver.com/p/search/${encodeURIComponent('제주대학교 통번역대학원')}" target="_blank" rel="noopener" title="새 창 열림">네이버 지도에서 크게 보기</a></p>
-    <table class="info-table" style="margin-top:24px">
-      <tr><th scope="row">주소</th><td>(63243) 제주특별자치도 제주시 제주대학로 102<br>제주대학교 통번역대학원 1층 103호 제주국제개발협력센터</td></tr>
-      <tr><th scope="row">전화</th><td>${TEL}</td></tr>
-      ${edRow('대중교통','map.bus','버스 노선·하차 정류장 입력', MAP_BUS)}
-    </table>`},
+    <div class="loc-bar">
+      <strong class="loc-name">제주국제개발협력센터</strong>
+      <div class="loc-info">
+        <p><span class="loc-k">${IC_PIN}주소</span><span class="loc-v">(63243) 제주특별자치도 제주시 제주대학로 102 제주대학교 통번역대학원 1층 103호</span></p>
+        <p><span class="loc-k">${IC_TEL}전화</span><span class="loc-v"><a href="tel:${TEL.replace(/[^0-9]/g,'')}">${TEL}</a></span></p>
+      </div>
+    </div>
+    <div class="map-links">
+      <a class="map-btn" href="https://naver.me/xuFTB945" target="_blank" rel="noopener" title="새 창 열림"><span class="map-ic"><img alt="" src="images/navermap_logo.jpg" data-base="images/navermap_logo" onerror="nextExt(this)"></span>네이버 지도</a>
+      <a class="map-btn" href="https://kko.to/yyuic0NoeC" target="_blank" rel="noopener" title="새 창 열림"><span class="map-ic"><img alt="" src="images/kakaomap_logo.jpg" data-base="images/kakaomap_logo" onerror="nextExt(this)"></span>카카오맵</a>
+    </div>
+    <table class="route-table">
+      <caption class="sr-only">출발지별 교통편 안내</caption>
+      ${MAP_ROUTES.map((r,i) => `<tr>
+        <th scope="row">${ed('map.r'+i+'.from', {label:'출발지', def:r[0], render:v=>esc(v)})}</th>
+        <td><span class="rt-ic" aria-hidden="true">${IC_BUS}</span><b>버스</b>${ed('map.r'+i+'.bus', {label:r[0]+' 버스 안내', def:r[1], render:v=>`<span>${nl2br(v)}</span>`})}</td>
+        <td><span class="rt-ic" aria-hidden="true">${IC_CAR}</span><b>택시</b>${ed('map.r'+i+'.taxi', {label:r[0]+' 택시 안내', def:r[2], render:v=>`<span>${nl2br(v)}</span>`})}</td>
+      </tr>`).join('')}
+    </table>
+    <p class="route-note">버스 노선과 도착 시간은 <a href="https://bus.jeju.go.kr" target="_blank" rel="noopener" title="새 창 열림">제주버스정보시스템</a>에서 확인하세요.</p>`},
   awareness:{body:()=>bizPage('awareness')}, network:{body:()=>bizPage('network')}, koica:{body:()=>bizPage('koica')},
   odyssey:{body:()=>bizPage('odyssey')}, consult:{body:()=>bizPage('consult')}, briefing:{body:()=>bizPage('briefing')},
-  privacy:{title:'개인정보처리방침', body:()=>ed('page.privacy', {label:'개인정보처리방침', ph:'「개인정보 보호법」 제30조에 따른 개인정보 처리방침 전문 (발송대행 업체 등 처리 위탁 내용 포함)'})},
-  terms:{title:'이용약관', body:()=>ed('page.terms', {label:'이용약관', ph:'누리집 이용약관 전문'})},
+  privacy:{title:'개인정보처리방침', body:()=>ed('page.privacy', {rich:true, label:'개인정보처리방침', ph:'「개인정보 보호법」 제30조에 따른 개인정보 처리방침 전문 (발송대행 업체 등 처리 위탁 내용 포함)'})},
+  terms:{title:'이용약관', body:()=>ed('page.terms', {rich:true, label:'이용약관', ph:'누리집 이용약관 전문'})},
 };
 
 // ---------- 관련기관 (로고는 관리자 페이지에서 등록) ----------
@@ -938,7 +1314,7 @@ function renderAuth(){
 
 function renderFamily(){
   const logos = store.get('logos', {});
-  $('#family').innerHTML = FAMILY.map(f => `<li><a class="fam" href="${f.url}" target="_blank" rel="noopener" title="${f.name} 누리집 (새 창 열림)"><span class="fam-ic"><img src="${logos[f.key] || 'images/'+f.file}" alt="" onerror="this.remove()"></span><span class="fam-nm">${f.name}</span></a></li>`).join('');
+  $('#family').innerHTML = FAMILY.map(f => `<li><a class="fam" href="${f.url}" target="_blank" rel="noopener" title="${f.name} 누리집 (새 창 열림)"><span class="fam-ic"><img src="${logos[f.key] || 'images/'+f.file}" alt="" onerror="this.closest('.fam').classList.add('no-logo');this.remove()"></span><span class="fam-nm">${f.name}</span></a></li>`).join('');
 }
 
 // ---------- 화면: 메인 ----------
@@ -952,19 +1328,32 @@ const QUICK = [
 // ---------- 메인 배너 사진 ----------
 const DIMS = {light:.35, mid:.55, strong:.75};
 // 배너 이미지 파일 (HTML 파일과 같은 위치의 images 폴더)
-const BANNER_FILES = { pc:'images/banner_pc.jpg', m:'images/banner_mobile.jpg' };
-function bannerErr(img){
-  const pic = img.closest('picture'), src = pic && pic.querySelector('source');
-  if (src) { src.remove(); return; }          // 모바일 파일이 없으면 PC 파일로 대체
-  if (pic) { pic.nextElementSibling?.remove(); pic.remove(); }   // 둘 다 없으면 기본 그래픽
+// 배너 이미지 파일 (images 폴더). 확장자는 jpg·jpeg·png·webp 중 있는 것을 자동으로 찾음
+const BANNER_BASE = { pc:'images/banner_pc', m:'images/banner_mobile' };
+const IMG_EXTS = ['jpg','jpeg','png','webp','JPG','PNG'];
+const probeCache = {};
+function probeImg(base){
+  if (base in probeCache) return probeCache[base];
+  return probeCache[base] = new Promise(res => {
+    let i = 0; const img = new Image();
+    img.onload = () => res(img.src);
+    img.onerror = () => { if (++i < IMG_EXTS.length) img.src = base + '.' + IMG_EXTS[i]; else res(null); };
+    img.src = base + '.' + IMG_EXTS[0];
+  });
 }
-function heroPhoto(){
+// 모바일: 관리자 모바일 사진 → images/banner_mobile → 관리자 PC 사진 → images/banner_pc
+// PC   : 관리자 PC 사진 → images/banner_pc → 관리자 모바일 사진 → images/banner_mobile
+async function loadBanner(){
+  const hero = $('.hero'); if (!hero) return;
   const bn = store.get('banner', {});
-  if (!bn.pc && !bn.m) return `<picture class="hero-photo" aria-hidden="true"><source media="(max-width:767px)" srcset="${BANNER_FILES.m}"><img src="${BANNER_FILES.pc}" alt="" onerror="bannerErr(this)"></picture><div class="hero-dim" style="--dim:${DIMS.mid}" aria-hidden="true"></div>`;
-  const pc = bn.pc || bn.m, m = bn.m || bn.pc;
-  return `<picture class="hero-photo" aria-hidden="true"><source media="(max-width:767px)" srcset="${m}"><img src="${pc}" alt=""></picture><div class="hero-dim" style="--dim:${DIMS[bn.dim||'mid']}" aria-hidden="true"></div>`;
+  const [fPc, fM] = await Promise.all([probeImg(BANNER_BASE.pc), probeImg(BANNER_BASE.m)]);
+  const pc = bn.pc || fPc || bn.m || fM, m = bn.m || fM || bn.pc || fPc;
+  if (!pc && !m) return;
+  if (!document.body.contains(hero)) return;
+  hero.insertAdjacentHTML('afterbegin', `<picture class="hero-photo" aria-hidden="true"><source media="(max-width:767px)" srcset="${m}"><img src="${pc}" alt="" style="object-position:${({left:'left',center:'center',right:'right'})[bn.pos]||'center'} center"></picture><div class="hero-dim" style="--dim:${DIMS[bn.dim||'mid']}" aria-hidden="true"></div>`);
 }
-const BIZ_SHOW = 4;   // 카드에 처음 보이는 사업 수
+function heroPhoto(){ return ''; }
+const BIZ_SHOW = 3;   // 카드에 처음 보이는 사업 수
 const BIZ_CARDS = [
   {title:'ODA 인지제고', page:'awareness'},
   {title:'ODA 네트워킹', page:'network'},
@@ -1023,6 +1412,7 @@ function viewHome(){
   </section>`;
   showTab('notice');
   showGallery('all');
+  loadBanner();
 }
 const galCard = p => `<li class="gal-item"><a href="#/post/${p.id}">
   <span class="gal-thumb">${p.photo ? `<img src="${p.photo}" alt="${esc(p.alt||p.title)}" loading="lazy">` : `<span class="noimg"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 17l-5-5-8 7"/></svg>사진 준비 중</span>`}<span class="cat">${BOARDS[p.board].name}</span></span>
@@ -1052,12 +1442,13 @@ function subLayout(menuId, currentKey, title, inner){
   const open = k => isBiz && window._lnbOpen === k;
   const cur = window._lnbCur;
   const sub = k => (isBiz && BIZ[k]) ? `<ul class="lnb-sub" id="lsub_${k}" ${open(k)?'':'hidden'}>${BIZ[k].programs.map((n,i)=>`<li><a href="#/program/${k}/${i}" ${cur===k+'/'+i?'aria-current="page"':''}>${esc(n)}</a></li>`).join('')}</ul>` : '';
-  const lnb = m ? `<nav class="lnb" aria-label="${m.name} 하위메뉴"><h2>${m.name}</h2><ul>${m.items.map(([k,n])=>`<li><a href="${linkOf(k)}" ${k===currentKey?'aria-current="page"':''} ${isBiz&&BIZ[k]?`class="lnb-tg" data-lnb="${k}" aria-controls="lsub_${k}" aria-expanded="${open(k)}"`:''}><span>${n}</span>${isBiz&&BIZ[k]?ico.down:''}</a>${sub(k)}</li>`).join('')}</ul></nav>` : '<div></div>';
+  const lnb = m ? `<nav class="lnb" aria-label="${m.name} 하위메뉴"><h2>${m.name}</h2><ul>${m.items.map(([k,n])=>`<li><a href="${linkOf(k)}" ${k===currentKey?'aria-current="page"':''} ${isBiz&&BIZ[k]?`class="lnb-tg" data-lnb="${k}" aria-controls="lsub_${k}" aria-expanded="${open(k)}"`:''}><span>${n}</span>${isBiz&&BIZ[k]?ico.down:''}</a>${sub(k)}</li>`).join('')}</ul>${isBiz && BIZ[currentKey] ? `<div class="lnb-m-sub" aria-label="세부 사업">${BIZ[currentKey].programs.map((n,i)=>`<a href="#/program/${currentKey}/${i}" ${cur===currentKey+'/'+i?'aria-current="page"':''}>${esc(n)}</a>`).join('')}</div>` : ''}</nav>` : '<div></div>';
   window._lnbOpen = null; window._lnbCur = null;
   app.innerHTML = `
   <div class="sub-visual"><div class="wrap"><h1>${esc(title)}</h1>
     <ol class="crumb" aria-label="현재 위치"><li><a href="#/">홈</a></li>${m?`<li>${m.name}</li>`:''}<li aria-current="page">${esc(title)}</li></ol></div></div>
   <div class="wrap sub-body">${lnb}<div class="content">${inner}</div></div>`;
+  if (innerWidth <= 767) requestAnimationFrame(() => document.querySelectorAll('.lnb>ul, .lnb-m-sub').forEach(row => { const c = row.querySelector(':scope > li > a[aria-current], :scope > a[aria-current]'); if (c) row.scrollLeft = c.offsetLeft - (row.clientWidth - c.offsetWidth) / 2; }));
 }
 function viewPage(slug){
   if (['awareness','network','koica','jejuoda'].includes(slug)) return viewProgram(slug, 0);   // 분야 클릭 → 첫 번째 사업
@@ -1128,7 +1519,7 @@ function viewPost(id){
       <div class="view-meta"><span>작성자 ${esc(p.author)}</span><span>등록일 ${p.date}</span><span>조회 ${p.views}</span></div></div>
     ${p.files?.length?`<div class="view-files"><strong>첨부파일</strong> ${p.files.map(f=>esc(f)).join(', ')} <span class="hint">(시안: 파일명만 저장)</span></div>`:''}
     ${p.photo?`<div class="view-photo${p.board==='notice'?' poster':''}"><img src="${p.photo}" alt="${esc(p.alt||p.title)}"></div>`:''}
-    <div class="view-body">${esc(p.body)}</div>
+    ${p.html ? `<div class="view-body rich">${cleanHTML(p.html)}</div>` : `<div class="view-body">${esc(p.body)}</div>`}
     ${p.board==='qna' ? (p.answer ? `<section class="answer" aria-label="답변"><h4>센터 답변 <span class="hint" style="font-weight:400">${p.answer.date}</span></h4><div class="ab">${esc(p.answer.body)}</div></section>` : '<section class="answer"><h4>답변 대기 중</h4><p class="hint">담당자가 확인 후 답변을 등록합니다.</p></section>') : ''}
     ${p.board==='qna' && isAdmin() ? `<form id="ansForm" class="field" style="margin-top:20px"><label for="ans">${p.answer?'답변 수정':'답변 작성'} (관리자)</label><textarea id="ans" style="height:160px">${esc(p.answer?.body||'')}</textarea><div class="board-bottom"><button class="btn btn-primary" type="submit">답변 저장</button></div></form>` : ''}
     <div class="view-nav">
@@ -1192,7 +1583,7 @@ function viewWrite(b, editId){
           <p class="err" id="wspErr" hidden></p>
         </div>
       </div>
-      <div class="field"><label for="wc">내용<span class="req" aria-hidden="true">*</span><span class="sr-only">(필수)</span></label><textarea id="wc" name="body" required>${esc(p?.body||'')}</textarea><p class="err" id="wcErr" hidden></p></div>
+      <div class="field"><label for="wc">내용<span class="req" aria-hidden="true">*</span><span class="sr-only">(필수)</span></label><div class="rt-wrap">${richEditor('wcRich', p ? (p.html ? cleanHTML(p.html) : nl2br(p.body)) : '', '내용')}</div><textarea id="wc" name="body" hidden>${esc(p?.body||'')}</textarea><p class="err" id="wcErr" hidden></p></div>
       <div class="field" id="photoBox" ${BOARDS[board].photo?'':'hidden'}>
         <label for="wph"><span id="phLbl">${BOARDS[board].photoLabel || '대표 사진'}</span><span id="phReq" ${board==='gallery'?'':'hidden'}><span class="req" aria-hidden="true">*</span><span class="sr-only">(필수)</span></span></label>
         <input id="wph" type="file" accept="image/png,image/jpeg,image/webp">
@@ -1220,6 +1611,8 @@ function viewWrite(b, editId){
   $('#wsec').onchange = e => { $('#secPwBox').hidden = !e.target.checked; if (e.target.checked) $('#wsp').focus(); };
   wf.onsubmit = async e => {
     e.preventDefault(); const f = e.target; let ok = true;
+    const rich = $('#wcRich'); f.body.value = rich.innerText.trim();
+    const html = rich.textContent.trim() ? cleanHTML(rich.innerHTML) : '';
     const t = f.title.value.trim(), c = f.body.value.trim();
     const setErr = (id, msg) => { const el = $('#'+id); el.hidden = !msg; el.textContent = msg||''; if(msg) ok = false; };
     setErr('wtErr', t ? '' : '제목을 입력하세요.'); setErr('wcErr', c ? '' : '내용을 입력하세요.');
@@ -1234,15 +1627,15 @@ function viewWrite(b, editId){
     alt = f.alt.value.trim();
     setErr('wphErr', isGal && !photoData ? '대표 사진을 등록하세요.' : '');
     setErr('walErr', usePhoto && photoData && !alt ? '사진 설명(대체텍스트)을 입력하세요.' : '');
-    if (!ok) { (!t ? f.title : (isGal && !photoData) ? $('#wph') : (usePhoto && photoData && !alt) ? f.alt : !c ? f.body : f.spw).focus(); return; }
+    if (!ok) { (!t ? f.title : (isGal && !photoData) ? $('#wph') : (usePhoto && photoData && !alt) ? f.alt : !c ? $('#wcRich') : f.spw).focus(); return; }
     const ph = usePhoto ? {photo:photoData, alt} : {photo:null, alt:''};
     let sec = {secret:false, secSalt:null, secPw:null};
     if (secret) sec = spw ? {secret:true, secSalt: uid()} : {secret:true, secSalt:p.secSalt, secPw:p.secPw};
     if (secret && spw) sec.secPw = await hash(spw, sec.secSalt);
     const files = [...f.files.files].map(x=>x.name);
     const all = store.get('posts',[]);
-    if (p) { const q = all.find(x=>x.id===p.id); Object.assign(q, {board:f.board.value, cat: f.board.value==='odastat' ? f.cat.value : undefined, title:t, body:c, pinned: !!f.pinned?.checked, files: files.length?files:q.files}, sec, ph); if (sec.secret) setUnlock(q.id); store.set('posts',all); toast('수정했습니다.'); location.hash = '#/post/'+p.id; }
-    else { const np = {id:uid(), board:f.board.value, cat: f.board.value==='odastat' ? f.cat.value : undefined, title:t, body:c, author:user.name, authorId:user.id, date:today(), created:Date.now(), views:0, pinned: !!f.pinned?.checked, files, ...sec, ...ph}; if (sec.secret) setUnlock(np.id); all.push(np); store.set('posts',all); toast('등록했습니다.'); location.hash = '#/post/'+np.id; }
+    if (p) { const q = all.find(x=>x.id===p.id); Object.assign(q, {board:f.board.value, cat: f.board.value==='odastat' ? f.cat.value : undefined, title:t, body:c, html, pinned: !!f.pinned?.checked, files: files.length?files:q.files}, sec, ph); if (sec.secret) setUnlock(q.id); store.set('posts',all); toast('수정했습니다.'); location.hash = '#/post/'+p.id; }
+    else { const np = {id:uid(), board:f.board.value, cat: f.board.value==='odastat' ? f.cat.value : undefined, title:t, body:c, html, author:user.name, authorId:user.id, date:today(), created:Date.now(), views:0, pinned: !!f.pinned?.checked, files, ...sec, ...ph}; if (sec.secret) setUnlock(np.id); all.push(np); store.set('posts',all); toast('등록했습니다.'); location.hash = '#/post/'+np.id; }
   };
 }
 
@@ -1421,6 +1814,7 @@ function viewAdmin(){
     if (!confirm('이 배너 사진을 삭제할까요?')) return;
     const bn = store.get('banner', {}); delete bn[btn.dataset.bannerDel]; store.set('banner', bn); toast('배너 사진을 삭제했습니다.'); viewAdmin();
   });
+  app.querySelectorAll('[name=bpos]').forEach(r => r.onchange = () => { const bn = store.get('banner', {}); bn.pos = r.value; store.set('banner', bn); toast('사진 기준 위치를 변경했습니다.'); });
   app.querySelectorAll('[name=dim]').forEach(r => r.onchange = () => { const bn = store.get('banner', {}); bn.dim = r.value; store.set('banner', bn); toast('어둡기를 변경했습니다.'); viewAdmin(); });
   app.querySelectorAll('[data-logo]').forEach(inp => inp.onchange = async () => {
     const file = inp.files[0]; if (!file) return;
@@ -1471,7 +1865,7 @@ function bannerAdmin(){
       <div class="board-bottom"><button class="btn btn-primary" id="heroTextSave">문구 저장</button></div>
     </div>
     <div class="sec-title" style="margin-top:48px"><h2 style="font-size:1.25rem">메인 배너 사진 관리</h2></div>
-    <p class="hint" style="margin-bottom:16px;text-align:center">여기서 등록한 사진이 우선 적용됩니다. 등록한 사진이 없으면 <b>images/banner_pc.jpg</b>(PC)·<b>images/banner_mobile.jpg</b>(모바일) 파일을 보여 주고, 파일도 없으면 기본 물결 그래픽이 보입니다.</p>
+    <p class="hint" style="margin-bottom:16px;text-align:center">여기서 등록한 사진이 우선 적용됩니다. 등록한 사진이 없으면 <b>images/banner_pc</b>(PC)·<b>images/banner_mobile</b>(모바일) 파일(jpg·png·webp)을 보여 주고, 파일도 없으면 기본 물결 그래픽이 보입니다.</p>
     <div class="banner-grid">
       <div class="field">
         <span class="lbl">PC용 (권장 3840×880, 최소 1920×440)</span>
@@ -1492,6 +1886,9 @@ function bannerAdmin(){
     </div>
     <fieldset style="border:0;margin-top:20px"><legend class="lbl" style="font-weight:700;margin-bottom:8px">사진 어둡기 (흰 글자 가독성)</legend>
       <div class="dim-row">${[['light','약하게'],['mid','보통 (권장)'],['strong','강하게']].map(([v,t])=>`<label><input type="radio" name="dim" value="${v}" ${dim===v?'checked':''}> ${t}</label>`).join('')}</div>
+    </fieldset>
+    <fieldset style="border:0;margin-top:16px"><legend class="lbl" style="font-weight:700;margin-bottom:8px">사진 기준 위치 (창이 좁아질 때 남길 부분)</legend>
+      <div class="dim-row">${[['left','왼쪽'],['center','가운데'],['right','오른쪽']].map(([v,t])=>`<label><input type="radio" name="bpos" value="${v}" ${(bn.pos||'center')===v?'checked':''}> ${t}</label>`).join('')}</div>
     </fieldset>
     <ul class="hint" style="margin-top:12px;list-style:disc;padding-left:20px;line-height:1.8">
       <li>제목 글자가 왼쪽 아래에 올라가므로 사진의 주요 피사체는 오른쪽에 두세요.</li>
@@ -1627,6 +2024,58 @@ function loadSideLogos(){
     if (img.complete && !img.naturalWidth) img.onerror();
   });
 }
+// 첫 화면: 오른쪽 고정 메뉴가 배너 사진을 가리지 않도록 배너 아래에서 시작 → 스크롤하면 원래 자리(가운데)로
+function placeSideBar(){
+  const sb = $('#sideBar'); if (!sb) return;
+  sb.style.top = ''; sb.style.transform = '';
+  const hero = document.querySelector('.hero');
+  if (!hero || !matchMedia('(min-width:1024px)').matches) return;
+  const r = sb.getBoundingClientRect(), want = hero.getBoundingClientRect().bottom + 16;
+  if (r.top >= want) return;
+  sb.style.top = Math.min(want, Math.max(r.top, innerHeight - r.height - 16)) + 'px';
+  sb.style.transform = 'none';
+}
+addEventListener('scroll', placeSideBar, {passive:true});
+addEventListener('resize', placeSideBar);
+addEventListener('hashchange', () => setTimeout(placeSideBar, 60));
+setTimeout(placeSideBar, 300);
+// 모바일: 고정 배너 접기/펴기
+$('#sbToggle').onclick = () => { const sb = $('#sideBar'), on = !sb.classList.contains('open'); sb.classList.toggle('open', on); $('#sbToggle').setAttribute('aria-expanded', on); $('#sbToggle').setAttribute('aria-label', on ? 'SNS·글자 크기 메뉴 닫기' : 'SNS·글자 크기 메뉴 열기'); };
+// 관련기관: 한 줄에 다 안 보일 때만 끊김 없이 천천히 흐름
+// (마우스·손가락·키보드 초점이 있으면 멈춤, '움직임 줄이기' 설정이면 움직이지 않음)
+(function(){
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const SPEED = 30;                      // 초당 이동 거리(px) — 숫자가 작을수록 느림
+  let hold = false, last = 0, pos = 0;
+  ['touchstart','mouseover','focusin'].forEach(ev => document.addEventListener(ev, e => { if (e.target.closest && e.target.closest('#family')) hold = true; }, true));
+  ['touchend','mouseout','focusout'].forEach(ev => document.addEventListener(ev, e => { if (e.target.closest && e.target.closest('#family')) setTimeout(()=>{ hold = false; pos = $('#family').scrollLeft; }, 1500); }, true));
+  // 이어서 흐르도록 목록을 한 번 더 복제 (화면낭독기·키보드에서는 숨김)
+  function prepare(l){
+    l.querySelectorAll('.fam-clone').forEach(n => n.remove());
+    l.dataset.loop = '';
+    if (l.scrollWidth <= l.clientWidth + 2) return false;
+    [...l.children].forEach(li => { const c = li.cloneNode(true); c.classList.add('fam-clone'); c.setAttribute('aria-hidden','true'); c.querySelectorAll('a').forEach(a => a.tabIndex = -1); l.appendChild(c); });
+    l.dataset.loop = '1'; l.style.scrollSnapType = 'none';
+    return true;
+  }
+  let prepared = null;
+  window.addEventListener('resize', () => { prepared = null; });
+  function tick(t){
+    const l = $('#family');
+    if (l && !l.closest('.family').hidden){
+      if (prepared !== l.innerHTML.length) { prepare(l); prepared = l.innerHTML.length; pos = l.scrollLeft; }
+      const dt = last ? Math.min(t - last, 50) : 0;
+      if (l.dataset.loop && !hold){
+        const half = l.scrollWidth / 2;
+        pos += SPEED * dt / 1000;
+        if (pos >= half) pos -= half;
+        l.scrollLeft = pos;
+      }
+    }
+    last = t; requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
 (async () => { importSiteData(); loadSideLogos(); applyBizLists(); await seed(); seedGallery(); store.set('posts', store.get('posts',[]).filter(p=>BOARDS[p.board])); renderMenus(); renderAuth(); renderFamily(); renderLogo(); route(); })();
 </script>
 </body>
