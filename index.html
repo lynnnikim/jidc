@@ -235,11 +235,12 @@ img{max-width:100%}
 .lnb ul{border:1px solid var(--line);border-top:0}
 .lnb a{display:flex;align-items:center;height:52px;padding:0 20px;border-top:1px solid var(--line);font-size:.9375rem;line-height:1.3}
 .lnb-sub{border:0!important;background:#FAFBFC}
-.lnb-m-sub{display:none;gap:0;align-items:center;overflow-x:auto;padding:12px 0 2px;scrollbar-width:none}
+.lnb-m-sub{display:none;gap:0;align-items:center;overflow-x:auto;padding:10px 14px;margin:12px 0 16px;background:var(--stone);border-radius:8px;scrollbar-width:none}
 .lnb-m-sub::-webkit-scrollbar{display:none}
 .lnb-m-sub a{flex:0 0 auto;white-space:nowrap;padding:6px 12px;font-size:.875rem;color:var(--sub);position:relative}
-.lnb-m-sub a:first-child{padding-left:0}
+.lnb-m-sub a:first-child{padding-left:2px}
 .lnb-m-sub a+a::before{content:"";position:absolute;left:0;top:50%;width:1px;height:12px;margin-top:-6px;background:var(--line)}
+.lnb .lnb-m-sub a{border:0;min-height:0}
 .lnb .lnb-m-sub a[aria-current="page"]{color:var(--sea);font-weight:700;background:none}
 .lnb-tg{justify-content:space-between;gap:8px}
 .lnb-tg svg{flex-shrink:0;color:var(--sub);transition:transform .2s}
@@ -421,6 +422,42 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .steps li{counter-increment:st;border:1px solid var(--line);border-radius:8px;padding:18px 8px;text-align:center;font-weight:700}
 .steps li::before{content:counter(st);display:flex;margin:0 auto 8px;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;align-items:center;justify-content:center;font-size:.8125rem}
 .org{display:flex;flex-direction:column;align-items:center}
+.oc{display:flex;flex-direction:column;align-items:center;max-width:640px;margin:8px auto 48px;font-size:.9375rem}
+.oc-two{display:grid;grid-template-columns:1fr 1fr;width:100%;position:relative}
+.oc-cell{display:flex;flex-direction:column;align-items:center;padding:0 10px;position:relative}
+.oc-top{max-width:460px}
+.oc-top::after{content:"";position:absolute;left:25%;right:25%;bottom:-22px;height:2px;background:#B9C7D6}
+.oc-top .oc-cell::after{content:"";position:absolute;left:50%;bottom:-22px;width:2px;height:22px;margin-left:-1px;background:#B9C7D6}
+.oc-pill{width:100%;max-width:220px;padding:13px 16px;border-radius:999px;background:var(--stone);border:1px solid #D5DEE7;text-align:center;font-weight:700;color:var(--navy)}
+.oc-center{max-width:300px;background:#2F7FC1;border-color:#2F7FC1;color:#fff;font-size:1rem}
+.oc-v{width:2px;height:26px;background:#B9C7D6}
+.oc-top+.oc-v{height:22px;margin-top:22px}
+.oc-v.sm{height:14px}
+.oc-mid{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;width:100%}
+.oc-head{padding:13px 26px;border-radius:8px;background:var(--navy);color:#fff;font-weight:800;white-space:nowrap}
+.oc-side{display:flex;align-items:center;min-width:0}
+.oc-dash{flex:1;position:relative;border-top:2px dashed #B9C7D6;min-width:24px;margin:0 8px}
+.oc-dash em{position:absolute;left:50%;bottom:4px;transform:translateX(-50%);font-style:normal;font-size:.8125rem;color:var(--sub);white-space:nowrap}
+.oc-partner{padding:12px 16px;border-radius:8px;background:#E6F2FB;border:1px solid #BFDDF3;color:var(--navy);font-weight:700;white-space:nowrap}
+.oc-branch{margin-top:0}
+.oc-branch::before{content:"";position:absolute;left:25%;right:25%;top:0;height:2px;background:#B9C7D6}
+.oc-branch .oc-cell{padding-top:22px}
+.oc-branch .oc-team{flex:1;display:flex;align-items:center;justify-content:center}
+.oc-branch .oc-cell::before{content:"";position:absolute;left:50%;top:0;width:2px;height:22px;margin-left:-1px;background:#B9C7D6}
+.oc-team,.oc-person{width:100%;max-width:240px;padding:12px 10px;border-radius:6px;text-align:center;font-weight:700;word-break:keep-all}
+.oc-team{background:#fff;border:1px solid var(--line);color:var(--basalt)}
+.oc-person{background:var(--navy);color:#fff;font-weight:600}
+@media (max-width:520px){
+  .oc{font-size:.8125rem}
+  .oc-cell{padding:0 5px}
+  .oc-pill{padding:11px 8px}
+  .oc-head{padding:11px 14px}
+  .oc-partner{padding:9px 8px}
+  .oc-dash{margin:0 4px;min-width:20px}
+  .oc-dash em{font-size:.6875rem}
+  .oc-partner{white-space:normal;word-break:keep-all;text-align:center;font-size:.75rem}
+  .oc-team{min-height:3.6em;display:flex;align-items:center;justify-content:center}
+}
 .org .box{background:var(--navy);color:#fff;padding:14px 36px;border-radius:8px;font-weight:700}
 .org .line{width:2px;height:24px;background:var(--line)}
 .org .row{display:flex;gap:16px;padding-top:24px;flex-wrap:wrap;justify-content:center}
@@ -628,14 +665,15 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
   .sub-body{grid-template-columns:minmax(0,1fr);gap:24px;padding-top:24px}
   .content,.lnb{min-width:0}
   .lnb h2{display:none}
-  .lnb>ul{display:flex;overflow-x:auto;border:0;border-bottom:1px solid var(--line);gap:4px;scrollbar-width:none}
+  .lnb>ul{display:flex;overflow-x:auto;border:0;gap:4px;scrollbar-width:none}
   .lnb>ul::-webkit-scrollbar{display:none}
   .lnb>ul>li{flex:0 0 auto}
   .lnb>ul>li>a{border:0;white-space:nowrap;padding:0 14px;height:46px;background:none!important}
   .lnb .lnb-sub{display:none!important}
   .lnb .lnb-tg svg{display:none}
   .lnb>ul>li>a[aria-current="page"]{box-shadow:inset 0 -3px 0 var(--sea)}
-  .lnb-m-sub{display:flex!important}
+  .lnb-m-sub{display:flex!important;margin-top:8px;padding:6px 8px;background:var(--stone);border-radius:10px}
+  .lnb-m-sub a:first-child{padding-left:12px}
   .stats{grid-template-columns:repeat(2,1fr)}
   .side-bar{top:auto;bottom:80px;transform:none;right:10px;width:50px;border-radius:18px}
   .sb-tx{display:none}
@@ -645,7 +683,8 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
   .banner-grid{grid-template-columns:1fr}
   .gal-grid,.board-gal{grid-template-columns:repeat(2,1fr);gap:14px}
   .greet-top{grid-template-columns:1fr;gap:24px}
-  .greet-head{padding-top:0;order:2}
+  .greet-head{display:none}
+  body.is-admin .greet-head{display:block}
   .greet-title{font-size:1.3125rem}
   .steps{grid-template-columns:1fr}
   .steps li{display:flex;align-items:center;gap:12px;text-align:left;padding:12px 14px}
@@ -1255,9 +1294,24 @@ const PAGES = {
     ${ed('purpose.history', {label:'연혁 (한 줄에 하나씩: 연도 | 내용)', def:'2015. 08. | 제주특별자치도·KOICA·제주대학교 3자 업무협약 체결\n2016. 06. 22. | 제주국제개발협력센터 개소 (제주대학교 본관 개소식)', render:timeline})}`},
   org:{body:()=>`
     <h3 class="h3">조직도</h3>
-    <div class="org">
-      <div class="box">센터장</div><div class="line"></div>
-      ${ed('org.chart', {label:'조직도 (한 줄에 한 칸씩)', ph:'담당 업무를 한 줄에 하나씩 입력', render:orgRow})}
+    <div class="oc" role="img" aria-label="조직도: 제주대학교·KOICA 아래 제주국제개발협력센터, 센터장(산학협력단과 협력), 그 아래 ODA사업 발굴 및 기획 담당 실장, 행정 및 사업운영 담당 대리">
+      <div class="oc-two oc-top">
+        <div class="oc-cell"><div class="oc-pill">${ed('org.p1', {label:'상위 기관 1', def:'제주대학교', render:v=>esc(v)})}</div></div>
+        <div class="oc-cell"><div class="oc-pill">${ed('org.p2', {label:'상위 기관 2', def:'KOICA', render:v=>esc(v)})}</div></div>
+      </div>
+      <div class="oc-v"></div>
+      <div class="oc-pill oc-center">${ed('org.center', {label:'센터명', def:'제주국제개발협력센터', render:v=>esc(v)})}</div>
+      <div class="oc-v"></div>
+      <div class="oc-mid">
+        <span></span>
+        <div class="oc-head">${ed('org.head', {label:'센터장', def:'센터장 신의철', render:v=>esc(v)})}</div>
+        <div class="oc-side"><span class="oc-dash"><em>협력</em></span><div class="oc-partner">${ed('org.partner', {label:'협력 기관', def:'산학협력단', render:v=>esc(v)})}</div></div>
+      </div>
+      <div class="oc-v"></div>
+      <div class="oc-two oc-branch">
+        <div class="oc-cell"><div class="oc-team">${ed('org.t1', {label:'담당 업무 1', def:'ODA사업 발굴 및 기획', render:v=>esc(v)})}</div><div class="oc-v sm"></div><div class="oc-person">${ed('org.n1', {label:'담당자 1', def:'실장 이에스더', render:v=>esc(v)})}</div></div>
+        <div class="oc-cell"><div class="oc-team">${ed('org.t2', {label:'담당 업무 2', def:'행정 및 사업운영', render:v=>esc(v)})}</div><div class="oc-v sm"></div><div class="oc-person">${ed('org.n2', {label:'담당자 2', def:'대리 김린', render:v=>esc(v)})}</div></div>
+      </div>
     </div>
     <h3 class="h3">대표 연락처</h3>
     <table class="info-table"><tr><th scope="row">대표 전화</th><td>${TEL}</td></tr><tr><th scope="row">이메일</th><td>jejuidcc@jejunu.ac.kr</td></tr></table>`},
