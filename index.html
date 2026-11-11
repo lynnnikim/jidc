@@ -6,7 +6,7 @@
 <title>제주국제개발협력센터</title>
 <meta name="description" content="제주국제개발협력센터">
 <meta name="theme-color" content="#0E3A5F">
-<!-- 홈페이지 주소: 도메인 확정 시 아래 주소만 바꾸면 됩니다 -->
+
 <link rel="canonical" href="https://jejuidcc.kr/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jejuidcc.kr/">
@@ -35,8 +35,6 @@ img{max-width:100%}
 .skip:focus{left:0}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
 
-
-/* 헤더 */
 .header{position:relative;background:#fff;border-bottom:1px solid var(--line);z-index:50}
 .header .wrap{display:flex;align-items:center;height:96px;position:relative}
 .h-auth{position:absolute;top:16px;right:24px;display:flex;align-items:center;font-size:.8125rem;color:var(--sub);z-index:3}
@@ -68,7 +66,6 @@ img{max-width:100%}
 .btn-sitemap{margin-left:12px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius)}
 .btn-sitemap:hover{background:var(--stone)}
 
-/* 모바일 메뉴 */
 .m-nav{position:fixed;inset:0;z-index:200;visibility:hidden;overflow:hidden}
 .m-nav.on{visibility:visible}
 .m-dim{position:absolute;inset:0;background:rgba(10,20,30,.5);opacity:0;transition:opacity .25s}
@@ -89,7 +86,6 @@ img{max-width:100%}
 .m-list .m-single{display:block;padding:16px 20px;font-weight:700;border-bottom:1px solid var(--line)}
 .m-list ul a{display:block;padding:10px 28px;font-size:.9375rem;color:var(--sub)}
 
-/* 메인 비주얼 */
 .hero{position:relative;background:var(--navy);color:#fff;overflow:hidden}
 .hero-photo{position:absolute;inset:0;width:100%;height:100%}
 .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
@@ -116,7 +112,6 @@ img{max-width:100%}
 .slide .cta{display:inline-flex;margin-top:30px;padding:13px 26px;background:#fff;color:var(--navy);font-weight:700;border-radius:var(--radius)}
 .slide .cta:hover{background:var(--sea-weak)}
 
-/* 퀵메뉴 */
 .quick{position:relative;margin-top:-40px;z-index:2;background:linear-gradient(transparent 40px,var(--stone) 40px)}
 .quick ul{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 16px 32px -20px rgba(14,58,95,.45)}
 .quick li+li{border-left:1px solid var(--line)}
@@ -126,7 +121,6 @@ img{max-width:100%}
 .quick a:hover .qi{background:var(--sea);color:#fff}
 .qi{width:56px;height:56px;border-radius:50%;background:var(--sea-weak);color:var(--sea);display:flex;align-items:center;justify-content:center;transition:background .15s}
 
-/* 섹션 공통 */
 .sec{padding:80px 0}
 .sec-gray{background:var(--stone)}
 .sec-title{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px;gap:16px}
@@ -134,7 +128,6 @@ img{max-width:100%}
 .more{font-size:.875rem;color:var(--sub);display:inline-flex;align-items:center;gap:4px}
 .more:hover{color:var(--sea)}
 
-/* 게시판 미리보기 */
 .board-cols{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
 .col-title{font-size:1.75rem;font-weight:800;letter-spacing:-.03em;text-align:center;margin-bottom:20px}
 .gal-grid.col-gal{grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px}
@@ -184,7 +177,6 @@ img{max-width:100%}
 .contact-card .links a{background:rgba(255,255,255,.1);padding:12px;border-radius:var(--radius);font-weight:600;font-size:.9375rem;text-align:center}
 .contact-card .links a:hover{background:rgba(255,255,255,.2)}
 
-/* 주요사업 */
 .biz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .biz{background:#fff;border:1px solid var(--line);border-top:4px solid var(--sea);padding:30px 28px 26px;border-radius:0 0 10px 10px}
 .biz:nth-child(2){border-top-color:var(--navy)}
@@ -194,7 +186,6 @@ img{max-width:100%}
 .biz li:last-child{border:0}
 .biz .more{margin-top:16px}
 
-/* 관련기관 */
 .family{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .family .wrap{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding-top:56px;padding-bottom:56px}
 .family strong{font-size:.9375rem;margin-right:12px}
@@ -204,7 +195,7 @@ img{max-width:100%}
 .fam-ic img{max-width:85%;max-height:48px;object-fit:contain;display:block}
 .fam:hover{color:var(--sea)}
 .fam:hover .fam-nm{text-decoration:underline}
-/* 로고가 있으면 기관명 글자는 숨김 (화면낭독기로만 읽힘) */
+
 .fam:not(.no-logo) .fam-nm{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .fam{position:relative}
 .fam:not(.no-logo){gap:0;min-height:88px}
@@ -213,7 +204,6 @@ img{max-width:100%}
 .logo-cell{display:flex;align-items:center;justify-content:center;height:48px;min-width:120px;border:1px dashed var(--line);border-radius:4px;background:#fff;font-size:.75rem;color:var(--sub)}
 .logo-cell img{max-height:36px;max-width:140px;object-fit:contain}
 
-/* 푸터 */
 .footer{background:var(--basalt);color:#C9CFD5;font-size:.875rem;padding:36px 0 44px}
 .f-links{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:18px}
 .f-links a{color:#fff}
@@ -223,7 +213,6 @@ img{max-width:100%}
 .footer address{font-style:normal;line-height:1.9}
 .footer .copy{margin-top:12px;opacity:.7}
 
-/* 서브페이지 */
 .sub-visual{background:var(--navy);color:#fff;padding:52px 0 46px;position:relative;overflow:hidden}
 .sub-visual h1{font-size:2rem;font-weight:800;letter-spacing:-.03em}
 .crumb{display:flex;gap:8px;font-size:.875rem;opacity:.8;margin-top:10px;flex-wrap:wrap}
@@ -260,7 +249,7 @@ img{max-width:100%}
 .content h2.ct{font-size:1.5rem;font-weight:800;padding-bottom:0;border-bottom:0;margin-bottom:28px}
 .placeholder{border:2px dashed var(--line);border-radius:10px;padding:40px;text-align:center;color:var(--sub)}
 .info-table{width:100%;border-collapse:collapse;border-top:2px solid var(--basalt)}
-/* 사업 페이지 */
+
 .prog-notice{border:1px solid var(--line);border-radius:8px;padding:22px 26px;margin-top:44px;font-size:.9375rem;line-height:1.8}
 .pn-q{display:flex;gap:14px;margin-top:6px}
 .pn-q b{letter-spacing:.3em;color:var(--basalt);white-space:nowrap}
@@ -299,7 +288,6 @@ img{max-width:100%}
 .info-table th,.info-table td{padding:14px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
 .info-table th{background:var(--stone);width:160px;font-weight:700;text-align:center;vertical-align:middle}
 
-/* 게시판 */
 .board-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
 .board-top .total{font-size:.9375rem}
 .board-top .total b{color:var(--sea)}
@@ -329,7 +317,6 @@ table.list tr.pinned{background:#F7FAFD}
 .view-body{padding:36px 8px 50px;border-bottom:1px solid var(--line);white-space:pre-wrap;min-height:200px}
 .view-nav{display:flex;justify-content:space-between;margin-top:20px;gap:8px;flex-wrap:wrap}
 
-/* 폼 */
 .form-box{max-width:560px;margin:0 auto}
 .form-box.wide{max-width:none}
 .field{margin-bottom:18px}
@@ -363,22 +350,16 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .inline .btn{height:48px;flex-shrink:0}
 .demo-note{margin-top:20px;padding:12px 14px;background:#FFF6EC;border:1px solid #F5CFA8;border-radius:var(--radius);font-size:.8125rem;color:#7A4510}
 
-/* 관리자 */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px}
 .stat{border:1px solid var(--line);border-radius:10px;padding:20px}
 .stat span{font-size:.875rem;color:var(--sub)}
 .stat b{display:block;font-size:2rem;font-weight:800;color:var(--navy);font-variant-numeric:tabular-nums}
 
-/* 토스트 */
 .toast{position:fixed;left:50%;bottom:32px;transform:translateX(-50%) translateY(20px);background:var(--basalt);color:#fff;padding:14px 22px;border-radius:var(--radius);font-weight:600;opacity:0;pointer-events:none;transition:all .25s;z-index:300}
 .toast.on{opacity:1;transform:translateX(-50%)}
 .top-btn{position:fixed;right:20px;bottom:20px;width:48px;height:48px;border-radius:50%;background:#fff;border:1px solid var(--line);box-shadow:0 6px 16px -8px rgba(0,0,0,.3);display:none;align-items:center;justify-content:center;z-index:40}
 .top-btn.on{display:flex}
 
-/* 반응형 */
-
-
-/* 서브페이지 구성 요소 */
 .slot{border:2px dashed #C3CDD7;border-radius:8px;background:#FAFBFC;color:#6B7580;padding:16px;text-align:center;font-size:.875rem}
 .slot.img{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:8px}
 .slot.tall{min-height:240px;display:flex;align-items:center;justify-content:center}
@@ -473,7 +454,7 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .sitemap ul{border:1px solid var(--line);border-top:0;padding:10px 0;border-radius:0 0 8px 8px}
 .sitemap a{display:block;padding:7px 16px;font-size:.9375rem}
 .sitemap a:hover{color:var(--sea);text-decoration:underline}
-/* 갤러리 */
+
 .gal-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:28px;flex-wrap:wrap}
 .gal-tabs button{padding:9px 20px;border:1px solid var(--line);border-radius:999px;font-weight:600;font-size:.9375rem;color:var(--sub);background:#fff}
 .gal-tabs button[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
@@ -524,7 +505,7 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .biz li a:hover{color:var(--sea)}
 .biz li a:hover::after{color:var(--sea)}
 @media (min-width:1024px){.slide p{white-space:nowrap;max-width:none}}
-/* 오른쪽 고정 배너 */
+
 .side-bar{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:60;width:80px;background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);border:1px solid var(--line);border-radius:22px;box-shadow:0 10px 28px -14px rgba(14,58,95,.4);overflow:hidden}
 .sb-fs{display:contents}
 .sb-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:100%;height:72px;padding:0 4px;border-bottom:1px solid var(--line);font-size:.75rem;color:var(--sub);background:transparent}
@@ -538,7 +519,6 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .sb-glyph sup{font-size:.6875rem;margin-left:1px}
 .sb-tx{white-space:nowrap;line-height:1.2}
 
-/* 관리자 편집 */
 .ed{position:relative;outline:2px dashed transparent;outline-offset:4px;border-radius:6px}
 .is-admin .ed{outline-color:rgba(232,121,43,.45)}
 .ed-btn{position:absolute;top:-10px;right:-10px;z-index:5;padding:4px 10px;font-size:.75rem;font-weight:700;color:#fff;background:var(--tangerine);border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,.2)}
@@ -560,11 +540,11 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .admin-bar[hidden]{display:none}
 .admin-bar a,.admin-bar button{color:#fff;text-decoration:underline}
 .is-admin .footer{padding-bottom:80px}
-/* 배포 */
+
 .publish-box{display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:20px 24px;margin-bottom:32px;border:2px solid var(--tangerine);border-radius:10px;background:#FFF8F1}
 .publish-box b{font-size:1.0625rem}
 .publish-btns{display:flex;gap:8px;flex-wrap:wrap}
-/* 네이버 지도 */
+
 .naver-map{width:100%;height:400px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--stone)}
 .map-empty{height:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:var(--sub);font-size:.9375rem}
 .map-link{text-align:right;margin-top:10px}
@@ -607,7 +587,7 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
   .route-table td>b{margin:0 10px;flex-shrink:0}
 }
 @media (max-width:640px){.naver-map{height:280px}}
-/* 사업 페이지 활동 사진 (대표 사진 크게) */
+
 .photo-gallery{display:grid;gap:12px;margin-bottom:40px}
 .photo-gallery.pg-3{grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;aspect-ratio:16/7}
 .photo-gallery.pg-3 .pg-item:first-child{grid-row:1 / span 2}
@@ -617,7 +597,7 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .pg-item img.ed-img,.pg-item .ed-img{width:100%;height:100%;object-fit:cover;border-radius:10px}
 .pg-item .slot.img{height:100%;aspect-ratio:auto}
 @media (max-width:640px){.photo-gallery.pg-3{grid-template-columns:1fr 1fr;grid-template-rows:auto auto;aspect-ratio:auto}.photo-gallery.pg-3 .pg-item:first-child{grid-row:auto;grid-column:1 / span 2;aspect-ratio:4/3}.photo-gallery.pg-3 .pg-item{aspect-ratio:4/3}.photo-gallery.pg-2,.photo-gallery.pg-1{aspect-ratio:auto}.photo-gallery.pg-2 .pg-item,.photo-gallery.pg-1 .pg-item{aspect-ratio:4/3}}
-/* 서식 편집기 */
+
 .rt-bar{display:flex;flex-wrap:wrap;gap:4px;padding:6px;border:1px solid #B8C0C8;border-bottom:0;border-radius:var(--radius) var(--radius) 0 0;background:var(--stone)}
 .rt-bar button{min-width:34px;height:32px;padding:0 8px;border:1px solid transparent;border-radius:4px;font-size:.875rem;background:none}
 .rt-bar button:hover{background:#fff;border-color:var(--line)}
@@ -629,7 +609,7 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .fs-s{font-size:.875em}.fs-l{font-size:1.25em}.fs-xl{font-size:1.5em;line-height:1.5}
 .rich .hl,.rt-area font[color],.hl{color:var(--sea);font-weight:800}
 .view-body.rich{white-space:normal}
-/* 가운데 정렬 (제목·관련기관·푸터) */
+
 .sec-title{justify-content:center;text-align:center}
 .sub-visual{text-align:center}
 .crumb{justify-content:center}
@@ -716,9 +696,8 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
   .contact-card .tel{font-size:1.6rem}
 }
 
-/* ===== 모바일 최적화 (767px 이하) ===== */
 @media (max-width:767px){
-  /* 관련기관: 로고 한 줄 슬라이드 */
+
   .family .wrap{position:relative;padding-top:28px;padding-bottom:28px}
   .fam-title{font-size:1.25rem;margin-bottom:14px}
   .fam-list{display:flex;flex-wrap:nowrap;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:2px 0}
@@ -730,22 +709,22 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
   .fam:not(.no-logo) .fam-nm{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
   .fam.no-logo .fam-ic{display:none}
   .fam.no-logo{font-size:.8125rem;line-height:1.3}
-  /* 오른쪽 고정 배너: 접었다 펴기 */
+
   .side-bar{top:auto;bottom:76px;right:12px;width:48px;border-radius:24px}
   .side-bar:not(.open)>a,.side-bar:not(.open) .sb-fs{display:none}
   .sb-toggle{display:flex!important}
   .sb-item{height:46px}
   .top-btn{right:12px;bottom:20px;width:44px;height:44px}
-  /* 메인 배너 글자 */
+
   .slide .tag{font-size:.875rem;padding:4px 12px;margin-bottom:14px}
   .slide h2,.slide p{font-size:1.0625rem}
   .sub-visual h1{font-size:1.375rem;padding:0 8px}
   .crumb{font-size:.75rem}
-  /* 하단 정보 */
+
   .footer{font-size:.8125rem;padding:28px 0 36px}
   .f-links{gap:6px 14px}
   .footer address{line-height:1.7;word-break:keep-all}
-  /* 공통 여백·글자 */
+
   .sec{padding:44px 0}
   .col-title{font-size:1.375rem}
   .sec-title h2{font-size:1.125rem}
@@ -767,17 +746,16 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .sb-toggle{display:none;width:100%;height:48px;align-items:center;justify-content:center;color:var(--navy)}
 .side-bar.open .sb-toggle svg{transform:rotate(45deg)}
 .sb-toggle svg{transition:transform .2s}
-/* 배너: 창 폭에 맞춰 사진 비율(1920×440)대로 줄어듦 — 좌우 잘림 최소화 */
+
 @media (min-width:768px){
   .hero{height:clamp(300px, calc(100vw * 440 / 1920), 560px)}
   .hero .wrap{min-height:0!important;height:100%;padding-top:24px}
 }
 
-/* 좁은 PC·태블릿(768~1023px) */
 @media (min-width:768px) and (max-width:1023px){
   .sub-body{grid-template-columns:200px minmax(0,1fr);gap:32px;padding-top:40px}
 }
-/* 왼쪽 메뉴: 제목 + 세로선 목록 (768px 이상 전체) */
+
 @media (min-width:768px){
   .lnb{border-right:1px solid var(--line);padding-right:12px;align-self:stretch}
   .lnb h2{display:block;background:none;color:var(--basalt);font-size:1.375rem;font-weight:800;padding:0 0 22px;border-radius:0;text-align:left}
@@ -814,9 +792,6 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 <body>
 <a class="skip" href="#app">본문 바로가기</a>
 
-<!-- 유틸바 -->
-
-<!-- 헤더 / GNB -->
 <header class="header" id="header">
   <div class="wrap">
     <a href="#/" class="logo" aria-label="제주국제개발협력센터 홈">
@@ -830,7 +805,6 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
   <div class="mega-bg" aria-hidden="true"></div>
 </header>
 
-<!-- 모바일 메뉴 -->
 <div class="m-nav" id="mNav" aria-hidden="true">
   <div class="m-dim" data-close></div>
   <nav class="m-panel" aria-label="모바일 전체메뉴">
@@ -895,15 +869,9 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 <div class="admin-bar" id="adminBar" hidden><span>관리자 모드 · 각 영역의 [수정] 버튼으로 글과 사진을 바꿀 수 있습니다</span><a href="#/admin">관리자 페이지</a><button data-logout>로그아웃</button></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<!-- 배포 데이터: 관리자 페이지 [배포 파일 만들기]로 받은 data.js를 이 HTML과 같은 폴더에 둡니다 -->
 <script src="data.js"></script>
 <script>
-/* =========================================================
-   ※ 시안용 데모: 데이터는 브라우저 localStorage에 저장됩니다.
-   실제 운영 시에는 서버 API + DB로 교체합니다. (화면 하단 설계 참고)
-   ========================================================= */
 
-// ---------- 메뉴 구조 (실제 센터 프로그램 기준) ----------
 const MENU = [
   {id:'about', name:'센터소개', items:[['greeting','인사말'],['purpose','설립목적 및 연혁'],['org','조직·연락처'],['map','찾아오시는 길']]},
   {id:'cnews', name:'센터뉴스', items:[['board:press','보도자료'],['board:gallery','운영 사진']]},
@@ -914,13 +882,12 @@ const BOARDS = {
   notice:{name:'공지사항', menu:'news', write:'admin'},
   press:{name:'보도자료', menu:'cnews', write:'admin'},
   gallery:{name:'운영 사진', menu:'cnews', write:'admin', photo:true},
-  odastat:{name:'제주도 내 ODA 현황', menu:'biz', write:'admin', cat:'jejuoda'}   // 분류(제주도청 ODA 등)별 글 목록
+  odastat:{name:'제주도 내 ODA 현황', menu:'biz', write:'admin', cat:'jejuoda'}
 };
-BOARDS.press.photo = true;   // 보도자료도 대표 사진 등록 가능
-BOARDS.notice.photo = true; BOARDS.notice.photoLabel = '포스터';   // 공지사항: 포스터를 글 안에 표시
+BOARDS.press.photo = true;
+BOARDS.notice.photo = true; BOARDS.notice.photoLabel = '포스터';
 const GALLERY_BOARDS = ['press','gallery'];
-// ---------- 서브페이지 구성 ----------
-// .slot = 센터가 원고·사진을 채울 자리 (사실 확인된 내용만 미리 입력)
+
 const slot = (t, cls='') => `<div class="slot ${cls}">${t}</div>`;
 const TEL = '064-754-8250';
 const BIZ = {
@@ -948,13 +915,12 @@ function applyBizLists(){
   const lists = store.get('bizLists', null); if (!lists) return;
   Object.entries(lists).forEach(([k, items]) => { if (BIZ[k]) { BIZ[k].groups = [{name:'', items}]; BIZ[k].programs = items; } });
 }
-// 분야 페이지: 세부 사업 목록만 (누르면 개별 사업 페이지)
+
 function bizPage(key){
   const d = BIZ[key];
   return `<ul class="prog-list">${d.programs.map((n,i)=>`<li><a href="#/program/${key}/${i}"><span>${esc(n)}</span>${ico.down.replace('M6 9l6 6 6-6','M9 6l6 6-6 6')}</a></li>`).join('')}</ul>`;
 }
-// 개별 사업 페이지
-// 제주도 내 ODA 현황: 기관별 현황 페이지
+
 function statusPage(name){
   const list = store.get('posts',[]).filter(p => p.board === 'odastat' && p.cat === name).sort(sortPosts);
   const total = list.length;
@@ -966,13 +932,13 @@ function statusPage(name){
     <tbody>${total ? list.map((p,i)=>`<tr class="${p.pinned?'pinned':''}"><td>${p.pinned?'<span class="badge pin">공지</span>':total-i}</td><td class="tl"><a href="#/post/${p.id}">${esc(p.title)}</a>${p.files?.length?' <span class="sr-only">첨부파일 있음</span>📎':''}</td><td>${p.date}</td><td class="hide-m">${p.views}</td></tr>`).join('') : `<tr><td colspan="4" class="empty">등록된 글이 없습니다.${canWrite('odastat')?' [글쓰기]로 현황을 추가하세요.':''}</td></tr>`}</tbody>
   </table>`;
 }
-// 사업 페이지 = 안내 상자 + 활동 사진 + 소제목 섹션(관리자가 추가·순서 변경·삭제)
+
 const secKey = name => 'prog.' + name + '.secs';
 const toInline = v => !v ? '' : isRich(v) ? cleanHTML(v.slice(RICH.length)).replace(/<\/?p>/g, m => m === '</p>' ? '<br>' : '').replace(/(<br>)+$/, '') : nl2br(v);
 function progSecs(name){
   const saved = CMS.get(secKey(name));
   if (Array.isArray(saved)) return saved;
-  const k = f => CMS.get('prog.' + name + '.' + f);   // 예전 '사업 개요' 표 내용이 있으면 가져옴
+  const k = f => CMS.get('prog.' + name + '.' + f);
   const li = (l, f, d) => `<li><strong>${l} :</strong> ${toInline(k(f)) || d}</li>`;
   return [{t:'프로그램 개요', b: RICH + `<ul>${li('사업 목적','purpose','사업 목적 입력')}${li('참여 대상','target','참여 대상 입력')}${li('주요 내용','content','주요 활동 내용 입력')}${li('신청 방법','apply','공지사항 게시 후 접수')}</ul>`}];
 }
@@ -1057,8 +1023,7 @@ function viewProgram(cat, idx){
   window._lnbOpen = cat; window._lnbCur = cat + '/' + idx;
   subLayout('biz', cat, name, `<h2 class="ct">${esc(name)}</h2>${d.status ? statusPage(name) : programPage(name)}`);
 }
-// ---------- 배포 데이터 (data.js) ----------
-// 관리자 PC: data.js가 새 버전이면 그 내용을 불러와 이어서 편집
+
 function importSiteData(force){
   if (PUBLIC || !SITE) return false;
   if (!force && store.get('dataVer') === SITE._ver) return false;
@@ -1066,23 +1031,20 @@ function importSiteData(force){
   store.set('seeded', true); store.set('seed_gallery', true); store.set('dataVer', SITE._ver);
   return true;
 }
-// 관리자: 현재 내용을 data.js로 내려받기 → 서버 폴더의 data.js를 교체하면 방문자 화면에 반영
+
 function exportSiteData(){
   const ver = new Date().toISOString();
   const data = { _ver: ver };
   DATA_KEYS.forEach(k => { const v = store.get(k); if (v !== undefined && v !== null) data[k] = v; });
-  const blob = new Blob(['/* 제주국제개발협력센터 배포 데이터 · ' + ver + ' */\nwindow.SITE_DATA = ' + JSON.stringify(data) + ';\n'], {type:'text/javascript'});
+  const blob = new Blob(['window.SITE_DATA = ' + JSON.stringify(data) + ';\n'], {type:'text/javascript'});
   const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'data.js';
   document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
   store.set('dataVer', ver);
   toast('data.js를 내려받았습니다. 서버 폴더의 data.js를 이 파일로 바꾸세요.');
 }
 
-// ---------- 네이버 지도 ----------
-// NCP 콘솔(Maps > Application)에서 발급한 Client ID를 관리자 페이지에 입력하면 지도가 표시됩니다.
-// ※ 콘솔의 'Web 서비스 URL'에 홈페이지 주소를 등록해야 합니다. (내 PC에서 파일로 열면 지도가 뜨지 않음)
-const SITE_URL = 'https://jejuidcc.kr';   // 홈페이지 주소 (도메인 확정 시 수정)
-const MAP_DEFAULT = { lat: 33.4531, lng: 126.5603, zoom: 17 };   // 제주대학교 일대 (관리자 페이지에서 정확한 좌표로 수정)
+const SITE_URL = 'https://jejuidcc.kr';
+const MAP_DEFAULT = { lat: 33.4531, lng: 126.5603, zoom: 17 };
 function mapCfg(){ const c = CMS.get('map.cfg') || {}; return { id: c.id || '', lat: +c.lat || MAP_DEFAULT.lat, lng: +c.lng || MAP_DEFAULT.lng, zoom: +c.zoom || MAP_DEFAULT.zoom }; }
 function drawNaverMap(){
   const el = $('#naverMap'); if (!el) return;
@@ -1103,20 +1065,17 @@ function drawNaverMap(){
   document.head.appendChild(sc);
 }
 
-// ---------- 관리자 편집(CMS) ----------
-// 관리자로 로그인하면 각 영역에 [수정] 버튼이 생기고, 글·사진을 바로 바꿀 수 있습니다.
-// 시안: 브라우저 저장 / 실서비스: 서버 DB(콘텐츠 테이블)로 교체
 const CMS = {
   all(){ return store.get('cms', {}); },
   get(k){ return this.all()[k]; },
   set(k, v){ const a = this.all(); if (v === null || v === '' || v === undefined) delete a[k]; else a[k] = v; store.set('cms', a); }
 };
 const nl2br = t => esc(t).replace(/\n/g, '<br>');
-const hl = t => nl2br(t).replace(/\*\*(.+?)\*\*/g, '<strong class="hl">$1</strong>');   // **강조** → 파란 굵은 글씨
-// ---------- 서식 있는 글 (굵게·기울임·밑줄·크기·강조색) ----------
+const hl = t => nl2br(t).replace(/\*\*(.+?)\*\*/g, '<strong class="hl">$1</strong>');
+
 const RICH = '<!--rich-->';
 const isRich = v => typeof v === 'string' && v.startsWith(RICH);
-// 허용한 태그만 남기고 나머지는 지움 (스크립트·링크 속성 등 차단)
+
 function cleanHTML(html){
   const doc = new DOMParser().parseFromString('<div>' + html + '</div>', 'text/html');
   const SIZE = {'1':'fs-s','2':'fs-s','4':'fs-l','5':'fs-l','6':'fs-xl','7':'fs-xl'};
@@ -1143,7 +1102,7 @@ function cleanHTML(html){
   return walk(doc.body.firstChild);
 }
 const richView = v => isRich(v) ? `<div class="ed-text rich">${cleanHTML(v.slice(RICH.length))}</div>` : `<div class="ed-text">${hl(v)}</div>`;
-// 편집기 안에서는 브라우저 기본 서식(font 태그)으로 바꿔야 '서식 지우기'·'강조' 해제가 됨
+
 const HL_COLOR = '#1769aa';
 function toEditorHTML(html){
   const box = document.createElement('div'); box.innerHTML = html;
@@ -1160,7 +1119,7 @@ function toEditorHTML(html){
   return box.innerHTML;
 }
 const richToEditor = v => !v ? '' : toEditorHTML(isRich(v) ? cleanHTML(v.slice(RICH.length)) : hl(v));
-// 선택 영역에 걸친 서식 태그 풀기
+
 function unwrapIn(area, test){
   const sel = getSelection(); if (!sel.rangeCount) return 0;
   const r = sel.getRangeAt(0); let n = 0;
@@ -1190,21 +1149,20 @@ const RICH_BAR = `<div class="rt-bar" role="toolbar" aria-label="글자 서식">
   <button type="button" data-rt="clear" aria-label="서식 지우기">서식 지우기</button>
 </div>`;
 const richEditor = (id, html, label) => `${RICH_BAR}<div class="rt-area" id="${id}" contenteditable="true" role="textbox" aria-multiline="true" aria-label="${esc(label)}">${html}</div>`;
-document.addEventListener('mousedown', e => { if (e.target.closest('[data-rt]')) e.preventDefault(); });   // 선택 영역 유지
+document.addEventListener('mousedown', e => { if (e.target.closest('[data-rt]')) e.preventDefault(); });
 document.addEventListener('click', e => {
   const b = e.target.closest('[data-rt]'); if (!b) return;
   const area = b.closest('.rt-wrap')?.querySelector('.rt-area'); if (area) area.focus();
   const c = b.dataset.rt;
   try { document.execCommand('styleWithCSS', false, false); } catch(_) {}
   if (c === 'size') document.execCommand('fontSize', false, b.dataset.v);
-  else if (c === 'color') { if (!area || !unwrapIn(area, isHL)) document.execCommand('foreColor', false, HL_COLOR); }   // 강조된 곳에서 누르면 해제
+  else if (c === 'color') { if (!area || !unwrapIn(area, isHL)) document.execCommand('foreColor', false, HL_COLOR); }
   else if (c === 'br') { if (!document.execCommand('insertLineBreak')) document.execCommand('insertHTML', false, '<br><br>'); }
   else if (c === 'list') document.execCommand('insertUnorderedList');
   else if (c === 'clear') { document.execCommand('removeFormat'); if (area) unwrapIn(area, isFmt); }
   else document.execCommand(c);
 });
 
-// 편집 가능 영역. type: text | image
 function ed(key, o = {}){
   const type = o.type || 'text', v = CMS.get(key), val = v !== undefined ? v : o.def;
   let view = '';
@@ -1213,7 +1171,7 @@ function ed(key, o = {}){
   if (!isAdmin()) return view;
   return `<div class="ed ${o.cls||''}" data-ed="${esc(key)}" data-type="${type}" ${o.rich?'data-rich="1"':''} ${o.png?'data-png="1"':''} data-label="${esc(o.label||'')}">${view}<button class="ed-btn" data-edit>수정</button></div>`;
 }
-// 표 한 줄: 방문자에게는 내용이 있을 때만 보임
+
 function edRow(label, key, ph, def){
   const has = CMS.get(key) || def;
   if (!has && !isAdmin()) return '';
@@ -1227,7 +1185,7 @@ const IC_PIN = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentCol
 const IC_TEL = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>';
 const IC_BUS = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4 16c0 .9.4 1.7 1 2.2V20a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h8v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1.8c.6-.5 1-1.3 1-2.2V6c0-3.5-3.6-4-8-4S4 2.5 4 6v10zm3.5 1a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm9 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM18 11H6V6h12v5z"/></svg>';
 const IC_CAR = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 6a1.5 1.5 0 0 0-1.4-1h-11a1.5 1.5 0 0 0-1.4 1L3 12v8a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h12v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-8l-2.1-6zM6.5 16a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm11 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM5 11l1.5-4.5h11L19 11H5z"/></svg>';
-// 이미지 확장자 자동 찾기 (png → jpg → jpeg → svg → webp), 끝까지 없으면 숨김
+
 function nextExt(img){ const ex = ['png','jpg','jpeg','svg','webp']; const i = +(img.dataset.i || 0) + 1; if (i < ex.length) { img.dataset.i = i; img.src = img.dataset.base + '.' + ex[i]; } else { img.onerror = null; img.style.display = 'none'; } }
 const MAP_BUS = '버스 이용 시 \'제주대학교\' 정류장에서 내리면 됩니다.\n노선과 도착 시간은 제주버스정보시스템(bus.jeju.go.kr)에서 확인하세요.';
 let edCtx = null;
@@ -1344,7 +1302,6 @@ const PAGES = {
   terms:{title:'이용약관', body:()=>ed('page.terms', {rich:true, label:'이용약관', ph:'이용약관 전문'})},
 };
 
-// ---------- 관련기관 (로고는 관리자 페이지에서 등록) ----------
 const FAMILY = [
   {key:'koica',   name:'한국국제협력단(KOICA)', url:'https://www.koica.go.kr',   file:'koica_logo.png'},
   {key:'odaedu',  name:'KOICA ODA교육원',       url:'https://oda.koica.go.kr',   file:'koicaoda_logo.png'},
@@ -1354,11 +1311,10 @@ const FAMILY = [
   {key:'odakorea',name:'ODA 통합누리집',         url:'https://www.odakorea.go.kr',file:'odakorea.png'}
 ];
 
-// ---------- 저장소 (try/catch) ----------
 const mem = {};
-const PUBLIC = false;   // 배포(방문자)용 파일은 true: 브라우저 저장 대신 data.js 내용만 표시
+const PUBLIC = false;
 const SITE = window.SITE_DATA || null;
-const DATA_KEYS = ['cms','posts','banner','siteLogo','logos','bizLists'];   // data.js로 배포되는 항목
+const DATA_KEYS = ['cms','posts','banner','siteLogo','logos','bizLists'];
 const store = {
   get(k, d){
     if (PUBLIC) return (SITE && k in SITE) ? SITE[k] : (k in mem ? mem[k] : d);
@@ -1382,7 +1338,6 @@ const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,7
 const today = () => { const d = new Date(); return d.getFullYear()+'.'+String(d.getMonth()+1).padStart(2,'0')+'.'+String(d.getDate()).padStart(2,'0'); };
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-// ---------- 초기 데이터 (예시) ----------
 async function seed(){
   if (store.get('seeded')) return;
   const salt = uid();
@@ -1406,7 +1361,6 @@ function seedGallery(){
   store.set('posts', all); store.set('seed_gallery', true);
 }
 
-// ---------- 공통 ----------
 const $ = (s, el=document) => el.querySelector(s);
 const app = $('#app');
 let user = session.get();
@@ -1423,9 +1377,8 @@ const ico = {
   plus:'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>'
 };
 
-// ---------- 메뉴 렌더 ----------
 function renderMenus(){
-  const single = m => m.items.length === 1 && m.items[0][1] === m.name;   // 하위메뉴 없음
+  const single = m => m.items.length === 1 && m.items[0][1] === m.name;
   $('#gnb').innerHTML = MENU.map(m => `<li><a href="${linkOf(m.items[0][0])}">${m.name}</a><ul class="gnb-sub">${single(m) ? '' : m.items.map(([k,n])=>`<li><a href="${linkOf(k)}">${n}</a></li>`).join('')}</ul></li>`).join('');
   $('#mList').innerHTML = MENU.map((m,i) => single(m)
     ? `<li><a class="m-single" href="${linkOf(m.items[0][0])}">${m.name}</a></li>`
@@ -1447,7 +1400,6 @@ function renderFamily(){
   $('#family').innerHTML = FAMILY.map(f => `<li><a class="fam" href="${f.url}" target="_blank" rel="noopener" title="${f.name} (새 창 열림)"><span class="fam-ic"><img src="${logos[f.key] || 'images/'+f.file}" alt="" onerror="this.closest('.fam').classList.add('no-logo');this.remove()"></span><span class="fam-nm">${f.name}</span></a></li>`).join('');
 }
 
-// ---------- 화면: 메인 ----------
 const QUICK = [
   ['prog:awareness/10',"대학생 ODA 서포터즈 '오디세이'",'<path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>'],
   ['prog:awareness/0','개발협력 초급전문가 양성과정','<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/>'],
@@ -1455,10 +1407,8 @@ const QUICK = [
   ['prog:koica/1','개발협력 진로 컨설팅','<rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/>']
 ];
 
-// ---------- 메인 배너 사진 ----------
 const DIMS = {light:.35, mid:.55, strong:.75};
-// 배너 이미지 파일 (HTML 파일과 같은 위치의 images 폴더)
-// 배너 이미지 파일 (images 폴더). 확장자는 jpg·jpeg·png·webp 중 있는 것을 자동으로 찾음
+
 const BANNER_BASE = { pc:'images/banner_pc', m:'images/banner_mobile' };
 const IMG_EXTS = ['jpg','jpeg','png','webp','JPG','PNG'];
 const probeCache = {};
@@ -1471,8 +1421,7 @@ function probeImg(base){
     img.src = base + '.' + IMG_EXTS[0];
   });
 }
-// 모바일: 관리자 모바일 사진 → images/banner_mobile → 관리자 PC 사진 → images/banner_pc
-// PC   : 관리자 PC 사진 → images/banner_pc → 관리자 모바일 사진 → images/banner_mobile
+
 async function loadBanner(){
   const hero = $('.hero'); if (!hero) return;
   const bn = store.get('banner', {});
@@ -1483,7 +1432,7 @@ async function loadBanner(){
   hero.insertAdjacentHTML('afterbegin', `<picture class="hero-photo" aria-hidden="true"><source media="(max-width:767px)" srcset="${m}"><img src="${pc}" alt="" style="object-position:${({left:'left',center:'center',right:'right'})[bn.pos]||'center'} center"></picture><div class="hero-dim" style="--dim:${DIMS[bn.dim||'mid']}" aria-hidden="true"></div>`);
 }
 function heroPhoto(){ return ''; }
-const BIZ_SHOW = 3;   // 카드에 처음 보이는 사업 수
+const BIZ_SHOW = 3;
 const BIZ_CARDS = [
   {title:'ODA 인지제고', page:'awareness'},
   {title:'ODA 네트워킹', page:'network'},
@@ -1559,7 +1508,7 @@ const galCard = p => `<li class="gal-item"><a href="#/post/${p.id}">
 function showGallery(kind){
   document.querySelectorAll('[data-gal]').forEach(t => t.setAttribute('aria-selected', t.dataset.gal===kind));
   $('#galMore').href = '#/board/' + (kind==='press' ? 'press' : 'gallery');
-  // [전체] = 보도자료 + 공지사항 (최신 등록순), 나머지 탭은 해당 게시판만
+
   const byDate = (a, b) => b.date.localeCompare(a.date) || (b.created||0) - (a.created||0);
   const list = kind==='all'
     ? store.get('posts',[]).filter(p => ['press','notice'].includes(p.board)).sort(byDate).slice(0,4)
@@ -1576,11 +1525,9 @@ function showTab(b){
 const sortPosts = (a,b) => (b.pinned - a.pinned) || (b.created||0) - (a.created||0) || b.date.localeCompare(a.date);
 const isNew = p => p.created && Date.now() - p.created < 3*864e5;
 
-// ---------- 서브 레이아웃 ----------
 function subLayout(menuId, currentKey, title, inner){
   const m = MENU.find(x=>x.id===menuId);
-  // 주요사업: 선택한 분야 아래에 세부 사업 목록을 펼침
-  // 주요사업: 분야를 누르면 아래에 세부 사업 목록이 펼쳐짐 (처음엔 닫힘)
+
   const isBiz = menuId==='biz';
   const open = k => isBiz && window._lnbOpen === k;
   const cur = window._lnbCur;
@@ -1594,8 +1541,8 @@ function subLayout(menuId, currentKey, title, inner){
   if (innerWidth <= 767) requestAnimationFrame(() => document.querySelectorAll('.lnb>ul, .lnb-m-sub').forEach(row => { const c = row.querySelector(':scope > li > a[aria-current], :scope > a[aria-current]'); if (c) row.scrollLeft = c.offsetLeft - (row.clientWidth - c.offsetWidth) / 2; }));
 }
 function viewPage(slug){
-  if (['awareness','network','koica','jejuoda'].includes(slug)) return viewProgram(slug, 0);   // 분야 클릭 → 첫 번째 사업
-  // 메뉴에 없는 세부 사업 페이지는 상위 분야 메뉴에 속함
+  if (['awareness','network','koica','jejuoda'].includes(slug)) return viewProgram(slug, 0);
+
   const PARENT = {odyssey:'awareness', consult:'koica', briefing:'koica'};
   const key = PARENT[slug] || slug;
   const m = MENU.find(x=>x.items.some(([k])=>k===key));
@@ -1607,8 +1554,6 @@ function viewPage(slug){
   if (slug === 'map') drawNaverMap();
 }
 
-// ---------- 게시판 ----------
-// 게시글 '목록' 이동 위치 (분류 게시판은 해당 분류 페이지로)
 const listHref = p => p.board === 'odastat' ? `#/program/jejuoda/${Math.max(0, BIZ.jejuoda.programs.indexOf(p.cat))}` : '#/board/' + p.board;
 function viewBoard(b, q=''){
   if (b === 'odastat') return viewProgram('jejuoda', 0);
@@ -1787,7 +1732,7 @@ function viewWrite(b, editId){
     const needPw = secret && !(p?.secret && !spw);
     setErr('wspErr', needPw && !/^\d{4}$/.test(spw) ? '비밀번호는 숫자 4자리로 입력하세요.' : '');
     const isGal = f.board.value === 'gallery', usePhoto = BOARDS[f.board.value].photo; let alt = f.alt.value.trim();
-    if (f.board.value === 'notice' && !photoData) {   // 첨부한 이미지(포스터)를 글 안에 자동 표시
+    if (f.board.value === 'notice' && !photoData) {
       const imgFile = [...f.files.files].find(x => /^image\/(png|jpeg|webp)$/.test(x.type));
       if (imgFile) { photoData = await readPhoto(imgFile); if (!f.alt.value.trim()) f.alt.value = t + ' 포스터'; }
     }
@@ -1806,7 +1751,6 @@ function viewWrite(b, editId){
   };
 }
 
-// ---------- 회원 ----------
 function viewLogin(q){
   const r = new URLSearchParams(q).get('r') || '#/';
   app.innerHTML = `<div class="sub-visual"><div class="wrap"><h1>관리자 로그인</h1></div></div>
@@ -1886,7 +1830,6 @@ function viewSignup(){
   };
 }
 
-// ---------- 관리자 ----------
 function viewAdmin(){
   if (!isAdmin()) { toast('관리자만 접근할 수 있습니다.'); location.hash = '#/login?r='+encodeURIComponent('#/admin'); return; }
   const users = store.get('users',[]), posts = store.get('posts',[]);
@@ -1937,24 +1880,24 @@ function viewAdmin(){
       <tbody>${FAMILY.map(f=>{ const lg = store.get('logos',{})[f.key]; return `<tr><td class="tl"><a href="${f.url}" target="_blank" rel="noopener" title="새 창 열림">${f.name}</a></td><td><div class="logo-cell">${lg?`<img src="${lg}" alt="${f.name} 로고">`:'로고 없음'}</div></td><td><code>${f.file}</code></td><td><label class="sr-only" for="lg_${f.key}">${f.name} 로고 파일</label><input id="lg_${f.key}" type="file" accept=".png,.jpg,.jpeg,.svg,.webp,image/png,image/jpeg,image/svg+xml,image/webp" data-logo="${f.key}"></td><td>${lg?`<button class="btn btn-danger btn-sm" data-logo-del="${f.key}">삭제</button>`:'-'}</td></tr>`; }).join('')}</tbody>
     </table></div>
   </div>`;
-  // 배포
+
   $('#pubExport').onclick = exportSiteData;
   const pr = $('#pubReload');
   if (pr) pr.onclick = () => { if (!confirm('이 PC에서 고친 내용을 버리고 현재 data.js 내용으로 되돌릴까요?')) return; importSiteData(true); applyBizLists(); renderFamily(); renderLogo(); toast('배포된 내용으로 되돌렸습니다.'); viewAdmin(); };
-  // 네이버 지도
+
   const nms = $('#nmSave');
   if (nms) nms.onclick = () => { CMS.set('map.cfg', {id: $('#nmId').value.trim(), lat: $('#nmLat').value.trim(), lng: $('#nmLng').value.trim(), zoom: $('#nmZoom').value.trim()}); toast('지도 설정을 저장했습니다.'); };
-  // 배너 문구
+
   const hts = $('#heroTextSave');
   if (hts) hts.onclick = () => { CMS.set('home.tag', $('#hTag').value.trim()); CMS.set('home.title', $('#hTitle').value.trim()); CMS.set('home.desc', $('#hDesc').value.trim()); toast('배너 문구를 저장했습니다.'); };
-  // 주요사업 목록
+
   const bls = $('#bizListSave');
   if (bls) bls.onclick = () => {
     const lists = {}; app.querySelectorAll('[data-bizlist]').forEach(t => lists[t.dataset.bizlist] = t.value.split('\n').map(x=>x.trim()).filter(Boolean));
     if (Object.values(lists).some(l => !l.length)) { toast('분야마다 사업을 하나 이상 입력하세요.'); return; }
     store.set('bizLists', lists); applyBizLists(); toast('주요사업 목록을 저장했습니다.');
   };
-  // 센터 로고
+
   const slf = $('#siteLogoFile');
   if (slf) slf.onchange = async () => {
     const file = slf.files[0], er = $('#siteLogoErr'); er.hidden = true; if (!file) return;
@@ -1964,7 +1907,7 @@ function viewAdmin(){
   };
   const sld = $('#siteLogoDel');
   if (sld) sld.onclick = () => { if (!confirm('센터 로고를 삭제할까요?')) return; store.set('siteLogo', null); renderLogo(); toast('센터 로고를 삭제했습니다.'); viewAdmin(); };
-  // 배너 사진
+
   app.querySelectorAll('[data-banner]').forEach(inp => inp.onchange = async () => {
     const file = inp.files[0], kind = inp.dataset.banner, er = $('#bnErr_'+kind); er.hidden = true; if (!file) return;
     if (!/^image\/(png|jpeg|webp)$/.test(file.type)) { er.hidden = false; er.textContent = 'JPG·PNG·WEBP 파일만 등록할 수 있습니다.'; inp.value=''; return; }
@@ -1996,7 +1939,7 @@ function viewAdmin(){
   });
   app.querySelectorAll('[data-role]').forEach(s => s.onchange = () => { const us = store.get('users',[]); us.find(u=>u.id===s.dataset.role).role = s.value; store.set('users',us); toast('권한을 변경했습니다.'); });
 }
-// ---------- 센터 로고 ----------
+
 const LOGO_FILE = 'images/logo.png';
 function renderLogo(){
   const img = $('#logoImg'), a = img.closest('.logo'), custom = store.get('siteLogo');
@@ -2061,7 +2004,7 @@ function bannerAdmin(){
       <li>사진 속 글자는 화면낭독기가 읽지 못하므로 문구는 사진에 넣지 마세요.</li>
     </ul>`;
 }
-// 배너 사진: 목표 크기를 넘으면 줄여서 JPEG 저장
+
 function readBanner(file, maxW, minH){
   return new Promise(res => {
     const r = new FileReader();
@@ -2073,7 +2016,7 @@ function readBanner(file, maxW, minH){
     r.readAsDataURL(file);
   });
 }
-// 게시판 사진: 가로 최대 1200px, JPEG 0.82로 줄여 저장
+
 function readPhoto(file){
   return new Promise(res => {
     const r = new FileReader();
@@ -2081,7 +2024,7 @@ function readPhoto(file){
     r.readAsDataURL(file);
   });
 }
-// 래스터 이미지는 높이 120px로 줄여 저장 (SVG는 원본 유지)
+
 function readLogo(file, maxH=120){
   return new Promise(res => {
     const r = new FileReader();
@@ -2096,12 +2039,11 @@ function readLogo(file, maxH=120){
 }
 function viewNotFound(){ subLayout(null,'','페이지를 찾을 수 없습니다', `<div class="placeholder">요청한 페이지가 없거나 삭제되었습니다.<br><br><a class="btn btn-primary" href="#/">홈으로 가기</a></div>`); }
 
-// ---------- 라우터 ----------
 function route(){
   const [path, q=''] = (location.hash.slice(1) || '/').split('?');
   const seg = path.split('/').filter(Boolean);
   closeMega(); closeMobile();
-  const fam = document.querySelector('.family'); if (fam) fam.hidden = !!seg[0];   // 관련기관은 메인에서만
+  const fam = document.querySelector('.family'); if (fam) fam.hidden = !!seg[0];
   switch(seg[0]){
     case undefined: viewHome(); break;
     case 'page': viewPage(seg[1]); break;
@@ -2120,14 +2062,13 @@ function route(){
   document.title = (seg[0] ? ($('.sub-visual h1')?.textContent + ' | ') : '') + '제주국제개발협력센터';
 }
 
-// ---------- 이벤트 ----------
 const header = $('#header');
 function openMega(){
   header.classList.add('open');
   const subs = [...document.querySelectorAll('.gnb-sub')];
   subs.forEach(u => u.style.height = '');
   const h = Math.max(...subs.map(u => u.offsetHeight));
-  subs.forEach(u => u.style.height = h + 'px');   // 모든 칸을 같은 높이로 → 구분선이 끝까지 이어짐
+  subs.forEach(u => u.style.height = h + 'px');
   $('.mega-bg').style.height = h + 'px';
 }
 function closeMega(){ header.classList.remove('open'); }
@@ -2163,11 +2104,11 @@ document.addEventListener('click', e => {
   const lt = e.target.closest('[data-lnb]');
   if (lt) {
     const k = lt.dataset.lnb;
-    if (lt.getAttribute('aria-current') === 'page') {           // 현재 페이지: 열고 닫기만
+    if (lt.getAttribute('aria-current') === 'page') {
       e.preventDefault();
       const ex = lt.getAttribute('aria-expanded') === 'true';
       lt.setAttribute('aria-expanded', !ex); $('#lsub_'+k).hidden = ex;
-    } else { window._lnbOpen = k; }                              // 다른 분야: 이동 후 펼침
+    } else { window._lnbOpen = k; }
   }
   const gt = e.target.closest('[data-gal]'); if (gt) showGallery(gt.dataset.gal);
 });
@@ -2181,7 +2122,6 @@ window.addEventListener('scroll', () => topBtn.classList.toggle('on', scrollY > 
 topBtn.onclick = () => { window.scrollTo({top:0, behavior:'smooth'}); $('.skip').focus(); };
 window.addEventListener('hashchange', route);
 
-// SNS 로고: images/insta_logo, images/blog_logo (png → jpg → svg → webp 순서로 찾음)
 function loadSideLogos(){
   document.querySelectorAll('.sb-ic img[data-base]').forEach(img => {
     const exts = ['png','jpg','jpeg','svg','webp']; let i = 0;
@@ -2189,7 +2129,7 @@ function loadSideLogos(){
     if (img.complete && !img.naturalWidth) img.onerror();
   });
 }
-// 첫 화면: 오른쪽 고정 메뉴가 배너 사진을 가리지 않도록 배너 아래에서 시작 → 스크롤하면 원래 자리(가운데)로
+
 function placeSideBar(){
   const sb = $('#sideBar'); if (!sb) return;
   sb.style.top = ''; sb.style.transform = '';
@@ -2204,17 +2144,16 @@ addEventListener('scroll', placeSideBar, {passive:true});
 addEventListener('resize', placeSideBar);
 addEventListener('hashchange', () => setTimeout(placeSideBar, 60));
 setTimeout(placeSideBar, 300);
-// 모바일: 고정 배너 접기/펴기
+
 $('#sbToggle').onclick = () => { const sb = $('#sideBar'), on = !sb.classList.contains('open'); sb.classList.toggle('open', on); $('#sbToggle').setAttribute('aria-expanded', on); $('#sbToggle').setAttribute('aria-label', on ? 'SNS·글자 크기 메뉴 닫기' : 'SNS·글자 크기 메뉴 열기'); };
-// 관련기관: 한 줄에 다 안 보일 때만 끊김 없이 천천히 흐름
-// (마우스·손가락·키보드 초점이 있으면 멈춤, '움직임 줄이기' 설정이면 움직이지 않음)
+
 (function(){
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const SPEED = 30;                      // 초당 이동 거리(px) — 숫자가 작을수록 느림
+  const SPEED = 30;
   let hold = false, last = 0, pos = 0;
   ['touchstart','mouseover','focusin'].forEach(ev => document.addEventListener(ev, e => { if (e.target.closest && e.target.closest('#family')) hold = true; }, true));
   ['touchend','mouseout','focusout'].forEach(ev => document.addEventListener(ev, e => { if (e.target.closest && e.target.closest('#family')) setTimeout(()=>{ hold = false; pos = $('#family').scrollLeft; }, 1500); }, true));
-  // 이어서 흐르도록 목록을 한 번 더 복제 (화면낭독기·키보드에서는 숨김)
+
   function prepare(l){
     l.querySelectorAll('.fam-clone').forEach(n => n.remove());
     l.dataset.loop = '';
