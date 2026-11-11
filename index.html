@@ -6,6 +6,14 @@
 <title>제주국제개발협력센터</title>
 <meta name="description" content="제주국제개발협력센터 누리집 시안">
 <meta name="theme-color" content="#0E3A5F">
+<!-- 누리집 주소: 도메인 확정 시 아래 주소만 바꾸면 됩니다 -->
+<link rel="canonical" href="https://jejuidcc.kr/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jejuidcc.kr/">
+<meta property="og:site_name" content="제주국제개발협력센터">
+<meta property="og:title" content="제주국제개발협력센터">
+<meta property="og:description" content="제주국제개발협력센터가 기업과 청년의 국제개발협력 참여 기회를 넓힙니다.">
+<meta property="og:image" content="https://jejuidcc.kr/images/banner_pc.jpg">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 :root{
@@ -40,9 +48,9 @@ img{max-width:100%}
 .logo-alt{display:none;font-size:1.25rem;font-weight:800;color:var(--navy);letter-spacing:-.02em}
 .logo-img.broken{display:none}
 .logo-img.broken+.logo-alt{display:block}
-.logo-img{display:block;height:52px;width:auto;max-width:360px;object-fit:contain}
+.logo-img{display:block;max-width:260px!important;height:52px;width:auto;max-width:360px;object-fit:contain}
 .gnb{display:flex;margin-left:auto;height:100%;position:relative;z-index:2}
-.gnb>li{position:relative;height:100%;width:220px}
+.gnb>li{position:relative;height:100%;width:180px}
 .gnb>li>a{display:flex;align-items:center;justify-content:center;height:100%;padding:0 10px;font-size:1.0625rem;font-weight:700;position:relative}
 .gnb>li>a::after{content:"";position:absolute;left:30px;right:30px;bottom:-1px;height:3px;background:var(--sea);transform:scaleX(0);transition:transform .2s}
 .gnb>li:hover>a::after,.gnb>li:focus-within>a::after{transform:scaleX(1)}
@@ -212,6 +220,7 @@ img{max-width:100%}
 .prog-list svg{color:var(--sub)}
 .lnb-sub-old::before{content:"";position:absolute;left:20px;top:50%;width:4px;height:4px;border-radius:50%;background:var(--sea)}
 .lnb a[aria-current="page"]{color:var(--sea);font-weight:700;background:var(--sea-weak)}
+.lnb .lnb-sub a[aria-current="page"]{color:var(--sea);font-weight:700;background:#F4F8FC}
 .content h2.ct{font-size:1.5rem;font-weight:800;padding-bottom:16px;border-bottom:2px solid var(--basalt);margin-bottom:24px}
 .placeholder{border:2px dashed var(--line);border-radius:10px;padding:40px;text-align:center;color:var(--sub)}
 .info-table{width:100%;border-collapse:collapse;border-top:2px solid var(--basalt)}
@@ -348,6 +357,7 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .gal-more{text-align:center;margin-top:32px}
 .view-photo{padding:28px 8px 0;text-align:center}
 .view-photo img{max-width:100%;max-height:640px;border-radius:8px}
+.view-photo.poster img{max-width:min(100%,720px);max-height:none;border:1px solid var(--line);border-radius:4px}
 .photo-prev{margin-top:10px;max-width:280px;border-radius:6px;display:block}
 
 .biz h3 a:hover{color:var(--sea);text-decoration:underline}
@@ -370,9 +380,9 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .biz li a:hover::after{color:var(--sea)}
 @media (min-width:1024px){.slide p{white-space:nowrap;max-width:none}}
 /* 오른쪽 고정 배너 */
-.side-bar{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:60;width:80px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 10px 28px -14px rgba(14,58,95,.4);overflow:hidden}
+.side-bar{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:60;width:80px;background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);border:1px solid var(--line);border-radius:22px;box-shadow:0 10px 28px -14px rgba(14,58,95,.4);overflow:hidden}
 .sb-fs{display:contents}
-.sb-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:100%;height:72px;padding:0 4px;border-bottom:1px solid var(--line);font-size:.75rem;color:var(--sub);background:#fff}
+.sb-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:100%;height:72px;padding:0 4px;border-bottom:1px solid var(--line);font-size:.75rem;color:var(--sub);background:transparent}
 .side-bar>:last-child>.sb-item:last-child{border-bottom:0}
 .sb-item:hover{background:var(--sea-weak);color:var(--sea)}
 .sb-ic{width:30px;height:30px;display:flex;align-items:center;justify-content:center;color:var(--navy)}
@@ -407,6 +417,25 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .admin-bar[hidden]{display:none}
 .admin-bar a,.admin-bar button{color:#fff;text-decoration:underline}
 .is-admin .footer{padding-bottom:80px}
+/* 배포 */
+.publish-box{display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:20px 24px;margin-bottom:32px;border:2px solid var(--tangerine);border-radius:10px;background:#FFF8F1}
+.publish-box b{font-size:1.0625rem}
+.publish-btns{display:flex;gap:8px;flex-wrap:wrap}
+/* 네이버 지도 */
+.naver-map{width:100%;height:400px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--stone)}
+.map-empty{height:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:var(--sub);font-size:.9375rem}
+.map-link{text-align:right;margin-top:10px}
+@media (max-width:640px){.naver-map{height:280px}}
+/* 사업 페이지 활동 사진 (대표 사진 크게) */
+.photo-gallery{display:grid;gap:12px;margin-bottom:40px}
+.photo-gallery.pg-3{grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;aspect-ratio:16/7}
+.photo-gallery.pg-3 .pg-item:first-child{grid-row:1 / span 2}
+.photo-gallery.pg-2{grid-template-columns:1fr 1fr;aspect-ratio:16/6}
+.photo-gallery.pg-1{grid-template-columns:1fr;aspect-ratio:16/7}
+.pg-item,.pg-item>.ed{min-height:0;height:100%}
+.pg-item img.ed-img,.pg-item .ed-img{width:100%;height:100%;object-fit:cover;border-radius:10px}
+.pg-item .slot.img{height:100%;aspect-ratio:auto}
+@media (max-width:640px){.photo-gallery.pg-3{grid-template-columns:1fr 1fr;grid-template-rows:auto auto;aspect-ratio:auto}.photo-gallery.pg-3 .pg-item:first-child{grid-row:auto;grid-column:1 / span 2;aspect-ratio:4/3}.photo-gallery.pg-3 .pg-item{aspect-ratio:4/3}.photo-gallery.pg-2,.photo-gallery.pg-1{aspect-ratio:auto}.photo-gallery.pg-2 .pg-item,.photo-gallery.pg-1 .pg-item{aspect-ratio:4/3}}
 /* 가운데 정렬 (제목·관련기관·푸터) */
 .sec-title{justify-content:center;text-align:center}
 .sub-visual{text-align:center}
@@ -422,7 +451,7 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .footer{text-align:center}
 .f-links{justify-content:center}
 @media (max-width:1180px){
-  .gnb>li{width:170px}
+  .gnb>li{width:140px}
     .gnb>li>a{font-size:1rem}
   .gnb>li>a::after{left:22px;right:22px}
 }
@@ -535,15 +564,15 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
     <div class="f-links">
       <a href="#/page/privacy" class="priv">개인정보처리방침</a>
       <a href="#/page/terms">이용약관</a>
-      <a href="#/page/noemail">이메일무단수집거부</a>
       <a href="#/page/map">오시는 길</a>
       <span id="utilAuth" class="f-admin"></span>
       <a href="https://www.jejunu.ac.kr" target="_blank" rel="noopener" title="새 창 열림">제주대학교</a>
       <a href="https://www.koica.go.kr" target="_blank" rel="noopener" title="새 창 열림">한국국제협력단(KOICA)</a>
+      <a href="#/admin">관리자</a>
     </div>
     <address>
       (63243) 제주특별자치도 제주시 제주대학로 102 제주대학교 통번역대학원 1층 103호 제주국제개발협력센터<br>
-      전화 064-754-8250 · 이메일 esther@jejunu.ac.kr
+      전화 064-754-8250 · 이메일 jejuidcc@jejunu.ac.kr
     </address>
     <p class="copy">Copyright © 제주국제개발협력센터. All rights reserved.</p>
   </div>
@@ -576,6 +605,8 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 <div class="admin-bar" id="adminBar" hidden><span>관리자 모드 · 각 영역의 [수정] 버튼으로 글과 사진을 바꿀 수 있습니다</span><a href="#/admin">관리자 페이지</a><button data-logout>로그아웃</button></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<!-- 배포 데이터: 관리자 페이지 [배포 파일 만들기]로 받은 data.js를 이 HTML과 같은 폴더에 둡니다 -->
+<script src="data.js"></script>
 <script>
 /* =========================================================
    ※ 시안용 데모: 데이터는 브라우저 localStorage에 저장됩니다.
@@ -586,15 +617,17 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 const MENU = [
   {id:'about', name:'센터소개', items:[['greeting','인사말'],['purpose','설립목적·연혁'],['org','조직·연락처'],['map','오시는 길']]},
   {id:'cnews', name:'센터뉴스', items:[['board:press','보도자료'],['board:gallery','운영 사진']]},
-  {id:'biz', name:'주요사업', items:[['awareness','ODA 인지제고'],['network','ODA 네트워킹'],['koica','공공협력사업 참여 지원']]},
+  {id:'biz', name:'주요사업', items:[['awareness','ODA 인지제고'],['network','ODA 네트워킹'],['koica','ODA 사업 참여 지원'],['jejuoda','제주도 내 ODA 현황']]},
   {id:'news', name:'공지사항', items:[['board:notice','공지사항']]}
 ];
 const BOARDS = {
   notice:{name:'공지사항', menu:'news', write:'admin'},
   press:{name:'보도자료', menu:'cnews', write:'admin'},
-  gallery:{name:'운영 사진', menu:'cnews', write:'admin', photo:true}
+  gallery:{name:'운영 사진', menu:'cnews', write:'admin', photo:true},
+  odastat:{name:'제주도 내 ODA 현황', menu:'biz', write:'admin', cat:'jejuoda'}   // 분류(제주도청 ODA 등)별 글 목록
 };
 BOARDS.press.photo = true;   // 보도자료도 대표 사진 등록 가능
+BOARDS.notice.photo = true; BOARDS.notice.photoLabel = '포스터';   // 공지사항: 포스터를 글 안에 표시
 const GALLERY_BOARDS = ['press','gallery'];
 // ---------- 서브페이지 구성 ----------
 // .slot = 센터가 원고·사진을 채울 자리 (사실 확인된 내용만 미리 입력)
@@ -602,10 +635,10 @@ const slot = (t, cls='') => `<div class="slot ${cls}">${t}</div>`;
 const TEL = '064-754-8250';
 const BIZ = {
   awareness:{groups:[
-    {name:'ODA 이해 제고 교육', items:['개발협력 초급전문가 양성과정','찾아가는 국제개발협력교육','대학생 개발협력교육','미래세대 개발협력교육 강사양성과정']},
+    {name:'ODA 이해 제고 교육', items:['개발협력 초급전문가 양성과정','개발협력 초급전문가 해외현장체험','찾아가는 국제개발협력교육','대학생 개발협력교육','미래세대 개발협력교육 강사양성과정']},
     {name:'ODA 사업 설명회', items:['WFK 해외봉사단 참여방법 설명회','ODA 사업 참여방법 설명회']},
     {name:'ODA 홍보', items:['ODA 사진전','ODA 홍보부스','제주국제개발협력 포럼',"대학생 ODA 서포터즈 '오디세이'",'개발협력주간 행사']}
-  ], kw:['교육','설명회','사진전','홍보부스','포럼','서포터즈','오디세이','개발협력주간','WFK']},
+  ], kw:['교육','해외현장체험','설명회','사진전','홍보부스','포럼','서포터즈','오디세이','개발협력주간','WFK']},
   network:{groups:[
     {name:'ODA 네트워킹', items:['KOICA 리크루터 양성','제주지역 ODA 활성화 협의회','다문화 가족 연계 SDGs 실천 행사']}
   ], kw:['리크루터','협의회','SDGs','다문화']},
@@ -613,6 +646,9 @@ const BIZ = {
     {name:'ODA 사업 발굴 지원', items:['파트너기관 ODA 사업발굴 현지조사']},
     {name:'지역사회 사업참여 지원', items:['ODA 사업참여 및 개발협력 진로 컨설팅']}
   ], kw:['현지조사','컨설팅']},
+  jejuoda:{groups:[
+    {name:'제주도 내 ODA 현황', items:['제주도청 ODA','KOICA ODA']}
+  ], kw:['현황'], status:true},
   odyssey:{groups:[{name:"대학생 ODA 서포터즈 '오디세이'", items:["대학생 ODA 서포터즈 '오디세이'"]}], kw:['오디세이','서포터즈']},
   consult:{groups:[{name:'ODA 사업참여 컨설팅', items:['ODA 사업참여 컨설팅']}], kw:['사업참여','컨설팅']},
   briefing:{groups:[{name:'개발협력 진로 컨설팅', items:['개발협력 진로 컨설팅']}], kw:['진로','컨설팅']}
@@ -628,24 +664,83 @@ function bizPage(key){
   return `<ul class="prog-list">${d.programs.map((n,i)=>`<li><a href="#/program/${key}/${i}"><span>${esc(n)}</span>${ico.down.replace('M6 9l6 6 6-6','M9 6l6 6-6 6')}</a></li>`).join('')}</ul>`;
 }
 // 개별 사업 페이지
+// 제주도 내 ODA 현황: 기관별 현황 페이지
+function statusPage(name){
+  const list = store.get('posts',[]).filter(p => p.board === 'odastat' && p.cat === name).sort(sortPosts);
+  const total = list.length;
+  return `
+  <div class="board-top"><p class="total">전체 <b>${total}</b>건</p>${canWrite('odastat') ? `<a class="btn btn-primary" href="#/write/odastat?cat=${encodeURIComponent(name)}">글쓰기</a>` : ''}</div>
+  <table class="list">
+    <caption class="sr-only">${esc(name)} 목록 - 번호, 제목, 등록일, 조회수</caption>
+    <thead><tr><th scope="col" style="width:80px">번호</th><th scope="col">제목</th><th scope="col" style="width:120px">등록일</th><th scope="col" class="hide-m" style="width:70px">조회</th></tr></thead>
+    <tbody>${total ? list.map((p,i)=>`<tr class="${p.pinned?'pinned':''}"><td>${p.pinned?'<span class="badge pin">공지</span>':total-i}</td><td class="tl"><a href="#/post/${p.id}">${esc(p.title)}</a>${p.files?.length?' <span class="sr-only">첨부파일 있음</span>📎':''}</td><td>${p.date}</td><td class="hide-m">${p.views}</td></tr>`).join('') : `<tr><td colspan="4" class="empty">등록된 글이 없습니다.${canWrite('odastat')?' [글쓰기]로 현황을 추가하세요.':''}</td></tr>`}</tbody>
+  </table>`;
+}
 function programPage(name){
   const k = f => 'prog.' + name + '.' + f;
   const rows = [edRow('사업 목적',k('purpose'),'사업 목적 입력'), edRow('참여 대상',k('target'),'참여 대상 입력'), edRow('주요 내용',k('content'),'주요 활동 내용 입력'), edRow('신청 방법',k('apply'),'신청 방법 입력 (공지사항 게시 후 접수 등)')].join('');
-  const photos = [1,2,3].map(n => (CMS.get(k('photo'+n)) || isAdmin()) ? ed(k('photo'+n), {type:'image', label:'활동 사진 '+n, ph:'활동 사진 '+n}) : '').join('');
+  const ph = [1,2,3].filter(n => CMS.get(k('photo'+n)) || isAdmin());
+  const photos = ph.map(n => `<div class="pg-item">${ed(k('photo'+n), {type:'image', label:n===1?'대표 활동 사진':'활동 사진 '+n, ph:n===1?'대표 활동 사진 (사업을 가장 잘 보여주는 사진)':'활동 사진 '+n})}</div>`).join('');
   return `
+  ${photos ? `<div class="photo-gallery pg-${ph.length}" aria-label="활동 사진">${photos}</div>` : ''}
   <h3 class="h3">사업 개요</h3>
   <table class="info-table"><caption class="sr-only">사업 개요</caption>
     ${rows}
     <tr><th scope="row">문의</th><td>제주국제개발협력센터 ${TEL}</td></tr>
-  </table>
-  ${photos ? `<h3 class="h3">활동 사진</h3><div class="cards photo-cards">${photos}</div>` : ''}`;
+  </table>`;
 }
 function viewProgram(cat, idx){
   const d = BIZ[cat], name = d && d.programs[+idx];
   if (!name) return viewNotFound();
   window._lnbOpen = cat; window._lnbCur = cat + '/' + idx;
-  subLayout('biz', cat, name, `<h2 class="ct">${esc(name)}</h2>${programPage(name)}`);
+  subLayout('biz', cat, name, `<h2 class="ct">${esc(name)}</h2>${d.status ? statusPage(name) : programPage(name)}`);
 }
+// ---------- 배포 데이터 (data.js) ----------
+// 관리자 PC: data.js가 새 버전이면 그 내용을 불러와 이어서 편집
+function importSiteData(force){
+  if (PUBLIC || !SITE) return false;
+  if (!force && store.get('dataVer') === SITE._ver) return false;
+  DATA_KEYS.forEach(k => { if (k in SITE) store.set(k, SITE[k]); });
+  store.set('seeded', true); store.set('seed_gallery', true); store.set('dataVer', SITE._ver);
+  return true;
+}
+// 관리자: 현재 내용을 data.js로 내려받기 → 누리집 폴더의 data.js를 교체하면 방문자 화면에 반영
+function exportSiteData(){
+  const ver = new Date().toISOString();
+  const data = { _ver: ver };
+  DATA_KEYS.forEach(k => { const v = store.get(k); if (v !== undefined && v !== null) data[k] = v; });
+  const blob = new Blob(['/* 제주국제개발협력센터 누리집 배포 데이터 · ' + ver + ' */\nwindow.SITE_DATA = ' + JSON.stringify(data) + ';\n'], {type:'text/javascript'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'data.js';
+  document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  store.set('dataVer', ver);
+  toast('data.js를 내려받았습니다. 누리집 폴더의 data.js를 이 파일로 바꾸세요.');
+}
+
+// ---------- 네이버 지도 ----------
+// NCP 콘솔(Maps > Application)에서 발급한 Client ID를 관리자 페이지에 입력하면 지도가 표시됩니다.
+// ※ 콘솔의 'Web 서비스 URL'에 누리집 주소를 등록해야 합니다. (내 PC에서 파일로 열면 지도가 뜨지 않음)
+const SITE_URL = 'https://jejuidcc.kr';   // 누리집 주소 (도메인 확정 시 수정)
+const MAP_DEFAULT = { lat: 33.4531, lng: 126.5603, zoom: 17 };   // 제주대학교 일대 (관리자 페이지에서 정확한 좌표로 수정)
+function mapCfg(){ const c = CMS.get('map.cfg') || {}; return { id: c.id || '', lat: +c.lat || MAP_DEFAULT.lat, lng: +c.lng || MAP_DEFAULT.lng, zoom: +c.zoom || MAP_DEFAULT.zoom }; }
+function drawNaverMap(){
+  const el = $('#naverMap'); if (!el) return;
+  const c = mapCfg();
+  const fallback = msg => el.innerHTML = `<div class="map-empty">${msg}</div>`;
+  if (!c.id) return fallback(isAdmin() ? '관리자 페이지 → 네이버 지도 설정에 Client ID를 입력하면 지도가 표시됩니다.' : '지도를 불러올 수 없습니다. 아래 버튼으로 네이버 지도에서 확인하세요.');
+  const make = () => {
+    try {
+      const pos = new naver.maps.LatLng(c.lat, c.lng);
+      const map = new naver.maps.Map(el, { center: pos, zoom: c.zoom });
+      new naver.maps.Marker({ position: pos, map, title: '제주국제개발협력센터' });
+    } catch (e) { fallback('지도를 불러오지 못했습니다. Client ID와 Web 서비스 URL 등록을 확인하세요.'); }
+  };
+  if (window.naver && naver.maps) return make();
+  const sc = document.createElement('script');
+  sc.src = 'https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=' + encodeURIComponent(c.id);
+  sc.onload = make; sc.onerror = () => fallback('지도 스크립트를 불러오지 못했습니다. 인터넷 연결과 Client ID를 확인하세요.');
+  document.head.appendChild(sc);
+}
+
 // ---------- 관리자 편집(CMS) ----------
 // 관리자로 로그인하면 각 영역에 [수정] 버튼이 생기고, 글·사진을 바로 바꿀 수 있습니다.
 // 시안: 브라우저 저장 / 실서비스: 서버 DB(콘텐츠 테이블)로 교체
@@ -665,11 +760,12 @@ function ed(key, o = {}){
   return `<div class="ed ${o.cls||''}" data-ed="${esc(key)}" data-type="${type}" data-label="${esc(o.label||'')}">${view}<button class="ed-btn" data-edit>수정</button></div>`;
 }
 // 표 한 줄: 방문자에게는 내용이 있을 때만 보임
-function edRow(label, key, ph){
-  const has = CMS.get(key);
+function edRow(label, key, ph, def){
+  const has = CMS.get(key) || def;
   if (!has && !isAdmin()) return '';
-  return `<tr><th scope="row">${label}</th><td>${ed(key, {label, ph})}</td></tr>`;
+  return `<tr><th scope="row">${label}</th><td>${ed(key, {label, ph, def})}</td></tr>`;
 }
+const MAP_BUS = '버스 이용 시 \'제주대학교\' 정류장에서 내리면 됩니다.\n노선과 도착 시간은 제주버스정보시스템(bus.jeju.go.kr)에서 확인하세요.';
 let edCtx = null;
 function openEditor(box){
   const key = box.dataset.ed, type = box.dataset.type, label = box.dataset.label || '내용';
@@ -710,7 +806,7 @@ const PAGES = {
     </div>`},
   purpose:{body:()=>`
     ${ed('purpose.lead', {label:'설립 목적', def:'제주 지역의 공적개발원조(ODA) 참여 기반 확대를 위해\n제주특별자치도·한국국제협력단(KOICA)·제주대학교의 협약으로 설립되었습니다.', render:v=>`<p class="lead">${nl2br(v)}</p>`})}
-    <h3 class="h3">설립 당시 주요 역할</h3>
+    <h3 class="h3">주요 역할</h3>
     <div class="cards">
       <div class="card"><b>ODA 교육</b>주민·학생·시민단체·기업 대상</div>
       <div class="card"><b>사업 발굴·컨설팅</b>신규 ODA 사업 발굴과 사업 수행 컨설팅</div>
@@ -727,20 +823,19 @@ const PAGES = {
       ${ed('org.chart', {label:'조직도 (한 줄에 한 칸씩)', ph:'담당 업무를 한 줄에 하나씩 입력', render:orgRow})}
     </div>
     <h3 class="h3">대표 연락처</h3>
-    <table class="info-table"><tr><th scope="row">대표 전화</th><td>${TEL}</td></tr><tr><th scope="row">이메일</th><td>esther@jejunu.ac.kr</td></tr></table>`},
+    <table class="info-table"><tr><th scope="row">대표 전화</th><td>${TEL}</td></tr><tr><th scope="row">이메일</th><td>jejuidcc@jejunu.ac.kr</td></tr></table>`},
   map:{body:()=>`
-    ${ed('map.image', {type:'image', label:'약도 이미지', ph:'약도 이미지 (지도 API는 외주 개발 시 연동)', cls:'map-ed'})}
+    <div id="naverMap" class="naver-map" role="region" aria-label="센터 위치 지도"></div>
+    <p class="map-link"><a class="btn btn-line btn-sm" href="https://map.naver.com/p/search/${encodeURIComponent('제주대학교 통번역대학원')}" target="_blank" rel="noopener" title="새 창 열림">네이버 지도에서 크게 보기</a></p>
     <table class="info-table" style="margin-top:24px">
       <tr><th scope="row">주소</th><td>(63243) 제주특별자치도 제주시 제주대학로 102<br>제주대학교 통번역대학원 1층 103호 제주국제개발협력센터</td></tr>
       <tr><th scope="row">전화</th><td>${TEL}</td></tr>
-      ${edRow('대중교통','map.bus','버스 노선·하차 정류장 입력')}
-      ${edRow('자가용·주차','map.car','주차 안내 입력')}
+      ${edRow('대중교통','map.bus','버스 노선·하차 정류장 입력', MAP_BUS)}
     </table>`},
   awareness:{body:()=>bizPage('awareness')}, network:{body:()=>bizPage('network')}, koica:{body:()=>bizPage('koica')},
   odyssey:{body:()=>bizPage('odyssey')}, consult:{body:()=>bizPage('consult')}, briefing:{body:()=>bizPage('briefing')},
   privacy:{title:'개인정보처리방침', body:()=>ed('page.privacy', {label:'개인정보처리방침', ph:'「개인정보 보호법」 제30조에 따른 개인정보 처리방침 전문 (발송대행 업체 등 처리 위탁 내용 포함)'})},
   terms:{title:'이용약관', body:()=>ed('page.terms', {label:'이용약관', ph:'누리집 이용약관 전문'})},
-  noemail:{title:'이메일무단수집거부', body:()=>'<p>본 누리집에 게시된 이메일 주소가 전자우편 수집 프로그램이나 그 밖의 기술적 장치를 이용하여 무단으로 수집되는 것을 거부합니다.</p>'}
 };
 
 // ---------- 관련기관 (로고는 관리자 페이지에서 등록) ----------
@@ -755,9 +850,14 @@ const FAMILY = [
 
 // ---------- 저장소 (try/catch) ----------
 const mem = {};
+const PUBLIC = false;   // 배포(방문자)용 파일은 true: 브라우저 저장 대신 data.js 내용만 표시
+const SITE = window.SITE_DATA || null;
+const DATA_KEYS = ['cms','posts','banner','siteLogo','logos','bizLists'];   // data.js로 배포되는 항목
 const store = {
-  get(k, d){ try{ const v = localStorage.getItem('jicdc_'+k); return v ? JSON.parse(v) : d; }catch(e){ return k in mem ? mem[k] : d; } },
-  set(k, v){ try{ localStorage.setItem('jicdc_'+k, JSON.stringify(v)); }catch(e){ mem[k] = v; if (e && e.name === 'QuotaExceededError') setTimeout(()=>toast('브라우저 저장 공간이 가득 찼습니다. (시안 한계 — 실서비스는 서버 저장)')); } }
+  get(k, d){
+    if (PUBLIC) return (SITE && k in SITE) ? SITE[k] : (k in mem ? mem[k] : d);
+    try{ const v = localStorage.getItem('jicdc_'+k); return v ? JSON.parse(v) : d; }catch(e){ return k in mem ? mem[k] : d; } },
+  set(k, v){ if (PUBLIC) { mem[k] = v; return; } try{ localStorage.setItem('jicdc_'+k, JSON.stringify(v)); }catch(e){ mem[k] = v; if (e && e.name === 'QuotaExceededError') setTimeout(()=>toast('브라우저 저장 공간이 가득 찼습니다. (시안 한계 — 실서비스는 서버 저장)')); } }
 };
 const session = {
   get(){ try{ return JSON.parse(sessionStorage.getItem('jicdc_user')); }catch(e){ return mem._user || null; } },
@@ -780,7 +880,7 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt
 async function seed(){
   if (store.get('seeded')) return;
   const salt = uid();
-  store.set('users', [{id:'admin', name:'관리자', email:'esther@jejunu.ac.kr', role:'admin', salt, pw: await hash('admin1234!', salt), joined: today()}]);
+  store.set('users', [{id:'admin', name:'관리자', email:'jejuidcc@jejunu.ac.kr', role:'admin', salt, pw: await hash('admin1234!', salt), joined: today()}]);
   const ex = (board, title, pinned=false) => ({id:uid(), board, title, body:'시안용 예시 게시물입니다. 관리자 로그인 후 수정·삭제할 수 있습니다.', author:'관리자', authorId:'admin', date: today(), views:0, pinned, files:[]});
   store.set('posts', [
     ex('notice','[예시] 누리집 개편 안내', true),
@@ -811,7 +911,7 @@ const unlocked = id => { try{ return sessionStorage.getItem('unlock_'+id)==='1';
 const setUnlock = id => { try{ sessionStorage.setItem('unlock_'+id,'1'); }catch(e){ mem['unlock_'+id]=1; } };
 const canSee = p => !p.secret || isAdmin() || unlocked(p.id);
 const MAX_TRY = 5;
-const linkOf = key => key.startsWith('board:') ? '#/board/' + key.slice(6) : key.startsWith('prog:') ? '#/program/' + key.slice(5) : '#/page/' + key;
+const linkOf = key => key.startsWith('#') ? key : key.startsWith('board:') ? '#/board/' + key.slice(6) : key.startsWith('prog:') ? '#/program/' + key.slice(5) : '#/page/' + key;
 const ico = {
   down:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>',
   plus:'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>'
@@ -843,7 +943,7 @@ function renderFamily(){
 
 // ---------- 화면: 메인 ----------
 const QUICK = [
-  ['prog:awareness/9',"대학생 ODA 서포터즈 '오디세이'",'<path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>'],
+  ['prog:awareness/10',"대학생 ODA 서포터즈 '오디세이'",'<path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>'],
   ['prog:awareness/0','개발협력 초급전문가 양성과정','<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/>'],
   ['prog:koica/1','ODA 사업참여 컨설팅','<path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z"/>'],
   ['prog:koica/1','개발협력 진로 컨설팅','<rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/>']
@@ -960,7 +1060,7 @@ function subLayout(menuId, currentKey, title, inner){
   <div class="wrap sub-body">${lnb}<div class="content">${inner}</div></div>`;
 }
 function viewPage(slug){
-  if (['awareness','network','koica'].includes(slug)) return viewProgram(slug, 0);   // 분야 클릭 → 첫 번째 사업
+  if (['awareness','network','koica','jejuoda'].includes(slug)) return viewProgram(slug, 0);   // 분야 클릭 → 첫 번째 사업
   // 메뉴에 없는 세부 사업 페이지는 상위 분야 메뉴에 속함
   const PARENT = {odyssey:'awareness', consult:'koica', briefing:'koica'};
   const key = PARENT[slug] || slug;
@@ -970,10 +1070,14 @@ function viewPage(slug){
   if (!pg) return viewNotFound();
   const title = PARENT[slug] ? BIZ[slug].programs[0] : (item ? item[1] : pg.title);
   subLayout(m?.id, key, title, `<h2 class="ct">${esc(title)}</h2>${pg.body()}`);
+  if (slug === 'map') drawNaverMap();
 }
 
 // ---------- 게시판 ----------
+// 게시글 '목록' 이동 위치 (분류 게시판은 해당 분류 페이지로)
+const listHref = p => p.board === 'odastat' ? `#/program/jejuoda/${Math.max(0, BIZ.jejuoda.programs.indexOf(p.cat))}` : '#/board/' + p.board;
 function viewBoard(b, q=''){
+  if (b === 'odastat') return viewProgram('jejuoda', 0);
   const B = BOARDS[b]; if(!B) return viewNotFound();
   const params = new URLSearchParams(q);
   const field = params.get('f')||'title', kw = (params.get('k')||'').trim(), page = +params.get('p')||1;
@@ -1013,25 +1117,28 @@ function viewPost(id){
   try{ if(!sessionStorage.getItem(vk)){ p.views++; store.set('posts',posts); sessionStorage.setItem(vk,1);} }catch(e){}
   const B = BOARDS[p.board];
   const mine = user && (isAdmin() || user.id===p.authorId);
-  const same = posts.filter(x=>x.board===p.board).sort(sortPosts); const i = same.findIndex(x=>x.id===id);
+  const same = posts.filter(x=>x.board===p.board && x.cat===p.cat).sort(sortPosts); const i = same.findIndex(x=>x.id===id);
   const prev = same[i+1], next = same[i-1];
-  subLayout(B.menu, 'board:'+p.board, B.name, `
-    <h2 class="ct">${B.name}</h2>
+  const isStat = p.board === 'odastat', ci = isStat ? Math.max(0, BIZ.jejuoda.programs.indexOf(p.cat)) : 0;
+  if (isStat) { window._lnbOpen = 'jejuoda'; window._lnbCur = 'jejuoda/' + ci; }
+  const secName = isStat ? (p.cat || B.name) : B.name;
+  subLayout(B.menu, isStat ? 'jejuoda' : 'board:'+p.board, secName, `
+    <h2 class="ct">${esc(secName)}</h2>
     <div class="view-head"><h3>${esc(p.title)}</h3>
       <div class="view-meta"><span>작성자 ${esc(p.author)}</span><span>등록일 ${p.date}</span><span>조회 ${p.views}</span></div></div>
     ${p.files?.length?`<div class="view-files"><strong>첨부파일</strong> ${p.files.map(f=>esc(f)).join(', ')} <span class="hint">(시안: 파일명만 저장)</span></div>`:''}
-    ${p.photo?`<div class="view-photo"><img src="${p.photo}" alt="${esc(p.alt||p.title)}"></div>`:''}
+    ${p.photo?`<div class="view-photo${p.board==='notice'?' poster':''}"><img src="${p.photo}" alt="${esc(p.alt||p.title)}"></div>`:''}
     <div class="view-body">${esc(p.body)}</div>
     ${p.board==='qna' ? (p.answer ? `<section class="answer" aria-label="답변"><h4>센터 답변 <span class="hint" style="font-weight:400">${p.answer.date}</span></h4><div class="ab">${esc(p.answer.body)}</div></section>` : '<section class="answer"><h4>답변 대기 중</h4><p class="hint">담당자가 확인 후 답변을 등록합니다.</p></section>') : ''}
     ${p.board==='qna' && isAdmin() ? `<form id="ansForm" class="field" style="margin-top:20px"><label for="ans">${p.answer?'답변 수정':'답변 작성'} (관리자)</label><textarea id="ans" style="height:160px">${esc(p.answer?.body||'')}</textarea><div class="board-bottom"><button class="btn btn-primary" type="submit">답변 저장</button></div></form>` : ''}
     <div class="view-nav">
       <div style="display:flex;gap:8px">${prev?`<a class="btn btn-line btn-sm" href="#/post/${prev.id}">이전글</a>`:''}${next?`<a class="btn btn-line btn-sm" href="#/post/${next.id}">다음글</a>`:''}</div>
-      <div style="display:flex;gap:8px">${mine?`<a class="btn btn-line" href="#/edit/${p.id}">수정</a><button class="btn btn-danger" id="delBtn">삭제</button>`:''}<a class="btn btn-dark" href="#/board/${p.board}">목록</a></div>
+      <div style="display:flex;gap:8px">${mine?`<a class="btn btn-line" href="#/edit/${p.id}">수정</a><button class="btn btn-danger" id="delBtn">삭제</button>`:''}<a class="btn btn-dark" href="${listHref(p)}">목록</a></div>
     </div>`);
   const af = $('#ansForm');
   if (af) af.onsubmit = e => { e.preventDefault(); const v = $('#ans').value.trim(); if(!v){ $('#ans').focus(); return; } const all = store.get('posts',[]); all.find(x=>x.id===id).answer = {body:v, date:today()}; store.set('posts',all); toast('답변을 저장했습니다.'); viewPost(id); };
   const del = $('#delBtn');
-  if (del) del.onclick = () => { if(!confirm('이 게시물을 삭제할까요? 삭제하면 되돌릴 수 없습니다.')) return; store.set('posts', store.get('posts',[]).filter(x=>x.id!==id)); toast('삭제했습니다.'); location.hash = '#/board/'+p.board; };
+  if (del) del.onclick = () => { if(!confirm('이 게시물을 삭제할까요? 삭제하면 되돌릴 수 없습니다.')) return; store.set('posts', store.get('posts',[]).filter(x=>x.id!==id)); toast('삭제했습니다.'); location.hash = listHref(p); };
 }
 function viewLock(p){
   const B = BOARDS[p.board], key = 'tries_'+p.id;
@@ -1066,11 +1173,13 @@ function viewWrite(b, editId){
   if (!user) { toast('로그인이 필요합니다.'); location.hash = '#/login?r='+encodeURIComponent(location.hash); return; }
   if (p ? !(isAdmin() || user.id===p.authorId) : !canWrite(board)) { toast('글쓰기 권한이 없습니다.'); location.hash = '#/board/'+board; return; }
   const B = BOARDS[board];
+  const wCat = new URLSearchParams((location.hash.split('?')[1]||'')).get('cat') || '';
   const boardOpts = Object.entries(BOARDS).filter(([k])=>canWrite(k)).map(([k,v])=>`<option value="${k}" ${k===board?'selected':''}>${v.name}</option>`).join('');
   subLayout(B.menu, 'board:'+board, B.name, `
     <h2 class="ct">${p?'게시물 수정':'게시물 작성'}</h2>
     <form class="form-box wide" id="writeForm" novalidate>
       <div class="field"><label for="wb">게시판</label><select id="wb" name="board">${boardOpts}</select></div>
+      <div class="field" id="catBox" ${board==='odastat'?'':'hidden'}><label for="wcat">분류</label><select id="wcat" name="cat">${BIZ.jejuoda.programs.map(n=>`<option ${n===(p?.cat||wCat)?'selected':''}>${esc(n)}</option>`).join('')}</select></div>
       <div class="field"><label for="wt">제목<span class="req" aria-hidden="true">*</span><span class="sr-only">(필수)</span></label><input id="wt" name="title" type="text" maxlength="100" required value="${esc(p?.title||'')}"><p class="err" id="wtErr" hidden></p></div>
       ${isAdmin()?`<div class="field"><label class="check-line"><input type="checkbox" name="pinned" ${p?.pinned?'checked':''}> 목록 상단에 공지로 고정</label></div>`:''}
       <div class="field" id="secretBox" ${board==='qna'?'':'hidden'}>
@@ -1085,7 +1194,7 @@ function viewWrite(b, editId){
       </div>
       <div class="field"><label for="wc">내용<span class="req" aria-hidden="true">*</span><span class="sr-only">(필수)</span></label><textarea id="wc" name="body" required>${esc(p?.body||'')}</textarea><p class="err" id="wcErr" hidden></p></div>
       <div class="field" id="photoBox" ${BOARDS[board].photo?'':'hidden'}>
-        <label for="wph">대표 사진<span id="phReq" ${board==='gallery'?'':'hidden'}><span class="req" aria-hidden="true">*</span><span class="sr-only">(필수)</span></span></label>
+        <label for="wph"><span id="phLbl">${BOARDS[board].photoLabel || '대표 사진'}</span><span id="phReq" ${board==='gallery'?'':'hidden'}><span class="req" aria-hidden="true">*</span><span class="sr-only">(필수)</span></span></label>
         <input id="wph" type="file" accept="image/png,image/jpeg,image/webp">
         <p class="hint">JPG·PNG·WEBP, 10MB 이하. 가로 1200px로 줄여 저장합니다. 사람이 나온 사진은 초상권 동의를 확인하세요.</p>
         <img id="phPrev" class="photo-prev" alt="" ${p?.photo?`src="${p.photo}"`:'hidden'}>
@@ -1096,11 +1205,11 @@ function viewWrite(b, editId){
         <p class="err" id="walErr" hidden></p>
       </div>
       <div class="field"><label for="wf">첨부파일</label><input id="wf" name="files" type="file" multiple><p class="hint">한글(hwp)·PDF 첨부 시 접근성을 위해 본문에 주요 내용을 함께 적어 주세요. 시안에서는 파일명만 저장됩니다.</p></div>
-      <div class="board-bottom"><a class="btn btn-line" href="${p?'#/post/'+p.id:'#/board/'+board}">취소</a><button class="btn btn-primary" type="submit">${p?'수정 저장':'등록'}</button></div>
+      <div class="board-bottom"><a class="btn btn-line" href="${p?'#/post/'+p.id:(board==='odastat'?listHref({board,cat:wCat}):'#/board/'+board)}">취소</a><button class="btn btn-primary" type="submit">${p?'수정 저장':'등록'}</button></div>
     </form>`);
   const wf = $('#writeForm');
   let photoData = p?.photo || null;
-  const syncBoard = () => { const v = wf.board.value; $('#secretBox').hidden = v !== 'qna'; $('#photoBox').hidden = !BOARDS[v].photo; $('#phReq').hidden = $('#alReq').hidden = v !== 'gallery'; };
+  const syncBoard = () => { const v = wf.board.value; $('#catBox').hidden = v !== 'odastat'; $('#secretBox').hidden = v !== 'qna'; $('#photoBox').hidden = !BOARDS[v].photo; $('#phLbl').textContent = BOARDS[v].photoLabel || '대표 사진'; $('#phReq').hidden = $('#alReq').hidden = v !== 'gallery'; };
   wf.board.onchange = syncBoard;
   $('#wph').onchange = async e => {
     const file = e.target.files[0], er = $('#wphErr'); er.hidden = true; if (!file) return;
@@ -1117,7 +1226,12 @@ function viewWrite(b, editId){
     const secret = f.board.value === 'qna' && f.secret.checked, spw = f.spw.value;
     const needPw = secret && !(p?.secret && !spw);
     setErr('wspErr', needPw && !/^\d{4}$/.test(spw) ? '비밀번호는 숫자 4자리로 입력하세요.' : '');
-    const isGal = f.board.value === 'gallery', usePhoto = BOARDS[f.board.value].photo, alt = f.alt.value.trim();
+    const isGal = f.board.value === 'gallery', usePhoto = BOARDS[f.board.value].photo; let alt = f.alt.value.trim();
+    if (f.board.value === 'notice' && !photoData) {   // 첨부한 이미지(포스터)를 글 안에 자동 표시
+      const imgFile = [...f.files.files].find(x => /^image\/(png|jpeg|webp)$/.test(x.type));
+      if (imgFile) { photoData = await readPhoto(imgFile); if (!f.alt.value.trim()) f.alt.value = t + ' 포스터'; }
+    }
+    alt = f.alt.value.trim();
     setErr('wphErr', isGal && !photoData ? '대표 사진을 등록하세요.' : '');
     setErr('walErr', usePhoto && photoData && !alt ? '사진 설명(대체텍스트)을 입력하세요.' : '');
     if (!ok) { (!t ? f.title : (isGal && !photoData) ? $('#wph') : (usePhoto && photoData && !alt) ? f.alt : !c ? f.body : f.spw).focus(); return; }
@@ -1127,8 +1241,8 @@ function viewWrite(b, editId){
     if (secret && spw) sec.secPw = await hash(spw, sec.secSalt);
     const files = [...f.files.files].map(x=>x.name);
     const all = store.get('posts',[]);
-    if (p) { const q = all.find(x=>x.id===p.id); Object.assign(q, {board:f.board.value, title:t, body:c, pinned: !!f.pinned?.checked, files: files.length?files:q.files}, sec, ph); if (sec.secret) setUnlock(q.id); store.set('posts',all); toast('수정했습니다.'); location.hash = '#/post/'+p.id; }
-    else { const np = {id:uid(), board:f.board.value, title:t, body:c, author:user.name, authorId:user.id, date:today(), created:Date.now(), views:0, pinned: !!f.pinned?.checked, files, ...sec, ...ph}; if (sec.secret) setUnlock(np.id); all.push(np); store.set('posts',all); toast('등록했습니다.'); location.hash = '#/post/'+np.id; }
+    if (p) { const q = all.find(x=>x.id===p.id); Object.assign(q, {board:f.board.value, cat: f.board.value==='odastat' ? f.cat.value : undefined, title:t, body:c, pinned: !!f.pinned?.checked, files: files.length?files:q.files}, sec, ph); if (sec.secret) setUnlock(q.id); store.set('posts',all); toast('수정했습니다.'); location.hash = '#/post/'+p.id; }
+    else { const np = {id:uid(), board:f.board.value, cat: f.board.value==='odastat' ? f.cat.value : undefined, title:t, body:c, author:user.name, authorId:user.id, date:today(), created:Date.now(), views:0, pinned: !!f.pinned?.checked, files, ...sec, ...ph}; if (sec.secret) setUnlock(np.id); all.push(np); store.set('posts',all); toast('등록했습니다.'); location.hash = '#/post/'+np.id; }
   };
 }
 
@@ -1221,11 +1335,28 @@ function viewAdmin(){
   const ntc = posts.filter(p=>p.board==='notice').length;
   app.innerHTML = `<div class="sub-visual"><div class="wrap"><h1>관리자 페이지</h1></div></div>
   <div class="wrap" style="padding:48px 24px 90px">
+    <div class="publish-box">
+      <div><b>배포</b><p class="hint">관리자 화면에서 고친 내용(글·사진·배너·로고·사업 목록·공지)은 이 PC에만 저장됩니다. [배포 파일 만들기]로 받은 <code>data.js</code>를 누리집 폴더에 넣어(덮어쓰기) 올리면 방문자 화면에 반영됩니다.</p></div>
+      <div class="publish-btns"><button class="btn btn-primary" id="pubExport">배포 파일 만들기 (data.js)</button><button class="btn btn-line" id="pubReload" ${SITE?'':'disabled'}>배포된 내용으로 되돌리기</button></div>
+    </div>
     <div class="stats">
       <div class="stat"><span>전체 회원</span><b>${users.length}</b></div>
       <div class="stat"><span>전체 게시물</span><b>${posts.length}</b></div>
       <div class="stat"><span>공지사항</span><b>${ntc}</b></div>
       <div class="stat"><span>총 조회수</span><b>${posts.reduce((s,p)=>s+p.views,0)}</b></div>
+    </div>
+    ${bannerAdmin()}
+    <div style="height:48px"></div>
+    <div class="sec-title"><h2 style="font-size:1.25rem">네이버 지도 설정</h2></div>
+    <div class="form-box wide" style="max-width:720px;margin:0 auto 48px">
+      <div class="field"><label for="nmId">Client ID (NCP 콘솔 Maps 발급)</label><input id="nmId" type="text" value="${esc(mapCfg().id)}"></div>
+      <div class="cards" style="grid-template-columns:repeat(3,1fr);gap:12px">
+        <div class="field"><label for="nmLat">위도</label><input id="nmLat" type="text" value="${mapCfg().lat}"></div>
+        <div class="field"><label for="nmLng">경도</label><input id="nmLng" type="text" value="${mapCfg().lng}"></div>
+        <div class="field"><label for="nmZoom">확대 (6~21)</label><input id="nmZoom" type="text" value="${mapCfg().zoom}"></div>
+      </div>
+      <p class="hint">좌표는 네이버 지도에서 센터 위치를 우클릭해 확인할 수 있습니다. NCP 콘솔의 Web 서비스 URL에 누리집 주소(${SITE_URL})를 등록해야 지도가 뜹니다.</p>
+      <div class="board-bottom"><button class="btn btn-primary" id="nmSave">지도 설정 저장</button></div>
     </div>
     <div class="sec-title"><h2 style="font-size:1.25rem">빠른 글쓰기</h2></div>
     <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px">${Object.entries(BOARDS).map(([k,v])=>`<a class="btn btn-line" href="#/write/${k}">${v.name} 작성</a>`).join('')}</div>
@@ -1238,10 +1369,9 @@ function viewAdmin(){
 
     <div class="sec-title" style="margin-top:48px"><h2 style="font-size:1.25rem">주요사업 목록 관리</h2></div>
     <p class="hint" style="margin-bottom:14px;text-align:center">한 줄에 사업 하나씩 입력하세요. 메뉴·메인 카드·사업 페이지에 바로 반영됩니다. 사업 이름을 바꾸면 그 사업에 입력한 내용은 새로 입력해야 합니다.</p>
-    <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">${BIZ_CARDS.map(c=>`<div class="field"><label for="bl_${c.page}">${c.title}</label><textarea id="bl_${c.page}" data-bizlist="${c.page}" style="height:240px">${esc(BIZ[c.page].programs.join('\n'))}</textarea></div>`).join('')}</div>
+    <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">${[...BIZ_CARDS,{title:'제주도 내 ODA 현황',page:'jejuoda'}].map(c=>`<div class="field"><label for="bl_${c.page}">${c.title}</label><textarea id="bl_${c.page}" data-bizlist="${c.page}" style="height:240px">${esc(BIZ[c.page].programs.join('\n'))}</textarea></div>`).join('')}</div>
     <div class="board-bottom"><button class="btn btn-primary" id="bizListSave">목록 저장</button></div>
     ${logoAdmin()}
-    ${bannerAdmin()}
     <div class="sec-title" style="margin-top:48px"><h2 style="font-size:1.25rem">관련기관 로고 관리</h2></div>
     <p class="hint" style="margin-bottom:14px;text-align:center">기관명 위에 들어가는 로고입니다. 투명 배경 PNG, 1MB 이하.<br>여기서 등록한 로고가 우선이고, 없으면 images 폴더의 아래 파일명 PNG를 씁니다. 각 기관 CI 사용 규정을 확인하세요.</p>
     <div style="overflow-x:auto"><table class="list"><caption class="sr-only">관련기관 로고 목록</caption>
@@ -1249,6 +1379,16 @@ function viewAdmin(){
       <tbody>${FAMILY.map(f=>{ const lg = store.get('logos',{})[f.key]; return `<tr><td class="tl"><a href="${f.url}" target="_blank" rel="noopener" title="새 창 열림">${f.name}</a></td><td><div class="logo-cell">${lg?`<img src="${lg}" alt="${f.name} 로고">`:'로고 없음'}</div></td><td><code>${f.file}</code></td><td><label class="sr-only" for="lg_${f.key}">${f.name} 로고 파일</label><input id="lg_${f.key}" type="file" accept=".png,.jpg,.jpeg,.svg,.webp,image/png,image/jpeg,image/svg+xml,image/webp" data-logo="${f.key}"></td><td>${lg?`<button class="btn btn-danger btn-sm" data-logo-del="${f.key}">삭제</button>`:'-'}</td></tr>`; }).join('')}</tbody>
     </table></div>
   </div>`;
+  // 배포
+  $('#pubExport').onclick = exportSiteData;
+  const pr = $('#pubReload');
+  if (pr) pr.onclick = () => { if (!confirm('이 PC에서 고친 내용을 버리고 현재 data.js 내용으로 되돌릴까요?')) return; importSiteData(true); applyBizLists(); renderFamily(); renderLogo(); toast('배포된 내용으로 되돌렸습니다.'); viewAdmin(); };
+  // 네이버 지도
+  const nms = $('#nmSave');
+  if (nms) nms.onclick = () => { CMS.set('map.cfg', {id: $('#nmId').value.trim(), lat: $('#nmLat').value.trim(), lng: $('#nmLng').value.trim(), zoom: $('#nmZoom').value.trim()}); toast('지도 설정을 저장했습니다.'); };
+  // 배너 문구
+  const hts = $('#heroTextSave');
+  if (hts) hts.onclick = () => { CMS.set('home.tag', $('#hTag').value.trim()); CMS.set('home.title', $('#hTitle').value.trim()); CMS.set('home.desc', $('#hDesc').value.trim()); toast('배너 문구를 저장했습니다.'); };
   // 주요사업 목록
   const bls = $('#bizListSave');
   if (bls) bls.onclick = () => {
@@ -1323,6 +1463,13 @@ function bannerAdmin(){
   const bn = store.get('banner', {}), dim = bn.dim || 'mid';
   const prev = (kind, label) => `<div class="banner-prev ${kind}">${bn[kind] ? `<img src="${bn[kind]}" alt="">` : `<span class="empty-b">${label}</span>`}${bn[kind]?`<div class="hero-dim" style="--dim:${DIMS[dim]}"></div>`:''}</div>`;
   return `
+    <div class="sec-title" style="margin-top:48px"><h2 style="font-size:1.25rem">메인 배너 문구</h2></div>
+    <div class="form-box wide" style="max-width:720px;margin:0 auto">
+      <div class="field"><label for="hTag">작은 표시</label><input id="hTag" type="text" value="${esc(CMS.get('home.tag') ?? '제주국제개발협력센터')}"></div>
+      <div class="field"><label for="hTitle">제목</label><input id="hTitle" type="text" value="${esc(CMS.get('home.title') ?? '기업에게는 기회를, 청년에게는 꿈을')}"></div>
+      <div class="field"><label for="hDesc">설명</label><input id="hDesc" type="text" value="${esc(CMS.get('home.desc') ?? '제주국제개발협력센터가 기업과 청년의 국제개발협력 참여 기회를 넓힙니다.')}"></div>
+      <div class="board-bottom"><button class="btn btn-primary" id="heroTextSave">문구 저장</button></div>
+    </div>
     <div class="sec-title" style="margin-top:48px"><h2 style="font-size:1.25rem">메인 배너 사진 관리</h2></div>
     <p class="hint" style="margin-bottom:16px;text-align:center">여기서 등록한 사진이 우선 적용됩니다. 등록한 사진이 없으면 <b>images/banner_pc.jpg</b>(PC)·<b>images/banner_mobile.jpg</b>(모바일) 파일을 보여 주고, 파일도 없으면 기본 물결 그래픽이 보입니다.</p>
     <div class="banner-grid">
@@ -1392,6 +1539,7 @@ function route(){
   const [path, q=''] = (location.hash.slice(1) || '/').split('?');
   const seg = path.split('/').filter(Boolean);
   closeMega(); closeMobile();
+  const fam = document.querySelector('.family'); if (fam) fam.hidden = !!seg[0];   // 관련기관은 메인에서만
   switch(seg[0]){
     case undefined: viewHome(); break;
     case 'page': viewPage(seg[1]); break;
@@ -1479,7 +1627,7 @@ function loadSideLogos(){
     if (img.complete && !img.naturalWidth) img.onerror();
   });
 }
-(async () => { loadSideLogos(); applyBizLists(); await seed(); seedGallery(); store.set('posts', store.get('posts',[]).filter(p=>BOARDS[p.board])); renderMenus(); renderAuth(); renderFamily(); renderLogo(); route(); })();
+(async () => { importSiteData(); loadSideLogos(); applyBizLists(); await seed(); seedGallery(); store.set('posts', store.get('posts',[]).filter(p=>BOARDS[p.board])); renderMenus(); renderAuth(); renderFamily(); renderLogo(); route(); })();
 </script>
 </body>
 </html>

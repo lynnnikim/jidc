@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>제주국제개발협력센터</title>
+<meta name="description" content="제주국제개발협력센터 누리집 시안">
+<meta name="theme-color" content="#0E3A5F">
+<!-- 누리집 주소: 도메인 확정 시 아래 주소만 바꾸면 됩니다 -->
+<link rel="canonical" href="https://jejuidcc.kr/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jejuidcc.kr/">
+<meta property="og:site_name" content="제주국제개발협력센터">
+<meta property="og:title" content="제주국제개발협력센터">
+<meta property="og:description" content="제주국제개발협력센터가 기업과 청년의 국제개발협력 참여 기회를 넓힙니다.">
+<meta property="og:image" content="https://jejuidcc.kr/images/banner_pc.jpg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --navy:#0E3A5F; --sea:#1769AA; --sea-weak:#E8F1F9; --basalt:#23292F; --sub:#56606B;
+  --stone:#F3F5F7; --line:#DCE1E6; --tangerine:#E8792B; --white:#fff; --danger:#C62828;
+  --radius:6px; --wrap:1240px; --fs:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:var(--fs);-webkit-text-size-adjust:100%}
+body{font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:var(--basalt);background:var(--white);line-height:1.6;word-break:keep-all}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0}
+ul,ol{list-style:none}
+img{max-width:100%}
+:focus-visible{outline:3px solid var(--tangerine);outline-offset:2px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:12px 20px;z-index:999}
+.skip:focus{left:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+
+
+/* 헤더 */
+.header{position:relative;background:#fff;border-bottom:1px solid var(--line);z-index:50}
+.header .wrap{display:flex;align-items:center;height:96px;position:relative}
+.h-auth{position:absolute;top:16px;right:24px;display:flex;align-items:center;font-size:.8125rem;color:var(--sub);z-index:3}
+.h-auth a,.h-auth button,.h-auth .h-user{padding:2px 10px;line-height:1.4}
+.h-auth>*+*{border-left:1px solid var(--line)}
+.h-auth a:hover,.h-auth button:hover{color:var(--sea);text-decoration:underline}
+.gnb>li>a{padding-top:0}
+.logo{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.logo-alt{display:none;font-size:1.25rem;font-weight:800;color:var(--navy);letter-spacing:-.02em}
+.logo-img.broken{display:none}
+.logo-img.broken+.logo-alt{display:block}
+.logo-img{display:block;max-width:260px!important;height:52px;width:auto;max-width:360px;object-fit:contain}
+.gnb{display:flex;margin-left:auto;height:100%;position:relative;z-index:2}
+.gnb>li{position:relative;height:100%;width:180px}
+.gnb>li>a{display:flex;align-items:center;justify-content:center;height:100%;padding:0 10px;font-size:1.0625rem;font-weight:700;position:relative}
+.gnb>li>a::after{content:"";position:absolute;left:30px;right:30px;bottom:-1px;height:3px;background:var(--sea);transform:scaleX(0);transition:transform .2s}
+.gnb>li:hover>a::after,.gnb>li:focus-within>a::after{transform:scaleX(1)}
+.gnb-sub{display:none;position:absolute;top:100%;left:0;width:100%;padding:18px 0 22px}
+.gnb-sub a{display:block;padding:6px 4px;font-size:.9375rem;color:var(--sub);text-align:center;line-height:1.45;white-space:nowrap}
+.header.open .gnb>li+li .gnb-sub{border-left:1px solid var(--line)}
+.header.open .gnb>li:last-child .gnb-sub{border-left:0}
+.gnb>li:nth-last-child(2) .gnb-sub{z-index:1}
+.header.open .gnb>li:first-child .gnb-sub{border-left:1px solid var(--line)}
+.gnb-sub a:hover{color:var(--sea);text-decoration:underline}
+.mega-bg{display:none;z-index:1;position:absolute;left:0;right:0;top:100%;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);box-shadow:0 12px 24px -16px rgba(14,58,95,.35)}
+.header.open .gnb-sub,.header.open .mega-bg{display:block}
+.header.open .gnb>li{border-left:1px solid transparent}
+.btn-menu{display:none;margin-left:auto;width:44px;height:44px;align-items:center;justify-content:center}
+.btn-sitemap{margin-left:12px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius)}
+.btn-sitemap:hover{background:var(--stone)}
+
+/* 모바일 메뉴 */
+.m-nav{position:fixed;inset:0;z-index:200;visibility:hidden;overflow:hidden}
+.m-nav.on{visibility:visible}
+.m-dim{position:absolute;inset:0;background:rgba(10,20,30,.5);opacity:0;transition:opacity .25s}
+.m-nav.on .m-dim{opacity:1}
+.m-panel{position:absolute;right:0;top:0;bottom:0;width:min(86vw,360px);background:#fff;transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column}
+.m-nav.on .m-panel{transform:none}
+.m-head{background:var(--navy);color:#fff;padding:18px 20px}
+.m-head .m-auth{display:flex;gap:8px;margin-top:12px}
+.m-head .m-auth a,.m-head .m-auth button{flex:1;text-align:center;padding:9px 0;border:1px solid rgba(255,255,255,.4);border-radius:var(--radius);font-size:.875rem;color:#fff}
+.m-close{position:absolute;right:10px;top:10px;color:#fff;width:40px;height:40px}
+.m-list{overflow-y:auto;flex:1}
+.m-list>li>button{width:100%;display:flex;justify-content:space-between;align-items:center;padding:16px 20px;font-weight:700;border-bottom:1px solid var(--line);text-align:left}
+.m-list>li>button svg{transition:transform .2s}
+.m-list>li>button[aria-expanded="true"]{color:var(--sea)}
+.m-list>li>button[aria-expanded="true"] svg{transform:rotate(180deg)}
+.m-list ul{display:none;background:var(--stone);padding:8px 0}
+.m-list ul.on{display:block}
+.m-list .m-single{display:block;padding:16px 20px;font-weight:700;border-bottom:1px solid var(--line)}
+.m-list ul a{display:block;padding:10px 28px;font-size:.9375rem;color:var(--sub)}
+
+/* 메인 비주얼 */
+.hero{position:relative;background:var(--navy);color:#fff;overflow:hidden}
+.hero-photo{position:absolute;inset:0;width:100%;height:100%}
+.hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-dim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,58,95,var(--dim)) 0%,rgba(14,58,95,calc(var(--dim)*.55)) 70%,rgba(14,58,95,calc(var(--dim)*.35)) 100%)}
+.hero.has-photo 
+.hero.has-photo .slide h2,.hero.has-photo .slide p{text-shadow:0 1px 12px rgba(0,0,0,.25)}
+.banner-prev{position:relative;border-radius:8px;overflow:hidden;background:var(--navy);margin-bottom:12px}
+.banner-prev.pc{aspect-ratio:1920/440}
+.banner-prev.m{aspect-ratio:390/360;max-width:220px}
+.banner-prev img{width:100%;height:100%;object-fit:cover;display:block}
+.banner-prev .empty-b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#9FBAD3;font-size:.8125rem;text-align:center;padding:8px}
+.banner-grid{display:grid;grid-template-columns:2fr 1fr;gap:28px;align-items:start}
+.banner-grid .field{margin-bottom:0}
+.dim-row{display:flex;gap:8px;flex-wrap:wrap}
+.dim-row label{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:var(--radius);padding:8px 14px;font-weight:600;font-size:.875rem;cursor:pointer}
+.dim-row input{accent-color:var(--sea)}
+.hero .wrap{position:relative;min-height:440px;display:flex;flex-direction:column;justify-content:flex-end;padding-top:40px;padding-bottom:96px}
+.slide{display:none}
+.slide.on{display:block;animation:fade .6s ease}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.slide .tag{display:inline-block;font-size:1.125rem;font-weight:600;padding:5px 12px;border:1px solid rgba(255,255,255,.45);border-radius:999px;margin-bottom:20px}
+.slide h2{font-size:clamp(1.25rem,calc(1.6vw + 4px),1.4375rem);font-weight:800;line-height:1.5;letter-spacing:-.01em;white-space:nowrap}
+.slide p{margin-top:6px;font-size:clamp(1.25rem,calc(1.6vw + 4px),1.4375rem);opacity:.88;max-width:34em}
+.slide .cta{display:inline-flex;margin-top:30px;padding:13px 26px;background:#fff;color:var(--navy);font-weight:700;border-radius:var(--radius)}
+.slide .cta:hover{background:var(--sea-weak)}
+
+/* 퀵메뉴 */
+.quick{position:relative;margin-top:-40px;z-index:2;background:linear-gradient(transparent 40px,var(--stone) 40px)}
+.quick ul{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 16px 32px -20px rgba(14,58,95,.45)}
+.quick li+li{border-left:1px solid var(--line)}
+.quick a{display:flex;flex-direction:column;align-items:center;gap:12px;padding:26px 12px;text-align:center;font-weight:600;font-size:.9375rem;height:100%}
+.quick .ql{flex:1;display:flex;align-items:center;justify-content:center;min-height:2.9em;line-height:1.45}
+.quick a:hover{color:var(--sea)}
+.quick a:hover .qi{background:var(--sea);color:#fff}
+.qi{width:56px;height:56px;border-radius:50%;background:var(--sea-weak);color:var(--sea);display:flex;align-items:center;justify-content:center;transition:background .15s}
+
+/* 섹션 공통 */
+.sec{padding:80px 0}
+.sec-gray{background:var(--stone)}
+.sec-title{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px;gap:16px}
+.sec-title h2{font-size:1.75rem;font-weight:800;letter-spacing:-.03em}
+.more{font-size:.875rem;color:var(--sub);display:inline-flex;align-items:center;gap:4px}
+.more:hover{color:var(--sea)}
+
+/* 게시판 미리보기 */
+.board-cols{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.col-title{font-size:1.75rem;font-weight:800;letter-spacing:-.03em;text-align:center;margin-bottom:20px}
+.gal-grid.col-gal{grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px}
+.col-gal .gal-item .gt{margin-top:10px;font-size:.9375rem}
+.col-gal .gal-thumb{aspect-ratio:16/9}
+.col-gal .gal-item .gt{-webkit-line-clamp:1}
+.sec-biz{padding-top:72px;background:var(--stone)}
+.tabs{display:flex;border-bottom:2px solid var(--basalt);margin-bottom:6px}
+.tabs button{padding:12px 20px;font-size:1.0625rem;font-weight:600;color:var(--sub);position:relative}
+.tabs button[aria-selected="true"]{color:var(--basalt);font-weight:800}
+.tabs button[aria-selected="true"]::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:4px;background:var(--sea)}
+.tabs .more{margin-left:auto;align-self:center}
+.latest li a{display:flex;align-items:center;gap:14px;padding:15px 4px;border-bottom:1px solid var(--line)}
+.latest li a:hover .t{color:var(--sea);text-decoration:underline}
+.latest .t{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.latest .d{font-size:.875rem;color:var(--sub);font-variant-numeric:tabular-nums}
+.badge{display:inline-block;font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:4px;background:var(--sea-weak);color:var(--sea);flex-shrink:0}
+.badge.pin{background:var(--navy);color:#fff}
+.badge.new{background:#FDEBDD;color:#A9500F}
+.contact-card{background:var(--navy);color:#fff;border-radius:10px;padding:30px;display:flex;flex-direction:column;gap:18px}
+.contact-card h3{font-size:1.25rem;font-weight:800}
+.contact-card .tel{font-size:2rem;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.contact-card address{font-style:normal;opacity:.85;font-size:.9375rem}
+.contact-card .links{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto}
+.contact-card .links a{background:rgba(255,255,255,.1);padding:12px;border-radius:var(--radius);font-weight:600;font-size:.9375rem;text-align:center}
+.contact-card .links a:hover{background:rgba(255,255,255,.2)}
+
+/* 주요사업 */
+.biz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.biz{background:#fff;border-top:4px solid var(--sea);padding:30px 28px 26px;border-radius:0 0 10px 10px}
+.biz:nth-child(2){border-top-color:var(--navy)}
+.biz:nth-child(3){border-top-color:var(--tangerine)}
+.biz h3{font-size:1.25rem;font-weight:800;margin-bottom:14px}
+.biz li{padding:8px 0;border-bottom:1px dashed var(--line);font-size:.9375rem}
+.biz li:last-child{border:0}
+.biz .more{margin-top:16px}
+
+/* 관련기관 */
+.family{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.family .wrap{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding-top:56px;padding-bottom:56px}
+.family strong{font-size:.9375rem;margin-right:12px}
+.fam-list{display:flex;flex-wrap:wrap;gap:10px;flex:1}
+.fam{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;min-height:132px;height:100%;min-width:170px;padding:18px 16px;text-align:center;border:0;border-radius:var(--radius);background:#fff;font-size:1rem;font-weight:400;color:var(--basalt)}
+.fam-ic{flex-shrink:0;width:100%;height:48px;display:flex;align-items:center;justify-content:center}
+.fam-ic img{max-width:85%;max-height:48px;object-fit:contain;display:block}
+.fam:hover{color:var(--sea)}
+.fam:hover .fam-nm{text-decoration:underline}
+
+.logo-cell{display:flex;align-items:center;justify-content:center;height:48px;min-width:120px;border:1px dashed var(--line);border-radius:4px;background:#fff;font-size:.75rem;color:var(--sub)}
+.logo-cell img{max-height:36px;max-width:140px;object-fit:contain}
+
+/* 푸터 */
+.footer{background:var(--basalt);color:#C9CFD5;font-size:.875rem;padding:36px 0 44px}
+.f-links{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:18px}
+.f-links a{color:#fff}
+.f-links a.priv{color:#7FC1F2;font-weight:700}
+.f-admin{display:contents}
+.f-admin a,.f-admin button,.f-admin span{color:#9FB0C0;font-size:.8125rem}
+.footer address{font-style:normal;line-height:1.9}
+.footer .copy{margin-top:12px;opacity:.7}
+
+/* 서브페이지 */
+.sub-visual{background:var(--navy);color:#fff;padding:52px 0 46px;position:relative;overflow:hidden}
+.sub-visual h1{font-size:2rem;font-weight:800;letter-spacing:-.03em}
+.crumb{display:flex;gap:8px;font-size:.875rem;opacity:.8;margin-top:10px;flex-wrap:wrap}
+.crumb li+li::before{content:"›";margin-right:8px}
+.sub-body{display:grid;grid-template-columns:280px 1fr;gap:48px;padding:48px 0 90px}
+.lnb h2{font-size:1.25rem;font-weight:800;padding:20px;background:var(--sea);color:#fff;border-radius:var(--radius) var(--radius) 0 0}
+.lnb ul{border:1px solid var(--line);border-top:0}
+.lnb a{display:flex;align-items:center;height:52px;padding:0 20px;border-top:1px solid var(--line);font-size:.9375rem;line-height:1.3}
+.lnb-sub{border:0!important;background:#FAFBFC}
+.lnb-tg{justify-content:space-between;gap:8px}
+.lnb-tg svg{flex-shrink:0;color:var(--sub);transition:transform .2s}
+.lnb-tg[aria-expanded="true"] svg{transform:rotate(180deg);color:var(--sea)}
+.lnb-sub li{display:block;height:auto;padding:0;white-space:nowrap;border-top:1px solid var(--line);font-size:.875rem;color:var(--sub);line-height:1.3;position:relative}
+.lnb-sub a{display:flex;align-items:center;height:52px;padding:0 12px 0 32px;border-top:0;font-size:.875rem;color:var(--sub);position:relative}
+.lnb-sub a:hover{color:var(--sea)}
+.lnb-sub a[aria-current="page"]{color:var(--sea);font-weight:700;background:#fff}
+.lnb-sub a::before{content:"";position:absolute;left:20px;top:50%;width:4px;height:4px;border-radius:50%;background:var(--sea)}
+.prog-list{border-top:2px solid var(--basalt)}
+.prog-list a{display:flex;justify-content:space-between;align-items:center;height:60px;padding:0 16px;border-bottom:1px solid var(--line);font-size:1rem}
+.prog-list a:hover{background:var(--sea-weak);color:var(--sea)}
+.prog-list svg{color:var(--sub)}
+.lnb-sub-old::before{content:"";position:absolute;left:20px;top:50%;width:4px;height:4px;border-radius:50%;background:var(--sea)}
+.lnb a[aria-current="page"]{color:var(--sea);font-weight:700;background:var(--sea-weak)}
+.lnb .lnb-sub a[aria-current="page"]{color:var(--sea);font-weight:700;background:#F4F8FC}
+.content h2.ct{font-size:1.5rem;font-weight:800;padding-bottom:16px;border-bottom:2px solid var(--basalt);margin-bottom:24px}
+.placeholder{border:2px dashed var(--line);border-radius:10px;padding:40px;text-align:center;color:var(--sub)}
+.info-table{width:100%;border-collapse:collapse;border-top:2px solid var(--basalt)}
+.info-table th,.info-table td{padding:14px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.info-table th{background:var(--stone);width:160px;font-weight:700;text-align:center;vertical-align:middle}
+
+/* 게시판 */
+.board-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.board-top .total{font-size:.9375rem}
+.board-top .total b{color:var(--sea)}
+.search{display:flex;gap:6px}
+.search select,.search input{height:42px;border:1px solid var(--line);border-radius:var(--radius);padding:0 12px;background:#fff}
+.search input{width:220px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:42px;padding:0 18px;border-radius:var(--radius);font-weight:700;font-size:.9375rem;border:1px solid transparent}
+.btn-primary{background:var(--sea);color:#fff}
+.btn-primary:hover{background:#105A93}
+.btn-dark{background:var(--basalt);color:#fff}
+.btn-line{border-color:var(--line);background:#fff}
+.btn-line:hover{border-color:var(--sub)}
+.btn-danger{border-color:var(--danger);color:var(--danger);background:#fff}
+.btn-sm{height:34px;padding:0 12px;font-size:.8125rem}
+table.list{width:100%;border-collapse:collapse;border-top:2px solid var(--basalt);font-size:.9375rem}
+table.list th{background:var(--stone);padding:14px 8px;border-bottom:1px solid var(--line);font-weight:700}
+table.list td{padding:14px 8px;border-bottom:1px solid var(--line);text-align:center}
+table.list td.tl{text-align:left}
+table.list td.tl a:hover{color:var(--sea);text-decoration:underline}
+table.list tr.pinned{background:#F7FAFD}
+.empty{padding:60px 0;text-align:center;color:var(--sub)}
+.board-bottom{display:flex;justify-content:flex-end;margin-top:20px;gap:8px}
+.view-head{border-top:2px solid var(--basalt);border-bottom:1px solid var(--line);padding:22px 8px}
+.view-head h3{font-size:1.375rem;font-weight:800;letter-spacing:-.02em}
+.view-meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px;font-size:.875rem;color:var(--sub)}
+.view-files{padding:14px 8px;border-bottom:1px solid var(--line);font-size:.875rem;background:var(--stone)}
+.view-body{padding:36px 8px 50px;border-bottom:1px solid var(--line);white-space:pre-wrap;min-height:200px}
+.view-nav{display:flex;justify-content:space-between;margin-top:20px;gap:8px;flex-wrap:wrap}
+
+/* 폼 */
+.form-box{max-width:560px;margin:0 auto}
+.form-box.wide{max-width:none}
+.field{margin-bottom:18px}
+.field label,.field .lbl{display:block;font-weight:700;margin-bottom:8px;font-size:.9375rem}
+.field label .req{color:var(--danger);margin-left:2px}
+.field input[type=text],.field input[type=password],.field input[type=email],.field select,.field textarea{width:100%;height:48px;border:1px solid #B8C0C8;border-radius:var(--radius);padding:0 14px;background:#fff}
+.field textarea{height:320px;padding:14px;resize:vertical;line-height:1.7}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--sea);outline:2px solid var(--sea);outline-offset:0}
+.hint{font-size:.8125rem;color:var(--sub);margin-top:6px}
+.err{font-size:.8125rem;color:var(--danger);margin-top:6px;font-weight:600}
+.agree{border:1px solid var(--line);border-radius:var(--radius);margin-bottom:14px}
+.agree-head{display:flex;align-items:center;gap:10px;padding:14px 16px;font-weight:700}
+.agree-body{border-top:1px solid var(--line);padding:14px 16px;font-size:.8125rem;color:var(--sub);max-height:150px;overflow:auto;background:var(--stone)}
+.agree-body table{width:100%;border-collapse:collapse;background:#fff}
+.agree-body th,.agree-body td{border:1px solid var(--line);padding:6px 8px;text-align:left}
+input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
+.check-line{display:flex;align-items:center;gap:8px;font-weight:600}
+.auth-card{max-width:460px;margin:0 auto;padding:40px;border:1px solid var(--line);border-radius:10px}
+.auth-card h2{font-size:1.5rem;font-weight:800;text-align:center;margin-bottom:6px}
+.auth-card .desc{text-align:center;color:var(--sub);font-size:.9375rem;margin-bottom:28px}
+.btn-block{width:100%;height:52px;font-size:1rem}
+.auth-links{display:flex;justify-content:center;gap:16px;margin-top:18px;font-size:.875rem;color:var(--sub)}
+.auth-links a{text-decoration:underline}
+.lock-box{max-width:420px;margin:20px auto;text-align:center;padding:36px 24px;border:1px solid var(--line);border-radius:10px}
+.lock-box input{text-align:center;letter-spacing:.6em;font-size:1.25rem;max-width:180px;margin:0 auto}
+.answer{margin-top:24px;border:1px solid var(--line);border-left:4px solid var(--sea);border-radius:var(--radius);padding:22px 24px;background:#F7FAFD}
+.answer h4{font-size:1rem;font-weight:800;margin-bottom:8px}
+.answer .ab{white-space:pre-wrap}
+.badge.wait{background:#EEF0F2;color:var(--sub)}
+.inline{display:flex;gap:8px}
+.inline .btn{height:48px;flex-shrink:0}
+.demo-note{margin-top:20px;padding:12px 14px;background:#FFF6EC;border:1px solid #F5CFA8;border-radius:var(--radius);font-size:.8125rem;color:#7A4510}
+
+/* 관리자 */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px}
+.stat{border:1px solid var(--line);border-radius:10px;padding:20px}
+.stat span{font-size:.875rem;color:var(--sub)}
+.stat b{display:block;font-size:2rem;font-weight:800;color:var(--navy);font-variant-numeric:tabular-nums}
+
+/* 토스트 */
+.toast{position:fixed;left:50%;bottom:32px;transform:translateX(-50%) translateY(20px);background:var(--basalt);color:#fff;padding:14px 22px;border-radius:var(--radius);font-weight:600;opacity:0;pointer-events:none;transition:all .25s;z-index:300}
+.toast.on{opacity:1;transform:translateX(-50%)}
+.top-btn{position:fixed;right:20px;bottom:20px;width:48px;height:48px;border-radius:50%;background:#fff;border:1px solid var(--line);box-shadow:0 6px 16px -8px rgba(0,0,0,.3);display:none;align-items:center;justify-content:center;z-index:40}
+.top-btn.on{display:flex}
+
+/* 반응형 */
+
+
+/* 서브페이지 구성 요소 */
+.slot{border:2px dashed #C3CDD7;border-radius:8px;background:#FAFBFC;color:#6B7580;padding:16px;text-align:center;font-size:.875rem}
+.slot.img{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:8px}
+.slot.tall{min-height:240px;display:flex;align-items:center;justify-content:center}
+.slot.map{height:360px;display:flex;align-items:center;justify-content:center}
+.inline-slot{display:inline-block;padding:2px 14px;font-size:.875rem}
+.greet{display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:start}
+.greet>.slot.img{aspect-ratio:3/4}
+.lead{font-size:1.1875rem;font-weight:700;text-align:center;padding:28px 20px;background:var(--sea-weak);border-radius:10px;color:var(--navy);line-height:1.7}
+.h3{font-size:1.1875rem;font-weight:800;margin:44px 0 16px;padding-left:12px;border-left:4px solid var(--sea);line-height:1.3}
+.content>.ct+.h3{margin-top:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.card{border:1px solid var(--line);border-radius:10px;padding:20px;font-size:.9375rem;color:var(--sub)}
+.card b{display:block;font-size:1.0625rem;color:var(--basalt);margin-bottom:6px}
+.card .slot{margin-top:8px}
+.timeline{border-left:2px solid var(--line);margin-left:6px}
+.timeline li{position:relative;padding:0 0 24px 26px}
+.timeline li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--sea)}
+.timeline .y{display:inline-block;font-weight:800;color:var(--sea);font-variant-numeric:tabular-nums;margin-bottom:4px}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;counter-reset:st}
+.steps li{counter-increment:st;border:1px solid var(--line);border-radius:8px;padding:18px 8px;text-align:center;font-weight:700}
+.steps li::before{content:counter(st);display:flex;margin:0 auto 8px;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;align-items:center;justify-content:center;font-size:.8125rem}
+.org{display:flex;flex-direction:column;align-items:center}
+.org .box{background:var(--navy);color:#fff;padding:14px 36px;border-radius:8px;font-weight:700}
+.org .line{width:2px;height:24px;background:var(--line)}
+.org .row{display:flex;gap:16px;border-top:2px solid var(--line);padding-top:24px;flex-wrap:wrap;justify-content:center}
+.org .slot-box{background:#FAFBFC;color:#6B7580;border:2px dashed #C3CDD7;font-weight:500;font-size:.875rem}
+.cta-row{display:flex;gap:8px;justify-content:center;margin-top:40px;flex-wrap:wrap}
+.sitemap{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.sitemap h3{font-size:1.0625rem;font-weight:800;background:var(--navy);color:#fff;padding:12px 16px;border-radius:8px 8px 0 0}
+.sitemap ul{border:1px solid var(--line);border-top:0;padding:10px 0;border-radius:0 0 8px 8px}
+.sitemap a{display:block;padding:7px 16px;font-size:.9375rem}
+.sitemap a:hover{color:var(--sea);text-decoration:underline}
+/* 갤러리 */
+.gal-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:28px;flex-wrap:wrap}
+.gal-tabs button{padding:9px 20px;border:1px solid var(--line);border-radius:999px;font-weight:600;font-size:.9375rem;color:var(--sub);background:#fff}
+.gal-tabs button[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.board-gal{grid-template-columns:repeat(3,1fr)}
+.gal-item a{display:block}
+.gal-thumb{display:block;position:relative;aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:var(--sea-weak)}
+.gal-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.gal-item a:hover .gal-thumb img{transform:scale(1.04)}
+.gal-thumb .noimg{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#6E8CA8;font-size:.8125rem}
+.gal-thumb .cat{position:absolute;left:10px;top:10px;font-size:.75rem;font-weight:700;padding:3px 9px;border-radius:4px;background:rgba(14,58,95,.88);color:#fff;white-space:nowrap}
+.gal-item .gt{display:block;margin-top:12px;font-weight:700;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.gal-item a:hover .gt{color:var(--sea);text-decoration:underline}
+.gal-item .gd{display:block;margin-top:4px;font-size:.8125rem;color:var(--sub)}
+.gal-more{text-align:center;margin-top:32px}
+.view-photo{padding:28px 8px 0;text-align:center}
+.view-photo img{max-width:100%;max-height:640px;border-radius:8px}
+.view-photo.poster img{max-width:min(100%,720px);max-height:none;border:1px solid var(--line);border-radius:4px}
+.photo-prev{margin-top:10px;max-width:280px;border-radius:6px;display:block}
+
+.biz h3 a:hover{color:var(--sea);text-decoration:underline}
+.biz h3{text-align:center}
+.biz-more{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:14px;padding:8px 0;font-size:.875rem;font-weight:600;color:var(--sub)}
+.biz-more:hover{color:var(--sea)}
+.bm-ic{position:relative;width:26px;height:26px;border:1.5px solid currentColor;border-radius:50%}
+.bm-ic::before,.bm-ic::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:1.5px;background:currentColor;transform:translate(-50%,-50%)}
+.bm-ic::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .2s}
+.biz-more[aria-expanded="true"] .bm-ic::after{transform:translate(-50%,-50%) rotate(0)}
+.biz-g{font-size:.9375rem;font-weight:700;color:var(--navy);margin:18px 0 4px;padding:6px 10px;background:var(--sea-weak);border-radius:6px}
+.biz h3+.biz-g{margin-top:0}
+.dot-list{margin-top:8px}
+.dot-list li{position:relative;padding:3px 0 3px 12px;color:var(--basalt)}
+.dot-list li::before{content:"";position:absolute;left:0;top:.8em;width:4px;height:4px;border-radius:50%;background:var(--sea)}
+.biz li{padding:0}
+.biz li a{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 0}
+.biz li a::after{content:"›";color:#9AA4AE;font-size:1.125rem;line-height:1}
+.biz li a:hover{color:var(--sea)}
+.biz li a:hover::after{color:var(--sea)}
+@media (min-width:1024px){.slide p{white-space:nowrap;max-width:none}}
+/* 오른쪽 고정 배너 */
+.side-bar{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:60;width:80px;background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);border:1px solid var(--line);border-radius:22px;box-shadow:0 10px 28px -14px rgba(14,58,95,.4);overflow:hidden}
+.sb-fs{display:contents}
+.sb-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:100%;height:72px;padding:0 4px;border-bottom:1px solid var(--line);font-size:.75rem;color:var(--sub);background:transparent}
+.side-bar>:last-child>.sb-item:last-child{border-bottom:0}
+.sb-item:hover{background:var(--sea-weak);color:var(--sea)}
+.sb-ic{width:30px;height:30px;display:flex;align-items:center;justify-content:center;color:var(--navy)}
+.sb-ic svg{width:26px;height:26px}
+.sb-ic img{display:block;max-width:30px;max-height:30px;object-fit:contain}
+.sb-glyph{font-weight:800;font-size:1.25rem;line-height:1}
+.sb-glyph.sm{font-size:1rem}
+.sb-glyph sup{font-size:.6875rem;margin-left:1px}
+.sb-tx{white-space:nowrap;line-height:1.2}
+
+/* 관리자 편집 */
+.ed{position:relative;outline:2px dashed transparent;outline-offset:4px;border-radius:6px}
+.is-admin .ed{outline-color:rgba(232,121,43,.45)}
+.ed-btn{position:absolute;top:-10px;right:-10px;z-index:5;padding:4px 10px;font-size:.75rem;font-weight:700;color:#fff;background:var(--tangerine);border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.ed-btn:hover{background:#C9631C}
+.ed-dark{display:inline-block}
+.ed-dark+.ed-dark{display:block}
+.slide .ed{margin-bottom:4px}
+.ed-img{width:100%;border-radius:8px;display:block}
+.greet .ed-img{aspect-ratio:3/4;object-fit:cover}
+.photo-cards .ed-img{aspect-ratio:4/3;object-fit:cover}
+.greet-title{font-size:1.375rem;font-weight:800;color:var(--navy);line-height:1.5}
+.greet-sign{text-align:right;margin-top:20px;font-weight:700}
+.ed-text{line-height:1.8}
+.org .slot-box.filled{background:#fff;color:var(--basalt);border:1px solid var(--line);font-weight:600}
+.ed-modal{position:fixed;inset:0;z-index:400;display:flex;align-items:center;justify-content:center;padding:16px}
+.ed-modal[hidden]{display:none}
+.em-dim{position:absolute;inset:0;background:rgba(10,20,30,.5)}
+.em-box{position:relative;width:min(560px,100%);max-height:90vh;overflow:auto;background:#fff;border-radius:12px;padding:24px}
+.em-title{font-size:1.25rem;font-weight:800;margin-bottom:16px}
+.admin-bar{position:fixed;left:0;right:0;bottom:0;z-index:300;display:flex;align-items:center;gap:16px;justify-content:center;flex-wrap:wrap;padding:10px 16px;background:var(--tangerine);color:#fff;font-size:.875rem;font-weight:600}
+.admin-bar[hidden]{display:none}
+.admin-bar a,.admin-bar button{color:#fff;text-decoration:underline}
+.is-admin .footer{padding-bottom:80px}
+/* 배포 */
+.publish-box{display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:20px 24px;margin-bottom:32px;border:2px solid var(--tangerine);border-radius:10px;background:#FFF8F1}
+.publish-box b{font-size:1.0625rem}
+.publish-btns{display:flex;gap:8px;flex-wrap:wrap}
+/* 네이버 지도 */
+.naver-map{width:100%;height:400px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--stone)}
+.map-empty{height:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:var(--sub);font-size:.9375rem}
+.map-link{text-align:right;margin-top:10px}
+@media (max-width:640px){.naver-map{height:280px}}
+/* 사업 페이지 활동 사진 (대표 사진 크게) */
+.photo-gallery{display:grid;gap:12px;margin-bottom:40px}
+.photo-gallery.pg-3{grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;aspect-ratio:16/7}
+.photo-gallery.pg-3 .pg-item:first-child{grid-row:1 / span 2}
+.photo-gallery.pg-2{grid-template-columns:1fr 1fr;aspect-ratio:16/6}
+.photo-gallery.pg-1{grid-template-columns:1fr;aspect-ratio:16/7}
+.pg-item,.pg-item>.ed{min-height:0;height:100%}
+.pg-item img.ed-img,.pg-item .ed-img{width:100%;height:100%;object-fit:cover;border-radius:10px}
+.pg-item .slot.img{height:100%;aspect-ratio:auto}
+@media (max-width:640px){.photo-gallery.pg-3{grid-template-columns:1fr 1fr;grid-template-rows:auto auto;aspect-ratio:auto}.photo-gallery.pg-3 .pg-item:first-child{grid-row:auto;grid-column:1 / span 2;aspect-ratio:4/3}.photo-gallery.pg-3 .pg-item{aspect-ratio:4/3}.photo-gallery.pg-2,.photo-gallery.pg-1{aspect-ratio:auto}.photo-gallery.pg-2 .pg-item,.photo-gallery.pg-1 .pg-item{aspect-ratio:4/3}}
+/* 가운데 정렬 (제목·관련기관·푸터) */
+.sec-title{justify-content:center;text-align:center}
+.sub-visual{text-align:center}
+.crumb{justify-content:center}
+.content h2.ct{text-align:center}
+.lnb h2{text-align:center}
+.family .wrap{justify-content:center}
+.fam-title{width:100%;margin-bottom:12px}
+.fam-list{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;width:100%}
+.fam-list .fam{padding-left:6px;padding-right:6px}
+@media (max-width:1180px){.fam-list{grid-template-columns:repeat(3,1fr)}}
+.fam{min-width:0}
+.footer{text-align:center}
+.f-links{justify-content:center}
+@media (max-width:1180px){
+  .gnb>li{width:140px}
+    .gnb>li>a{font-size:1rem}
+  .gnb>li>a::after{left:22px;right:22px}
+}
+@media (max-width:1023px){
+  .header .wrap{height:64px;padding-top:0}
+  .h-auth{display:none}
+  .gnb>li>a{padding-top:0}
+  .gnb,.btn-sitemap,.mega-bg{display:none!important}
+  .btn-menu{display:flex}
+    .logo-img{height:38px;max-width:230px}
+    .hero .wrap{min-height:400px;padding-bottom:80px}
+  .quick ul{grid-template-columns:repeat(2,1fr)}
+  .quick li:nth-child(n+3){border-top:1px solid var(--line)}
+  .quick li:nth-child(3){border-left:0}
+  .board-cols{grid-template-columns:minmax(0,1fr);gap:56px}
+  .biz-grid{grid-template-columns:1fr}
+  .sub-body{grid-template-columns:minmax(0,1fr);gap:24px;padding-top:24px}
+  .content,.lnb{min-width:0}
+  .lnb h2{display:none}
+  .lnb ul{display:flex;overflow-x:auto;border:0;border-bottom:1px solid var(--line);gap:4px}
+  .lnb a{border:0;white-space:nowrap;padding:0 14px;height:46px}
+  .lnb-sub{display:none}
+  .lnb a[aria-current="page"]{background:none;box-shadow:inset 0 -3px 0 var(--sea)}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .side-bar{top:auto;bottom:80px;transform:none;right:10px;width:50px;border-radius:18px}
+  .sb-tx{display:none}
+  .sb-item{height:48px}
+  .sb-ic{width:26px;height:26px}
+  .sb-glyph{font-size:1.0625rem}
+  .banner-grid{grid-template-columns:1fr}
+  .gal-grid,.board-gal{grid-template-columns:repeat(2,1fr);gap:14px}
+  .greet{grid-template-columns:1fr}
+  .greet>.slot.img{max-width:220px;margin:0 auto;width:100%}
+  .steps{grid-template-columns:1fr}
+  .steps li{display:flex;align-items:center;gap:12px;text-align:left;padding:12px 14px}
+  .steps li::before{margin:0}
+  .slot.map{height:240px}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  .sec{padding:56px 0}
+  .sec-title h2{font-size:1.4rem}
+  .hero .wrap{min-height:360px;padding-bottom:64px}
+  .quick{margin-top:-32px;background:linear-gradient(transparent 32px,var(--stone) 32px)}
+  .quick a{padding:18px 4px;font-size:.8125rem;gap:8px}
+  .qi{width:44px;height:44px}
+  .qi svg{width:22px;height:22px}
+  .tabs button{padding:10px 12px;font-size:.9375rem}
+  .latest .d{display:none}
+  .sub-visual{padding:36px 0 30px}
+  .sub-visual h1{font-size:1.5rem}
+    .family strong{width:100%}
+  .fam-list{display:grid;grid-template-columns:1fr 1fr}
+  .fam{min-width:0;padding:14px 10px;min-height:110px;font-size:.9375rem;gap:16px}
+  .fam-ic{height:36px}
+  .fam-ic img{max-height:36px}
+  .family .wrap{padding-top:44px;padding-bottom:44px}
+  .search{width:100%}
+  .search input{flex:1;width:auto;min-width:0}
+  .search select{flex:0 0 96px;min-width:0}
+  .search .btn{flex-shrink:0;padding:0 14px}
+  table.list .hide-m{display:none}
+  .auth-card{padding:28px 20px;border:0}
+  .info-table th{width:100px}
+  .contact-card .tel{font-size:1.6rem}
+}
+@media (max-width:359px){.slide h2{white-space:normal}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#app">본문 바로가기</a>
+
+<!-- 유틸바 -->
+
+<!-- 헤더 / GNB -->
+<header class="header" id="header">
+  <div class="wrap">
+    <a href="#/" class="logo" aria-label="제주국제개발협력센터 홈">
+      <img class="logo-img" id="logoImg" src="images/logo.png" alt="제주국제개발협력센터" onerror="this.classList.add('broken')"><span class="logo-alt">제주국제개발협력센터</span>
+    </a>
+    <ul class="gnb" id="gnb"></ul>
+    <button class="btn-menu" id="btnMenu" aria-label="전체메뉴 열기" aria-controls="mNav" aria-expanded="false">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <div class="mega-bg" aria-hidden="true"></div>
+</header>
+
+<!-- 모바일 메뉴 -->
+<div class="m-nav" id="mNav" aria-hidden="true">
+  <div class="m-dim" data-close></div>
+  <nav class="m-panel" aria-label="모바일 전체메뉴">
+    <div class="m-head">
+      <strong>전체메뉴</strong>
+      <button class="m-close" data-close aria-label="전체메뉴 닫기"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <ul class="m-list" id="mList"></ul>
+  </nav>
+</div>
+
+<main id="app" tabindex="-1"></main>
+
+<div class="family">
+  <div class="wrap"><h2 class="col-title fam-title" id="famTitle">관련기관</h2><ul class="fam-list" id="family" aria-labelledby="famTitle"></ul></div>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="f-links">
+      <a href="#/page/privacy" class="priv">개인정보처리방침</a>
+      <a href="#/page/terms">이용약관</a>
+      <a href="#/page/map">오시는 길</a>
+      <span id="utilAuth" class="f-admin"></span>
+      <a href="https://www.jejunu.ac.kr" target="_blank" rel="noopener" title="새 창 열림">제주대학교</a>
+      <a href="https://www.koica.go.kr" target="_blank" rel="noopener" title="새 창 열림">한국국제협력단(KOICA)</a>
+    </div>
+    <address>
+      (63243) 제주특별자치도 제주시 제주대학로 102 제주대학교 통번역대학원 1층 103호 제주국제개발협력센터<br>
+      전화 064-754-8250 · 이메일 jejuidcc@jejunu.ac.kr
+    </address>
+    <p class="copy">Copyright © 제주국제개발협력센터. All rights reserved.</p>
+  </div>
+</footer>
+
+<aside class="side-bar" aria-label="SNS 및 글자 크기">
+  <a class="sb-item" id="sbInsta" href="https://www.instagram.com/jjidcc_official" target="_blank" rel="noopener" title="인스타그램 (새 창 열림)">
+    <span class="sb-ic"><img alt="" src="images/insta_logo.png" data-base="images/insta_logo"></span><span class="sb-tx">인스타그램</span>
+  </a>
+  <a class="sb-item" id="sbBlog" href="https://blog.naver.com/jidcc" target="_blank" rel="noopener" title="블로그 (새 창 열림)">
+    <span class="sb-ic"><img alt="" src="images/blog_logo.png" data-base="images/blog_logo"></span><span class="sb-tx">블로그</span>
+  </a>
+  <a class="sb-item" id="sbYoutube" href="https://www.youtube.com/@%EC%A0%9C%EC%A3%BC%EA%B5%AD%EC%A0%9C%EA%B0%9C%EB%B0%9C%ED%98%91%EB%A0%A5%EC%84%BC%ED%84%B0" target="_blank" rel="noopener" title="유튜브 (새 창 열림)">
+    <span class="sb-ic"><img alt="" src="images/youtube_logo.png" data-base="images/youtube_logo"></span><span class="sb-tx">유튜브</span>
+  </a>
+  <div class="sb-fs" role="group" aria-label="글자 크기">
+    <button class="sb-item" data-fs="1" aria-label="글자 크게"><span class="sb-ic sb-glyph">가<sup>+</sup></span><span class="sb-tx">글자 크게</span></button>
+    <button class="sb-item" data-fs="-1" aria-label="글자 작게"><span class="sb-ic sb-glyph sm">가<sup>−</sup></span><span class="sb-tx">글자 작게</span></button>
+  </div>
+</aside>
+<button class="top-btn" id="topBtn" aria-label="맨 위로"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
+<div class="ed-modal" id="edModal" hidden>
+  <div class="em-dim" data-em-close></div>
+  <div class="em-box" role="dialog" aria-modal="true" aria-labelledby="emTitle">
+    <h2 class="em-title" id="emTitle">수정</h2>
+    <div class="em-body"></div>
+    <div class="board-bottom"><button class="btn btn-danger" data-em-del>비우기</button><span style="flex:1"></span><button class="btn btn-line" data-em-close>취소</button><button class="btn btn-primary" data-em-save>저장</button></div>
+  </div>
+</div>
+<div class="admin-bar" id="adminBar" hidden><span>관리자 모드 · 각 영역의 [수정] 버튼으로 글과 사진을 바꿀 수 있습니다</span><a href="#/admin">관리자 페이지</a><button data-logout>로그아웃</button></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- 배포 데이터: 관리자 페이지 [배포 파일 만들기]로 받은 data.js를 이 HTML과 같은 폴더에 둡니다 -->
+<script src="data.js"></script>
+<script>
+/* =========================================================
+   ※ 시안용 데모: 데이터는 브라우저 localStorage에 저장됩니다.
+   실제 운영 시에는 서버 API + DB로 교체합니다. (화면 하단 설계 참고)
+   ========================================================= */
+
+// ---------- 메뉴 구조 (실제 센터 프로그램 기준) ----------
+const MENU = [
+  {id:'about', name:'센터소개', items:[['greeting','인사말'],['purpose','설립목적·연혁'],['org','조직·연락처'],['map','오시는 길']]},
+  {id:'cnews', name:'센터뉴스', items:[['board:press','보도자료'],['board:gallery','운영 사진']]},
+  {id:'biz', name:'주요사업', items:[['awareness','ODA 인지제고'],['network','ODA 네트워킹'],['koica','ODA 사업 참여 지원'],['jejuoda','제주도 내 ODA 현황']]},
+  {id:'news', name:'공지사항', items:[['board:notice','공지사항']]}
+];
+const BOARDS = {
+  notice:{name:'공지사항', menu:'news', write:'admin'},
+  press:{name:'보도자료', menu:'cnews', write:'admin'},
+  gallery:{name:'운영 사진', menu:'cnews', write:'admin', photo:true},
+  odastat:{name:'제주도 내 ODA 현황', menu:'biz', write:'admin', cat:'jejuoda'}   // 분류(제주도청 ODA 등)별 글 목록
+};
+BOARDS.press.photo = true;   // 보도자료도 대표 사진 등록 가능
+BOARDS.notice.photo = true; BOARDS.notice.photoLabel = '포스터';   // 공지사항: 포스터를 글 안에 표시
+const GALLERY_BOARDS = ['press','gallery'];
+// ---------- 서브페이지 구성 ----------
+// .slot = 센터가 원고·사진을 채울 자리 (사실 확인된 내용만 미리 입력)
+const slot = (t, cls='') => `<div class="slot ${cls}">${t}</div>`;
+const TEL = '064-754-8250';
+const BIZ = {
+  awareness:{groups:[
+    {name:'ODA 이해 제고 교육', items:['개발협력 초급전문가 양성과정','개발협력 초급전문가 해외현장체험','찾아가는 국제개발협력교육','대학생 개발협력교육','미래세대 개발협력교육 강사양성과정']},
+    {name:'ODA 사업 설명회', items:['WFK 해외봉사단 참여방법 설명회','ODA 사업 참여방법 설명회']},
+    {name:'ODA 홍보', items:['ODA 사진전','ODA 홍보부스','제주국제개발협력 포럼',"대학생 ODA 서포터즈 '오디세이'",'개발협력주간 행사']}
+  ], kw:['교육','해외현장체험','설명회','사진전','홍보부스','포럼','서포터즈','오디세이','개발협력주간','WFK']},
+  network:{groups:[
+    {name:'ODA 네트워킹', items:['KOICA 리크루터 양성','제주지역 ODA 활성화 협의회','다문화 가족 연계 SDGs 실천 행사']}
+  ], kw:['리크루터','협의회','SDGs','다문화']},
+  koica:{groups:[
+    {name:'ODA 사업 발굴 지원', items:['파트너기관 ODA 사업발굴 현지조사']},
+    {name:'지역사회 사업참여 지원', items:['ODA 사업참여 및 개발협력 진로 컨설팅']}
+  ], kw:['현지조사','컨설팅']},
+  jejuoda:{groups:[
+    {name:'제주도 내 ODA 현황', items:['제주도청 ODA','KOICA ODA']}
+  ], kw:['현황'], status:true},
+  odyssey:{groups:[{name:"대학생 ODA 서포터즈 '오디세이'", items:["대학생 ODA 서포터즈 '오디세이'"]}], kw:['오디세이','서포터즈']},
+  consult:{groups:[{name:'ODA 사업참여 컨설팅', items:['ODA 사업참여 컨설팅']}], kw:['사업참여','컨설팅']},
+  briefing:{groups:[{name:'개발협력 진로 컨설팅', items:['개발협력 진로 컨설팅']}], kw:['진로','컨설팅']}
+};
+Object.values(BIZ).forEach(d => d.programs = d.groups.flatMap(g => g.items));
+function applyBizLists(){
+  const lists = store.get('bizLists', null); if (!lists) return;
+  Object.entries(lists).forEach(([k, items]) => { if (BIZ[k]) { BIZ[k].groups = [{name:'', items}]; BIZ[k].programs = items; } });
+}
+// 분야 페이지: 세부 사업 목록만 (누르면 개별 사업 페이지)
+function bizPage(key){
+  const d = BIZ[key];
+  return `<ul class="prog-list">${d.programs.map((n,i)=>`<li><a href="#/program/${key}/${i}"><span>${esc(n)}</span>${ico.down.replace('M6 9l6 6 6-6','M9 6l6 6-6 6')}</a></li>`).join('')}</ul>`;
+}
+// 개별 사업 페이지
+// 제주도 내 ODA 현황: 기관별 현황 페이지
+function statusPage(name){
+  const list = store.get('posts',[]).filter(p => p.board === 'odastat' && p.cat === name).sort(sortPosts);
+  const total = list.length;
+  return `
+  <div class="board-top"><p class="total">전체 <b>${total}</b>건</p>${canWrite('odastat') ? `<a class="btn btn-primary" href="#/write/odastat?cat=${encodeURIComponent(name)}">글쓰기</a>` : ''}</div>
+  <table class="list">
+    <caption class="sr-only">${esc(name)} 목록 - 번호, 제목, 등록일, 조회수</caption>
+    <thead><tr><th scope="col" style="width:80px">번호</th><th scope="col">제목</th><th scope="col" style="width:120px">등록일</th><th scope="col" class="hide-m" style="width:70px">조회</th></tr></thead>
+    <tbody>${total ? list.map((p,i)=>`<tr class="${p.pinned?'pinned':''}"><td>${p.pinned?'<span class="badge pin">공지</span>':total-i}</td><td class="tl"><a href="#/post/${p.id}">${esc(p.title)}</a>${p.files?.length?' <span class="sr-only">첨부파일 있음</span>📎':''}</td><td>${p.date}</td><td class="hide-m">${p.views}</td></tr>`).join('') : `<tr><td colspan="4" class="empty">등록된 글이 없습니다.${canWrite('odastat')?' [글쓰기]로 현황을 추가하세요.':''}</td></tr>`}</tbody>
+  </table>`;
+}
+function programPage(name){
+  const k = f => 'prog.' + name + '.' + f;
+  const rows = [edRow('사업 목적',k('purpose'),'사업 목적 입력'), edRow('참여 대상',k('target'),'참여 대상 입력'), edRow('주요 내용',k('content'),'주요 활동 내용 입력'), edRow('신청 방법',k('apply'),'신청 방법 입력 (공지사항 게시 후 접수 등)')].join('');
+  const ph = [1,2,3].filter(n => CMS.get(k('photo'+n)) || isAdmin());
+  const photos = ph.map(n => `<div class="pg-item">${ed(k('photo'+n), {type:'image', label:n===1?'대표 활동 사진':'활동 사진 '+n, ph:n===1?'대표 활동 사진 (사업을 가장 잘 보여주는 사진)':'활동 사진 '+n})}</div>`).join('');
+  return `
+  ${photos ? `<div class="photo-gallery pg-${ph.length}" aria-label="활동 사진">${photos}</div>` : ''}
+  <h3 class="h3">사업 개요</h3>
+  <table class="info-table"><caption class="sr-only">사업 개요</caption>
+    ${rows}
+    <tr><th scope="row">문의</th><td>제주국제개발협력센터 ${TEL}</td></tr>
+  </table>`;
+}
+function viewProgram(cat, idx){
+  const d = BIZ[cat], name = d && d.programs[+idx];
+  if (!name) return viewNotFound();
+  window._lnbOpen = cat; window._lnbCur = cat + '/' + idx;
+  subLayout('biz', cat, name, `<h2 class="ct">${esc(name)}</h2>${d.status ? statusPage(name) : programPage(name)}`);
+}
+// ---------- 배포 데이터 (data.js) ----------
+// 관리자 PC: data.js가 새 버전이면 그 내용을 불러와 이어서 편집
+function importSiteData(force){
+  if (PUBLIC || !SITE) return false;
+  if (!force && store.get('dataVer') === SITE._ver) return false;
+  DATA_KEYS.forEach(k => { if (k in SITE) store.set(k, SITE[k]); });
+  store.set('seeded', true); store.set('seed_gallery', true); store.set('dataVer', SITE._ver);
+  return true;
+}
+// 관리자: 현재 내용을 data.js로 내려받기 → 누리집 폴더의 data.js를 교체하면 방문자 화면에 반영
+function exportSiteData(){
+  const ver = new Date().toISOString();
+  const data = { _ver: ver };
+  DATA_KEYS.forEach(k => { const v = store.get(k); if (v !== undefined && v !== null) data[k] = v; });
+  const blob = new Blob(['/* 제주국제개발협력센터 누리집 배포 데이터 · ' + ver + ' */\nwindow.SITE_DATA = ' + JSON.stringify(data) + ';\n'], {type:'text/javascript'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'data.js';
+  document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  store.set('dataVer', ver);
+  toast('data.js를 내려받았습니다. 누리집 폴더의 data.js를 이 파일로 바꾸세요.');
+}
+
+// ---------- 네이버 지도 ----------
+// NCP 콘솔(Maps > Application)에서 발급한 Client ID를 관리자 페이지에 입력하면 지도가 표시됩니다.
+// ※ 콘솔의 'Web 서비스 URL'에 누리집 주소를 등록해야 합니다. (내 PC에서 파일로 열면 지도가 뜨지 않음)
+const SITE_URL = 'https://jejuidcc.kr';   // 누리집 주소 (도메인 확정 시 수정)
+const MAP_DEFAULT = { lat: 33.4531, lng: 126.5603, zoom: 17 };   // 제주대학교 일대 (관리자 페이지에서 정확한 좌표로 수정)
+function mapCfg(){ const c = CMS.get('map.cfg') || {}; return { id: c.id || '', lat: +c.lat || MAP_DEFAULT.lat, lng: +c.lng || MAP_DEFAULT.lng, zoom: +c.zoom || MAP_DEFAULT.zoom }; }
+function drawNaverMap(){
+  const el = $('#naverMap'); if (!el) return;
+  const c = mapCfg();
+  const fallback = msg => el.innerHTML = `<div class="map-empty">${msg}</div>`;
+  if (!c.id) return fallback(isAdmin() ? '관리자 페이지 → 네이버 지도 설정에 Client ID를 입력하면 지도가 표시됩니다.' : '지도를 불러올 수 없습니다. 아래 버튼으로 네이버 지도에서 확인하세요.');
+  const make = () => {
+    try {
+      const pos = new naver.maps.LatLng(c.lat, c.lng);
+      const map = new naver.maps.Map(el, { center: pos, zoom: c.zoom });
+      new naver.maps.Marker({ position: pos, map, title: '제주국제개발협력센터' });
+    } catch (e) { fallback('지도를 불러오지 못했습니다. Client ID와 Web 서비스 URL 등록을 확인하세요.'); }
+  };
+  if (window.naver && naver.maps) return make();
+  const sc = document.createElement('script');
+  sc.src = 'https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=' + encodeURIComponent(c.id);
+  sc.onload = make; sc.onerror = () => fallback('지도 스크립트를 불러오지 못했습니다. 인터넷 연결과 Client ID를 확인하세요.');
+  document.head.appendChild(sc);
+}
+
+// ---------- 관리자 편집(CMS) ----------
+// 관리자로 로그인하면 각 영역에 [수정] 버튼이 생기고, 글·사진을 바로 바꿀 수 있습니다.
+// 시안: 브라우저 저장 / 실서비스: 서버 DB(콘텐츠 테이블)로 교체
+const CMS = {
+  all(){ return store.get('cms', {}); },
+  get(k){ return this.all()[k]; },
+  set(k, v){ const a = this.all(); if (v === null || v === '' || v === undefined) delete a[k]; else a[k] = v; store.set('cms', a); }
+};
+const nl2br = t => esc(t).replace(/\n/g, '<br>');
+// 편집 가능 영역. type: text | image
+function ed(key, o = {}){
+  const type = o.type || 'text', v = CMS.get(key), val = v !== undefined ? v : o.def;
+  let view = '';
+  if (val) view = o.render ? o.render(val) : type === 'image' ? `<img class="ed-img" src="${val.src || val}" alt="${esc(val.alt || '')}">` : `<div class="ed-text">${nl2br(val)}</div>`;
+  else if (isAdmin()) view = slot(o.ph || '내용 입력', type === 'image' ? 'img' : '');
+  if (!isAdmin()) return view;
+  return `<div class="ed ${o.cls||''}" data-ed="${esc(key)}" data-type="${type}" data-label="${esc(o.label||'')}">${view}<button class="ed-btn" data-edit>수정</button></div>`;
+}
+// 표 한 줄: 방문자에게는 내용이 있을 때만 보임
+function edRow(label, key, ph, def){
+  const has = CMS.get(key) || def;
+  if (!has && !isAdmin()) return '';
+  return `<tr><th scope="row">${label}</th><td>${ed(key, {label, ph, def})}</td></tr>`;
+}
+const MAP_BUS = '버스 이용 시 \'제주대학교\' 정류장에서 내리면 됩니다.\n노선과 도착 시간은 제주버스정보시스템(bus.jeju.go.kr)에서 확인하세요.';
+let edCtx = null;
+function openEditor(box){
+  const key = box.dataset.ed, type = box.dataset.type, label = box.dataset.label || '내용';
+  const v = CMS.get(key);
+  edCtx = {key, type, img: v && type === 'image' ? (v.src || v) : null};
+  const m = $('#edModal');
+  m.querySelector('.em-title').textContent = label + ' 수정';
+  m.querySelector('.em-body').innerHTML = type === 'image'
+    ? `<img id="emPrev" class="photo-prev" alt="" ${edCtx.img?`src="${edCtx.img}"`:'hidden'}>
+       <div class="field" style="margin-top:12px"><label for="emFile">사진 파일 (JPG·PNG·WEBP, 10MB 이하)</label><input id="emFile" type="file" accept="image/png,image/jpeg,image/webp"></div>
+       <div class="field"><label for="emAlt">사진 설명 (대체텍스트)</label><input id="emAlt" type="text" maxlength="120" value="${esc(v && v.alt || '')}"></div>`
+    : `<div class="field"><label for="emText">${esc(label)}</label><textarea id="emText" style="height:220px">${esc(v || '')}</textarea><p class="hint">줄바꿈은 그대로 반영됩니다.</p></div>`;
+  const f = $('#emFile');
+  if (f) f.onchange = async () => { const file = f.files[0]; if (!file) return; edCtx.img = await readPhoto(file); const pv = $('#emPrev'); pv.src = edCtx.img; pv.hidden = false; };
+  m.hidden = false; (m.querySelector('textarea,input') || m.querySelector('button')).focus();
+}
+function closeEditor(){ $('#edModal').hidden = true; edCtx = null; }
+function saveEditor(remove){
+  if (!edCtx) return;
+  if (remove) CMS.set(edCtx.key, null);
+  else if (edCtx.type === 'image') CMS.set(edCtx.key, edCtx.img ? {src: edCtx.img, alt: $('#emAlt').value.trim()} : null);
+  else CMS.set(edCtx.key, $('#emText').value.trim());
+  closeEditor(); const y = scrollY; route(); window.scrollTo(0, y); toast(remove ? '삭제했습니다.' : '저장했습니다.');
+}
+const timeline = v => `<ul class="timeline">${v.split('\n').filter(Boolean).map(l => { const [y, ...t] = l.split('|'); return `<li><span class="y">${esc(y.trim())}</span><p>${esc(t.join('|').trim())}</p></li>`; }).join('')}</ul>`;
+const orgRow = v => `<div class="row">${v.split('\n').filter(Boolean).map(t=>`<div class="box slot-box filled">${esc(t)}</div>`).join('')}</div>`;
+
+const PAGES = {
+  greeting:{body:()=>`
+    <div class="greet">
+      ${ed('greeting.photo', {type:'image', label:'센터장 사진', ph:'센터장 사진<br>(세로형 3:4)'})}
+      <div>
+        ${ed('greeting.title', {label:'인사말 제목', ph:'인사말 제목 한 줄 입력', render:v=>`<p class="greet-title">${nl2br(v)}</p>`})}
+        <div style="height:16px"></div>
+        ${ed('greeting.body', {label:'인사말 본문', ph:'인사말 본문 입력 (3~5문단)'})}
+        ${ed('greeting.sign', {label:'서명', ph:'제주국제개발협력센터장 OOO', render:v=>`<p class="greet-sign">${nl2br(v)}</p>`})}
+      </div>
+    </div>`},
+  purpose:{body:()=>`
+    ${ed('purpose.lead', {label:'설립 목적', def:'제주 지역의 공적개발원조(ODA) 참여 기반 확대를 위해\n제주특별자치도·한국국제협력단(KOICA)·제주대학교의 협약으로 설립되었습니다.', render:v=>`<p class="lead">${nl2br(v)}</p>`})}
+    <h3 class="h3">주요 역할</h3>
+    <div class="cards">
+      <div class="card"><b>ODA 교육</b>주민·학생·시민단체·기업 대상</div>
+      <div class="card"><b>사업 발굴·컨설팅</b>신규 ODA 사업 발굴과 사업 수행 컨설팅</div>
+      <div class="card"><b>파트너 네트워크</b>ODA 협력 파트너 네트워크 강화</div>
+      <div class="card"><b>귀국 봉사단원 지원</b>WFK 귀국 단원의 지역 활동 지원</div>
+      <div class="card"><b>모니터링·평가</b>제주 지역 ODA 사업 모니터링·평가</div>
+    </div>
+    <h3 class="h3">연혁</h3>
+    ${ed('purpose.history', {label:'연혁 (한 줄에 하나씩: 연도 | 내용)', def:'2015. 08. | 제주특별자치도·KOICA·제주대학교 3자 업무협약 체결\n2016. 06. 22. | 제주국제개발협력센터 개소 (제주대학교 본관 개소식)', render:timeline})}`},
+  org:{body:()=>`
+    <h3 class="h3">조직도</h3>
+    <div class="org">
+      <div class="box">센터장</div><div class="line"></div>
+      ${ed('org.chart', {label:'조직도 (한 줄에 한 칸씩)', ph:'담당 업무를 한 줄에 하나씩 입력', render:orgRow})}
+    </div>
+    <h3 class="h3">대표 연락처</h3>
+    <table class="info-table"><tr><th scope="row">대표 전화</th><td>${TEL}</td></tr><tr><th scope="row">이메일</th><td>jejuidcc@jejunu.ac.kr</td></tr></table>`},
+  map:{body:()=>`
+    <div id="naverMap" class="naver-map" role="region" aria-label="센터 위치 지도"></div>
+    <p class="map-link"><a class="btn btn-line btn-sm" href="https://map.naver.com/p/search/${encodeURIComponent('제주대학교 통번역대학원')}" target="_blank" rel="noopener" title="새 창 열림">네이버 지도에서 크게 보기</a></p>
+    <table class="info-table" style="margin-top:24px">
+      <tr><th scope="row">주소</th><td>(63243) 제주특별자치도 제주시 제주대학로 102<br>제주대학교 통번역대학원 1층 103호 제주국제개발협력센터</td></tr>
+      <tr><th scope="row">전화</th><td>${TEL}</td></tr>
+      ${edRow('대중교통','map.bus','버스 노선·하차 정류장 입력', MAP_BUS)}
+    </table>`},
+  awareness:{body:()=>bizPage('awareness')}, network:{body:()=>bizPage('network')}, koica:{body:()=>bizPage('koica')},
+  odyssey:{body:()=>bizPage('odyssey')}, consult:{body:()=>bizPage('consult')}, briefing:{body:()=>bizPage('briefing')},
+  privacy:{title:'개인정보처리방침', body:()=>ed('page.privacy', {label:'개인정보처리방침', ph:'「개인정보 보호법」 제30조에 따른 개인정보 처리방침 전문 (발송대행 업체 등 처리 위탁 내용 포함)'})},
+  terms:{title:'이용약관', body:()=>ed('page.terms', {label:'이용약관', ph:'누리집 이용약관 전문'})},
+};
+
+// ---------- 관련기관 (로고는 관리자 페이지에서 등록) ----------
+const FAMILY = [
+  {key:'koica',   name:'한국국제협력단(KOICA)', url:'https://www.koica.go.kr',   file:'koica_logo.png'},
+  {key:'odaedu',  name:'KOICA ODA교육원',       url:'https://oda.koica.go.kr',   file:'koicaoda_logo.png'},
+  {key:'odalib',  name:'KOICA ODA도서관',       url:'https://lib.koica.go.kr',   file:'odalib_logo.png'},
+  {key:'jeju',    name:'제주특별자치도청',       url:'https://www.jeju.go.kr',    file:'jejudo_logo.png'},
+  {key:'jejunu',  name:'제주대학교',            url:'https://www.jejunu.ac.kr',  file:'jejunu_logo.png'},
+  {key:'odakorea',name:'ODA 통합누리집',         url:'https://www.odakorea.go.kr',file:'odakorea.png'}
+];
+
+// ---------- 저장소 (try/catch) ----------
+const mem = {};
+const PUBLIC = true;    // 배포(방문자)용 파일은 true: 브라우저 저장 대신 data.js 내용만 표시
+const SITE = window.SITE_DATA || null;
+const DATA_KEYS = ['cms','posts','banner','siteLogo','logos','bizLists'];   // data.js로 배포되는 항목
+const store = {
+  get(k, d){
+    if (PUBLIC) return (SITE && k in SITE) ? SITE[k] : (k in mem ? mem[k] : d);
+    try{ const v = localStorage.getItem('jicdc_'+k); return v ? JSON.parse(v) : d; }catch(e){ return k in mem ? mem[k] : d; } },
+  set(k, v){ if (PUBLIC) { mem[k] = v; return; } try{ localStorage.setItem('jicdc_'+k, JSON.stringify(v)); }catch(e){ mem[k] = v; if (e && e.name === 'QuotaExceededError') setTimeout(()=>toast('브라우저 저장 공간이 가득 찼습니다. (시안 한계 — 실서비스는 서버 저장)')); } }
+};
+const session = {
+  get(){ try{ return JSON.parse(sessionStorage.getItem('jicdc_user')); }catch(e){ return mem._user || null; } },
+  set(u){ try{ u ? sessionStorage.setItem('jicdc_user', JSON.stringify(u)) : sessionStorage.removeItem('jicdc_user'); }catch(e){ mem._user = u; } }
+};
+
+async function hash(pw, salt){
+  const data = new TextEncoder().encode(salt + ':' + pw);
+  if (window.crypto && crypto.subtle){
+    const buf = await crypto.subtle.digest('SHA-256', data);
+    return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('');
+  }
+  let h = 0; for (const c of data) h = (h*31 + c) | 0; return 'x' + h;
+}
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,7);
+const today = () => { const d = new Date(); return d.getFullYear()+'.'+String(d.getMonth()+1).padStart(2,'0')+'.'+String(d.getDate()).padStart(2,'0'); };
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+// ---------- 초기 데이터 (예시) ----------
+async function seed(){
+  if (store.get('seeded')) return;
+  const salt = uid();
+  store.set('users', [{id:'admin', name:'관리자', email:'jejuidcc@jejunu.ac.kr', role:'admin', salt, pw: await hash('admin1234!', salt), joined: today()}]);
+  const ex = (board, title, pinned=false) => ({id:uid(), board, title, body:'시안용 예시 게시물입니다. 관리자 로그인 후 수정·삭제할 수 있습니다.', author:'관리자', authorId:'admin', date: today(), views:0, pinned, files:[]});
+  store.set('posts', [
+    ex('notice','[예시] 누리집 개편 안내', true),
+    ex('notice',"[예시] 대학생 ODA 서포터즈 '오디세이' 모집 안내"),
+    ex('notice','[예시] 개발협력 진로 컨설팅 신청 안내'),
+    ex('notice','[예시] 개발협력 초급전문가 양성과정 참가자 모집'),
+    ex('notice','[예시] ODA 사업참여 컨설팅 참여기관 모집'),
+    ex('press','[예시] ODA 사진전 개최')
+  ]);
+  store.set('seeded', true);
+}
+function seedGallery(){
+  if (store.get('seed_gallery')) return;
+  const all = store.get('posts', []);
+  const ex = t => ({id:uid(), board:'gallery', title:t, body:'시안용 예시 게시물입니다. 관리자 로그인 후 사진을 등록할 수 있습니다.', author:'관리자', authorId:'admin', date: today(), views:0, pinned:false, files:[], photo:null, alt:''});
+  all.push(ex('[예시] ODA 홍보부스 운영'), ex('[예시] 대학생 개발협력교육 현장'), ex('[예시] 개발협력 진로 컨설팅'));
+  store.set('posts', all); store.set('seed_gallery', true);
+}
+
+// ---------- 공통 ----------
+const $ = (s, el=document) => el.querySelector(s);
+const app = $('#app');
+let user = session.get();
+const isAdmin = () => user && user.role === 'admin';
+const canWrite = b => b && user && (BOARDS[b].write === 'member' || isAdmin());
+function toast(msg){ const t = $('#toast'); t.textContent = msg; t.classList.add('on'); clearTimeout(t._t); t._t = setTimeout(()=>t.classList.remove('on'), 2200); }
+const unlocked = id => { try{ return sessionStorage.getItem('unlock_'+id)==='1'; }catch(e){ return !!mem['unlock_'+id]; } };
+const setUnlock = id => { try{ sessionStorage.setItem('unlock_'+id,'1'); }catch(e){ mem['unlock_'+id]=1; } };
+const canSee = p => !p.secret || isAdmin() || unlocked(p.id);
+const MAX_TRY = 5;
+const linkOf = key => key.startsWith('#') ? key : key.startsWith('board:') ? '#/board/' + key.slice(6) : key.startsWith('prog:') ? '#/program/' + key.slice(5) : '#/page/' + key;
+const ico = {
+  down:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>',
+  plus:'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>'
+};
+
+// ---------- 메뉴 렌더 ----------
+function renderMenus(){
+  const single = m => m.items.length === 1 && m.items[0][1] === m.name;   // 하위메뉴 없음
+  $('#gnb').innerHTML = MENU.map(m => `<li><a href="${linkOf(m.items[0][0])}">${m.name}</a><ul class="gnb-sub">${single(m) ? '' : m.items.map(([k,n])=>`<li><a href="${linkOf(k)}">${n}</a></li>`).join('')}</ul></li>`).join('');
+  $('#mList').innerHTML = MENU.map((m,i) => single(m)
+    ? `<li><a class="m-single" href="${linkOf(m.items[0][0])}">${m.name}</a></li>`
+    : `<li><button aria-expanded="false" aria-controls="msub${i}">${m.name}${ico.down}</button><ul id="msub${i}">${m.items.map(([k,n])=>`<li><a href="${linkOf(k)}">${n}</a></li>`).join('')}</ul></li>`).join('');
+}
+function renderAuth(){
+  const bar = $('#adminBar'); if (bar) { bar.hidden = !isAdmin(); document.body.classList.toggle('is-admin', isAdmin()); }
+  const u = user;
+  if ($('#utilAuth')) $('#utilAuth').innerHTML = ''; if (false) $('#utilAuth').innerHTML = u
+    ? `<span class="h-user">${esc(u.name)}님${u.role==='admin'?' (관리자)':''}</span>${u.role==='admin'?'<a href="#/admin">관리자 페이지</a>':''}<button data-logout>로그아웃</button>`
+    : '';
+  if ($('#mAuth')) $('#mAuth').innerHTML = u
+    ? `${u.role==='admin'?'<a href="#/admin">관리자</a>':''}<button data-logout>로그아웃</button>`
+    : `<a href="#/login">로그인</a><a href="#/signup">회원가입</a>`;
+}
+
+function renderFamily(){
+  const logos = store.get('logos', {});
+  $('#family').innerHTML = FAMILY.map(f => `<li><a class="fam" href="${f.url}" target="_blank" rel="noopener" title="${f.name} 누리집 (새 창 열림)"><span class="fam-ic"><img src="${logos[f.key] || 'images/'+f.file}" alt="" onerror="this.remove()"></span><span class="fam-nm">${f.name}</span></a></li>`).join('');
+}
+
+// ---------- 화면: 메인 ----------
+const QUICK = [
+  ['prog:awareness/10',"대학생 ODA 서포터즈 '오디세이'",'<path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>'],
+  ['prog:awareness/0','개발협력 초급전문가 양성과정','<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/>'],
+  ['prog:koica/1','ODA 사업참여 컨설팅','<path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z"/>'],
+  ['prog:koica/1','개발협력 진로 컨설팅','<rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/>']
+];
+
+// ---------- 메인 배너 사진 ----------
+const DIMS = {light:.35, mid:.55, strong:.75};
+// 배너 이미지 파일 (HTML 파일과 같은 위치의 images 폴더)
+const BANNER_FILES = { pc:'images/banner_pc.jpg', m:'images/banner_mobile.jpg' };
+function bannerErr(img){
+  const pic = img.closest('picture'), src = pic && pic.querySelector('source');
+  if (src) { src.remove(); return; }          // 모바일 파일이 없으면 PC 파일로 대체
+  if (pic) { pic.nextElementSibling?.remove(); pic.remove(); }   // 둘 다 없으면 기본 그래픽
+}
+function heroPhoto(){
+  const bn = store.get('banner', {});
+  if (!bn.pc && !bn.m) return `<picture class="hero-photo" aria-hidden="true"><source media="(max-width:767px)" srcset="${BANNER_FILES.m}"><img src="${BANNER_FILES.pc}" alt="" onerror="bannerErr(this)"></picture><div class="hero-dim" style="--dim:${DIMS.mid}" aria-hidden="true"></div>`;
+  const pc = bn.pc || bn.m, m = bn.m || bn.pc;
+  return `<picture class="hero-photo" aria-hidden="true"><source media="(max-width:767px)" srcset="${m}"><img src="${pc}" alt=""></picture><div class="hero-dim" style="--dim:${DIMS[bn.dim||'mid']}" aria-hidden="true"></div>`;
+}
+const BIZ_SHOW = 4;   // 카드에 처음 보이는 사업 수
+const BIZ_CARDS = [
+  {title:'ODA 인지제고', page:'awareness'},
+  {title:'ODA 네트워킹', page:'network'},
+  {title:'KOICA 공공협력사업 참여 지원', page:'koica'}
+];
+function viewHome(){
+  const posts = store.get('posts', []);
+  app.innerHTML = `
+  <section class="hero has-photo" aria-label="센터 소개">
+    ${heroPhoto()}
+    <div class="wrap">
+      <div class="slide on">
+        ${ed('home.tag', {label:'배너 작은 표시', def:'제주국제개발협력센터', render:v=>`<span class="tag">${esc(v)}</span>`, cls:'ed-dark'})}
+        ${ed('home.title', {label:'배너 제목', def:'기업에게는 기회를, 청년에게는 꿈을', render:v=>`<h2>${esc(v)}</h2>`, cls:'ed-dark'})}
+        ${ed('home.desc', {label:'배너 설명', def:'제주국제개발협력센터가 기업과 청년의 국제개발협력 참여 기회를 넓힙니다.', render:v=>`<p>${esc(v)}</p>`, cls:'ed-dark'})}
+      </div>
+    </div>
+  </section>
+
+  <nav class="quick" aria-label="바로가기">
+    <div class="wrap"><ul>
+      ${QUICK.map(([k,n,p])=>`<li><a href="${linkOf(k)}"><span class="qi"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${p}</svg></span><span class="ql">${n}</span></a></li>`).join('')}
+    </ul></div>
+  </nav>
+
+  <section class="sec sec-biz">
+    <div class="wrap">
+      <div class="sec-title"><h2>주요사업</h2></div>
+      <div class="biz-grid">
+        ${BIZ_CARDS.map(c=>`<article class="biz"><h3><a href="#/page/${c.page}">${c.title}</a></h3><ul>${BIZ[c.page].programs.map((n,i)=>`<li ${i>=BIZ_SHOW?'class="more-item" hidden':''}><a href="#/program/${c.page}/${i}">${esc(n)}</a></li>`).join('')}</ul>${BIZ[c.page].programs.length>BIZ_SHOW?`<button class="biz-more" data-bizmore aria-expanded="false"><span class="bm-ic" aria-hidden="true"></span><span class="bm-tx">더보기</span></button>`:''}</article>`).join('')}
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap board-cols">
+      <div class="bcol" aria-labelledby="ntTitle">
+        <h2 class="col-title" id="ntTitle">공지사항</h2>
+        <div class="tabs" role="tablist" aria-label="공지사항 분류">
+          ${['notice'].map((b,i)=>`<button role="tab" id="tab-${b}" aria-controls="panel" aria-selected="${i===0}" data-tab="${b}" tabindex="${i===0?0:-1}">${BOARDS[b].name}</button>`).join('')}
+          <a class="more" id="tabMore" href="#/board/notice">더보기 ${ico.plus}</a>
+        </div>
+        <ul class="latest" id="panel" role="tabpanel"></ul>
+      </div>
+      <div class="bcol" aria-labelledby="galTitle">
+        <h2 class="col-title" id="galTitle">센터뉴스</h2>
+        <div class="tabs" role="tablist" aria-label="센터뉴스 분류">
+          <button role="tab" aria-selected="true" data-gal="all">전체</button>
+          <button role="tab" aria-selected="false" data-gal="press">보도자료</button>
+          <button role="tab" aria-selected="false" data-gal="gallery">운영 사진</button>
+          <a class="more" id="galMore" href="#/board/gallery">더보기 ${ico.plus}</a>
+        </div>
+        <ul class="gal-grid col-gal" id="galGrid"></ul>
+      </div>
+    </div>
+  </section>`;
+  showTab('notice');
+  showGallery('all');
+}
+const galCard = p => `<li class="gal-item"><a href="#/post/${p.id}">
+  <span class="gal-thumb">${p.photo ? `<img src="${p.photo}" alt="${esc(p.alt||p.title)}" loading="lazy">` : `<span class="noimg"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 17l-5-5-8 7"/></svg>사진 준비 중</span>`}<span class="cat">${BOARDS[p.board].name}</span></span>
+  <span class="gt">${esc(p.title)}</span><span class="gd">${p.date}</span></a></li>`;
+function showGallery(kind){
+  document.querySelectorAll('[data-gal]').forEach(t => t.setAttribute('aria-selected', t.dataset.gal===kind));
+  $('#galMore').href = '#/board/' + (kind==='press' ? 'press' : 'gallery');
+  const list = store.get('posts',[]).filter(p => kind==='all' ? GALLERY_BOARDS.includes(p.board) : p.board===kind).sort(sortPosts).slice(0,4);
+  $('#galGrid').innerHTML = list.length ? list.map(galCard).join('') : '<li class="empty" style="grid-column:1/-1">등록된 사진이 없습니다.</li>';
+}
+function showTab(b){
+  document.querySelectorAll('[data-tab]').forEach(t=>{ const on = t.dataset.tab===b; t.setAttribute('aria-selected', on); t.tabIndex = on?0:-1; });
+  $('#panel').setAttribute('aria-labelledby','tab-'+b);
+  $('#tabMore').href = '#/board/'+b;
+  const list = store.get('posts',[]).filter(p=>p.board===b).sort(sortPosts).slice(0,6);
+  $('#panel').innerHTML = list.length ? list.map(p=>`<li><a href="#/post/${p.id}">${p.pinned?'<span class="badge pin">공지</span>':''}${isNew(p)?'<span class="badge new">NEW</span>':''}<span class="t">${esc(p.title)}</span><span class="d">${p.date}</span></a></li>`).join('') : '<li class="empty">등록된 게시물이 없습니다.</li>';
+}
+const sortPosts = (a,b) => (b.pinned - a.pinned) || (b.created||0) - (a.created||0) || b.date.localeCompare(a.date);
+const isNew = p => p.created && Date.now() - p.created < 3*864e5;
+
+// ---------- 서브 레이아웃 ----------
+function subLayout(menuId, currentKey, title, inner){
+  const m = MENU.find(x=>x.id===menuId);
+  // 주요사업: 선택한 분야 아래에 세부 사업 목록을 펼침
+  // 주요사업: 분야를 누르면 아래에 세부 사업 목록이 펼쳐짐 (처음엔 닫힘)
+  const isBiz = menuId==='biz';
+  const open = k => isBiz && window._lnbOpen === k;
+  const cur = window._lnbCur;
+  const sub = k => (isBiz && BIZ[k]) ? `<ul class="lnb-sub" id="lsub_${k}" ${open(k)?'':'hidden'}>${BIZ[k].programs.map((n,i)=>`<li><a href="#/program/${k}/${i}" ${cur===k+'/'+i?'aria-current="page"':''}>${esc(n)}</a></li>`).join('')}</ul>` : '';
+  const lnb = m ? `<nav class="lnb" aria-label="${m.name} 하위메뉴"><h2>${m.name}</h2><ul>${m.items.map(([k,n])=>`<li><a href="${linkOf(k)}" ${k===currentKey?'aria-current="page"':''} ${isBiz&&BIZ[k]?`class="lnb-tg" data-lnb="${k}" aria-controls="lsub_${k}" aria-expanded="${open(k)}"`:''}><span>${n}</span>${isBiz&&BIZ[k]?ico.down:''}</a>${sub(k)}</li>`).join('')}</ul></nav>` : '<div></div>';
+  window._lnbOpen = null; window._lnbCur = null;
+  app.innerHTML = `
+  <div class="sub-visual"><div class="wrap"><h1>${esc(title)}</h1>
+    <ol class="crumb" aria-label="현재 위치"><li><a href="#/">홈</a></li>${m?`<li>${m.name}</li>`:''}<li aria-current="page">${esc(title)}</li></ol></div></div>
+  <div class="wrap sub-body">${lnb}<div class="content">${inner}</div></div>`;
+}
+function viewPage(slug){
+  if (['awareness','network','koica','jejuoda'].includes(slug)) return viewProgram(slug, 0);   // 분야 클릭 → 첫 번째 사업
+  // 메뉴에 없는 세부 사업 페이지는 상위 분야 메뉴에 속함
+  const PARENT = {odyssey:'awareness', consult:'koica', briefing:'koica'};
+  const key = PARENT[slug] || slug;
+  const m = MENU.find(x=>x.items.some(([k])=>k===key));
+  const item = m && m.items.find(([k])=>k===key);
+  const pg = PAGES[slug];
+  if (!pg) return viewNotFound();
+  const title = PARENT[slug] ? BIZ[slug].programs[0] : (item ? item[1] : pg.title);
+  subLayout(m?.id, key, title, `<h2 class="ct">${esc(title)}</h2>${pg.body()}`);
+  if (slug === 'map') drawNaverMap();
+}
+
+// ---------- 게시판 ----------
+// 게시글 '목록' 이동 위치 (분류 게시판은 해당 분류 페이지로)
+const listHref = p => p.board === 'odastat' ? `#/program/jejuoda/${Math.max(0, BIZ.jejuoda.programs.indexOf(p.cat))}` : '#/board/' + p.board;
+function viewBoard(b, q=''){
+  if (b === 'odastat') return viewProgram('jejuoda', 0);
+  const B = BOARDS[b]; if(!B) return viewNotFound();
+  const params = new URLSearchParams(q);
+  const field = params.get('f')||'title', kw = (params.get('k')||'').trim(), page = +params.get('p')||1;
+  let list = store.get('posts',[]).filter(p=>p.board===b);
+  if (kw) list = list.filter(p => canSee(p) && (field==='all' ? p.title+p.body : p[field]||'').toLowerCase().includes(kw.toLowerCase()));
+  list.sort(sortPosts);
+  const per = 10, pages = Math.max(1, Math.ceil(list.length/per)), cur = list.slice((page-1)*per, page*per);
+  const unpinnedTotal = list.filter(p=>!p.pinned).length;
+  let num = unpinnedTotal - (page-1)*per + cur.filter(p=>p.pinned).length;
+  const writeBtn = canWrite(b) ? `<a class="btn btn-primary" href="#/write/${b}">글쓰기</a>`
+    : (B.write==='member' && !user ? `<a class="btn btn-line" href="#/login?r=${encodeURIComponent('#/board/'+b)}">로그인 후 글쓰기</a>` : '');
+  subLayout(B.menu, 'board:'+b, B.name, `
+    <h2 class="ct">${B.name}</h2>
+    <div class="board-top">
+      <p class="total">전체 <b>${list.length}</b>건 · ${page}/${pages} 페이지</p>
+      <form class="search" role="search" id="searchForm">
+        <label class="sr-only" for="sf">검색 항목</label>
+        <select id="sf" name="f"><option value="title" ${field==='title'?'selected':''}>제목</option><option value="body" ${field==='body'?'selected':''}>내용</option><option value="all" ${field==='all'?'selected':''}>제목+내용</option></select>
+        <label class="sr-only" for="sk">검색어</label>
+        <input id="sk" name="k" type="text" value="${esc(kw)}" placeholder="검색어를 입력하세요">
+        <button class="btn btn-dark" type="submit">검색</button>
+      </form>
+    </div>
+    ${b==='gallery' ? `<ul class="gal-grid board-gal">${cur.length ? cur.map(galCard).join('') : `<li class="empty" style="grid-column:1/-1">${kw?'검색 결과가 없습니다.':'등록된 사진이 없습니다.'}</li>`}</ul>` : `
+    <table class="list">
+      <caption class="sr-only">${B.name} 목록 - 번호, 제목, 작성자, 등록일, 조회수</caption>
+      <thead><tr><th scope="col" style="width:70px">번호</th><th scope="col">제목</th><th scope="col" class="hide-m" style="width:110px">작성자</th><th scope="col" style="width:110px">등록일</th><th scope="col" class="hide-m" style="width:70px">조회</th></tr></thead>
+      <tbody>${cur.length ? cur.map(p=>`<tr class="${p.pinned?'pinned':''}"><td>${p.pinned?'<span class="badge pin">공지</span>':num--}</td><td class="tl">${b==='qna'?(p.answer?'<span class="badge">답변완료</span> ':'<span class="badge wait">답변대기</span> '):''}<a href="#/post/${p.id}">${p.secret?'<span aria-hidden="true">🔒</span><span class="sr-only">비밀글</span> ':''}${p.secret&&!canSee(p)?'비밀글입니다.':esc(p.title)}</a> ${p.photo?'<span class="sr-only">사진 있음</span>🖼':''} ${p.files?.length?'<span class="sr-only">첨부파일 있음</span>📎':''} ${isNew(p)?'<span class="badge new">NEW</span>':''}</td><td class="hide-m">${esc(p.author)}</td><td>${p.date}</td><td class="hide-m">${p.views}</td></tr>`).join('') : `<tr><td colspan="5" class="empty">${kw?'검색 결과가 없습니다. 다른 검색어로 찾아보세요.':'등록된 게시물이 없습니다.'}</td></tr>`}</tbody>
+    </table>`}
+    <div class="board-bottom">${pages>1?Array.from({length:pages},(_,i)=>`<a class="btn btn-sm ${i+1===page?'btn-primary':'btn-line'}" href="#/board/${b}?f=${field}&k=${encodeURIComponent(kw)}&p=${i+1}" ${i+1===page?'aria-current="page"':''}>${i+1}</a>`).join(''):''}<span style="flex:1"></span>${writeBtn}</div>`);
+  $('#searchForm').onsubmit = e => { e.preventDefault(); const fd = new FormData(e.target); location.hash = `#/board/${b}?f=${fd.get('f')}&k=${encodeURIComponent(fd.get('k'))}`; };
+}
+function viewPost(id){
+  const posts = store.get('posts',[]); const p = posts.find(x=>x.id===id); if(!p) return viewNotFound();
+  if (!canSee(p)) return viewLock(p);
+  const vk = 'viewed_'+id;
+  try{ if(!sessionStorage.getItem(vk)){ p.views++; store.set('posts',posts); sessionStorage.setItem(vk,1);} }catch(e){}
+  const B = BOARDS[p.board];
+  const mine = user && (isAdmin() || user.id===p.authorId);
+  const same = posts.filter(x=>x.board===p.board && x.cat===p.cat).sort(sortPosts); const i = same.findIndex(x=>x.id===id);
+  const prev = same[i+1], next = same[i-1];
+  const isStat = p.board === 'odastat', ci = isStat ? Math.max(0, BIZ.jejuoda.programs.indexOf(p.cat)) : 0;
+  if (isStat) { window._lnbOpen = 'jejuoda'; window._lnbCur = 'jejuoda/' + ci; }
+  const secName = isStat ? (p.cat || B.name) : B.name;
+  subLayout(B.menu, isStat ? 'jejuoda' : 'board:'+p.board, secName, `
+    <h2 class="ct">${esc(secName)}</h2>
+    <div class="view-head"><h3>${esc(p.title)}</h3>
+      <div class="view-meta"><span>작성자 ${esc(p.author)}</span><span>등록일 ${p.date}</span><span>조회 ${p.views}</span></div></div>
+    ${p.files?.length?`<div class="view-files"><strong>첨부파일</strong> ${p.files.map(f=>esc(f)).join(', ')} <span class="hint">(시안: 파일명만 저장)</span></div>`:''}
+    ${p.photo?`<div class="view-photo${p.board==='notice'?' poster':''}"><img src="${p.photo}" alt="${esc(p.alt||p.title)}"></div>`:''}
+    <div class="view-body">${esc(p.body)}</div>
+    ${p.board==='qna' ? (p.answer ? `<section class="answer" aria-label="답변"><h4>센터 답변 <span class="hint" style="font-weight:400">${p.answer.date}</span></h4><div class="ab">${esc(p.answer.body)}</div></section>` : '<section class="answer"><h4>답변 대기 중</h4><p class="hint">담당자가 확인 후 답변을 등록합니다.</p></section>') : ''}
+    ${p.board==='qna' && isAdmin() ? `<form id="ansForm" class="field" style="margin-top:20px"><label for="ans">${p.answer?'답변 수정':'답변 작성'} (관리자)</label><textarea id="ans" style="height:160px">${esc(p.answer?.body||'')}</textarea><div class="board-bottom"><button class="btn btn-primary" type="submit">답변 저장</button></div></form>` : ''}
+    <div class="view-nav">
+      <div style="display:flex;gap:8px">${prev?`<a class="btn btn-line btn-sm" href="#/post/${prev.id}">이전글</a>`:''}${next?`<a class="btn btn-line btn-sm" href="#/post/${next.id}">다음글</a>`:''}</div>
+      <div style="display:flex;gap:8px">${mine?`<a class="btn btn-line" href="#/edit/${p.id}">수정</a><button class="btn btn-danger" id="delBtn">삭제</button>`:''}<a class="btn btn-dark" href="${listHref(p)}">목록</a></div>
+    </div>`);
+  const af = $('#ansForm');
+  if (af) af.onsubmit = e => { e.preventDefault(); const v = $('#ans').value.trim(); if(!v){ $('#ans').focus(); return; } const all = store.get('posts',[]); all.find(x=>x.id===id).answer = {body:v, date:today()}; store.set('posts',all); toast('답변을 저장했습니다.'); viewPost(id); };
+  const del = $('#delBtn');
+  if (del) del.onclick = () => { if(!confirm('이 게시물을 삭제할까요? 삭제하면 되돌릴 수 없습니다.')) return; store.set('posts', store.get('posts',[]).filter(x=>x.id!==id)); toast('삭제했습니다.'); location.hash = listHref(p); };
+}
+function viewLock(p){
+  const B = BOARDS[p.board], key = 'tries_'+p.id;
+  const tries = () => { try{ return +sessionStorage.getItem(key)||0; }catch(e){ return mem[key]||0; } };
+  const addTry = () => { const n = tries()+1; try{ sessionStorage.setItem(key,n); }catch(e){ mem[key]=n; } return n; };
+  const locked = tries() >= MAX_TRY;
+  subLayout(B.menu, 'board:'+p.board, B.name, `<h2 class="ct">${B.name}</h2>
+    <form class="lock-box" id="lockForm" novalidate>
+      <p style="font-size:2rem" aria-hidden="true">🔒</p>
+      <h3 style="font-size:1.25rem;font-weight:800;margin:6px 0 8px">비밀글입니다</h3>
+      ${locked ? `<p class="err">비밀번호를 ${MAX_TRY}회 틀려 확인이 잠겼습니다. 센터(064-754-8250)로 문의해 주세요.</p>`
+      : `<p class="hint" style="margin-bottom:18px">글을 쓸 때 설정한 숫자 4자리를 입력하세요.</p>
+      <div class="field"><label class="sr-only" for="lk">비밀번호 4자리</label><input id="lk" type="password" inputmode="numeric" maxlength="4" autocomplete="off"></div>
+      <p class="err" id="lkErr" role="alert" hidden></p>
+      <button class="btn btn-primary" type="submit" style="margin-top:6px">확인</button>`}
+      <div style="margin-top:18px"><a class="btn btn-line btn-sm" href="#/board/${p.board}">목록</a></div>
+    </form>`);
+  const f = $('#lockForm'); if (locked) return;
+  $('#lk').focus();
+  f.onsubmit = async e => {
+    e.preventDefault(); const v = $('#lk').value;
+    if (/^\d{4}$/.test(v) && await hash(v, p.secSalt) === p.secPw) { setUnlock(p.id); viewPost(p.id); return; }
+    const n = addTry(); if (n >= MAX_TRY) return viewLock(p);
+    const er = $('#lkErr'); er.hidden = false; er.textContent = `비밀번호가 일치하지 않습니다. (${n}/${MAX_TRY}회)`; $('#lk').value=''; $('#lk').focus();
+  };
+}
+function viewWrite(b, editId){
+  const posts = store.get('posts',[]); const p = editId ? posts.find(x=>x.id===editId) : null;
+  if (editId && !p) return viewNotFound();
+  if (p && !canSee(p)) return viewLock(p);
+  const board = p ? p.board : b;
+  if (!user) { toast('로그인이 필요합니다.'); location.hash = '#/login?r='+encodeURIComponent(location.hash); return; }
+  if (p ? !(isAdmin() || user.id===p.authorId) : !canWrite(board)) { toast('글쓰기 권한이 없습니다.'); location.hash = '#/board/'+board; return; }
+  const B = BOARDS[board];
+  const wCat = new URLSearchParams((location.hash.split('?')[1]||'')).get('cat') || '';
+  const boardOpts = Object.entries(BOARDS).filter(([k])=>canWrite(k)).map(([k,v])=>`<option value="${k}" ${k===board?'selected':''}>${v.name}</option>`).join('');
+  subLayout(B.menu, 'board:'+board, B.name, `
+    <h2 class="ct">${p?'게시물 수정':'게시물 작성'}</h2>
+    <form class="form-box wide" id="writeForm" novalidate>
+      <div class="field"><label for="wb">게시판</label><select id="wb" name="board">${boardOpts}</select></div>
+      <div class="field" id="catBox" ${board==='odastat'?'':'hidden'}><label for="wcat">분류</label><select id="wcat" name="cat">${BIZ.jejuoda.programs.map(n=>`<option ${n===(p?.cat||wCat)?'selected':''}>${esc(n)}</option>`).join('')}</select></div>
+      <div class="field"><label for="wt">제목<span class="req" aria-hidden="true">*</span><span class="sr-only">(필수)</span></label><input id="wt" name="title" type="text" maxlength="100" required value="${esc(p?.title||'')}"><p class="err" id="wtErr" hidden></p></div>
+      ${isAdmin()?`<div class="field"><label class="check-line"><input type="checkbox" name="pinned" ${p?.pinned?'checked':''}> 목록 상단에 공지로 고정</label></div>`:''}
+      <div class="field" id="secretBox" ${board==='qna'?'':'hidden'}>
+        <label class="check-line"><input type="checkbox" name="secret" id="wsec" ${p?.secret?'checked':''}> 비밀글로 설정</label>
+        <p class="hint">비밀글은 관리자와 비밀번호를 아는 사람만 볼 수 있습니다.</p>
+        <div id="secPwBox" ${p?.secret?'':'hidden'} style="margin-top:12px">
+          <label for="wsp">비밀번호 (숫자 4자리)</label>
+          <input id="wsp" name="spw" type="password" inputmode="numeric" maxlength="4" autocomplete="off" style="max-width:180px">
+          ${p?.secret?'<p class="hint">비밀번호를 바꿀 때만 입력하세요.</p>':''}
+          <p class="err" id="wspErr" hidden></p>
+        </div>
+      </div>
+      <div class="field"><label for="wc">내용<span class="req" aria-hidden="true">*</span><span class="sr-only">(필수)</span></label><textarea id="wc" name="body" required>${esc(p?.body||'')}</textarea><p class="err" id="wcErr" hidden></p></div>
+      <div class="field" id="photoBox" ${BOARDS[board].photo?'':'hidden'}>
+        <label for="wph"><span id="phLbl">${BOARDS[board].photoLabel || '대표 사진'}</span><span id="phReq" ${board==='gallery'?'':'hidden'}><span class="req" aria-hidden="true">*</span><span class="sr-only">(필수)</span></span></label>
+        <input id="wph" type="file" accept="image/png,image/jpeg,image/webp">
+        <p class="hint">JPG·PNG·WEBP, 10MB 이하. 가로 1200px로 줄여 저장합니다. 사람이 나온 사진은 초상권 동의를 확인하세요.</p>
+        <img id="phPrev" class="photo-prev" alt="" ${p?.photo?`src="${p.photo}"`:'hidden'}>
+        <p class="err" id="wphErr" hidden></p>
+        <label for="wal" style="margin-top:14px">사진 설명 (대체텍스트)<span id="alReq" ${board==='gallery'?'':'hidden'}><span class="req" aria-hidden="true">*</span><span class="sr-only">(필수)</span></span></label>
+        <input id="wal" name="alt" type="text" maxlength="120" value="${esc(p?.alt||'')}" placeholder="예: 홍보부스에서 학생들이 ODA 퀴즈에 참여하는 모습">
+        <p class="hint">화면낭독기 사용자에게 읽어 주는 설명입니다. (웹 접근성 필수 항목)</p>
+        <p class="err" id="walErr" hidden></p>
+      </div>
+      <div class="field"><label for="wf">첨부파일</label><input id="wf" name="files" type="file" multiple><p class="hint">한글(hwp)·PDF 첨부 시 접근성을 위해 본문에 주요 내용을 함께 적어 주세요. 시안에서는 파일명만 저장됩니다.</p></div>
+      <div class="board-bottom"><a class="btn btn-line" href="${p?'#/post/'+p.id:(board==='odastat'?listHref({board,cat:wCat}):'#/board/'+board)}">취소</a><button class="btn btn-primary" type="submit">${p?'수정 저장':'등록'}</button></div>
+    </form>`);
+  const wf = $('#writeForm');
+  let photoData = p?.photo || null;
+  const syncBoard = () => { const v = wf.board.value; $('#catBox').hidden = v !== 'odastat'; $('#secretBox').hidden = v !== 'qna'; $('#photoBox').hidden = !BOARDS[v].photo; $('#phLbl').textContent = BOARDS[v].photoLabel || '대표 사진'; $('#phReq').hidden = $('#alReq').hidden = v !== 'gallery'; };
+  wf.board.onchange = syncBoard;
+  $('#wph').onchange = async e => {
+    const file = e.target.files[0], er = $('#wphErr'); er.hidden = true; if (!file) return;
+    if (!/^image\/(png|jpeg|webp)$/.test(file.type)) { er.hidden = false; er.textContent = 'JPG·PNG·WEBP 파일만 등록할 수 있습니다.'; e.target.value=''; return; }
+    if (file.size > 10*1024*1024) { er.hidden = false; er.textContent = '10MB 이하 파일만 등록할 수 있습니다.'; e.target.value=''; return; }
+    photoData = await readPhoto(file); const pv = $('#phPrev'); pv.src = photoData; pv.hidden = false;
+  };
+  $('#wsec').onchange = e => { $('#secPwBox').hidden = !e.target.checked; if (e.target.checked) $('#wsp').focus(); };
+  wf.onsubmit = async e => {
+    e.preventDefault(); const f = e.target; let ok = true;
+    const t = f.title.value.trim(), c = f.body.value.trim();
+    const setErr = (id, msg) => { const el = $('#'+id); el.hidden = !msg; el.textContent = msg||''; if(msg) ok = false; };
+    setErr('wtErr', t ? '' : '제목을 입력하세요.'); setErr('wcErr', c ? '' : '내용을 입력하세요.');
+    const secret = f.board.value === 'qna' && f.secret.checked, spw = f.spw.value;
+    const needPw = secret && !(p?.secret && !spw);
+    setErr('wspErr', needPw && !/^\d{4}$/.test(spw) ? '비밀번호는 숫자 4자리로 입력하세요.' : '');
+    const isGal = f.board.value === 'gallery', usePhoto = BOARDS[f.board.value].photo; let alt = f.alt.value.trim();
+    if (f.board.value === 'notice' && !photoData) {   // 첨부한 이미지(포스터)를 글 안에 자동 표시
+      const imgFile = [...f.files.files].find(x => /^image\/(png|jpeg|webp)$/.test(x.type));
+      if (imgFile) { photoData = await readPhoto(imgFile); if (!f.alt.value.trim()) f.alt.value = t + ' 포스터'; }
+    }
+    alt = f.alt.value.trim();
+    setErr('wphErr', isGal && !photoData ? '대표 사진을 등록하세요.' : '');
+    setErr('walErr', usePhoto && photoData && !alt ? '사진 설명(대체텍스트)을 입력하세요.' : '');
+    if (!ok) { (!t ? f.title : (isGal && !photoData) ? $('#wph') : (usePhoto && photoData && !alt) ? f.alt : !c ? f.body : f.spw).focus(); return; }
+    const ph = usePhoto ? {photo:photoData, alt} : {photo:null, alt:''};
+    let sec = {secret:false, secSalt:null, secPw:null};
+    if (secret) sec = spw ? {secret:true, secSalt: uid()} : {secret:true, secSalt:p.secSalt, secPw:p.secPw};
+    if (secret && spw) sec.secPw = await hash(spw, sec.secSalt);
+    const files = [...f.files.files].map(x=>x.name);
+    const all = store.get('posts',[]);
+    if (p) { const q = all.find(x=>x.id===p.id); Object.assign(q, {board:f.board.value, cat: f.board.value==='odastat' ? f.cat.value : undefined, title:t, body:c, pinned: !!f.pinned?.checked, files: files.length?files:q.files}, sec, ph); if (sec.secret) setUnlock(q.id); store.set('posts',all); toast('수정했습니다.'); location.hash = '#/post/'+p.id; }
+    else { const np = {id:uid(), board:f.board.value, cat: f.board.value==='odastat' ? f.cat.value : undefined, title:t, body:c, author:user.name, authorId:user.id, date:today(), created:Date.now(), views:0, pinned: !!f.pinned?.checked, files, ...sec, ...ph}; if (sec.secret) setUnlock(np.id); all.push(np); store.set('posts',all); toast('등록했습니다.'); location.hash = '#/post/'+np.id; }
+  };
+}
+
+// ---------- 회원 ----------
+function viewLogin(q){
+  const r = new URLSearchParams(q).get('r') || '#/';
+  app.innerHTML = `<div class="sub-visual"><div class="wrap"><h1>로그인</h1></div></div>
+  <div class="wrap" style="padding:56px 16px 90px"><form class="auth-card" id="loginForm" novalidate>
+    <h2>로그인</h2><p class="desc">회원은 묻고답하기에 글을 쓸 수 있습니다.</p>
+    <div class="field"><label for="lid">아이디</label><input id="lid" name="id" type="text" autocomplete="username" required></div>
+    <div class="field"><label for="lpw">비밀번호</label><input id="lpw" name="pw" type="password" autocomplete="current-password" required></div>
+    <p class="err" id="lErr" role="alert" hidden></p>
+    <button class="btn btn-primary btn-block" type="submit">로그인</button>
+    <div class="auth-links"><a href="#/signup">회원가입</a><span>아이디·비밀번호 찾기는 실서비스에서 이메일 인증으로 제공</span></div>
+    <p class="demo-note">시안 확인용 관리자 계정: <b>admin</b> / <b>admin1234!</b><br>실제 운영 전 반드시 삭제하고 서버에서 계정을 발급하세요.</p>
+  </form></div>`;
+  $('#loginForm').onsubmit = async e => {
+    e.preventDefault(); const f = e.target; const err = $('#lErr');
+    const u = store.get('users',[]).find(x=>x.id===f.id.value.trim());
+    if (!u || u.pw !== await hash(f.pw.value, u.salt)) { err.hidden = false; err.textContent = '아이디 또는 비밀번호가 일치하지 않습니다.'; f.pw.value=''; f.pw.focus(); return; }
+    user = {id:u.id, name:u.name, role:u.role}; session.set(user); renderAuth();
+    toast(`${u.name}님, 로그인했습니다.`); location.hash = r;
+  };
+}
+function viewSignup(){
+  app.innerHTML = `<div class="sub-visual"><div class="wrap"><h1>회원가입</h1></div></div>
+  <div class="wrap" style="padding:56px 16px 90px"><form class="form-box" id="joinForm" novalidate>
+    <div class="agree"><div class="agree-head"><label class="check-line"><input type="checkbox" id="agAll"> 아래 내용에 모두 동의합니다.</label></div></div>
+    <div class="agree"><div class="agree-head"><label class="check-line"><input type="checkbox" name="ag1" class="ag"> [필수] 이용약관 동의</label></div><div class="agree-body" tabindex="0">이용약관 전문이 들어갈 자리입니다.</div></div>
+    <div class="agree"><div class="agree-head"><label class="check-line"><input type="checkbox" name="ag2" class="ag"> [필수] 개인정보 수집·이용 동의</label></div>
+      <div class="agree-body" tabindex="0"><table><caption class="sr-only">개인정보 수집·이용 내역</caption><tr><th scope="col">수집 항목</th><th scope="col">목적</th><th scope="col">보유 기간</th></tr><tr><td>아이디, 비밀번호, 이름, 이메일</td><td>회원 식별, 게시판 이용, 문의 답변 안내</td><td>회원 탈퇴 시까지 (기관 내부 규정에 맞게 확정)</td></tr></table><p style="margin-top:8px">동의를 거부할 수 있으며, 거부 시 회원가입이 제한됩니다.</p></div></div>
+    <div class="agree"><div class="agree-head"><label class="check-line"><input type="checkbox" name="ag3" class="ag"> [필수] 만 14세 이상입니다.</label></div></div>
+    <p class="err" id="agErr" hidden></p>
+    <hr style="border:0;border-top:1px solid var(--line);margin:28px 0">
+    <div class="field"><label for="jid">아이디<span class="req" aria-hidden="true">*</span></label><input id="jid" name="id" type="text" autocomplete="username" aria-describedby="jidH"><p class="hint" id="jidH">영문 소문자·숫자 4~20자</p><p class="err" hidden></p></div>
+    <div class="field"><label for="jpw">비밀번호<span class="req" aria-hidden="true">*</span></label><input id="jpw" name="pw" type="password" autocomplete="new-password" aria-describedby="jpwH"><p class="hint" id="jpwH">영문·숫자·특수문자를 모두 포함해 9자 이상</p><p class="err" hidden></p></div>
+    <div class="field"><label for="jpw2">비밀번호 확인<span class="req" aria-hidden="true">*</span></label><input id="jpw2" name="pw2" type="password" autocomplete="new-password"><p class="err" hidden></p></div>
+    <div class="field"><label for="jname">이름<span class="req" aria-hidden="true">*</span></label><input id="jname" name="name" type="text" autocomplete="name"><p class="err" hidden></p></div>
+    <div class="field"><label for="jmail">이메일<span class="req" aria-hidden="true">*</span></label><div class="inline"><input id="jmail" name="email" type="email" autocomplete="email"><button type="button" class="btn btn-dark" id="sendCode">인증번호 받기</button></div><p class="err" hidden></p></div>
+    <div class="field" id="codeBox" hidden><label for="jcode">인증번호 6자리</label><div class="inline"><input id="jcode" type="text" inputmode="numeric" maxlength="6" autocomplete="one-time-code"><button type="button" class="btn btn-line" id="checkCode">확인</button></div><p class="hint" id="codeHint" aria-live="polite"></p></div>
+    <button class="btn btn-primary btn-block" type="submit">가입하기</button>
+  </form></div>`;
+  const f = $('#joinForm'); const ags = [...f.querySelectorAll('.ag')];
+  const ev = {code:null, email:null, exp:0, ok:false};
+  const mailOk = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  const mailErr = msg => { const er = f.email.closest('.field').querySelector('.err'); er.hidden = !msg; er.textContent = msg||''; };
+  f.email.oninput = () => { if (ev.ok) { ev.ok = false; $('#codeHint').textContent = '이메일이 바뀌어 다시 인증해야 합니다.'; $('#jcode').disabled = false; } };
+  $('#sendCode').onclick = () => {
+    const em = f.email.value.trim();
+    if (!mailOk(em)) { mailErr('이메일 형식을 확인하세요. 예: name@example.com'); f.email.focus(); return; }
+    mailErr(''); ev.code = String(Math.floor(100000 + Math.random()*900000)); ev.email = em; ev.exp = Date.now() + 10*60*1000; ev.ok = false;
+    $('#codeBox').hidden = false; $('#jcode').disabled = false; $('#jcode').value = ''; $('#jcode').focus();
+    $('#sendCode').textContent = '다시 받기';
+    $('#codeHint').innerHTML = `${esc(em)}(으)로 인증번호를 보냈습니다. 10분 안에 입력하세요.<br><span style="color:#7A4510">시안 확인용: 실제로는 메일로만 발송되는 번호 → <b>${ev.code}</b></span>`;
+  };
+  $('#checkCode').onclick = () => {
+    const h = $('#codeHint');
+    if (!ev.code) return;
+    if (Date.now() > ev.exp) { h.textContent = '인증 시간이 지났습니다. 인증번호를 다시 받으세요.'; return; }
+    if ($('#jcode').value.trim() !== ev.code) { h.textContent = '인증번호가 일치하지 않습니다.'; return; }
+    ev.ok = true; $('#jcode').disabled = true; h.textContent = '이메일 인증을 마쳤습니다.'; mailErr('');
+  };
+  $('#agAll').onchange = e => ags.forEach(a=>a.checked = e.target.checked);
+  ags.forEach(a=>a.onchange = () => $('#agAll').checked = ags.every(x=>x.checked));
+  f.onsubmit = async e => {
+    e.preventDefault(); let first = null;
+    const set = (input, msg) => { const er = input.closest('.field').querySelector('.err'); er.hidden = !msg; er.textContent = msg||''; input.setAttribute('aria-invalid', !!msg); if (msg && !first) first = input; };
+    const agErr = $('#agErr'); const agOk = ags.every(a=>a.checked); agErr.hidden = agOk; agErr.textContent = agOk?'':'필수 항목에 모두 동의해 주세요.';
+    const users = store.get('users',[]);
+    const id = f.id.value.trim(), pw = f.pw.value, name = f.name.value.trim(), email = f.email.value.trim();
+    set(f.id, !/^[a-z0-9]{4,20}$/.test(id) ? '아이디는 영문 소문자·숫자 4~20자로 입력하세요.' : users.some(u=>u.id===id) ? '이미 사용 중인 아이디입니다.' : '');
+    set(f.pw, !(pw.length>=9 && /[A-Za-z]/.test(pw) && /\d/.test(pw) && /[^A-Za-z0-9]/.test(pw)) ? '영문·숫자·특수문자를 모두 포함해 9자 이상 입력하세요.' : '');
+    set(f.pw2, pw !== f.pw2.value ? '비밀번호가 서로 다릅니다.' : '');
+    set(f.name, !name ? '이름을 입력하세요.' : '');
+    set(f.email, !mailOk(email) ? '이메일 형식을 확인하세요. 예: name@example.com' : (!ev.ok || ev.email !== email) ? '[인증번호 받기]로 이메일 인증을 마쳐 주세요.' : '');
+    if (!agOk) { ags.find(a=>!a.checked).focus(); return; }
+    if (first) { first.focus(); return; }
+    const salt = uid();
+    users.push({id, name, email, emailVerified:true, role:'member', salt, pw: await hash(pw, salt), joined: today()});
+    store.set('users', users);
+    user = {id, name, role:'member'}; session.set(user); renderAuth();
+    toast('회원가입을 마쳤습니다.'); location.hash = '#/';
+  };
+}
+
+// ---------- 관리자 ----------
+function viewAdmin(){
+  if (!isAdmin()) { toast('관리자만 접근할 수 있습니다.'); location.hash = '#/login?r='+encodeURIComponent('#/admin'); return; }
+  const users = store.get('users',[]), posts = store.get('posts',[]);
+  const ntc = posts.filter(p=>p.board==='notice').length;
+  app.innerHTML = `<div class="sub-visual"><div class="wrap"><h1>관리자 페이지</h1></div></div>
+  <div class="wrap" style="padding:48px 24px 90px">
+    <div class="publish-box">
+      <div><b>배포</b><p class="hint">관리자 화면에서 고친 내용(글·사진·배너·로고·사업 목록·공지)은 이 PC에만 저장됩니다. [배포 파일 만들기]로 받은 <code>data.js</code>를 누리집 폴더에 넣어(덮어쓰기) 올리면 방문자 화면에 반영됩니다.</p></div>
+      <div class="publish-btns"><button class="btn btn-primary" id="pubExport">배포 파일 만들기 (data.js)</button><button class="btn btn-line" id="pubReload" ${SITE?'':'disabled'}>배포된 내용으로 되돌리기</button></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><span>전체 회원</span><b>${users.length}</b></div>
+      <div class="stat"><span>전체 게시물</span><b>${posts.length}</b></div>
+      <div class="stat"><span>공지사항</span><b>${ntc}</b></div>
+      <div class="stat"><span>총 조회수</span><b>${posts.reduce((s,p)=>s+p.views,0)}</b></div>
+    </div>
+    ${bannerAdmin()}
+    <div style="height:48px"></div>
+    <div class="sec-title"><h2 style="font-size:1.25rem">네이버 지도 설정</h2></div>
+    <div class="form-box wide" style="max-width:720px;margin:0 auto 48px">
+      <div class="field"><label for="nmId">Client ID (NCP 콘솔 Maps 발급)</label><input id="nmId" type="text" value="${esc(mapCfg().id)}"></div>
+      <div class="cards" style="grid-template-columns:repeat(3,1fr);gap:12px">
+        <div class="field"><label for="nmLat">위도</label><input id="nmLat" type="text" value="${mapCfg().lat}"></div>
+        <div class="field"><label for="nmLng">경도</label><input id="nmLng" type="text" value="${mapCfg().lng}"></div>
+        <div class="field"><label for="nmZoom">확대 (6~21)</label><input id="nmZoom" type="text" value="${mapCfg().zoom}"></div>
+      </div>
+      <p class="hint">좌표는 네이버 지도에서 센터 위치를 우클릭해 확인할 수 있습니다. NCP 콘솔의 Web 서비스 URL에 누리집 주소(${SITE_URL})를 등록해야 지도가 뜹니다.</p>
+      <div class="board-bottom"><button class="btn btn-primary" id="nmSave">지도 설정 저장</button></div>
+    </div>
+    <div class="sec-title"><h2 style="font-size:1.25rem">빠른 글쓰기</h2></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px">${Object.entries(BOARDS).map(([k,v])=>`<a class="btn btn-line" href="#/write/${k}">${v.name} 작성</a>`).join('')}</div>
+    <div class="sec-title"><h2 style="font-size:1.25rem">회원 관리</h2></div>
+    <div style="overflow-x:auto"><table class="list"><caption class="sr-only">회원 목록</caption>
+      <thead><tr><th scope="col">아이디</th><th scope="col">이름</th><th scope="col" class="hide-m">이메일</th><th scope="col">가입일</th><th scope="col">권한</th></tr></thead>
+      <tbody>${users.map(u=>`<tr><td>${esc(u.id)}</td><td>${esc(u.name)}</td><td class="hide-m">${esc(u.email)}</td><td>${u.joined}</td><td>${u.id==='admin'?'관리자':`<label class="sr-only" for="r_${esc(u.id)}">${esc(u.name)} 권한</label><select id="r_${esc(u.id)}" data-role="${esc(u.id)}" style="height:34px;border:1px solid var(--line);border-radius:4px"><option value="member" ${u.role==='member'?'selected':''}>일반회원</option><option value="admin" ${u.role==='admin'?'selected':''}>관리자</option></select>`}</td></tr>`).join('')}</tbody>
+    </table></div>
+    <p class="hint" style="margin-top:12px">실서비스에서는 권한 변경·삭제 이력을 접속기록(로그)으로 남겨야 합니다.</p>
+
+    <div class="sec-title" style="margin-top:48px"><h2 style="font-size:1.25rem">주요사업 목록 관리</h2></div>
+    <p class="hint" style="margin-bottom:14px;text-align:center">한 줄에 사업 하나씩 입력하세요. 메뉴·메인 카드·사업 페이지에 바로 반영됩니다. 사업 이름을 바꾸면 그 사업에 입력한 내용은 새로 입력해야 합니다.</p>
+    <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">${[...BIZ_CARDS,{title:'제주도 내 ODA 현황',page:'jejuoda'}].map(c=>`<div class="field"><label for="bl_${c.page}">${c.title}</label><textarea id="bl_${c.page}" data-bizlist="${c.page}" style="height:240px">${esc(BIZ[c.page].programs.join('\n'))}</textarea></div>`).join('')}</div>
+    <div class="board-bottom"><button class="btn btn-primary" id="bizListSave">목록 저장</button></div>
+    ${logoAdmin()}
+    <div class="sec-title" style="margin-top:48px"><h2 style="font-size:1.25rem">관련기관 로고 관리</h2></div>
+    <p class="hint" style="margin-bottom:14px;text-align:center">기관명 위에 들어가는 로고입니다. 투명 배경 PNG, 1MB 이하.<br>여기서 등록한 로고가 우선이고, 없으면 images 폴더의 아래 파일명 PNG를 씁니다. 각 기관 CI 사용 규정을 확인하세요.</p>
+    <div style="overflow-x:auto"><table class="list"><caption class="sr-only">관련기관 로고 목록</caption>
+      <thead><tr><th scope="col">기관명</th><th scope="col">미리보기</th><th scope="col">파일명 (images 폴더)</th><th scope="col">로고 등록</th><th scope="col">삭제</th></tr></thead>
+      <tbody>${FAMILY.map(f=>{ const lg = store.get('logos',{})[f.key]; return `<tr><td class="tl"><a href="${f.url}" target="_blank" rel="noopener" title="새 창 열림">${f.name}</a></td><td><div class="logo-cell">${lg?`<img src="${lg}" alt="${f.name} 로고">`:'로고 없음'}</div></td><td><code>${f.file}</code></td><td><label class="sr-only" for="lg_${f.key}">${f.name} 로고 파일</label><input id="lg_${f.key}" type="file" accept=".png,.jpg,.jpeg,.svg,.webp,image/png,image/jpeg,image/svg+xml,image/webp" data-logo="${f.key}"></td><td>${lg?`<button class="btn btn-danger btn-sm" data-logo-del="${f.key}">삭제</button>`:'-'}</td></tr>`; }).join('')}</tbody>
+    </table></div>
+  </div>`;
+  // 배포
+  $('#pubExport').onclick = exportSiteData;
+  const pr = $('#pubReload');
+  if (pr) pr.onclick = () => { if (!confirm('이 PC에서 고친 내용을 버리고 현재 data.js 내용으로 되돌릴까요?')) return; importSiteData(true); applyBizLists(); renderFamily(); renderLogo(); toast('배포된 내용으로 되돌렸습니다.'); viewAdmin(); };
+  // 네이버 지도
+  const nms = $('#nmSave');
+  if (nms) nms.onclick = () => { CMS.set('map.cfg', {id: $('#nmId').value.trim(), lat: $('#nmLat').value.trim(), lng: $('#nmLng').value.trim(), zoom: $('#nmZoom').value.trim()}); toast('지도 설정을 저장했습니다.'); };
+  // 배너 문구
+  const hts = $('#heroTextSave');
+  if (hts) hts.onclick = () => { CMS.set('home.tag', $('#hTag').value.trim()); CMS.set('home.title', $('#hTitle').value.trim()); CMS.set('home.desc', $('#hDesc').value.trim()); toast('배너 문구를 저장했습니다.'); };
+  // 주요사업 목록
+  const bls = $('#bizListSave');
+  if (bls) bls.onclick = () => {
+    const lists = {}; app.querySelectorAll('[data-bizlist]').forEach(t => lists[t.dataset.bizlist] = t.value.split('\n').map(x=>x.trim()).filter(Boolean));
+    if (Object.values(lists).some(l => !l.length)) { toast('분야마다 사업을 하나 이상 입력하세요.'); return; }
+    store.set('bizLists', lists); applyBizLists(); toast('주요사업 목록을 저장했습니다.');
+  };
+  // 센터 로고
+  const slf = $('#siteLogoFile');
+  if (slf) slf.onchange = async () => {
+    const file = slf.files[0], er = $('#siteLogoErr'); er.hidden = true; if (!file) return;
+    if (!/^image\/(png|jpeg|svg\+xml|webp)$/.test(file.type)) { er.hidden = false; er.textContent = 'PNG·SVG·WEBP·JPG 파일만 등록할 수 있습니다.'; slf.value=''; return; }
+    if (file.size > 1024*1024) { er.hidden = false; er.textContent = '1MB 이하 파일만 등록할 수 있습니다.'; slf.value=''; return; }
+    store.set('siteLogo', await readLogo(file, 160)); renderLogo(); toast('센터 로고를 등록했습니다.'); viewAdmin();
+  };
+  const sld = $('#siteLogoDel');
+  if (sld) sld.onclick = () => { if (!confirm('센터 로고를 삭제할까요?')) return; store.set('siteLogo', null); renderLogo(); toast('센터 로고를 삭제했습니다.'); viewAdmin(); };
+  // 배너 사진
+  app.querySelectorAll('[data-banner]').forEach(inp => inp.onchange = async () => {
+    const file = inp.files[0], kind = inp.dataset.banner, er = $('#bnErr_'+kind); er.hidden = true; if (!file) return;
+    if (!/^image\/(png|jpeg|webp)$/.test(file.type)) { er.hidden = false; er.textContent = 'JPG·PNG·WEBP 파일만 등록할 수 있습니다.'; inp.value=''; return; }
+    if (file.size > 10*1024*1024) { er.hidden = false; er.textContent = '10MB 이하 파일만 등록할 수 있습니다.'; inp.value=''; return; }
+    const spec = kind === 'pc' ? {w:2560, h:587} : {w:780, h:720};
+    const data = await readBanner(file, spec.w, spec.h);
+    const bn = store.get('banner', {}); bn[kind] = data.url; store.set('banner', bn);
+    toast(data.small ? `등록했습니다. 사진이 권장 크기보다 작아 흐리게 보일 수 있습니다.` : '배너 사진을 등록했습니다.');
+    viewAdmin();
+  });
+  app.querySelectorAll('[data-banner-del]').forEach(btn => btn.onclick = () => {
+    if (!confirm('이 배너 사진을 삭제할까요?')) return;
+    const bn = store.get('banner', {}); delete bn[btn.dataset.bannerDel]; store.set('banner', bn); toast('배너 사진을 삭제했습니다.'); viewAdmin();
+  });
+  app.querySelectorAll('[name=dim]').forEach(r => r.onchange = () => { const bn = store.get('banner', {}); bn.dim = r.value; store.set('banner', bn); toast('어둡기를 변경했습니다.'); viewAdmin(); });
+  app.querySelectorAll('[data-logo]').forEach(inp => inp.onchange = async () => {
+    const file = inp.files[0]; if (!file) return;
+    if (file.size > 1024*1024) { toast('1MB 이하 파일만 등록할 수 있습니다.'); inp.value=''; return; }
+    if (!/^image\/(png|jpeg|svg\+xml|webp)$/.test(file.type)) { toast('PNG·JPG·SVG·WEBP 파일만 등록할 수 있습니다.'); inp.value=''; return; }
+    const data = await readLogo(file, 160);
+    const logos = store.get('logos',{}); logos[inp.dataset.logo] = data; store.set('logos', logos);
+    renderFamily(); toast('로고를 등록했습니다.'); viewAdmin();
+  });
+  app.querySelectorAll('[data-logo-del]').forEach(btn => btn.onclick = () => {
+    if (!confirm('이 로고를 삭제할까요?')) return;
+    const logos = store.get('logos',{}); delete logos[btn.dataset.logoDel]; store.set('logos', logos);
+    renderFamily(); toast('로고를 삭제했습니다.'); viewAdmin();
+  });
+  app.querySelectorAll('[data-role]').forEach(s => s.onchange = () => { const us = store.get('users',[]); us.find(u=>u.id===s.dataset.role).role = s.value; store.set('users',us); toast('권한을 변경했습니다.'); });
+}
+// ---------- 센터 로고 ----------
+const LOGO_FILE = 'images/logo.png';
+function renderLogo(){
+  const img = $('#logoImg'), a = img.closest('.logo'), custom = store.get('siteLogo');
+  if (custom) { img.classList.remove('broken'); img.src = custom; } else if (!img.getAttribute('src').endsWith(LOGO_FILE)) img.src = LOGO_FILE;
+}
+function logoAdmin(){
+  const lg = store.get('siteLogo');
+  return `
+    <div class="sec-title" style="margin-top:48px"><h2 style="font-size:1.25rem">센터 로고 관리</h2></div>
+    <p class="hint" style="margin-bottom:16px;text-align:center">여기서 등록한 로고가 우선 적용됩니다. 없으면 <b>images/logo.png</b> 파일을, 파일도 없으면 기본 글자 로고를 보여 줍니다.</p>
+    <div class="field" style="max-width:560px;margin:0 auto;text-align:center">
+      <div class="banner-prev" style="background:#fff;border:1px solid var(--line);height:96px;display:flex;align-items:center;justify-content:center">
+        ${lg ? `<img src="${lg}" alt="" style="width:auto;height:56px;object-fit:contain">` : '<span class="empty-b" style="color:var(--sub)">등록된 로고 없음</span>'}
+      </div>
+      <label class="sr-only" for="siteLogoFile">센터 로고 파일</label>
+      <input id="siteLogoFile" type="file" accept=".png,.svg,.webp,.jpg,.jpeg,image/png,image/svg+xml,image/webp,image/jpeg">
+      ${lg?'<button class="btn btn-danger btn-sm" id="siteLogoDel" style="margin-left:8px">삭제</button>':''}
+      <p class="hint">투명 배경 PNG 또는 SVG, 가로형 권장 (예: 720×104px), 1MB 이하. 로고에 센터명이 들어 있으면 기존 글자 로고 대신 이미지만 보입니다.</p>
+      <p class="err" id="siteLogoErr" hidden></p>
+    </div>`;
+}
+function bannerAdmin(){
+  const bn = store.get('banner', {}), dim = bn.dim || 'mid';
+  const prev = (kind, label) => `<div class="banner-prev ${kind}">${bn[kind] ? `<img src="${bn[kind]}" alt="">` : `<span class="empty-b">${label}</span>`}${bn[kind]?`<div class="hero-dim" style="--dim:${DIMS[dim]}"></div>`:''}</div>`;
+  return `
+    <div class="sec-title" style="margin-top:48px"><h2 style="font-size:1.25rem">메인 배너 문구</h2></div>
+    <div class="form-box wide" style="max-width:720px;margin:0 auto">
+      <div class="field"><label for="hTag">작은 표시</label><input id="hTag" type="text" value="${esc(CMS.get('home.tag') ?? '제주국제개발협력센터')}"></div>
+      <div class="field"><label for="hTitle">제목</label><input id="hTitle" type="text" value="${esc(CMS.get('home.title') ?? '기업에게는 기회를, 청년에게는 꿈을')}"></div>
+      <div class="field"><label for="hDesc">설명</label><input id="hDesc" type="text" value="${esc(CMS.get('home.desc') ?? '제주국제개발협력센터가 기업과 청년의 국제개발협력 참여 기회를 넓힙니다.')}"></div>
+      <div class="board-bottom"><button class="btn btn-primary" id="heroTextSave">문구 저장</button></div>
+    </div>
+    <div class="sec-title" style="margin-top:48px"><h2 style="font-size:1.25rem">메인 배너 사진 관리</h2></div>
+    <p class="hint" style="margin-bottom:16px;text-align:center">여기서 등록한 사진이 우선 적용됩니다. 등록한 사진이 없으면 <b>images/banner_pc.jpg</b>(PC)·<b>images/banner_mobile.jpg</b>(모바일) 파일을 보여 주고, 파일도 없으면 기본 물결 그래픽이 보입니다.</p>
+    <div class="banner-grid">
+      <div class="field">
+        <span class="lbl">PC용 (권장 3840×880, 최소 1920×440)</span>
+        ${prev('pc','PC용 사진 없음')}
+        <label class="sr-only" for="bn_pc">PC용 배너 사진 파일</label>
+        <input id="bn_pc" type="file" accept="image/png,image/jpeg,image/webp" data-banner="pc">
+        ${bn.pc?'<button class="btn btn-danger btn-sm" data-banner-del="pc" style="margin-left:8px">삭제</button>':''}
+        <p class="err" id="bnErr_pc" hidden></p>
+      </div>
+      <div class="field">
+        <span class="lbl">모바일용 (권장 780×720)</span>
+        ${prev('m', bn.pc ? '없으면 PC용 사진의<br>가운데를 잘라 사용' : '모바일용 사진 없음')}
+        <label class="sr-only" for="bn_m">모바일용 배너 사진 파일</label>
+        <input id="bn_m" type="file" accept="image/png,image/jpeg,image/webp" data-banner="m">
+        ${bn.m?'<button class="btn btn-danger btn-sm" data-banner-del="m" style="margin-left:8px">삭제</button>':''}
+        <p class="err" id="bnErr_m" hidden></p>
+      </div>
+    </div>
+    <fieldset style="border:0;margin-top:20px"><legend class="lbl" style="font-weight:700;margin-bottom:8px">사진 어둡기 (흰 글자 가독성)</legend>
+      <div class="dim-row">${[['light','약하게'],['mid','보통 (권장)'],['strong','강하게']].map(([v,t])=>`<label><input type="radio" name="dim" value="${v}" ${dim===v?'checked':''}> ${t}</label>`).join('')}</div>
+    </fieldset>
+    <ul class="hint" style="margin-top:12px;list-style:disc;padding-left:20px;line-height:1.8">
+      <li>제목 글자가 왼쪽 아래에 올라가므로 사진의 주요 피사체는 오른쪽에 두세요.</li>
+      <li>배너 하단(PC 약 40px, 휴대폰 약 32px)은 바로가기 메뉴에 가려집니다.</li>
+      <li>사진 속 글자는 화면낭독기가 읽지 못하므로 문구는 사진에 넣지 마세요.</li>
+    </ul>`;
+}
+// 배너 사진: 목표 크기를 넘으면 줄여서 JPEG 저장
+function readBanner(file, maxW, minH){
+  return new Promise(res => {
+    const r = new FileReader();
+    r.onload = () => { const img = new Image(); img.onload = () => {
+      const w = Math.min(maxW, img.width), h = Math.round(img.height * w / img.width);
+      const c = document.createElement('canvas'); c.width = w; c.height = h; const x = c.getContext('2d'); x.drawImage(img,0,0,w,h);
+      res({url: c.toDataURL('image/jpeg', .8), small: img.width < maxW/2 || img.height < minH/2 });
+    }; img.src = r.result; };
+    r.readAsDataURL(file);
+  });
+}
+// 게시판 사진: 가로 최대 1200px, JPEG 0.82로 줄여 저장
+function readPhoto(file){
+  return new Promise(res => {
+    const r = new FileReader();
+    r.onload = () => { const img = new Image(); img.onload = () => { const w = Math.min(1200, img.width), h = Math.round(img.height * w / img.width); const c = document.createElement('canvas'); c.width = w; c.height = h; const x = c.getContext('2d'); x.fillStyle = '#fff'; x.fillRect(0,0,w,h); x.drawImage(img,0,0,w,h); res(c.toDataURL('image/jpeg', .82)); }; img.onerror = () => res(null); img.src = r.result; };
+    r.readAsDataURL(file);
+  });
+}
+// 래스터 이미지는 높이 120px로 줄여 저장 (SVG는 원본 유지)
+function readLogo(file, maxH=120){
+  return new Promise(res => {
+    const r = new FileReader();
+    r.onload = () => {
+      if (file.type === 'image/svg+xml') return res(r.result);
+      const img = new Image();
+      img.onload = () => { const h = Math.min(maxH, img.height), w = Math.round(img.width * h / img.height); const c = document.createElement('canvas'); c.width = w; c.height = h; c.getContext('2d').drawImage(img, 0, 0, w, h); res(c.toDataURL('image/png')); };
+      img.onerror = () => res(r.result); img.src = r.result;
+    };
+    r.readAsDataURL(file);
+  });
+}
+function viewNotFound(){ subLayout(null,'','페이지를 찾을 수 없습니다', `<div class="placeholder">요청한 페이지가 없거나 삭제되었습니다.<br><br><a class="btn btn-primary" href="#/">홈으로 가기</a></div>`); }
+
+// ---------- 라우터 ----------
+function route(){
+  const [path, q=''] = (location.hash.slice(1) || '/').split('?');
+  const seg = path.split('/').filter(Boolean);
+  closeMega(); closeMobile();
+  const fam = document.querySelector('.family'); if (fam) fam.hidden = !!seg[0];   // 관련기관은 메인에서만
+  if (['login','signup','admin','write','edit'].includes(seg[0])) { location.hash = '#/'; return; }   // 관리자 기능 없는 버전
+  switch(seg[0]){
+    case undefined: viewHome(); break;
+    case 'page': viewPage(seg[1]); break;
+    case 'program': viewProgram(seg[1], seg[2]); break;
+    case 'board': viewBoard(seg[1], q); break;
+    case 'post': viewPost(seg[1]); break;
+    case 'write': viewWrite(seg[1]); break;
+    case 'edit': viewWrite(null, seg[1]); break;
+    case 'login': viewLogin(q); break;
+    case 'signup': viewSignup(); break;
+    case 'admin': viewAdmin(); break;
+    default: viewNotFound();
+  }
+  window.scrollTo(0,0);
+  if (seg[0]) app.focus({preventScroll:true});
+  document.title = (seg[0] ? ($('.sub-visual h1')?.textContent + ' | ') : '') + '제주국제개발협력센터';
+}
+
+// ---------- 이벤트 ----------
+const header = $('#header');
+function openMega(){
+  header.classList.add('open');
+  const subs = [...document.querySelectorAll('.gnb-sub')];
+  subs.forEach(u => u.style.height = '');
+  const h = Math.max(...subs.map(u => u.offsetHeight));
+  subs.forEach(u => u.style.height = h + 'px');   // 모든 칸을 같은 높이로 → 구분선이 끝까지 이어짐
+  $('.mega-bg').style.height = h + 'px';
+}
+function closeMega(){ header.classList.remove('open'); }
+header.addEventListener('mouseenter', e => { if (window.innerWidth > 1023) openMega(); });
+header.addEventListener('mouseleave', closeMega);
+$('#gnb').addEventListener('focusin', openMega);
+header.addEventListener('focusout', e => { if (!header.contains(e.relatedTarget)) closeMega(); });
+
+const mNav = $('#mNav'), btnMenu = $('#btnMenu');
+function closeMobile(){ mNav.classList.remove('on'); mNav.setAttribute('aria-hidden','true'); btnMenu.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+btnMenu.onclick = () => { mNav.classList.add('on'); mNav.setAttribute('aria-hidden','false'); btnMenu.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; setTimeout(()=>$('.m-close').focus(), 50); };
+mNav.addEventListener('click', e => {
+  if (e.target.closest('[data-close]')) { closeMobile(); btnMenu.focus(); }
+  const t = e.target.closest('.m-list>li>button');
+  if (t) { const ex = t.getAttribute('aria-expanded')==='true'; t.setAttribute('aria-expanded', !ex); $('#'+t.getAttribute('aria-controls')).classList.toggle('on', !ex); }
+});
+document.addEventListener('keydown', e => { if (e.key==='Escape' && !$('#edModal').hidden) { closeEditor(); return; } if (e.key==='Escape') { if (mNav.classList.contains('on')) { closeMobile(); btnMenu.focus(); } closeMega(); } });
+
+document.addEventListener('click', e => {
+  const lo = e.target.closest('[data-logout]');
+  if (lo) { user = null; session.set(null); renderAuth(); toast('로그아웃했습니다.'); if (location.hash === '#/' || !location.hash) route(); else location.hash = '#/'; }
+  const fsb = e.target.closest('[data-fs]');
+  if (fsb) { const d = +fsb.dataset.fs; const cur = parseInt(getComputedStyle(document.documentElement).fontSize); const n = d===0 ? 16 : Math.min(22, Math.max(14, cur + d*2)); document.documentElement.style.setProperty('--fs', n+'px'); toast(n===16?'기본 글자 크기':'글자 크기 '+Math.round(n/16*100)+'%'); }
+  const tab = e.target.closest('[data-tab]'); if (tab) showTab(tab.dataset.tab);
+  const eb = e.target.closest('[data-edit]'); if (eb) { e.preventDefault(); openEditor(eb.closest('.ed')); }
+  if (e.target.closest('[data-em-close]')) closeEditor();
+  if (e.target.closest('[data-em-save]')) saveEditor(false);
+  if (e.target.closest('[data-em-del]') && confirm('이 영역의 내용을 비울까요?')) saveEditor(true);
+  const bm = e.target.closest('[data-bizmore]');
+  if (bm) { const ex = bm.getAttribute('aria-expanded') === 'true';
+    bm.closest('.biz').querySelectorAll('.more-item').forEach(li => li.hidden = ex);
+    bm.setAttribute('aria-expanded', !ex); bm.querySelector('.bm-tx').textContent = ex ? '더보기' : '접기'; }
+  const lt = e.target.closest('[data-lnb]');
+  if (lt) {
+    const k = lt.dataset.lnb;
+    if (lt.getAttribute('aria-current') === 'page') {           // 현재 페이지: 열고 닫기만
+      e.preventDefault();
+      const ex = lt.getAttribute('aria-expanded') === 'true';
+      lt.setAttribute('aria-expanded', !ex); $('#lsub_'+k).hidden = ex;
+    } else { window._lnbOpen = k; }                              // 다른 분야: 이동 후 펼침
+  }
+  const gt = e.target.closest('[data-gal]'); if (gt) showGallery(gt.dataset.gal);
+});
+document.addEventListener('keydown', e => {
+  const tab = e.target.closest?.('[data-tab]'); if (!tab || !['ArrowLeft','ArrowRight'].includes(e.key)) return;
+  const tabs = [...document.querySelectorAll('[data-tab]')]; const i = tabs.indexOf(tab);
+  const n = tabs[(i + (e.key==='ArrowRight'?1:-1) + tabs.length) % tabs.length]; n.focus(); showTab(n.dataset.tab);
+});
+const topBtn = $('#topBtn');
+window.addEventListener('scroll', () => topBtn.classList.toggle('on', scrollY > 400), {passive:true});
+topBtn.onclick = () => { window.scrollTo({top:0, behavior:'smooth'}); $('.skip').focus(); };
+window.addEventListener('hashchange', route);
+
+// SNS 로고: images/insta_logo, images/blog_logo (png → jpg → svg → webp 순서로 찾음)
+function loadSideLogos(){
+  document.querySelectorAll('.sb-ic img[data-base]').forEach(img => {
+    const exts = ['png','jpg','jpeg','svg','webp']; let i = 0;
+    img.onerror = () => { if (++i < exts.length) img.src = img.dataset.base + '.' + exts[i]; else img.onerror = null; };
+    if (img.complete && !img.naturalWidth) img.onerror();
+  });
+}
+(async () => { importSiteData(); loadSideLogos(); applyBizLists(); await seed(); seedGallery(); store.set('posts', store.get('posts',[]).filter(p=>BOARDS[p.board])); renderMenus(); renderAuth(); renderFamily(); renderLogo(); route(); })();
+</script>
+</body>
+</html>
