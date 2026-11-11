@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>제주국제개발협력센터</title>
-<meta name="description" content="제주국제개발협력센터 누리집 시안">
+<meta name="description" content="제주국제개발협력센터">
 <meta name="theme-color" content="#0E3A5F">
-<!-- 누리집 주소: 도메인 확정 시 아래 주소만 바꾸면 됩니다 -->
+<!-- 홈페이지 주소: 도메인 확정 시 아래 주소만 바꾸면 됩니다 -->
 <link rel="canonical" href="https://jejuidcc.kr/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jejuidcc.kr/">
@@ -141,7 +141,28 @@ img{max-width:100%}
 .col-gal .gal-item .gt{margin-top:10px;font-size:.9375rem}
 .col-gal .gal-thumb{aspect-ratio:16/9}
 .col-gal .gal-item .gt{-webkit-line-clamp:1}
-.sec-biz{padding-top:72px;background:var(--stone)}
+.sec-biz{padding-top:72px;background:#fff}
+.sec-about{background:#fff;padding-bottom:24px}
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:56px;align-items:center}
+.about-eye{font-size:.9375rem;font-weight:700;color:var(--sea);margin-bottom:12px}
+.about-head h2{font-size:1.875rem;font-weight:800;line-height:1.4;letter-spacing:-.03em;color:var(--basalt)}
+.about-text{margin-top:18px;font-size:1rem;line-height:1.85;color:var(--sub);word-break:keep-all}
+.about-list{display:flex;flex-direction:column}
+.about-list li{display:flex;gap:22px;align-items:flex-start;padding:22px 4px;border-top:1px solid var(--line)}
+.about-list li:last-child{border-bottom:1px solid var(--line)}
+.al-no{font-size:1.25rem;font-weight:800;color:var(--sea);line-height:1.4;min-width:30px}
+.about-list h3{font-size:1.125rem;font-weight:800;margin-bottom:4px}
+.about-list h3 a:hover{color:var(--sea);text-decoration:underline}
+.about-list p{font-size:.9375rem;color:var(--sub);line-height:1.7}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr;gap:28px}.about-head h2{font-size:1.5rem}}
+@media (max-width:767px){
+  .sec-about{padding:36px 0 8px}
+  .about-grid{gap:20px}
+  .about-head h2{font-size:min(1.25rem,4.7vw);white-space:nowrap}
+  .about-head h2 br{display:none}
+  .about-text{margin-top:10px;font-size:.875rem;line-height:1.7}
+  .about-list{display:none}
+}
 .tabs{display:flex;border-bottom:2px solid var(--basalt);margin-bottom:6px}
 .tabs button{padding:12px 20px;font-size:1.0625rem;font-weight:600;color:var(--sub);position:relative}
 .tabs button[aria-selected="true"]{color:var(--basalt);font-weight:800}
@@ -164,7 +185,7 @@ img{max-width:100%}
 
 /* 주요사업 */
 .biz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.biz{background:#fff;border-top:4px solid var(--sea);padding:30px 28px 26px;border-radius:0 0 10px 10px}
+.biz{background:#fff;border:1px solid var(--line);border-top:4px solid var(--sea);padding:30px 28px 26px;border-radius:0 0 10px 10px}
 .biz:nth-child(2){border-top-color:var(--navy)}
 .biz:nth-child(3){border-top-color:var(--tangerine)}
 .biz h3{font-size:1.25rem;font-weight:800;margin-bottom:14px}
@@ -234,7 +255,7 @@ img{max-width:100%}
 .lnb-sub-old::before{content:"";position:absolute;left:20px;top:50%;width:4px;height:4px;border-radius:50%;background:var(--sea)}
 .lnb a[aria-current="page"]{color:var(--sea);font-weight:700;background:var(--sea-weak)}
 .lnb .lnb-sub a[aria-current="page"]{color:var(--sea);font-weight:700;background:#F4F8FC}
-.content h2.ct{font-size:1.5rem;font-weight:800;padding-bottom:16px;border-bottom:2px solid var(--basalt);margin-bottom:24px}
+.content h2.ct{font-size:1.5rem;font-weight:800;padding-bottom:0;border-bottom:0;margin-bottom:28px}
 .placeholder{border:2px dashed var(--line);border-radius:10px;padding:40px;text-align:center;color:var(--sub)}
 .info-table{width:100%;border-collapse:collapse;border-top:2px solid var(--basalt)}
 /* 사업 페이지 */
@@ -299,7 +320,7 @@ table.list td.tl a:hover{color:var(--sea);text-decoration:underline}
 table.list tr.pinned{background:#F7FAFD}
 .empty{padding:60px 0;text-align:center;color:var(--sub)}
 .board-bottom{display:flex;justify-content:flex-end;margin-top:20px;gap:8px}
-.view-head{border-top:2px solid var(--basalt);border-bottom:1px solid var(--line);padding:22px 8px}
+.view-head{border-bottom:1px solid var(--line);padding:6px 8px 22px}
 .view-head h3{font-size:1.375rem;font-weight:800;letter-spacing:-.02em}
 .view-meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px;font-size:.875rem;color:var(--sub)}
 .view-files{padding:14px 8px;border-bottom:1px solid var(--line);font-size:.875rem;background:var(--stone)}
@@ -361,13 +382,17 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .slot.tall{min-height:240px;display:flex;align-items:center;justify-content:center}
 .slot.map{height:360px;display:flex;align-items:center;justify-content:center}
 .inline-slot{display:inline-block;padding:2px 14px;font-size:.875rem}
-.greet{display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:start}
-.greet-side{margin:0}
-.greet-side .slot.img,.greet-side .ed-img{aspect-ratio:4/3.5;object-fit:cover;border-radius:16px;width:100%}
-.greet-cap{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:20px;font-size:.9375rem;color:var(--basalt)}
-.greet-cap .slot{padding:6px 12px}
-.greet-signimg{height:44px;width:auto;display:block}
-.greet-body{line-height:1.9;white-space:normal}
+.greet-top{display:grid;grid-template-columns:minmax(0,1fr) 44%;gap:48px;margin-bottom:56px}
+.greet-head{display:flex;flex-direction:column;justify-content:center;padding-top:14%}
+.greet-photo{margin:0}
+.greet-photo .ed-img,.greet-photo .slot.img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px}
+.greet-title{font-size:1.625rem;line-height:1.55;color:var(--basalt);font-weight:400;word-break:keep-all}
+.greet-title .hl,.greet-title strong{color:var(--navy);font-weight:800}
+.greet-sign{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin-top:16px;font-size:.9375rem;color:var(--sub)}
+.gs-name{font-size:1.125rem;color:var(--basalt);letter-spacing:.2em}
+.greet-signimg{height:40px;width:auto;display:block}
+.greet-body{line-height:1.9;white-space:normal;font-size:.9375rem;color:#3D4550}
+.greet-body p{margin:0}
 .greet-body .hl{color:var(--sea);font-weight:800}
 .lead{font-size:1.1875rem;font-weight:700;text-align:center;padding:28px 20px;background:var(--sea-weak);border-radius:10px;color:var(--navy);line-height:1.7}
 .h3{font-size:1.1875rem;font-weight:800;margin:44px 0 16px;padding-left:12px;border-left:4px solid var(--sea);line-height:1.3}
@@ -397,7 +422,13 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .org{display:flex;flex-direction:column;align-items:center}
 .org .box{background:var(--navy);color:#fff;padding:14px 36px;border-radius:8px;font-weight:700}
 .org .line{width:2px;height:24px;background:var(--line)}
-.org .row{display:flex;gap:16px;border-top:2px solid var(--line);padding-top:24px;flex-wrap:wrap;justify-content:center}
+.org .row{display:flex;gap:16px;padding-top:24px;flex-wrap:wrap;justify-content:center}
+.org .row>.box{position:relative}
+.org .row>.box::before{content:"";position:absolute;left:50%;top:-24px;width:2px;height:24px;margin-left:-1px;background:var(--line)}
+.org .row>.box::after{content:"";position:absolute;left:-9px;right:-9px;top:-24px;height:2px;background:var(--line)}
+.org .row>.box:first-child::after{left:50%}
+.org .row>.box:last-child::after{right:50%}
+.org .row>.box:only-child::after{display:none}
 .org .slot-box{background:#FAFBFC;color:#6B7580;border:2px dashed #C3CDD7;font-weight:500;font-size:.875rem}
 .cta-row{display:flex;gap:8px;justify-content:center;margin-top:40px;flex-wrap:wrap}
 .sitemap{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
@@ -423,6 +454,16 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .gal-more{text-align:center;margin-top:32px}
 .view-photo{padding:28px 8px 0;text-align:center}
 .view-photo img{max-width:100%;max-height:640px;border-radius:8px}
+.view-more{display:flex;flex-direction:column;align-items:center;gap:28px;padding:8px 8px 28px}
+.view-more figure{margin:0;text-align:center}
+.view-more img{max-width:100%;max-height:640px;border-radius:8px}
+.view-more figcaption{margin-top:8px;font-size:.875rem;color:var(--sub);line-height:1.6}
+.more-ph{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+.more-ph li{display:flex;gap:12px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:8px}
+.more-ph img{width:96px;height:72px;object-fit:cover;border-radius:6px;flex-shrink:0}
+.more-ph li>div{flex:1;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.more-ph input{flex:1;min-width:160px}
+.mp-btns{display:flex;gap:4px}
 .view-photo.poster img{max-width:min(100%,720px);max-height:none;border:1px solid var(--line);border-radius:4px}
 .photo-prev{margin-top:10px;max-width:280px;border-radius:6px;display:block}
 
@@ -471,8 +512,6 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .ed-img{width:100%;border-radius:8px;display:block}
 
 .photo-cards .ed-img{aspect-ratio:4/3;object-fit:cover}
-.greet-title{font-size:1.25rem;font-weight:800;color:var(--sea);line-height:1.5;padding-left:12px;border-left:4px solid var(--sea);margin-bottom:18px}
-.greet-sign{text-align:right;margin-top:20px;font-weight:700}
 .ed-text{line-height:1.8}
 .org .slot-box.filled{background:#fff;color:var(--basalt);border:1px solid var(--line);font-weight:600}
 .ed-modal{position:fixed;inset:0;z-index:400;display:flex;align-items:center;justify-content:center;padding:16px}
@@ -558,7 +597,6 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .sub-visual{text-align:center}
 .crumb{justify-content:center}
 .content h2.ct{text-align:center}
-.content h2.ct:has(+ .board-top),.content h2.ct:has(+ .list){border-bottom:0;padding-bottom:0}
 .lnb h2{text-align:center}
 .family .wrap{justify-content:center}
 .fam-title{width:100%;margin-bottom:12px}
@@ -605,8 +643,9 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
   .sb-glyph{font-size:1.0625rem}
   .banner-grid{grid-template-columns:1fr}
   .gal-grid,.board-gal{grid-template-columns:repeat(2,1fr);gap:14px}
-  .greet{grid-template-columns:1fr;gap:28px}
-  .greet-side{order:-1;max-width:360px;margin:0 auto;width:100%}
+  .greet-top{grid-template-columns:1fr;gap:24px}
+  .greet-head{padding-top:0;order:2}
+  .greet-title{font-size:1.3125rem}
   .steps{grid-template-columns:1fr}
   .steps li{display:flex;align-items:center;gap:12px;text-align:left;padding:12px 14px}
   .steps li::before{margin:0}
@@ -680,7 +719,7 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
   .board-top{gap:10px}
   table.list{font-size:.875rem}
   table.list th,table.list td{padding:12px 6px}
-  .content h2.ct{font-size:1.25rem;margin-bottom:18px;padding-bottom:12px}
+  .content h2.ct{font-size:1.25rem;margin-bottom:20px}
   .admin-bar{font-size:.75rem;gap:8px;padding:8px 12px}
   .admin-bar>span{width:100%;text-align:center}
   .em-box{padding:18px}
@@ -895,7 +934,7 @@ function progSecs(name){
   if (Array.isArray(saved)) return saved;
   const k = f => CMS.get('prog.' + name + '.' + f);   // 예전 '사업 개요' 표 내용이 있으면 가져옴
   const li = (l, f, d) => `<li><strong>${l} :</strong> ${toInline(k(f)) || d}</li>`;
-  return [{t:'사업 개요', b: RICH + `<ul>${li('사업 목적','purpose','사업 목적 입력')}${li('참여 대상','target','참여 대상 입력')}${li('주요 내용','content','주요 활동 내용 입력')}${li('신청 방법','apply','공지사항 게시 후 접수')}</ul>`}];
+  return [{t:'프로그램 개요', b: RICH + `<ul>${li('사업 목적','purpose','사업 목적 입력')}${li('참여 대상','target','참여 대상 입력')}${li('주요 내용','content','주요 활동 내용 입력')}${li('신청 방법','apply','공지사항 게시 후 접수')}</ul>`}];
 }
 const secTable = t => {
   const rows = t.split('\n').map(l => l.trim()).filter(Boolean).map(l => l.split('|').map(c => c.trim()));
@@ -925,7 +964,7 @@ function programPage(name){
       <button type="button" class="btn btn-sm btn-danger" data-sec="del" data-name="${esc(name)}" data-i="${i}">삭제</button></div>` : ''}
   </section>`).join('')}
   ${adm ? `<p class="ps-add"><button type="button" class="btn btn-line" data-sec="add" data-name="${esc(name)}">+ 소제목 항목 추가</button></p>` : ''}
-  <div class="prog-notice">${ed(k('notice'), {rich:true, label:'안내 문구', def: RICH + `<p><span class="hl">세부 내용은 사업계획에 따라 수정 및 변경될 수 있습니다.</span></p>`, render:v=>richView(v)})}
+  <div class="prog-notice">${ed(k('notice'), {rich:true, label:'안내 문구', def: RICH + `<p><span class="hl">프로그램 운영 기간 및 세부내용은 공지사항 확인 바랍니다.</span></p>`, render:v=>richView(v)})}
     <p class="pn-q"><b>문의</b><span>제주국제개발협력센터 <a href="tel:${TEL.replace(/[^0-9]/g,'')}">${TEL}</a></span></p></div>`;
 }
 function openSecEditor(name, i){
@@ -987,22 +1026,22 @@ function importSiteData(force){
   store.set('seeded', true); store.set('seed_gallery', true); store.set('dataVer', SITE._ver);
   return true;
 }
-// 관리자: 현재 내용을 data.js로 내려받기 → 누리집 폴더의 data.js를 교체하면 방문자 화면에 반영
+// 관리자: 현재 내용을 data.js로 내려받기 → 서버 폴더의 data.js를 교체하면 방문자 화면에 반영
 function exportSiteData(){
   const ver = new Date().toISOString();
   const data = { _ver: ver };
   DATA_KEYS.forEach(k => { const v = store.get(k); if (v !== undefined && v !== null) data[k] = v; });
-  const blob = new Blob(['/* 제주국제개발협력센터 누리집 배포 데이터 · ' + ver + ' */\nwindow.SITE_DATA = ' + JSON.stringify(data) + ';\n'], {type:'text/javascript'});
+  const blob = new Blob(['/* 제주국제개발협력센터 배포 데이터 · ' + ver + ' */\nwindow.SITE_DATA = ' + JSON.stringify(data) + ';\n'], {type:'text/javascript'});
   const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'data.js';
   document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
   store.set('dataVer', ver);
-  toast('data.js를 내려받았습니다. 누리집 폴더의 data.js를 이 파일로 바꾸세요.');
+  toast('data.js를 내려받았습니다. 서버 폴더의 data.js를 이 파일로 바꾸세요.');
 }
 
 // ---------- 네이버 지도 ----------
 // NCP 콘솔(Maps > Application)에서 발급한 Client ID를 관리자 페이지에 입력하면 지도가 표시됩니다.
-// ※ 콘솔의 'Web 서비스 URL'에 누리집 주소를 등록해야 합니다. (내 PC에서 파일로 열면 지도가 뜨지 않음)
-const SITE_URL = 'https://jejuidcc.kr';   // 누리집 주소 (도메인 확정 시 수정)
+// ※ 콘솔의 'Web 서비스 URL'에 홈페이지 주소를 등록해야 합니다. (내 PC에서 파일로 열면 지도가 뜨지 않음)
+const SITE_URL = 'https://jejuidcc.kr';   // 홈페이지 주소 (도메인 확정 시 수정)
 const MAP_DEFAULT = { lat: 33.4531, lng: 126.5603, zoom: 17 };   // 제주대학교 일대 (관리자 페이지에서 정확한 좌표로 수정)
 function mapCfg(){ const c = CMS.get('map.cfg') || {}; return { id: c.id || '', lat: +c.lat || MAP_DEFAULT.lat, lng: +c.lng || MAP_DEFAULT.lng, zoom: +c.zoom || MAP_DEFAULT.zoom }; }
 function drawNaverMap(){
@@ -1064,7 +1103,37 @@ function cleanHTML(html){
   return walk(doc.body.firstChild);
 }
 const richView = v => isRich(v) ? `<div class="ed-text rich">${cleanHTML(v.slice(RICH.length))}</div>` : `<div class="ed-text">${hl(v)}</div>`;
-const richToEditor = v => !v ? '' : isRich(v) ? cleanHTML(v.slice(RICH.length)) : hl(v);
+// 편집기 안에서는 브라우저 기본 서식(font 태그)으로 바꿔야 '서식 지우기'·'강조' 해제가 됨
+const HL_COLOR = '#1769aa';
+function toEditorHTML(html){
+  const box = document.createElement('div'); box.innerHTML = html;
+  box.querySelectorAll('span').forEach(sp => {
+    const f = document.createElement('font');
+    if (sp.classList.contains('fs-s')) f.setAttribute('size', '2');
+    if (sp.classList.contains('fs-l')) f.setAttribute('size', '5');
+    if (sp.classList.contains('fs-xl')) f.setAttribute('size', '6');
+    if (sp.classList.contains('hl')) f.setAttribute('color', HL_COLOR);
+    while (sp.firstChild) f.appendChild(sp.firstChild);
+    sp.replaceWith(f);
+  });
+  box.querySelectorAll('strong.hl').forEach(st => { st.removeAttribute('class'); const f = document.createElement('font'); f.setAttribute('color', HL_COLOR); st.replaceWith(f); f.appendChild(st); });
+  return box.innerHTML;
+}
+const richToEditor = v => !v ? '' : toEditorHTML(isRich(v) ? cleanHTML(v.slice(RICH.length)) : hl(v));
+// 선택 영역에 걸친 서식 태그 풀기
+function unwrapIn(area, test){
+  const sel = getSelection(); if (!sel.rangeCount) return 0;
+  const r = sel.getRangeAt(0); let n = 0;
+  [...area.querySelectorAll('*')].reverse().forEach(el => {
+    if (!test(el) || !r.intersectsNode(el)) return;
+    if (el.tagName === 'FONT' && el.hasAttribute('size') && test.colorOnly) { el.removeAttribute('color'); el.style.color = ''; n++; return; }
+    el.replaceWith(...el.childNodes); n++;
+  });
+  return n;
+}
+const isHL = el => (el.tagName === 'FONT' && (el.hasAttribute('color') || el.style.color)) || (el.tagName === 'SPAN' && (el.classList.contains('hl') || el.style.color));
+isHL.colorOnly = true;
+const isFmt = el => ['B','STRONG','I','EM','U','FONT','SPAN'].includes(el.tagName);
 const RICH_BAR = `<div class="rt-bar" role="toolbar" aria-label="글자 서식">
   <button type="button" data-rt="bold" aria-label="굵게"><b>가</b></button>
   <button type="button" data-rt="italic" aria-label="기울임꼴"><i>가</i></button>
@@ -1075,7 +1144,7 @@ const RICH_BAR = `<div class="rt-bar" role="toolbar" aria-label="글자 서식">
   <button type="button" data-rt="size" data-v="5" aria-label="글자 크게">크게</button>
   <button type="button" data-rt="size" data-v="6" aria-label="글자 아주 크게">아주 크게</button>
   <span class="rt-sep"></span>
-  <button type="button" data-rt="color" aria-label="파란색 강조"><span style="color:var(--sea);font-weight:800">강조</span></button>
+  <button type="button" data-rt="color" aria-label="파란색 강조 (다시 누르면 해제)" title="다시 누르면 해제"><span style="color:var(--sea);font-weight:800">강조</span></button>
   <button type="button" data-rt="list" aria-label="목록">• 목록</button>
   <button type="button" data-rt="clear" aria-label="서식 지우기">서식 지우기</button>
 </div>`;
@@ -1087,9 +1156,9 @@ document.addEventListener('click', e => {
   const c = b.dataset.rt;
   try { document.execCommand('styleWithCSS', false, false); } catch(_) {}
   if (c === 'size') document.execCommand('fontSize', false, b.dataset.v);
-  else if (c === 'color') document.execCommand('foreColor', false, '#1769aa');
+  else if (c === 'color') { if (!area || !unwrapIn(area, isHL)) document.execCommand('foreColor', false, HL_COLOR); }   // 강조된 곳에서 누르면 해제
   else if (c === 'list') document.execCommand('insertUnorderedList');
-  else if (c === 'clear') document.execCommand('removeFormat');
+  else if (c === 'clear') { document.execCommand('removeFormat'); if (area) unwrapIn(area, isFmt); }
   else document.execCommand(c);
 });
 
@@ -1100,7 +1169,7 @@ function ed(key, o = {}){
   if (val) view = o.render ? o.render(val) : type === 'image' ? `<img class="ed-img" src="${val.src || val}" alt="${esc(val.alt || '')}">` : o.rich ? richView(val) : `<div class="ed-text">${nl2br(val)}</div>`;
   else if (isAdmin()) view = slot(o.ph || '내용 입력', type === 'image' ? 'img' : '');
   if (!isAdmin()) return view;
-  return `<div class="ed ${o.cls||''}" data-ed="${esc(key)}" data-type="${type}" ${o.rich?'data-rich="1"':''} data-label="${esc(o.label||'')}">${view}<button class="ed-btn" data-edit>수정</button></div>`;
+  return `<div class="ed ${o.cls||''}" data-ed="${esc(key)}" data-type="${type}" ${o.rich?'data-rich="1"':''} ${o.png?'data-png="1"':''} data-label="${esc(o.label||'')}">${view}<button class="ed-btn" data-edit>수정</button></div>`;
 }
 // 표 한 줄: 방문자에게는 내용이 있을 때만 보임
 function edRow(label, key, ph, def){
@@ -1135,7 +1204,7 @@ function openEditor(box){
       : `<div class="field"><label for="emText">${esc(label)}</label><textarea id="emText" style="height:220px">${esc(v || '')}</textarea><p class="hint">줄바꿈은 그대로 반영됩니다.</p></div>`;
   edCtx.rich = !!box.dataset.rich;
   const f = $('#emFile');
-  if (f) f.onchange = async () => { const file = f.files[0]; if (!file) return; edCtx.img = await readPhoto(file); const pv = $('#emPrev'); pv.src = edCtx.img; pv.hidden = false; };
+  if (f) f.onchange = async () => { const file = f.files[0]; if (!file) return; edCtx.img = box.dataset.png ? await readLogo(file, 160) : await readPhoto(file); const pv = $('#emPrev'); pv.src = edCtx.img; pv.hidden = false; };
   m.hidden = false; (m.querySelector('.rt-area,textarea,input') || m.querySelector('button')).focus();
 }
 function closeEditor(){ $('#edModal').hidden = true; edCtx = null; $('#edModal [data-em-del]').textContent = '비우기'; }
@@ -1153,19 +1222,20 @@ const orgRow = v => `<div class="row">${v.split('\n').filter(Boolean).map(t=>`<d
 
 const PAGES = {
   greeting:{body:()=>`
-    <div class="greet">
-      <div class="greet-text">
-        ${ed('greeting.title', {label:'인사말 제목', ph:'“인사말 제목 한 줄 입력”', render:v=>`<p class="greet-title">${esc(v)}</p>`})}
-        ${ed('greeting.body', {label:'인사말 본문', ph:'인사말 본문 입력 (굵게·기울임·크기·강조색 사용 가능)', rich:true, render:v=>`<div class="greet-body">${richView(v)}</div>`})}
+    <div class="greet-top">
+      <div class="greet-head">
+        ${ed('greeting.title', {rich:true, label:'인사말 제목', def: RICH + '<p><span class="hl">제주국제개발협력센터</span></p><p>홈페이지를 찾아주신 여러분께</p><p>감사드립니다.</p>', render:v=>`<div class="greet-title">${richView(v)}</div>`})}
       </div>
-      <figure class="greet-side">
-        ${ed('greeting.photo', {type:'image', label:'센터장 사진', ph:'센터장 사진<br>(가로 4 : 세로 3.5 권장)'})}
-        <figcaption class="greet-cap">
-          ${ed('greeting.sign', {label:'직위·성명', ph:'제주국제개발협력센터장 OOO', render:v=>`<span>${esc(v)}</span>`})}
-          ${ed('greeting.signimg', {type:'image', label:'서명 이미지 (투명 PNG)', ph:'서명', render:v=>`<img class="greet-signimg" src="${v.src||v}" alt="${esc(v.alt||'서명')}">`})}
+      <figure class="greet-photo">
+        ${ed('greeting.photo', {type:'image', label:'센터장 사진', ph:'사진<br>(가로 4 : 세로 3 권장)'})}
+        <figcaption class="greet-sign">
+          ${ed('greeting.sign', {label:'직위', def:'제주국제개발협력센터장', render:v=>`<span class="gs-pos">${esc(v)}</span>`})}
+          ${ed('greeting.name', {label:'성명', ph:'성명', render:v=>`<b class="gs-name">${esc(v)}</b>`})}
+          ${ed('greeting.signimg', {type:'image', png:true, label:'서명 이미지 (선택, 투명 PNG 권장)', ph:'서명', render:v=>`<img class="greet-signimg" src="${v.src||v}" alt="${esc(v.alt||'서명')}">`})}
         </figcaption>
       </figure>
-    </div>`},
+    </div>
+    ${ed('greeting.body', {label:'인사말 본문', ph:'인사말 본문 입력 (굵게·기울임·크기·강조색 사용 가능)', rich:true, render:v=>`<div class="greet-body">${richView(v)}</div>`})}`},
   purpose:{body:()=>`
     ${ed('purpose.lead', {label:'설립 목적', def:'제주 지역의 공적개발원조(ODA) 참여 기반 확대를 위해\n제주특별자치도·한국국제협력단(KOICA)·제주대학교의 협약으로 설립되었습니다.', render:v=>`<p class="lead">${nl2br(v)}</p>`})}
     <h3 class="h3">주요 역할</h3>
@@ -1215,7 +1285,7 @@ const PAGES = {
   awareness:{body:()=>bizPage('awareness')}, network:{body:()=>bizPage('network')}, koica:{body:()=>bizPage('koica')},
   odyssey:{body:()=>bizPage('odyssey')}, consult:{body:()=>bizPage('consult')}, briefing:{body:()=>bizPage('briefing')},
   privacy:{title:'개인정보처리방침', body:()=>ed('page.privacy', {rich:true, label:'개인정보처리방침', ph:'「개인정보 보호법」 제30조에 따른 개인정보 처리방침 전문 (발송대행 업체 등 처리 위탁 내용 포함)'})},
-  terms:{title:'이용약관', body:()=>ed('page.terms', {rich:true, label:'이용약관', ph:'누리집 이용약관 전문'})},
+  terms:{title:'이용약관', body:()=>ed('page.terms', {rich:true, label:'이용약관', ph:'이용약관 전문'})},
 };
 
 // ---------- 관련기관 (로고는 관리자 페이지에서 등록) ----------
@@ -1236,8 +1306,8 @@ const DATA_KEYS = ['cms','posts','banner','siteLogo','logos','bizLists'];   // d
 const store = {
   get(k, d){
     if (PUBLIC) return (SITE && k in SITE) ? SITE[k] : (k in mem ? mem[k] : d);
-    try{ const v = localStorage.getItem('jicdc_'+k); return v ? JSON.parse(v) : d; }catch(e){ return k in mem ? mem[k] : d; } },
-  set(k, v){ if (PUBLIC) { mem[k] = v; return; } try{ localStorage.setItem('jicdc_'+k, JSON.stringify(v)); }catch(e){ mem[k] = v; if (e && e.name === 'QuotaExceededError') setTimeout(()=>toast('브라우저 저장 공간이 가득 찼습니다. (시안 한계 — 실서비스는 서버 저장)')); } }
+    if (k in mem) return mem[k]; try{ const v = localStorage.getItem('jicdc_'+k); return v ? JSON.parse(v) : d; }catch(e){ return k in mem ? mem[k] : d; } },
+  set(k, v){ if (PUBLIC) { mem[k] = v; return; } try{ localStorage.setItem('jicdc_'+k, JSON.stringify(v)); delete mem[k]; }catch(e){ mem[k] = v; if (e && e.name === 'QuotaExceededError') setTimeout(()=>toast('브라우저 저장 공간이 가득 찼습니다. (시안 한계 — 실서비스는 서버 저장)')); } }
 };
 const session = {
   get(){ try{ return JSON.parse(sessionStorage.getItem('jicdc_user')); }catch(e){ return mem._user || null; } },
@@ -1263,7 +1333,7 @@ async function seed(){
   store.set('users', [{id:'admin', name:'관리자', email:'jejuidcc@jejunu.ac.kr', role:'admin', salt, pw: await hash('admin1234!', salt), joined: today()}]);
   const ex = (board, title, pinned=false) => ({id:uid(), board, title, body:'시안용 예시 게시물입니다. 관리자 로그인 후 수정·삭제할 수 있습니다.', author:'관리자', authorId:'admin', date: today(), views:0, pinned, files:[]});
   store.set('posts', [
-    ex('notice','[예시] 누리집 개편 안내', true),
+    ex('notice','[예시] 홈페이지 개편 안내', true),
     ex('notice',"[예시] 대학생 ODA 서포터즈 '오디세이' 모집 안내"),
     ex('notice','[예시] 개발협력 진로 컨설팅 신청 안내'),
     ex('notice','[예시] 개발협력 초급전문가 양성과정 참가자 모집'),
@@ -1318,7 +1388,7 @@ function renderAuth(){
 
 function renderFamily(){
   const logos = store.get('logos', {});
-  $('#family').innerHTML = FAMILY.map(f => `<li><a class="fam" href="${f.url}" target="_blank" rel="noopener" title="${f.name} 누리집 (새 창 열림)"><span class="fam-ic"><img src="${logos[f.key] || 'images/'+f.file}" alt="" onerror="this.closest('.fam').classList.add('no-logo');this.remove()"></span><span class="fam-nm">${f.name}</span></a></li>`).join('');
+  $('#family').innerHTML = FAMILY.map(f => `<li><a class="fam" href="${f.url}" target="_blank" rel="noopener" title="${f.name} (새 창 열림)"><span class="fam-ic"><img src="${logos[f.key] || 'images/'+f.file}" alt="" onerror="this.closest('.fam').classList.add('no-logo');this.remove()"></span><span class="fam-nm">${f.name}</span></a></li>`).join('');
 }
 
 // ---------- 화면: 메인 ----------
@@ -1377,11 +1447,20 @@ function viewHome(){
     </div>
   </section>
 
-  <nav class="quick" aria-label="바로가기">
-    <div class="wrap"><ul>
-      ${QUICK.map(([k,n,p])=>`<li><a href="${linkOf(k)}"><span class="qi"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${p}</svg></span><span class="ql">${n}</span></a></li>`).join('')}
-    </ul></div>
-  </nav>
+  <section class="sec sec-about" aria-labelledby="aboutTitle">
+    <div class="wrap about-grid">
+      <div class="about-head">
+        ${ed('home.about.title', {label:'센터 소개 제목', def:'제주와 세계를 잇는\n국제개발협력 플랫폼', render:v=>`<h2 id="aboutTitle">${esc(v).replace(/\n/g,' <br>')}</h2>`})}
+        ${ed('home.about.text', {rich:true, label:'센터 소개 글', def: RICH + '<p>제주국제개발협력센터는 제주특별자치도·한국국제협력단(KOICA)·제주대학교의 협력으로 설립되어, 도민과 청년이 국제개발협력을 이해하고 직접 참여할 수 있도록 지원합니다.</p>', render:v=>`<div class="about-text">${richView(v)}</div>`})}
+      </div>
+      <ol class="about-list">
+        ${[['awareness','ODA 인지제고','교육·설명회·홍보로 도민과 청년의 ODA 이해를 넓힙니다.'],
+           ['network','ODA 네트워킹','지역 기관·단체와 ODA 협력 네트워크를 만듭니다.'],
+           ['koica','ODA 사업 참여 지원','지역 기관의 ODA 사업 발굴과 참여를 돕습니다.']].map(([k,t,d],i)=>`
+        <li><span class="al-no" aria-hidden="true">0${i+1}</span><div><h3><a href="#/page/${k}">${t}</a></h3>${ed('purpose.role'+i, {label:t+' 설명', def:d, render:v=>`<p>${nl2br(v)}</p>`})}</div></li>`).join('')}
+      </ol>
+    </div>
+  </section>
 
   <section class="sec sec-biz">
     <div class="wrap">
@@ -1419,7 +1498,7 @@ function viewHome(){
   loadBanner();
 }
 const galCard = p => `<li class="gal-item"><a href="#/post/${p.id}">
-  <span class="gal-thumb">${p.photo ? `<img src="${p.photo}" alt="${esc(p.alt||p.title)}" loading="lazy">` : `<span class="noimg"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 17l-5-5-8 7"/></svg>사진 준비 중</span>`}<span class="cat">${BOARDS[p.board].name}</span></span>
+  <span class="gal-thumb">${p.photo ? `<img src="${p.photo}" alt="${esc(p.alt||p.title)}" loading="lazy">` : `<span class="noimg"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 17l-5-5-8 7"/></svg>사진 준비 중</span>`}</span>
   <span class="gt">${esc(p.title)}</span><span class="gd">${p.date}</span></a></li>`;
 function showGallery(kind){
   document.querySelectorAll('[data-gal]').forEach(t => t.setAttribute('aria-selected', t.dataset.gal===kind));
@@ -1524,6 +1603,7 @@ function viewPost(id){
     ${p.files?.length?`<div class="view-files"><strong>첨부파일</strong> ${p.files.map(f=>esc(f)).join(', ')} <span class="hint">(시안: 파일명만 저장)</span></div>`:''}
     ${p.photo?`<div class="view-photo${p.board==='notice'?' poster':''}"><img src="${p.photo}" alt="${esc(p.alt||p.title)}"></div>`:''}
     ${p.html ? `<div class="view-body rich">${cleanHTML(p.html)}</div>` : `<div class="view-body">${esc(p.body)}</div>`}
+    ${p.photos?.length ? `<div class="view-more">${p.photos.map((x, n) => `<figure><img src="${x.src}" alt="${esc(x.alt || p.title + ' 사진 ' + (n+2))}" loading="lazy">${x.alt ? `<figcaption>${esc(x.alt)}</figcaption>` : ''}</figure>`).join('')}</div>` : ''}
     ${p.board==='qna' ? (p.answer ? `<section class="answer" aria-label="답변"><h4>센터 답변 <span class="hint" style="font-weight:400">${p.answer.date}</span></h4><div class="ab">${esc(p.answer.body)}</div></section>` : '<section class="answer"><h4>답변 대기 중</h4><p class="hint">담당자가 확인 후 답변을 등록합니다.</p></section>') : ''}
     ${p.board==='qna' && isAdmin() ? `<form id="ansForm" class="field" style="margin-top:20px"><label for="ans">${p.answer?'답변 수정':'답변 작성'} (관리자)</label><textarea id="ans" style="height:160px">${esc(p.answer?.body||'')}</textarea><div class="board-bottom"><button class="btn btn-primary" type="submit">답변 저장</button></div></form>` : ''}
     <div class="view-nav">
@@ -1598,12 +1678,35 @@ function viewWrite(b, editId){
         <input id="wal" name="alt" type="text" maxlength="120" value="${esc(p?.alt||'')}" placeholder="예: 홍보부스에서 학생들이 ODA 퀴즈에 참여하는 모습">
         <p class="hint">화면낭독기 사용자에게 읽어 주는 설명입니다. (웹 접근성 필수 항목)</p>
         <p class="err" id="walErr" hidden></p>
+        <label for="wph2" style="margin-top:18px">추가 사진 (여러 장 한 번에 선택 가능, 최대 10장)</label>
+        <input id="wph2" type="file" accept="image/png,image/jpeg,image/webp" multiple>
+        <p class="hint">본문 아래에 순서대로 표시됩니다. 사진마다 설명을 적으면 사진 아래에 함께 나옵니다.</p>
+        <ul class="more-ph" id="morePh"></ul>
       </div>
       <div class="field"><label for="wf">첨부파일</label><input id="wf" name="files" type="file" multiple><p class="hint">한글(hwp)·PDF 첨부 시 접근성을 위해 본문에 주요 내용을 함께 적어 주세요. 시안에서는 파일명만 저장됩니다.</p></div>
       <div class="board-bottom"><a class="btn btn-line" href="${p?'#/post/'+p.id:(board==='odastat'?listHref({board,cat:wCat}):'#/board/'+board)}">취소</a><button class="btn btn-primary" type="submit">${p?'수정 저장':'등록'}</button></div>
     </form>`);
   const wf = $('#writeForm');
   let photoData = p?.photo || null;
+  let more = (p?.photos || []).map(x => ({...x}));
+  const drawMore = () => {
+    $('#morePh').innerHTML = more.map((x, i) => `<li><img src="${x.src}" alt=""><div><label class="sr-only" for="mpa${i}">추가 사진 ${i+1} 설명</label><input id="mpa${i}" data-mi="${i}" type="text" maxlength="120" value="${esc(x.alt||'')}" placeholder="사진 ${i+1} 설명"><span class="mp-btns"><button type="button" class="btn btn-sm btn-line" data-mu="${i}" ${i?'':'disabled'} aria-label="사진 ${i+1} 앞으로">↑</button><button type="button" class="btn btn-sm btn-line" data-md="${i}" ${i<more.length-1?'':'disabled'} aria-label="사진 ${i+1} 뒤로">↓</button><button type="button" class="btn btn-sm btn-danger" data-mx="${i}">삭제</button></span></div></li>`).join('');
+  };
+  drawMore();
+  $('#morePh').oninput = e => { const i = e.target.dataset.mi; if (i != null) more[i].alt = e.target.value; };
+  $('#morePh').onclick = e => {
+    const b = e.target.closest('button'); if (!b) return; const d = b.dataset;
+    if (d.mx != null) more.splice(+d.mx, 1);
+    if (d.mu != null) { const i = +d.mu; [more[i-1], more[i]] = [more[i], more[i-1]]; }
+    if (d.md != null) { const i = +d.md; [more[i+1], more[i]] = [more[i], more[i+1]]; }
+    drawMore();
+  };
+  $('#wph2').onchange = async e => {
+    const files = [...e.target.files].filter(x => /^image\/(png|jpeg|webp)$/.test(x.type) && x.size <= 10*1024*1024);
+    if (files.length < e.target.files.length) toast('JPG·PNG·WEBP 10MB 이하 파일만 추가했습니다.');
+    for (const file of files) { if (more.length >= 10) { toast('추가 사진은 최대 10장입니다.'); break; } const src = await readPhoto(file); if (src) more.push({src, alt:''}); }
+    e.target.value = ''; drawMore();
+  };
   const syncBoard = () => { const v = wf.board.value; $('#catBox').hidden = v !== 'odastat'; $('#secretBox').hidden = v !== 'qna'; $('#photoBox').hidden = !BOARDS[v].photo; $('#phLbl').textContent = BOARDS[v].photoLabel || '대표 사진'; $('#phReq').hidden = $('#alReq').hidden = v !== 'gallery'; };
   wf.board.onchange = syncBoard;
   $('#wph').onchange = async e => {
@@ -1632,7 +1735,7 @@ function viewWrite(b, editId){
     setErr('wphErr', isGal && !photoData ? '대표 사진을 등록하세요.' : '');
     setErr('walErr', usePhoto && photoData && !alt ? '사진 설명(대체텍스트)을 입력하세요.' : '');
     if (!ok) { (!t ? f.title : (isGal && !photoData) ? $('#wph') : (usePhoto && photoData && !alt) ? f.alt : !c ? $('#wcRich') : f.spw).focus(); return; }
-    const ph = usePhoto ? {photo:photoData, alt} : {photo:null, alt:''};
+    const ph = usePhoto ? {photo:photoData, alt, photos: more.map((x, i) => ({src:x.src, alt:(x.alt||'').trim()}))} : {photo:null, alt:'', photos:[]};
     let sec = {secret:false, secSalt:null, secPw:null};
     if (secret) sec = spw ? {secret:true, secSalt: uid()} : {secret:true, secSalt:p.secSalt, secPw:p.secPw};
     if (secret && spw) sec.secPw = await hash(spw, sec.secSalt);
@@ -1733,7 +1836,7 @@ function viewAdmin(){
   app.innerHTML = `<div class="sub-visual"><div class="wrap"><h1>관리자 페이지</h1></div></div>
   <div class="wrap" style="padding:48px 24px 90px">
     <div class="publish-box">
-      <div><b>배포</b><p class="hint">관리자 화면에서 고친 내용(글·사진·배너·로고·사업 목록·공지)은 이 PC에만 저장됩니다. [배포 파일 만들기]로 받은 <code>data.js</code>를 누리집 폴더에 넣어(덮어쓰기) 올리면 방문자 화면에 반영됩니다.</p></div>
+      <div><b>배포</b><p class="hint">관리자 화면에서 고친 내용(글·사진·배너·로고·사업 목록·공지)은 이 PC에만 저장됩니다. [배포 파일 만들기]로 받은 <code>data.js</code>를 서버 폴더에 넣어(덮어쓰기) 올리면 방문자 화면에 반영됩니다.</p></div>
       <div class="publish-btns"><button class="btn btn-primary" id="pubExport">배포 파일 만들기 (data.js)</button><button class="btn btn-line" id="pubReload" ${SITE?'':'disabled'}>배포된 내용으로 되돌리기</button></div>
     </div>
     <div class="stats">
@@ -1752,7 +1855,7 @@ function viewAdmin(){
         <div class="field"><label for="nmLng">경도</label><input id="nmLng" type="text" value="${mapCfg().lng}"></div>
         <div class="field"><label for="nmZoom">확대 (6~21)</label><input id="nmZoom" type="text" value="${mapCfg().zoom}"></div>
       </div>
-      <p class="hint">좌표는 네이버 지도에서 센터 위치를 우클릭해 확인할 수 있습니다. NCP 콘솔의 Web 서비스 URL에 누리집 주소(${SITE_URL})를 등록해야 지도가 뜹니다.</p>
+      <p class="hint">좌표는 네이버 지도에서 센터 위치를 우클릭해 확인할 수 있습니다. NCP 콘솔의 Web 서비스 URL에 홈페이지 주소(${SITE_URL})를 등록해야 지도가 뜹니다.</p>
       <div class="board-bottom"><button class="btn btn-primary" id="nmSave">지도 설정 저장</button></div>
     </div>
     <div class="sec-title"><h2 style="font-size:1.25rem">빠른 글쓰기</h2></div>
@@ -2080,7 +2183,7 @@ $('#sbToggle').onclick = () => { const sb = $('#sideBar'), on = !sb.classList.co
   }
   requestAnimationFrame(tick);
 })();
-(async () => { importSiteData(); loadSideLogos(); applyBizLists(); await seed(); seedGallery(); store.set('posts', store.get('posts',[]).filter(p=>BOARDS[p.board])); renderMenus(); renderAuth(); renderFamily(); renderLogo(); route(); })();
+(async () => { importSiteData(); loadSideLogos(); applyBizLists(); await seed(); seedGallery(); store.set('posts', store.get('posts',[]).filter(p=>BOARDS[p.board]).map(p => p.title === '[예시] 누리집 개편 안내' ? {...p, title:'[예시] 홈페이지 개편 안내'} : p)); renderMenus(); renderAuth(); renderFamily(); renderLogo(); route(); })();
 </script>
 </body>
 </html>
