@@ -384,15 +384,14 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
 .slot.tall{min-height:240px;display:flex;align-items:center;justify-content:center}
 .slot.map{height:360px;display:flex;align-items:center;justify-content:center}
 .inline-slot{display:inline-block;padding:2px 14px;font-size:.875rem}
-.greet-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,270px);gap:56px;align-items:start;margin-bottom:48px}
-.greet-head{display:flex;flex-direction:column;gap:28px;padding-top:8px}
-.greet-photo{margin:0}
-.greet-photo .ed-img,.greet-photo .slot.img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:12px;background:#EEF0F3}
-.greet-title{font-size:1.625rem;line-height:1.55;color:var(--basalt);font-weight:400;word-break:keep-all}
-.greet-title .hl,.greet-title strong{color:var(--navy);font-weight:800}
-.greet-sign{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin-top:16px;font-size:.9375rem;color:var(--sub)}
+.greet{max-width:none}
+.greet-hd{margin-bottom:24px}
+.greet-title{font-size:1.625rem;line-height:1.55;color:var(--navy);font-weight:800;word-break:keep-all}
+.greet-title .hl{color:var(--sea);font-weight:800}
+.greet-foot{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:16px;margin-top:40px}
+.gf-logo{height:44px;width:auto;max-width:240px;object-fit:contain}
+.greet-sign{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:10px;font-size:.9375rem;color:var(--sub)}
 .gs-name{font-size:1.125rem;color:var(--basalt);letter-spacing:.2em}
-.greet-signimg{height:40px;width:auto;display:block}
 .greet-body{line-height:1.9;white-space:normal;font-size:.9375rem;color:#3D4550}
 .greet-body p{margin:0}
 .greet-body .hl{color:var(--sea);font-weight:800}
@@ -682,11 +681,10 @@ input[type=checkbox]{width:20px;height:20px;accent-color:var(--sea)}
   .sb-glyph{font-size:1.0625rem}
   .banner-grid{grid-template-columns:1fr}
   .gal-grid,.board-gal{grid-template-columns:repeat(2,1fr);gap:14px}
-  .greet-top{grid-template-columns:1fr;gap:24px}
-  .greet-photo{max-width:260px;margin:0 auto;width:100%}
-  .greet-head{order:2;padding-top:0}
-  .greet-head>[data-ed="greeting.title"]{display:none}
-  body.is-admin .greet-head>[data-ed="greeting.title"]{display:block}
+  .greet-hd{display:none}
+  body.is-admin .greet-hd{display:block}
+  .greet-title{font-size:1.25rem}
+  .greet-foot{margin-top:28px}
   .greet-title{font-size:1.3125rem}
   .steps{grid-template-columns:1fr}
   .steps li{display:flex;align-items:center;gap:12px;text-align:left;padding:12px 14px}
@@ -1265,18 +1263,18 @@ const orgRow = v => `<div class="row">${v.split('\n').filter(Boolean).map(t=>`<d
 
 const PAGES = {
   greeting:{body:()=>`
-    <div class="greet-top">
-      <div class="greet-head">
-        ${ed('greeting.title', {rich:true, label:'인사말 제목', def: RICH + '<p><span class="hl">제주국제개발협력센터</span></p><p>홈페이지를 찾아주신 여러분께</p><p>감사드립니다.</p>', render:v=>`<div class="greet-title">${richView(v)}</div>`})}
-        ${ed('greeting.body', {label:'인사말 본문', ph:'인사말 본문 입력 (굵게·기울임·크기·강조색 사용 가능)', rich:true, render:v=>`<div class="greet-body">${richView(v)}</div>`})}
+    <div class="greet">
+      <div class="greet-hd">
+        ${ed('greeting.title', {rich:true, label:'인사말 제목', def: RICH + '<p><span class="hl">제주국제개발협력센터</span> 홈페이지를 찾아주신 여러분께 감사드립니다.</p>', render:v=>`<div class="greet-title">${richView(v)}</div>`})}
       </div>
-      <figure class="greet-photo">
-        ${ed('greeting.photo', {type:'image', label:'센터장 사진', ph:'사진<br>(가로 4 : 세로 5 권장)'})}
-        <figcaption class="greet-sign">
+      ${ed('greeting.body', {label:'인사말 본문', ph:'인사말 본문 입력 (굵게·기울임·크기·강조색 사용 가능)', rich:true, render:v=>`<div class="greet-body">${richView(v)}</div>`})}
+      <div class="greet-foot">
+        <img class="gf-logo" src="${store.get('siteLogo') || LOGO_FILE}" alt="제주국제개발협력센터 로고" onerror="this.remove()">
+        <div class="greet-sign">
           ${ed('greeting.sign', {label:'직위', def:'제주국제개발협력센터장', render:v=>`<span class="gs-pos">${esc(v)}</span>`})}
           ${ed('greeting.name', {label:'성명', ph:'성명', render:v=>`<b class="gs-name">${esc(v)}</b>`})}
-        </figcaption>
-      </figure>
+        </div>
+      </div>
     </div>`},
   purpose:{body:()=>`
     ${ed('purpose.lead', {label:'설립 목적', def:'제주 지역의 공적개발원조(ODA) 참여 기반 확대를 위해\n제주특별자치도·한국국제협력단(KOICA)·제주대학교의 협약으로 설립되었습니다.', render:v=>`<p class="lead">${nl2br(v)}</p>`})}
